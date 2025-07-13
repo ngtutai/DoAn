@@ -1,8 +1,8 @@
 # Hướng dẫn chạy đồ án React App TypeScript
 
-## Mở TERMINAL trong Visual Studio Code
+## Cài đặt Node_Modules
 
-1. **Sau khi tải tài từ Github**
+1. **Sau khi tải đồ án từ Github**
 
 Link Github:
 
@@ -15,6 +15,16 @@ Copy và Past vào trình duyệt sẽ ra Github chứa đồ án này
 ```bash
    cd NameFolder
 ```
+
+3. **Cài đặt Node_Modules**
+
+Mở TERMINAL trong Visual Studio Code chạy lệnh sau và chờ tải :
+
+```bash
+   npm install bootstrap
+```
+
+Sau tải xong chúng ta đã hoàn thành chỉ còn bước chạy lệnh là sẽ chạy được ứng dụng
 
 ## Lệnh chạy ứng dụng
 
