@@ -4,15 +4,11 @@
 
 Link Github:
 
-    ```bash
     https://github.com/ngtutai/DoAn.git
-    ```
 
 3. **Đợi tải xong mở lại dự án hoặc sử dụng lệnh để chuyển tới dựa án**
 
-   ```bash
    cd NameFolder
-   ```
 
 # Cách chạy ứng dụng
 
@@ -20,9 +16,7 @@ Link Github:
 
 Nhập lệnh:
 
-    ```bash
     npm start
-    ```
 
 Chạy ứng dụng ở chế độ phát triển.
 Mở [http://localhost:3000](http://localhost:3000) để xem trên trình duyệt.
