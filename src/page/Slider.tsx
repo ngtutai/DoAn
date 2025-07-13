@@ -1,0 +1,71 @@
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+export interface SliderItem {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+}
+
+export default function Slide() {
+  const [sliders, setSliders] = useState<SliderItem[]>([]);
+  const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("http://localhost:3002/sliders")
+      .then((res) => res.json())
+      .then((data) => setSliders(data))
+      .catch(() => console.error("Lỗi tải slider"));
+  }, []);
+
+  // Tự động chuyển slide sau 3s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % sliders.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [sliders]);
+
+  if (sliders.length === 0)
+    return (
+      <p>
+        <h4 className="mt-3">Hiện không có slider nào ...</h4>
+      </p>
+    );
+
+  return (
+    <div
+      className="position-relative overflow-hidden"
+      style={{ height: "550px" }}
+    >
+      {sliders.map((item, index) => (
+        <div
+          key={item.id}
+          className="position-absolute w-100 h-100 text-center text-white d-flex flex-column justify-content-center align-items-start px-5"
+          style={{
+            backgroundImage: `url("/assets/images/slider/${item.image}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: index === current ? 1 : 0,
+            transition: "opacity 0.8s ease-in-out",
+          }}
+        >
+          <h2 className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-2">
+            {item.title}
+          </h2>
+          <p className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-3 w-50 w-md-100">
+            {item.description}
+          </p>
+          <button
+            className="btn btn-danger rounded-pill px-4 text-warning"
+            onClick={() => navigate("/pet#section-pet")}
+          >
+            Xem thêm<i className="fa-solid fa-arrow-right ms-2"></i>
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+}

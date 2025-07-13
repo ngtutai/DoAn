@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Siêu Nhân Xanh",
+    "role": "Frontend Developer",
+    "avatar": "assets/images/teampage/a.png",
+    "shortDescription": "Chuyên gia React & TypeScript",
+    "fullDescription": "Có 5 năm kinh nghiệm phát triển ứng dụng web. Từng làm việc tại các công ty công nghệ hàng đầu. Chuyên môn: React, TypeScript, Redux, Next.js.",
+    "skills": ["React", "TypeScript", "UI/UX", "Performance"],
+    "social": {
+      "facebook": "#",
+      "zalo": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Siêu Nhân Đỏ",
+    "role": "UI/UX Designer",
+    "avatar": "assets/images/teampage/b.png",
+    "shortDescription": "Thiết kế trải nghiệm người dùng",
+    "fullDescription": "Tốt nghiệp loại giỏi ĐH Mỹ thuật Công nghiệp. Có khả năng cảm thụ nghệ thuật tốt và tư duy sáng tạo. Đã thiết kế giao diện cho hơn 20 dự án lớn nhỏ.",
+    "skills": ["Figma", "Adobe XD", "User Research", "Prototyping"],
+    "social": {
+      "facebook": "https://www.facebook.com/kun.21tuoi",
+      "zalo": "https://zalo.me/0868807904",
+      "github": "https://github.com/ngtutai"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Siêu Nhân Lục",
+    "role": "Backend Developer",
+    "avatar": "assets/images/teampage/c.png",
+    "shortDescription": "Chuyên gia hệ thống backend",
+    "fullDescription": "Có kiến thức sâu về kiến trúc hệ thống và cơ sở dữ liệu. Đã xây dựng nhiều hệ thống lớn phục vụ hàng triệu người dùng. Thành thạo nhiều ngôn ngữ lập trình server-side.",
+    "skills": ["Node.js", "Python", "Database", "API Design"],
+    "social": {
+      "facebook": "#",
+      "zalo": "#",
+      "github": "#"
+    }
+  }
+]

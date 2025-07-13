@@ -1,0 +1,16 @@
+{
+  "sliders": [
+    {
+      "id": "8d0d",
+      "image": "slider-1.png",
+      "title": "Tình Bạn Bất Tận",
+      "description": "Thú cưng không chỉ là những con vật, mà là những người bạn trung thành. Cùng chia sẻ những khoảnh khắc đáng nhớ bên thú cưng của bạn."
+    },
+    {
+      "id": "12b0",
+      "image": "slider-2.png",
+      "title": "Thú Cưng Đặc Biệt",
+      "description": "Tìm hiểu về những giống thú cưng độc đáo và thú vị trên thế giới. Mỗi loài đều có câu chuyện riêng của nó."
+    }
+  ]
+}

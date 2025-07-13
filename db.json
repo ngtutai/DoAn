@@ -1,0 +1,105 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Chó"
+    },
+    {
+      "id": "2",
+      "name": "Mèo"
+    },
+    {
+      "id": "3",
+      "name": "Phụ kiện"
+    }
+  ],
+  "products": [
+    {
+      "name": "Mèo Anh lông ngắn ",
+      "price": 6000000,
+      "image": "cat.png",
+      "categoryId": 2,
+      "description": "Chó Poodle thông minh, lông xoăn và thân thiện.",
+      "id": "5e31"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "displayname": "Admin",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "displayname": "Kun",
+      "email": "kun1@gmail.com",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": "8b2f",
+      "displayname": "Kun",
+      "email": "kun2@gmail.com",
+      "password": "123",
+      "role": "user"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 2,
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "productId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": 3900000,
+      "status": "Chờ xác nhận"
+    },
+    {
+      "id": "2",
+      "userId": 3,
+      "products": [
+        {
+          "productId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 3000000,
+      "status": "Hoàn tất"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "productId": 1,
+      "userId": 2,
+      "content": "Chó dễ thương quá!",
+      "date": "2024-07-01",
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "productId": 3,
+      "userId": 3,
+      "content": "Mèo ngoan lắm!",
+      "date": "2024-07-02",
+      "rating": 5
+    },
+    {
+      "id": "3",
+      "productId": 5,
+      "userId": 2,
+      "content": "Dây bền chắc",
+      "date": "2024-07-03",
+      "rating": 5
+    }
+  ]
+}

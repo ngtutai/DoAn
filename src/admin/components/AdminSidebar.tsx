@@ -1,0 +1,91 @@
+import { NavLink } from "react-router-dom";
+import React, { Fragment } from "react";
+
+export default function AdminSidebar() {
+  return (
+    <Fragment>
+      <nav className="sidebar border-end">
+        <ul className="nav flex-column list-unstyled">
+          <h5 className="p-1 text-muted">Dashboard</h5>
+
+          {/* Dashboard (Bảng điều khiển) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/dashboard"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-gauge me-2"></i> Bảng điều khiển
+            </NavLink>
+          </li>
+
+          {/* Product (Sản phẩm) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/product"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-brands fa-product-hunt me-2"></i> Sản phẩm
+            </NavLink>
+          </li>
+
+          {/* Slide */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/slider"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-sliders me-2"></i> Slider
+            </NavLink>
+          </li>
+
+          {/* Comment (Bình luận ) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/comment"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-comment me-2"></i> Bình luận
+            </NavLink>
+          </li>
+
+          <hr />
+          <h5 className="p-1 text-muted">Others</h5>
+
+          {/* Lightbulb */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-lightbulb me-2"></i> Dashboard 2
+            </NavLink>
+          </li>
+
+          {/* Question */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-question me-2"></i> Dashboard 3
+            </NavLink>
+          </li>
+
+          <hr />
+        </ul>
+      </nav>
+    </Fragment>
+  );
+}

@@ -1,0 +1,220 @@
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+
+export default function Header() {
+  const storedUser = localStorage.getItem("currentUser");
+  const currentUser = storedUser ? JSON.parse(storedUser) : null;
+  const handleLogout = () => {
+    localStorage.removeItem("currentUser");
+    window.location.href = "/login";
+  };
+
+  const location = useLocation();
+  const dropdownRoutes = ["/profile", "/change-password", "/orders"];
+  const isDropdownActive = dropdownRoutes.includes(location.pathname);
+
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const storedUser = localStorage.getItem("currentUser");
+      const userId = storedUser ? JSON.parse(storedUser).id : null;
+      const cartKey = userId ? `cart_${userId}` : "cart";
+      const cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+      const count = cart.reduce(
+        (sum: number, item: any) => sum + item.quantity,
+        0
+      );
+      setCartCount(count);
+    };
+
+    updateCartCount(); // Lần đầu load
+    window.addEventListener("cartUpdated", updateCartCount);
+    const interval = setInterval(updateCartCount, 1000);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartCount);
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <header className="header-area header-area2 p-0">
+      <nav className="navbar navbar-expand-lg navbar-primary">
+        <div className="container fw-bold">
+          <a className="col-2" href="/">
+            <img src="assets/Logo/..." alt="Logo" style={{ width: "50%" }} />
+          </a>
+          {/* Toggle button for mobile */}
+          <button
+            className="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          {/* Nav items */}
+          <div
+            className="collapse navbar-collapse text-start "
+            id="navbarContent"
+          >
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    "nav-link" + (isActive ? " active" : "")
+                  }
+                >
+                  Trang chủ
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/pet"
+                  className={({ isActive }) =>
+                    "nav-link" + (isActive ? " active" : "")
+                  }
+                >
+                  Thú cưng
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/detail"
+                  className={({ isActive }) =>
+                    "nav-link" + (isActive ? " active" : "")
+                  }
+                >
+                  Chi tiết
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    "nav-link" + (isActive ? " active" : "")
+                  }
+                >
+                  Liên hệ
+                </NavLink>
+              </li>
+            </ul>
+
+            <ul className="navbar-nav mb-2 mb-lg-0 ">
+              <li className="nav-item">
+                <NavLink
+                  to="/teampage"
+                  className={({ isActive }) =>
+                    "nav-link" + (isActive ? " active" : "")
+                  }
+                >
+                  <img
+                    src="/assets/images/iconlogo/group.png"
+                    alt="group"
+                    className="ms-2"
+                    style={{
+                      width: "35px", // hoặc 40px tùy kích thước bạn muốn
+                      height: "35px",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                    }}
+                  />
+                </NavLink>
+              </li>
+            </ul>
+            <ul className="navbar-nav mb-2 mb-lg-0 ">
+              <li className="nav-item me-2">
+                <NavLink
+                  to="/cart"
+                  className={({ isActive }) =>
+                    "nav-link position-relative" + (isActive ? " active" : "")
+                  }
+                >
+                  <i className="fa-solid fa-cart-shopping me-1"></i>
+                  <span
+                    className="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger bg-opacity-75"
+                    style={{ fontSize: "12px" }}
+                  >
+                    {cartCount}
+                  </span>
+                  Giỏ hàng
+                </NavLink>
+              </li>
+              {!currentUser ? (
+                <li className="nav-item">
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                  >
+                    <i className="fa-solid fa-user"></i> Đăng nhập
+                  </NavLink>
+                </li>
+              ) : (
+                <li className="nav-item dropdown ms-2">
+                  <span
+                    className={
+                      "nav-link dropdown-toggle" +
+                      (isDropdownActive ? " active " : "")
+                    }
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <i className="fa-solid fa-user me-1"></i>{" "}
+                    {currentUser.displayname}
+                  </span>
+                  <ul className="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <NavLink
+                        className="dropdown-item fw-bold text-muted"
+                        to="/profile"
+                      >
+                        <i className="fa-solid fa-id-card me-1"></i>
+                        Thông tin tài khoản
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item fw-bold text-muted"
+                        to="/change-password"
+                      >
+                        <i className="fa-solid fa-key me-2"></i>
+                        Đổi mật khẩu
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="dropdown-item fw-bold text-muted"
+                        to="/orders"
+                      >
+                        <i className="fa-solid fa-envelope-open-text me-2"></i>
+                        Đơn hàng
+                      </NavLink>
+                    </li>
+                    <li>
+                      <button
+                        className="dropdown-item fw-bold text-muted"
+                        onClick={handleLogout}
+                      >
+                        <i className="fa-solid fa-right-from-bracket me-2"></i>
+                        Đăng xuất
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+}
