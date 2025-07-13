@@ -8,7 +8,9 @@ Link Github:
 
 2. **Đợi tải xong mở lại dự án hoặc sử dụng lệnh để chuyển tới dựa án**
 
+```bash
    cd NameFolder
+```
 
 # Cách chạy ứng dụng
 
