@@ -1,4 +1,6 @@
-# Hướng dẫn tải node_modules "React App TypeScript" vào đồ án
+# Hướng dẫn chạy đồ án React App TypeScript
+
+## Mở TERMINAL trong Visual Studio Code
 
 1. **Sau khi tải tài từ Github**
 
@@ -14,9 +16,9 @@ Copy và Past vào trình duyệt sẽ ra Github chứa đồ án này
    cd NameFolder
 ```
 
-# Lệnh chạy ứng dụng
+## Lệnh chạy ứng dụng
 
-## Mở TERMINAL trong Visual Studio Code
+### Mở TERMINAL trong Visual Studio Code
 
 Nhập lệnh:
 
