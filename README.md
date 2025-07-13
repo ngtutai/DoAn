@@ -3,7 +3,8 @@
 1. **Sau khi tải tài từ Github**
 
 Link Github:
-https://github.com/ngtutai/DoAn.git
+
+    https://github.com/ngtutai/DoAn.git
 
 Copy và past vào trình duyệt sẽ ra Github chứa đồ án này
 
