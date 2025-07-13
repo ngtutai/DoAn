@@ -3,8 +3,9 @@
 1. **Sau khi tải tài từ Github**
 
 Link Github:
+https://github.com/ngtutai/DoAn.git
 
-    https://github.com/ngtutai/DoAn.git
+Copy và past vào trình duyệt sẽ ra Github chứa đồ án này
 
 2. **Đợi tải xong mở lại dự án hoặc sử dụng lệnh để chuyển tới dựa án**
 
@@ -12,7 +13,7 @@ Link Github:
    cd NameFolder
 ```
 
-# Cách chạy ứng dụng
+# Lệnh chạy ứng dụng
 
 ## Mở TERMINAL trong Visual Studio Code
 
