@@ -6,13 +6,13 @@ Link Github:
 
     https://github.com/ngtutai/DoAn.git
 
-3. **Đợi tải xong mở lại dự án hoặc sử dụng lệnh để chuyển tới dựa án**
+2. **Đợi tải xong mở lại dự án hoặc sử dụng lệnh để chuyển tới dựa án**
 
    cd NameFolder
 
 # Cách chạy ứng dụng
 
-1. **Mở TERMINAL trong Visual Studio Code**
+## Mở TERMINAL trong Visual Studio Code
 
 Nhập lệnh:
 
