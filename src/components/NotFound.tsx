@@ -6,7 +6,7 @@ export default function NotFound() {
         <i className="fa-solid fa-bug"></i> Trang bạn tìm không tồn tại.
       </p>
       <img
-        src="assets/images/Logo/icons/icon-error.png"
+        src="/assets/images/iconlogo/icon-error.png"
         alt=""
         style={{ width: "30%" }}
       />

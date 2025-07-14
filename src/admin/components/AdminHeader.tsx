@@ -9,6 +9,7 @@ export default function AdminHeader() {
       return "Bảng điều khiển";
     if (location.pathname.includes("/admin/category")) return "Thể loại";
     if (location.pathname.includes("/admin/product")) return "Sản phẩm";
+    if (location.pathname.includes("/admin/order")) return "Đơn hàng";
     if (location.pathname.includes("/admin/slider")) return "Slider";
     if (location.pathname.includes("/admin/profileadmin")) return "Thông tin";
     if (location.pathname.includes("/admin/comment")) return "Bình luận";
@@ -45,11 +46,7 @@ export default function AdminHeader() {
         <div className="col-12 col-md-2">
           <div className="d-flex align-items-center justify-content-center justify-content-md-start">
             <h2 className="mb-0 me-2">ADMIN</h2>
-            <img
-              src="/assets/images/icons/logo.png"
-              alt="Logo"
-              style={{ width: "40%", maxWidth: "150px" }}
-            />
+            <img src="" alt="Logo" />
           </div>
         </div>
 

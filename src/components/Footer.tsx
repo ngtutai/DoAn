@@ -6,7 +6,7 @@ export default function Footer() {
           {/* Cột 1: Logo và mô tả */}
           <div className="col-12 col-md-3 mb-2 text-center">
             <div className="row">
-              <div className="col">
+              <div className="col mt-4">
                 <h3 className="fw-bold">
                   PET
                   <br />
@@ -15,7 +15,7 @@ export default function Footer() {
               </div>
               <div className="col text-start">
                 <img
-                  src="assets/images/logo/logo.png"
+                  src="assets/images/iconlogo/icon-web.png"
                   alt="Logo"
                   className="rounded-circle my-3"
                   style={{ width: "80px", height: "80px", objectFit: "cover" }}

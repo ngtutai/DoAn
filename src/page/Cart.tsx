@@ -154,7 +154,7 @@ const Cart: React.FC = () => {
           backgroundImage: `url("assets/images/banner/banner-cart.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "630px",
+          height: "500px",
           position: "relative",
         }}
       >

@@ -22,7 +22,7 @@ export default function Contact() {
           backgroundImage: `url("assets/images/banner/banner-contact.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "635px",
+          height: "500px",
           position: "relative",
         }}
       >
@@ -130,9 +130,9 @@ export default function Contact() {
                 />
               </div>
             </div>
-            <div className="col-md-3 mt-3">
+            <div className="col-md-3 mt-4">
               <img
-                src="assets/images/icons/icon-map.png"
+                src="assets/images/iconlogo/icon-map.png"
                 style={{ width: "80%" }}
                 alt=""
               />

@@ -5,9 +5,9 @@ import Sidebar from "../Sidebar";
 
 export interface Orders {
   id: number;
-  code?: string; // Mã đơn hàng (tùy chọn nếu chưa có)
+  code?: string;
   orderDate: string;
-  status: "placed" | "processing" | "shipping" | "delivered";
+  status: "placed" | "processing" | "shipping" | "delivered" | "cancel";
   items: OrderItem[];
   shippingFee: number;
   total: number;
@@ -35,10 +35,8 @@ export default function Order() {
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [expandedOrderId, setExpandedOrderId] = useState<number | null>(null);
 
-  // Hiển thị mã đơn hàng dạng #1234ABC
   const formatOrderCode = (code?: string | number) => {
     if (code && typeof code === "string") return `#${code}`;
-    // Nếu chưa có mã thì tạo tạm theo id
     const id =
       typeof code === "number" ? code : Math.floor(1000 + Math.random() * 9000);
     const letters = Array.from({ length: 3 }, () =>
@@ -67,7 +65,48 @@ export default function Order() {
     }
   }, []);
 
-  // Helper functions (same as previous implementation)
+  // Hàm hủy
+  const handleCancel = async (orderId: number) => {
+    const confirmCancel = window.confirm("Bạn có chắc muốn hủy đơn hàng này?");
+    if (!confirmCancel) return;
+
+    try {
+      const res = await fetch(`http://localhost:3001/orders/${orderId}`);
+      const latestOrder = await res.json();
+
+      if (latestOrder.status === "delivered") {
+        alert("Đơn hàng đã được giao, không thể hủy!");
+        setOrders((prev) =>
+          prev.map((o) =>
+            o.id === orderId ? { ...o, status: "delivered" } : o
+          )
+        );
+        return;
+      }
+
+      if (latestOrder.status === "cancel") {
+        alert("Đơn hàng đã bị hủy trước đó!");
+        setOrders((prev) =>
+          prev.map((o) => (o.id === orderId ? { ...o, status: "cancel" } : o))
+        );
+        return;
+      }
+
+      await fetch(`http://localhost:3001/orders/${orderId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "cancel" }),
+      });
+
+      setOrders((prev) =>
+        prev.map((o) => (o.id === orderId ? { ...o, status: "cancel" } : o))
+      );
+    } catch (err) {
+      console.error("Lỗi khi hủy đơn:", err);
+      alert("Hủy không thành công!");
+    }
+  };
+
   const getStatusText = (status: string) => {
     switch (status) {
       case "placed":
@@ -78,6 +117,8 @@ export default function Order() {
         return "Đang trung chuyển";
       case "delivered":
         return "Đã giao đơn hàng";
+      case "cancel":
+        return "Đã hủy";
       default:
         return status;
     }
@@ -85,6 +126,7 @@ export default function Order() {
 
   const getStatusClass = (status: string, currentStatus: string) => {
     const statusOrder = ["placed", "processing", "shipping", "delivered"];
+    if (!statusOrder.includes(currentStatus)) return "";
     const currentIndex = statusOrder.indexOf(currentStatus);
     const statusIndex = statusOrder.indexOf(status);
 
@@ -93,7 +135,6 @@ export default function Order() {
     return "";
   };
 
-  // Chưa Login Order (Đơn hàng) hiển thị "Bạn chưa đăng nhập!"
   if (!currentUser) {
     return (
       <div>
@@ -109,7 +150,6 @@ export default function Order() {
     );
   }
 
-  // Loading
   if (loading) {
     return (
       <div>
@@ -118,9 +158,7 @@ export default function Order() {
           <div className="row">
             <Sidebar />
             <div className="col-md-9 text-center">
-              <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </div>
+              <div className="spinner-border text-primary" role="status" />
             </div>
           </div>
         </div>
@@ -129,7 +167,6 @@ export default function Order() {
     );
   }
 
-  // Đã Login Order (Đơn hàng) hiển thị "Bạn chưa có đơn hàng nào!"
   if (orders.length === 0) {
     return (
       <div>
@@ -148,48 +185,59 @@ export default function Order() {
   return (
     <Fragment>
       <Header />
-
       <div className="container py-2">
         <div className="row">
           <section className="bread-crumb">
             <div className="container">
-              <div className="row">
-                <div className="col-12 a-left">
-                  <ul className="breadcrumb">
-                    <li className="home">
-                      <a href="/" className="nav-link text-muted">
-                        <span>Trang chủ</span>
-                      </a>
-                    </li>
-                    <li>
-                      <span className="mr_lr">&nbsp;/&nbsp;</span>
-                      <strong>
-                        <span>Đơn hàng</span>
-                      </strong>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <ul className="breadcrumb">
+                <li className="home">
+                  <a href="/" className="nav-link text-muted">
+                    <span>Trang chủ</span>
+                  </a>
+                </li>
+                <li>
+                  <span className="mr_lr">&nbsp;/&nbsp;</span>
+                  <strong>
+                    <span>Đơn hàng</span>
+                  </strong>
+                </li>
+              </ul>
             </div>
           </section>
 
-          {/* Sidebar */}
           <Sidebar />
 
           <div className="col-md-9">
-            {/* Đã Login và có Order (Đơn hàng) hiển thị "Đơn hàng ra" */}
             {orders.map((order) => (
               <div key={order.id} className="card mb-2 shadow-sm mt-5">
                 <div className="card-header bg-primary text-white">
                   <div className="d-flex justify-content-start align-items-center">
                     <h6 className="card-title mb-0 mt-1">
-                      {" "}
                       Đơn hàng {formatOrderCode(order.code || order.id)}
                     </h6>
                     <span className="badge bg-light bg-opacity-50 text-dark ms-2 me-auto">
                       {new Date(order.orderDate).toLocaleDateString("vi-VN")}
                     </span>
 
+                    {/* Nút hủy */}
+                    {order.status === "cancel" ? (
+                      <span className="badge bg-danger bg-opacity-50 me-2">
+                        Đã hủy
+                      </span>
+                    ) : order.status === "delivered" ? (
+                      <span className="badge bg-success bg-opacity-50 me-2">
+                        Đã giao
+                      </span>
+                    ) : (
+                      <button
+                        className="bg-light bg-opacity-25 badge me-2"
+                        onClick={() => handleCancel(order.id)}
+                      >
+                        Hủy
+                      </button>
+                    )}
+
+                    {/* Nút xem */}
                     <button
                       className="bg-light bg-opacity-25 badge"
                       onClick={() =>
@@ -205,48 +253,48 @@ export default function Order() {
 
                 {expandedOrderId === order.id && (
                   <div className="card-body">
-                    {/* Order tracking progress */}
-                    <div className="row mb-4">
-                      <div className="col-12">
-                        <div className="row">
-                          {[
-                            "placed",
-                            "processing",
-                            "shipping",
-                            "delivered",
-                          ].map((status, index) => (
-                            <div
-                              key={status}
-                              className={`col-3 tracking-step ${getStatusClass(
-                                status,
-                                order.status
-                              )} ${index === 0 ? "step-first" : ""}`}
-                            >
-                              {index > 0 && <div className="step-line"></div>}
-                              <div className="step-icon">
-                                {status === "placed" && (
-                                  <i className="fa-solid fa-check-circle"></i>
-                                )}
-                                {status === "processing" && (
-                                  <i className="fa-solid fa-clock"></i>
-                                )}
-                                {status === "shipping" && (
-                                  <i className="fa-solid fa-truck"></i>
-                                )}
-                                {status === "delivered" && (
-                                  <i className="fa-solid fa-box-open"></i>
-                                )}
+                    {order.status !== "cancel" && (
+                      <div className="row mb-4">
+                        <div className="col-12">
+                          <div className="row">
+                            {[
+                              "placed",
+                              "processing",
+                              "shipping",
+                              "delivered",
+                            ].map((status, index) => (
+                              <div
+                                key={status}
+                                className={`col-3 tracking-step ${getStatusClass(
+                                  status,
+                                  order.status
+                                )} ${index === 0 ? "step-first" : ""}`}
+                              >
+                                {index > 0 && <div className="step-line"></div>}
+                                <div className="step-icon">
+                                  {status === "placed" && (
+                                    <i className="fa-solid fa-check-circle"></i>
+                                  )}
+                                  {status === "processing" && (
+                                    <i className="fa-solid fa-clock"></i>
+                                  )}
+                                  {status === "shipping" && (
+                                    <i className="fa-solid fa-truck"></i>
+                                  )}
+                                  {status === "delivered" && (
+                                    <i className="fa-solid fa-box-open"></i>
+                                  )}
+                                </div>
+                                <h6 className="step-title">
+                                  {getStatusText(status)}
+                                </h6>
                               </div>
-                              <h6 className="step-title">
-                                {getStatusText(status)}
-                              </h6>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    )}
 
-                    {/* Order details */}
                     <div className="table-responsive">
                       <table className="table">
                         <thead>

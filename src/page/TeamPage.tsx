@@ -51,7 +51,7 @@ export default function TeamPage() {
           backgroundImage: `url("assets/images/banner/banner-teampage.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "635px",
+          height: "500px",
           position: "relative",
         }}
       >

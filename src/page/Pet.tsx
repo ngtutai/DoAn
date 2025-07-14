@@ -157,7 +157,7 @@ export default function Pet() {
           backgroundImage: `url("assets/images/banner/banner-pet.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "630px",
+          height: "500px",
         }}
       >
         <div
@@ -173,9 +173,8 @@ export default function Pet() {
 
       <div className="container-fluid py-4" id="section-pet">
         <div className="row">
-          <div className="col-1"></div>
           {/* Danh mục sản phẩm */}
-          <div className="col-2 pt-3 pe-4 border-end">
+          <div className="col-3 pt-3 pe-4 border-end">
             <div className="mb-3 fw-bold text-dark">
               <h6>
                 <i className="fa-solid fa-table-list me-2"></i>Danh mục sản phẩm
@@ -250,10 +249,10 @@ export default function Pet() {
             </ul>
           </div>
 
-          <div className="col-8">
+          <div className="col-9">
             <div className="row align-items-center mb-3">
               {/* Breadcrumbs */}
-              <div className="col-md-6 text-dark text-start fw-bold fs-5">
+              <div className="col-md-6 text-dark text-start fw-bold">
                 <a href="/" className="text-muted text-decoration-none">
                   Home
                 </a>{" "}

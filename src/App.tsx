@@ -25,6 +25,8 @@ import AdminLayout from "./admin/Layout/AdminLayout";
 import AdminPrivateRoute from "./admin/Layout/AdminPrivateRoute";
 import AdminLogin from "./admin/auth/AdminLogin";
 import Dashboard from "./admin/page/Dashboard";
+import OrderList from "./admin/Orders/OrderList";
+import EditOrder from "./admin/Orders/EditOrder";
 import ProductList from "./admin/Products/ProductList";
 import EditProduct from "./admin/Products/EditProduct";
 import SliderList from "./admin/Sliders/SliderList";
@@ -67,6 +69,8 @@ function App() {
               }
             >
               <Route path="dashboard" element={<Dashboard />} />
+              <Route path="order" element={<OrderList />} />
+              <Route path="order/:id" element={<EditOrder />} />
               <Route path="product" element={<ProductList />} />
               <Route path="product/new" element={<EditProduct />} />
               <Route path="product/edit/:id" element={<EditProduct />} />

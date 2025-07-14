@@ -20,6 +20,18 @@ export default function AdminSidebar() {
             </NavLink>
           </li>
 
+          {/* Order (Đơn hàng) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/order"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-envelope-open-text me-2"></i> Đơn hàng
+            </NavLink>
+          </li>
+
           {/* Product (Sản phẩm) */}
           <li className="nav-item">
             <NavLink
@@ -68,6 +80,42 @@ export default function AdminSidebar() {
               }
             >
               <i className="fa-solid fa-lightbulb me-2"></i> Dashboard 2
+            </NavLink>
+          </li>
+
+          {/* Question */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-question me-2"></i> Dashboard 3
+            </NavLink>
+          </li>
+
+          {/* Question */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-question me-2"></i> Dashboard 3
+            </NavLink>
+          </li>
+
+          {/* Question */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-question me-2"></i> Dashboard 3
             </NavLink>
           </li>
 

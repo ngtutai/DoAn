@@ -13,7 +13,7 @@ export default function Detail() {
           backgroundImage: `url("assets/images/banner/banner-detail.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "630px",
+          height: "500px",
         }}
       >
         <div

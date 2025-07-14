@@ -30,7 +30,7 @@ export default function SliderList() {
       method: "DELETE",
     })
       .then(() => {
-        toast.success("Thêm slider thành công");
+        toast.success("Đã xóa slider!");
         fetchSliders();
       })
       .catch(() => toast.error("Lỗi xóa Slider"));
