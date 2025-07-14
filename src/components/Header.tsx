@@ -39,179 +39,193 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header-area header-area2 p-0">
+    <header className="header-area header-area2 bg-primary bg-opacity-25 p-0">
       <nav className="navbar navbar-expand-lg navbar-primary">
         <div className="container fw-bold">
           <a className="col-2" href="/">
             <img src="assets/Logo/..." alt="Logo" style={{ width: "50%" }} />
           </a>
-          {/* Toggle button for mobile */}
+
+          {/* Nút mở menu mobile (hiện offcanvas) */}
           <button
-            className="navbar-toggler collapsed"
+            className="btn btn-outline-secondary d-lg-none"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarContent"
-            aria-controls="navbarContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu"
           >
-            <span className="navbar-toggler-icon"></span>
+            <i className="fa fa-bars"></i>
           </button>
 
           {/* Nav items */}
           <div
-            className="collapse navbar-collapse text-start "
-            id="navbarContent"
+            className="offcanvas offcanvas-start"
+            tabIndex={-1}
+            id="mobileMenu"
+            aria-labelledby="mobileMenuLabel"
           >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Trang chủ
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/pet"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Thú cưng
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/detail"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Chi tiết
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  Liên hệ
-                </NavLink>
-              </li>
-            </ul>
-
-            <ul className="navbar-nav mb-2 mb-lg-0 ">
-              <li className="nav-item">
-                <NavLink
-                  to="/teampage"
-                  className={({ isActive }) =>
-                    "nav-link" + (isActive ? " active" : "")
-                  }
-                >
-                  <img
-                    src="/assets/images/iconlogo/group.png"
-                    alt="group"
-                    className="ms-2"
-                    style={{
-                      width: "35px", // hoặc 40px tùy kích thước bạn muốn
-                      height: "35px",
-                      objectFit: "cover",
-                      borderRadius: "50%",
-                    }}
-                  />
-                </NavLink>
-              </li>
-            </ul>
-            <ul className="navbar-nav mb-2 mb-lg-0 ">
-              <li className="nav-item me-2">
-                <NavLink
-                  to="/cart"
-                  className={({ isActive }) =>
-                    "nav-link position-relative" + (isActive ? " active" : "")
-                  }
-                >
-                  <i className="fa-solid fa-cart-shopping me-1"></i>
-                  <span
-                    className="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger bg-opacity-75"
-                    style={{ fontSize: "12px" }}
-                  >
-                    {cartCount}
-                  </span>
-                  Giỏ hàng
-                </NavLink>
-              </li>
-              {!currentUser ? (
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="mobileMenuLabel">
+                Menu
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="offcanvas-body">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 mt-1">
                 <li className="nav-item">
                   <NavLink
-                    to="/login"
+                    to="/"
                     className={({ isActive }) =>
                       "nav-link" + (isActive ? " active" : "")
                     }
                   >
-                    <i className="fa-solid fa-user"></i> Đăng nhập
+                    Trang chủ
                   </NavLink>
                 </li>
-              ) : (
-                <li className="nav-item dropdown ms-2">
-                  <span
-                    className={
-                      "nav-link dropdown-toggle" +
-                      (isDropdownActive ? " active " : "")
+                <li className="nav-item">
+                  <NavLink
+                    to="/pet"
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
                     }
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    style={{ cursor: "pointer" }}
                   >
-                    <i className="fa-solid fa-user me-1"></i>{" "}
-                    {currentUser.displayname}
-                  </span>
-                  <ul className="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <NavLink
-                        className="dropdown-item fw-bold text-muted"
-                        to="/profile"
-                      >
-                        <i className="fa-solid fa-id-card me-1"></i>
-                        Thông tin tài khoản
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        className="dropdown-item fw-bold text-muted"
-                        to="/change-password"
-                      >
-                        <i className="fa-solid fa-key me-2"></i>
-                        Đổi mật khẩu
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        className="dropdown-item fw-bold text-muted"
-                        to="/orders"
-                      >
-                        <i className="fa-solid fa-envelope-open-text me-2"></i>
-                        Đơn hàng
-                      </NavLink>
-                    </li>
-                    <li>
-                      <button
-                        className="dropdown-item fw-bold text-muted"
-                        onClick={handleLogout}
-                      >
-                        <i className="fa-solid fa-right-from-bracket me-2"></i>
-                        Đăng xuất
-                      </button>
-                    </li>
-                  </ul>
+                    Thú cưng
+                  </NavLink>
                 </li>
-              )}
-            </ul>
+                <li className="nav-item">
+                  <NavLink
+                    to="/detail"
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                  >
+                    Chi tiết
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                  >
+                    Liên hệ
+                  </NavLink>
+                </li>
+              </ul>
+
+              <ul className="navbar-nav mb-2 mb-lg-0 ">
+                <li className="nav-item">
+                  <NavLink
+                    to="/teampage"
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                  >
+                    <img
+                      src="/assets/images/Logo/group.png"
+                      alt="group"
+                      className="ms-2"
+                      style={{
+                        width: "35px", // hoặc 40px tùy kích thước bạn muốn
+                        height: "35px",
+                        objectFit: "cover",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </NavLink>
+                </li>
+              </ul>
+              <ul className="navbar-nav mb-2 mb-lg-0 mt-1">
+                <li className="nav-item me-2">
+                  <NavLink
+                    to="/cart"
+                    className={({ isActive }) =>
+                      "nav-link position-relative" + (isActive ? " active" : "")
+                    }
+                  >
+                    <i className="fa-solid fa-cart-shopping me-1"></i>
+                    <span
+                      className="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger bg-opacity-75"
+                      style={{ fontSize: "12px" }}
+                    >
+                      {cartCount}
+                    </span>
+                    Giỏ hàng
+                  </NavLink>
+                </li>
+                {!currentUser ? (
+                  <li className="nav-item">
+                    <NavLink
+                      to="/login"
+                      className={({ isActive }) =>
+                        "nav-link" + (isActive ? " active" : "")
+                      }
+                    >
+                      <i className="fa-solid fa-user"></i> Đăng nhập
+                    </NavLink>
+                  </li>
+                ) : (
+                  <li className="nav-item dropdown ms-2">
+                    <span
+                      className={
+                        "nav-link dropdown-toggle" +
+                        (isDropdownActive ? " active " : "")
+                      }
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      style={{ cursor: "pointer" }}
+                    >
+                      <i className="fa-solid fa-user me-1"></i>{" "}
+                      {currentUser.displayname}
+                    </span>
+                    <ul className="dropdown-menu dropdown-menu-end">
+                      <li>
+                        <NavLink
+                          className="dropdown-item fw-bold text-muted"
+                          to="/profile"
+                        >
+                          <i className="fa-solid fa-id-card me-1"></i>
+                          Thông tin tài khoản
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          className="dropdown-item fw-bold text-muted"
+                          to="/change-password"
+                        >
+                          <i className="fa-solid fa-key me-2"></i>
+                          Đổi mật khẩu
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          className="dropdown-item fw-bold text-muted"
+                          to="/orders"
+                        >
+                          <i className="fa-solid fa-envelope-open-text me-2"></i>
+                          Đơn hàng
+                        </NavLink>
+                      </li>
+                      <li>
+                        <button
+                          className="dropdown-item fw-bold text-muted"
+                          onClick={handleLogout}
+                        >
+                          <i className="fa-solid fa-right-from-bracket me-2"></i>
+                          Đăng xuất
+                        </button>
+                      </li>
+                    </ul>
+                  </li>
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </nav>

@@ -140,7 +140,7 @@ export default function Pet() {
   );
 
   return (
-    <>
+    <Fragment>
       <link
         rel="stylesheet"
         href="assets/plugins/font-awesome/css/all.min.css"
@@ -401,6 +401,6 @@ export default function Pet() {
       </div>
 
       <Footer />
-    </>
+    </Fragment>
   );
 }

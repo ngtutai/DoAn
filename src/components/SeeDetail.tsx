@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
@@ -99,14 +99,22 @@ export default function SeeDetail() {
   if (!product) return <p className="text-center mt-5">Đang tải...</p>;
 
   return (
-    <>
+    <Fragment>
+      <link
+        rel="stylesheet"
+        href="assets/plugins/font-awesome/css/all.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      />
       <Header />
 
       {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
         style={{
-          backgroundImage: `url("/assets/images/Logo/banner/banner-detail.png")`,
+          backgroundImage: `url("/assets/images/banner/banner-detail.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "630px",
@@ -137,7 +145,7 @@ export default function SeeDetail() {
                   <span className="mr_lr">&nbsp;/&nbsp;</span>
                   <span>Chi tiết</span>
                   <span className="mr_lr">&nbsp;/&nbsp;</span>
-                  <span>{product.name}</span>
+                  <span className="fw-bold">{product.name}</span>
                 </li>
               </ul>
             </div>
@@ -181,6 +189,6 @@ export default function SeeDetail() {
         </div>
       </div>
       <Footer />
-    </>
+    </Fragment>
   );
 }

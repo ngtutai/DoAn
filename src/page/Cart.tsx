@@ -319,7 +319,7 @@ const Cart: React.FC = () => {
                   </p>
                   <hr />
                   <p>
-                    <i className="fa-solid fa-car-side me-1"></i>
+                    <i className="fa-solid fa-truck-fast me-1"></i>
                     Phí vận chuyển :{" "}
                     <span className="text-muted">Miễn phí</span>
                   </p>

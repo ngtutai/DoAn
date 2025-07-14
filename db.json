@@ -48,58 +48,70 @@
   ],
   "orders": [
     {
-      "id": "1",
-      "userId": 2,
-      "products": [
+      "id": "2",
+      "code": "1A2B3C4",
+      "userId": "1",
+      "orderDate": "2025-07-13T08:00:00Z",
+      "status": "shipping",
+      "shippingFee": 30000,
+      "total": 680000,
+      "items": [
         {
-          "productId": 1,
-          "quantity": 1
+          "id": 1,
+          "name": "Mèo Anh lông ngắn",
+          "price": 150000,
+          "quantity": 2
         },
         {
-          "productId": 5,
-          "quantity": 2
+          "id": 2,
+          "name": "Vòng cổ Mèo đẹp",
+          "price": 200000,
+          "quantity": 1
         }
-      ],
-      "total": 3900000,
-      "status": "Chờ xác nhận"
+      ]
     },
     {
       "id": "2",
-      "userId": 3,
-      "products": [
+      "code": "4C3B2A1",
+      "userId": "8b2f",
+      "orderDate": "2025-07-13T08:00:00Z",
+      "status": "placed",
+      "shippingFee": 30000,
+      "total": 680000,
+      "items": [
         {
-          "productId": 3,
+          "id": 1,
+          "name": "Mèo Anh lông ngắn",
+          "price": 150000,
+          "quantity": 2
+        },
+        {
+          "id": 2,
+          "name": "Vòng cổ Mèo đẹp",
+          "price": 200000,
           "quantity": 1
         }
-      ],
-      "total": 3000000,
-      "status": "Hoàn tất"
+      ]
     }
   ],
   "comments": [
     {
-      "id": "1",
-      "productId": 1,
-      "userId": 2,
-      "content": "Chó dễ thương quá!",
-      "date": "2024-07-01",
-      "rating": 5
+      "id": "1752470665997",
+      "productId": "5e31",
+      "userId": "2",
+      "content": "wow thật đẹp",
+      "date": "2025-07-14T05:24:25.997Z",
+      "rating": 3,
+      "userName": "Kun"
     },
     {
-      "id": "2",
-      "productId": 3,
-      "userId": 3,
-      "content": "Mèo ngoan lắm!",
-      "date": "2024-07-02",
-      "rating": 5
-    },
-    {
-      "id": "3",
-      "productId": 5,
-      "userId": 2,
-      "content": "Dây bền chắc",
-      "date": "2024-07-03",
-      "rating": 5
+      "id": "1752470735422",
+      "productId": "5e31",
+      "userId": "1",
+      "content": "Cảm ơn bạn",
+      "date": "2025-07-14T05:25:35.422Z",
+      "rating": 5,
+      "userName": "Admin"
     }
   ]
 }
