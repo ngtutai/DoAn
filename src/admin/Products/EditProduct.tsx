@@ -12,6 +12,7 @@ export default function EditProduct() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState<number>(0);
   const [image, setImage] = useState("");
+  const [preview, setPreview] = useState("");
   const [categoryId, setCategoryId] = useState<number>(1);
   const [description, setDescription] = useState("");
 
@@ -28,9 +29,27 @@ export default function EditProduct() {
           setImage(data.image);
           setCategoryId(data.categoryId);
           setDescription(data.description);
+          setPreview(
+            `/assets/images/${
+              data.categoryId === 1
+                ? "Cho"
+                : data.categoryId === 2
+                ? "Meo"
+                : "PhuKien"
+            }/${data.image}`
+          );
         });
     }
   }, [id, isEditMode]);
+
+  // ✅ Chọn file ảnh và xem trước
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImage(file.name); // chỉ lưu tên ảnh
+      setPreview(URL.createObjectURL(file)); // xem trước ảnh
+    }
+  };
 
   // ✅ Gửi dữ liệu
   const handleSubmit = (e: React.FormEvent) => {
@@ -65,7 +84,6 @@ export default function EditProduct() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Phần thông tin cần làm */}
           <div className="container p-4">
             <h3>{isEditMode ? "Chỉnh sửa" : "Thêm mới"} sản phẩm</h3>
             <form
@@ -74,21 +92,31 @@ export default function EditProduct() {
             >
               {/* Ảnh */}
               <div className="mb-3">
-                <label className="form-label">
-                  Tên file ảnh (có đuôi .jpg, .png...)
-                </label>
+                <label className="form-label">Chọn ảnh sản phẩm</label>
                 <input
-                  type="text"
+                  type="file"
+                  accept="image/*"
                   className="form-control bg-secondary bg-opacity-10"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
-                  required
+                  onChange={handleFileChange}
+                  required={!isEditMode}
                 />
-                <small className="text-muted">
-                  Ảnh nằm trong mục: `/assets/images/Cho/`, `/Meo/`, hoặc
-                  `/PhuKien/`
-                </small>
+                {preview && (
+                  <img
+                    src={preview}
+                    alt="preview"
+                    className="mt-2"
+                    style={{ width: 150, objectFit: "cover" }}
+                  />
+                )}
+                <div className="form-text">
+                  Hãy chắc chắn bạn đã thêm ảnh vào thư mục:
+                  <br />
+                  <code>
+                    /assets/images/Cho/, /Meo/, hoặc /PhuKien/ (tùy danh mục)
+                  </code>
+                </div>
               </div>
+
               {/* Tên sản phẩm */}
               <div className="mb-3">
                 <label className="form-label">Tên sản phẩm</label>
@@ -100,6 +128,7 @@ export default function EditProduct() {
                   required
                 />
               </div>
+
               {/* Danh mục */}
               <div className="mb-3">
                 <label className="form-label">Danh mục</label>
@@ -113,6 +142,7 @@ export default function EditProduct() {
                   <option value={3}>Phụ kiện</option>
                 </select>
               </div>
+
               {/* Giá */}
               <div className="mb-3">
                 <label className="form-label">Giá</label>
@@ -124,6 +154,7 @@ export default function EditProduct() {
                   required
                 />
               </div>
+
               {/* Mô tả */}
               <div className="mb-3">
                 <label className="form-label">Mô tả</label>
@@ -135,6 +166,7 @@ export default function EditProduct() {
                   placeholder="Nhập mô tả chi tiết về sản phẩm"
                 ></textarea>
               </div>
+
               {/* Hành động */}
               <button type="submit" className="btn btn-success">
                 {isEditMode ? "Cập nhật" : "Thêm sản phẩm"}

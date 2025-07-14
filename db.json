@@ -15,12 +15,52 @@
   ],
   "products": [
     {
-      "name": "Mèo Anh lông ngắn ",
-      "price": 6000000,
-      "image": "cat.png",
+      "name": "Chó Samoyed",
+      "price": 35000000,
+      "image": "Cho-Samoyed-1.jpg",
+      "categoryId": 1,
+      "description": "- Là một giống chó nổi bật với bộ lông trắng muốt và nụ cười đáng yêu. Dưới đây là một số thông tin chi tiết về giống chó này:\n- Nguồn Gốc\nXuất xứ: Samoyed có nguồn gốc từ Siberia, Nga, nơi chúng được nuôi bởi người Samoyed để kéo xe và chăn gia súc.\nĐặc Điểm\nKích thước: Samoyed có kích thước trung bình, thường nặng từ 20-30 kg và cao từ 48-60 cm.\nBộ lông: Bộ lông dày, hai lớp, giúp giữ ấm trong điều kiện lạnh. Màu sắc chủ yếu là trắng, nhưng cũng có thể có màu kem hoặc biscuit.\nHình dáng: Đầu tròn, đôi tai đứng, và đôi mắt đen sáng, tạo nên vẻ ngoài thân thiện.\n- Tính Cách\nThân thiện: Samoyed rất hòa đồng, thân thiện và thích giao tiếp với con người, đặc biệt là trẻ em.\nNăng động: Chúng cần nhiều hoạt động thể chất và thích chơi đùa, chạy nhảy.\nThông minh: Rất thông minh và dễ huấn luyện, nhưng cũng có thể có phần bướng bỉnh.\n- Chăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông sạch sẽ và không bị rối.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, giàu protein để hỗ trợ sức khỏe và năng lượng.\nSức Khỏe\nSamoyed thường khỏe mạnh, nhưng có thể mắc một số vấn đề sức khỏe như bệnh về mắt và các vấn đề liên quan đến khớp.\n",
+      "id": "77b4"
+    },
+    {
+      "name": "Chó Alaska",
+      "price": 30000000,
+      "image": "Cho-Alaska-1.jpg",
+      "categoryId": 1,
+      "description": "Hay còn gọi là Alaskan Malamute, là một giống chó mạnh mẽ và có sức bền cao, thường được biết đến với khả năng kéo xe trong điều kiện lạnh. Dưới đây là một số thông tin chi tiết về giống chó này:\n\nNguồn Gốc\nXuất xứ: Alaskan Malamute có nguồn gốc từ vùng Alaska, Mỹ. Chúng được phát triển bởi người Inuit để kéo xe và làm việc trong môi trường khắc nghiệt.\nĐặc Điểm\nKích thước: Chúng là giống chó lớn, thường nặng từ 34-38 kg và cao từ 58-64 cm.\nBộ lông: Bộ lông dày, hai lớp, giúp giữ ấm. Màu lông thường là xám, đen, nâu hoặc màu trắng.\nHình dáng: Có đầu lớn, đôi tai dựng thẳng và đôi mắt sáng, thể hiện sự mạnh mẽ và thông minh.\nTính Cách\nThân thiện: Alaskan Malamute rất thân thiện với gia đình và trẻ em, nhưng cũng có tính cảnh giác với người lạ.\nNăng động: Chúng cần nhiều hoạt động thể chất để giữ sức khỏe và tránh cảm thấy chán nản.\nThông minh: Rất thông minh nhưng cũng có tính độc lập, nên cần huấn luyện kiên nhẫn và nhất quán.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên, đặc biệt trong mùa rụng lông.\nChế độ ăn: Cần cung cấp chế độ ăn giàu protein để hỗ trợ sức khỏe và hoạt động của chúng.\nSức Khỏe\nAlaskan Malamute thường khỏe mạnh, nhưng có thể gặp một số vấn đề sức khỏe như bệnh về khớp và các vấn đề liên quan đến di truyền.\nTổng Kết",
+      "id": "e852"
+    },
+    {
+      "name": "Chó Eskimo",
+      "price": 20000000,
+      "image": "Cho-Eskimo-1.jpg",
+      "categoryId": 1,
+      "description": "Là một giống chó nhỏ, thông minh và trung thành, nổi bật với bộ lông dày và tính cách vui vẻ. Dưới đây là một số thông tin chi tiết về giống chó này:\n\nNguồn Gốc\nXuất xứ: Mặc dù có tên gọi là \"American Eskimo\", giống chó này có nguồn gốc từ châu Âu, đặc biệt là từ các giống chó Spitz.\nĐặc Điểm\nKích thước: Có ba kích thước khác nhau: Toy (nhỏ nhất), Miniature và Standard (lớn nhất).\nBộ lông: Bộ lông dày, mềm mượt, có màu trắng hoặc kem. Chúng có lớp lông dưới giúp giữ ấm.\nHình dáng: Đầu hình tam giác, đôi tai thẳng đứng và mắt sáng, thể hiện sự thông minh.\nTính Cách\nThông minh: American Eskimo rất thông minh và dễ huấn luyện, thích học các lệnh và trò chơi.\nNăng động: Chúng yêu thích vận động và cần được tập thể dục thường xuyên.\nThân thiện: Rất hòa đồng với trẻ em và các vật nuôi khác, nhưng cũng có tính cảnh giác, thích giữ an ninh cho gia đình.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông sạch sẽ và không bị rối.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, phù hợp với kích thước và mức độ hoạt động.\nSức Khỏe\nAmerican Eskimo thường khỏe mạnh, nhưng có thể mắc một số vấn đề sức khỏe như bệnh về mắt và bệnh liên quan đến khớp.\n",
+      "id": "96f3"
+    },
+    {
+      "name": "Mèo Angora",
+      "price": 20000000,
+      "image": "Meo-Angora-1.jpg",
       "categoryId": 2,
-      "description": "Chó Poodle thông minh, lông xoăn và thân thiện.",
-      "id": "5e31"
+      "description": "Hay còn gọi là mèo Thổ Nhĩ Kỳ Angora, là một giống mèo nổi bật với bộ lông dài, mượt mà và tính cách thân thiện. Dưới đây là một số thông tin chi tiết về giống mèo này:\n\nNguồn Gốc\nXuất xứ: Mèo Angora có nguồn gốc từ Thổ Nhĩ Kỳ, nơi chúng được nuôi dưỡng từ hàng thế kỷ trước.\nĐặc Điểm\nKích thước: Chúng thường có kích thước trung bình, với cơ thể mảnh khảnh nhưng mạnh mẽ.\nBộ lông: Bộ lông dài, mềm mại, có thể có nhiều màu sắc khác nhau, từ trắng, đen đến nhiều màu sắc phối hợp.\nĐầu: Đầu hình tam giác với đôi tai lớn và mắt to, có thể có màu xanh, vàng hoặc hai màu khác nhau.\nTính Cách\nThân thiện: Mèo Angora thường rất thân thiện, hòa đồng và thích giao tiếp với con người.\nNăng động: Chúng rất hoạt bát và thích chơi đùa, vì vậy cần có không gian để chạy nhảy.\nThông minh: Chúng dễ huấn luyện và có khả năng học hỏi nhanh.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông không bị rối và khỏe mạnh.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, giàu protein để hỗ trợ sức khỏe.\nSức Khỏe\nMèo Angora thường khỏe mạnh, nhưng như nhiều giống mèo khác, chúng cũng có thể mắc một số bệnh di truyền, như bệnh tim.\n",
+      "id": "f1d6"
+    },
+    {
+      "name": "Mèo Maine Coon",
+      "price": 35000000,
+      "image": "Meo-MaineCoon-1.jpg",
+      "categoryId": 2,
+      "description": "Là một trong những giống mèo lớn nhất và phổ biến nhất trên thế giới. Dưới đây là một số thông tin chi tiết về giống mèo này:\n\nNguồn Gốc\nXuất xứ: Được cho là có nguồn gốc từ bang Maine, Mỹ, Maine Coon có lịch sử lâu dài và được biết đến như một giống mèo bản địa.\nĐặc Điểm\nKích thước: Chúng là một trong những giống mèo lớn nhất, với trọng lượng từ 4-10 kg, thậm chí có thể nặng hơn.\nBộ lông: Bộ lông dài, dày, có khả năng chống nước, thường có màu sắc đa dạng và hoa văn.\nĐầu: Đầu rộng với đôi tai lớn và có lông tua ở đầu, mắt lớn và biểu cảm thông minh.\nTính Cách\nThân thiện: Maine Coon rất hòa đồng, thân thiện và thường thích gần gũi với con người và các thú cưng khác.\nThông minh: Chúng rất thông minh và dễ huấn luyện, thích chơi các trò chơi trí tuệ.\nNăng động: Dù có kích thước lớn, chúng rất năng động và thích khám phá.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông không bị rối, đặc biệt là ở vùng bụng và lưng.\nChế độ ăn: Nên cung cấp chế độ ăn giàu protein và chất dinh dưỡng để hỗ trợ sự phát triển.\nSức Khỏe\nMaine Coon có thể mắc một số bệnh di truyền, như bệnh cơ tim phì đại (HCM), nên cần theo dõi sức khỏe định kỳ.\n",
+      "id": "5c48"
+    },
+    {
+      "name": "Mèo Ragdoll",
+      "price": 30000000,
+      "image": "Meo-Ragdoll-1.webp",
+      "categoryId": 2,
+      "description": "Là một giống mèo nổi bật với tính cách dịu dàng và bộ lông mềm mượt. Dưới đây là một số thông tin chi tiết về giống mèo này:\n\nNguồn Gốc\nXuất xứ: Ragdoll được phát triển vào những năm 1960 tại California, Mỹ, từ các giống mèo địa phương.\nĐặc Điểm\nKích thước: Ragdoll là một trong những giống mèo lớn nhất, thường nặng từ 4-9 kg.\nBộ lông: Chúng có bộ lông dài, mềm mượt và thường có nhiều màu sắc khác nhau (như màu điểm, màu bicolor, và màu mitted).\nĐầu: Đầu hình tam giác với đôi tai lớn và mắt xanh sáng, mang lại vẻ đẹp quyến rũ.\nTính Cách\nDịu dàng: Ragdoll nổi tiếng với tính cách hiền lành, thích được ôm ấp và thường thư giãn trong vòng tay của chủ.\nThân thiện: Chúng rất hòa đồng và thích gần gũi với con người, thường không ngại gặp gỡ khách lạ.\nThông minh: Ragdoll dễ huấn luyện và thích chơi các trò chơi tương tác.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông không bị rối và khỏe mạnh.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, giàu protein để hỗ trợ sức khỏe.\nSức Khỏe\nRagdoll có thể mắc một số bệnh di truyền như bệnh tim phì đại (HCM), nên cần theo dõi sức khỏe định kỳ.\n",
+      "id": "7feb"
     }
   ],
   "users": [
@@ -74,7 +114,7 @@
   "comments": [
     {
       "id": "1752470665997",
-      "productId": "5e31",
+      "productId": null,
       "userId": "2",
       "content": "wow thật đẹp",
       "date": "2025-07-14T05:24:25.997Z",
@@ -83,7 +123,7 @@
     },
     {
       "id": "1752470735422",
-      "productId": "5e31",
+      "productId": null,
       "userId": "1",
       "content": "Cảm ơn bạn",
       "date": "2025-07-14T05:25:35.422Z",

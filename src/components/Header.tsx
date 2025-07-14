@@ -43,7 +43,7 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg navbar-primary">
         <div className="container fw-bold">
           <a className="col-2" href="/">
-            <img src="assets/images/iconlogo/icon-web.png" alt="Logo" />
+            <img src="/assets/images/iconlogo/icon-web.png" alt="Logo" />
           </a>
 
           {/* Nút mở menu mobile (hiện offcanvas) */}

@@ -15,7 +15,7 @@ export default function Footer() {
               </div>
               <div className="col text-start">
                 <img
-                  src="assets/images/iconlogo/icon-web.png"
+                  src="/assets/images/iconlogo/icon-web.png"
                   alt="Logo"
                   className="rounded-circle my-3"
                   style={{ width: "80px", height: "80px", objectFit: "cover" }}

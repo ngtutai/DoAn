@@ -100,14 +100,6 @@ export default function SeeDetail() {
 
   return (
     <Fragment>
-      <link
-        rel="stylesheet"
-        href="assets/plugins/font-awesome/css/all.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="assets/plugins/bootstrap/css/bootstrap.min.css"
-      />
       <Header />
 
       {/* BANNER */}
@@ -155,7 +147,7 @@ export default function SeeDetail() {
       <div className="container">
         <div className="row">
           {/* Ảnh sản phẩm */}
-          <div className="col-md-5">
+          <div className="col-md-5 mt-5">
             <img
               src={product.image}
               alt={product.name}
