@@ -49,6 +49,7 @@ export default function Detail() {
         </div>
       </section>
 
+      {/* can lam */}
       <Footer />
     </>
   );

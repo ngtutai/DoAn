@@ -162,6 +162,7 @@ export default function SeeDetail() {
             <h4 className="text-danger mt-3">
               {product.price.toLocaleString("vi-VN")}₫
             </h4>
+            <hr />
             <p className="mt-3">
               {/* Mô tả */}
               {product.description || "Không có mô tả sản phẩm."}

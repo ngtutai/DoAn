@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import QR from "../components/user/QR";
+import COD from "../components/COD";
 
 export interface CartItem {
   id: number;
@@ -143,6 +145,12 @@ const Cart: React.FC = () => {
   };
 
   // Hàm thanh toán (bằng tiền mặt khi giao hàng)
+  const handleCODConfirm = (address: string) => {
+    toast.success("Đặt hàng thành công!\nĐịa chỉ: " + address);
+    setShowCODModal(false);
+    const updated = items.filter((item) => !item.checked);
+    updateCart(updated);
+  };
 
   // ==== UI ====
   return (
@@ -369,6 +377,22 @@ const Cart: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal QR */}
+      {showQRModal && (
+        <QR
+          orderId={orderId}
+          amount={final}
+          onClose={() => setShowQRModal(false)}
+        />
+      )}
+      {/* Modal COD */}
+      {showCODModal && (
+        <COD
+          onClose={() => setShowCODModal(false)}
+          onConfirm={handleCODConfirm}
+        />
+      )}
 
       <Footer />
     </Fragment>

@@ -1,0 +1,26 @@
+==================== Slider 1 ====================
+Tiêu đề :   Thế Giới Thú Cưng
+Mô tả   :   Khám phá những loài thú cưng dễ thương và thông minh. 
+            Hãy cùng chúng tôi khám phá thế giới thú cưng đầy màu sắc và thú vị.
+            Tìm hiểu cách chăm sóc và nuôi dưỡng bạn bè bốn chân của bạn.
+
+==================== Slider 2 ====================
+Tiêu đề :   Tình Bạn Bất Tận
+Mô tả   :   Thú cưng không chỉ là những con vật, mà là những người bạn trung thành. 
+            Cùng chia sẻ những khoảnh khắc đáng nhớ bên thú cưng của bạn.
+
+==================== Slider 3 ====================
+Tiêu đề :   Chăm Sóc Thú Cưng
+Mô tả   :   Những mẹo và hướng dẫn chăm sóc thú cưng để đảm bảo sức khỏe và hạnh phúc cho chúng. 
+            Hãy là người chủ tốt nhất cho thú cưng của bạn!
+
+==================== Slider 4 ====================
+Tiêu đề :   Thú Cưng Đặc Biệt
+Mô tả   :   Tìm hiểu về những giống thú cưng độc đáo và thú vị trên thế giới. 
+            Mỗi loài đều có câu chuyện riêng của nó.
+
+==================== Slider 5 ====================
+Tiêu đề :   Giải Trí Cùng Thú Cưng
+Mô tả   :   Khám phá các hoạt động vui chơi và giải trí thú vị cho thú cưng của bạn. 
+            Giúp chúng luôn năng động và hạnh phúc!
+
