@@ -39,7 +39,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header-area header-area2 bg-primary bg-opacity-25 p-0">
+    <header className="header-area header-area2 bg-primary bg-opacity-25 p-0 sticky-top">
       <nav className="navbar navbar-expand-lg navbar-primary">
         <div className="container fw-bold">
           <a className="col-2" href="/">

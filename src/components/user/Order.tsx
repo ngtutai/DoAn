@@ -116,7 +116,7 @@ export default function Order() {
       case "shipping":
         return "Đang trung chuyển";
       case "delivered":
-        return "Đã giao đơn hàng";
+        return "Đã giao";
       case "cancel":
         return "Đã hủy";
       default:

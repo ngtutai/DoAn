@@ -46,7 +46,7 @@ export default function AdminHeader() {
         <div className="col-12 col-md-2">
           <div className="d-flex align-items-center justify-content-center justify-content-md-start">
             <h2 className="mb-0 me-2">ADMIN</h2>
-            <img src="" alt="Logo" />
+            <img src="/assets/images/iconlogo/icon-web.png" alt="Logo" />
           </div>
         </div>
 
@@ -90,7 +90,7 @@ export default function AdminHeader() {
               style={{ cursor: "pointer" }}
             >
               <img
-                src="/assets/images/Meo/cat.png"
+                src="/assets/images/iconlogo/group.png"
                 alt="Avatar"
                 className="rounded-circle me-2"
                 width="40"
