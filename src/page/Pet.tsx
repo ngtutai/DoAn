@@ -298,6 +298,24 @@ export default function Pet() {
 
             {/* Danh sách sản phẩm */}
             <div className="row g-4">
+              {/* phần hiển sản phẩm tất cả thì có bào nhiêu sản phẩm trong tất cả */}
+              <div className="text-muted text-end">
+                Hiện có <strong>{filteredProducts.length}</strong> sản phẩm
+                {selectedType !== "all" && (
+                  <>
+                    {" "}
+                    ở mục{" "}
+                    <strong>
+                      {selectedType === "dog"
+                        ? "Chó"
+                        : selectedType === "cat"
+                        ? "Mèo"
+                        : "Phụ kiện"}
+                    </strong>
+                  </>
+                )}
+              </div>
+
               {paginatedProducts.map((product) => (
                 <div className="col-10 col-sm-6 col-md-3" key={product.id}>
                   <div className="product-card border p-3 text-center">

@@ -207,152 +207,144 @@ export default function Order() {
 
           <Sidebar />
 
+          {/* Phần chỉnh sửa */}
           <div className="col-md-9">
-            {orders.map((order) => (
-              <div key={order.id} className="card mb-2 shadow-sm mt-5">
-                <div className="card-header bg-primary text-white">
-                  <div className="d-flex justify-content-start align-items-center">
-                    <h6 className="card-title mb-0 mt-1">
-                      Đơn hàng {formatOrderCode(order.code || order.id)}
-                    </h6>
-                    <span className="badge bg-light bg-opacity-50 text-dark ms-2 me-auto">
-                      {new Date(order.orderDate).toLocaleDateString("vi-VN")}
-                    </span>
-
-                    {/* Nút hủy */}
-                    {order.status === "cancel" ? (
-                      <span className="badge bg-danger bg-opacity-50 me-2">
-                        Đã hủy
-                      </span>
-                    ) : order.status === "delivered" ? (
-                      <span className="badge bg-success bg-opacity-50 me-2">
-                        Đã giao
-                      </span>
-                    ) : (
-                      <button
-                        className="bg-light bg-opacity-25 badge me-2"
-                        onClick={() => handleCancel(order.id)}
-                      >
-                        Hủy
-                      </button>
-                    )}
-
-                    {/* Nút xem */}
-                    <button
-                      className="bg-light bg-opacity-25 badge"
-                      onClick={() =>
-                        setExpandedOrderId((prev) =>
-                          prev === order.id ? null : order.id
-                        )
-                      }
-                    >
-                      {expandedOrderId === order.id ? "Ẩn" : "Xem"}
-                    </button>
-                  </div>
-                </div>
-
-                {expandedOrderId === order.id && (
-                  <div className="card-body">
-                    {order.status !== "cancel" && (
-                      <div className="row mb-4">
-                        <div className="col-12">
-                          <div className="row">
-                            {[
-                              "placed",
-                              "processing",
-                              "shipping",
-                              "delivered",
-                            ].map((status, index) => (
-                              <div
-                                key={status}
-                                className={`col-3 tracking-step ${getStatusClass(
-                                  status,
-                                  order.status
-                                )} ${index === 0 ? "step-first" : ""}`}
-                              >
-                                {index > 0 && <div className="step-line"></div>}
-                                <div className="step-icon">
-                                  {status === "placed" && (
-                                    <i className="fa-solid fa-check-circle"></i>
-                                  )}
-                                  {status === "processing" && (
-                                    <i className="fa-solid fa-clock"></i>
-                                  )}
-                                  {status === "shipping" && (
-                                    <i className="fa-solid fa-truck"></i>
-                                  )}
-                                  {status === "delivered" && (
-                                    <i className="fa-solid fa-box-open"></i>
-                                  )}
-                                </div>
-                                <h6 className="step-title">
-                                  {getStatusText(status)}
-                                </h6>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+            {orders.filter(
+              (order) =>
+                order.status !== "delivered" && order.status !== "cancel"
+            ).length === 0 ? (
+              <div className="alert alert-warning">
+                Bạn không có đơn hàng nào đang xử lý.
+              </div>
+            ) : (
+              orders
+                .filter(
+                  (order) =>
+                    order.status !== "delivered" && order.status !== "cancel"
+                )
+                .map((order) => (
+                  <div key={order.id} className="card mb-4 shadow-sm">
+                    <div className="card-header bg-light d-flex justify-content-between align-items-center">
+                      <div>
+                        <strong className="text-dark">Mã đơn:</strong>{" "}
+                        {formatOrderCode(order.code || order.id)}
                       </div>
-                    )}
+                      <div className="text-muted">
+                        Ngày đặt:{" "}
+                        {new Date(order.orderDate).toLocaleDateString("vi-VN")}
+                      </div>
+                    </div>
 
-                    <div className="table-responsive">
-                      <table className="table">
-                        <thead>
-                          <tr>
-                            <th>Sản phẩm</th>
-                            <th>Số lượng</th>
-                            <th>Đơn giá</th>
-                            <th>Thành tiền</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {order.items.map((item) => (
-                            <tr key={item.id}>
-                              <td>{item.name}</td>
-                              <td>{item.quantity}</td>
-                              <td>{item.price.toLocaleString("vi-VN")}đ</td>
-                              <td>
-                                {(item.price * item.quantity).toLocaleString(
-                                  "vi-VN"
+                    <div className="card-body">
+                      {/* Tiến trình đơn hàng */}
+                      <div className="row mb-3 text-center">
+                        {["placed", "processing", "shipping", "delivered"].map(
+                          (status, index) => (
+                            <div
+                              key={status}
+                              className={`col-3 tracking-step ${getStatusClass(
+                                status,
+                                order.status
+                              )}`}
+                            >
+                              {index > 0 && <div className="step-line"></div>}
+                              <div className="step-icon">
+                                {status === "placed" && (
+                                  <i className="fa-solid fa-check-circle"></i>
                                 )}
-                                đ
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <th colSpan={3} className="text-end">
-                              Tạm tính:
-                            </th>
-                            <td>
-                              {(order.total - order.shippingFee).toLocaleString(
-                                "vi-VN"
-                              )}
-                              đ
-                            </td>
-                          </tr>
-                          <tr>
-                            <th colSpan={3} className="text-end">
-                              Phí vận chuyển:
-                            </th>
-                            <td>
-                              {order.shippingFee.toLocaleString("vi-VN")}đ
-                            </td>
-                          </tr>
-                          <tr>
-                            <th colSpan={3} className="text-end">
-                              Tổng cộng:
-                            </th>
-                            <td>{order.total.toLocaleString("vi-VN")}đ</td>
-                          </tr>
-                        </tfoot>
-                      </table>
+                                {status === "processing" && (
+                                  <i className="fa-solid fa-clock"></i>
+                                )}
+                                {status === "shipping" && (
+                                  <i className="fa-solid fa-truck"></i>
+                                )}
+                                {status === "delivered" && (
+                                  <i className="fa-solid fa-box-open"></i>
+                                )}
+                              </div>
+                              <div className="step-title small">
+                                {getStatusText(status)}
+                              </div>
+                            </div>
+                          )
+                        )}
+                      </div>
+
+                      {/* Nút Xem / Hủy */}
+                      <div className="d-flex justify-content-end gap-2 mb-3">
+                        <button
+                          className="btn btn-outline-danger btn-sm"
+                          onClick={() => handleCancel(order.id)}
+                        >
+                          Hủy đơn
+                        </button>
+
+                        <button
+                          className="btn btn-outline-primary btn-sm"
+                          onClick={() =>
+                            setExpandedOrderId((prev) =>
+                              prev === order.id ? null : order.id
+                            )
+                          }
+                        >
+                          {expandedOrderId === order.id
+                            ? "Ẩn chi tiết"
+                            : "Xem chi tiết"}
+                        </button>
+                      </div>
+
+                      {/* Chi tiết sản phẩm */}
+                      {expandedOrderId === order.id && (
+                        <div className="table-responsive">
+                          <table className="table table-bordered table-hover">
+                            <thead className="table-secondary">
+                              <tr>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                                <th>Thành tiền</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {order.items.map((item) => (
+                                <tr key={item.id}>
+                                  <td>{item.name}</td>
+                                  <td>{item.quantity}</td>
+                                  <td>{item.price.toLocaleString("vi-VN")}đ</td>
+                                  <td>
+                                    {(
+                                      item.price * item.quantity
+                                    ).toLocaleString("vi-VN")}
+                                    đ
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                            <tfoot>
+                              <tr>
+                                <td colSpan={3} className="text-end">
+                                  Phí vận chuyển:
+                                </td>
+                                <td>
+                                  {order.shippingFee.toLocaleString("vi-VN")}đ
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colSpan={3} className="text-end fw-bold">
+                                  Tổng cộng:
+                                </td>
+                                <td className="fw-bold text-danger">
+                                  {order.total.toLocaleString("vi-VN")}đ
+                                </td>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      )}
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
+                ))
+            )}
           </div>
         </div>
       </div>

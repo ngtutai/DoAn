@@ -30,11 +30,19 @@ export default function Sidebar() {
           </a>
           <a
             href="/orders"
-            className={`list-group-item list-group-item-action mb-5 ${
+            className={`list-group-item list-group-item-action ${
               isActive("/orders") ? "active" : ""
             }`}
           >
             <i className="fa-solid fa-envelope-open-text me-2"></i> Đơn hàng
+          </a>
+          <a
+            href="/historyorder"
+            className={`list-group-item list-group-item-action mb-5 ${
+              isActive("/historyorder") ? "active" : ""
+            }`}
+          >
+            <i className="fa-solid fa-envelope-open-text me-2"></i> Lịch sử
           </a>
           <span className="pt-5 mt-5 mb-5"></span>
         </div>

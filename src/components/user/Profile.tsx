@@ -51,7 +51,7 @@ export default function Profile() {
                     <li>
                       <span className="mr_lr">&nbsp;/&nbsp;</span>
                       <strong>
-                        <span>Thông tin</span>
+                        <span>Thông tin tài khoản</span>
                       </strong>
                     </li>
                   </ul>
@@ -62,6 +62,7 @@ export default function Profile() {
 
           <Sidebar />
 
+          {/* Phần chỉnh sửa */}
           <div className="col-md-9">
             <table className="table table-bordered text-start mt-5">
               <tbody>

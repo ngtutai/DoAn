@@ -17,7 +17,7 @@ export interface Order {
   code: string;
   userId: string;
   orderDate: string;
-  status: "placed" | "processing" | "shipping" | "delivered";
+  status: "placed" | "processing" | "shipping" | "delivered" | "cancel";
   shippingFee: number;
   total: number;
   items: OrderItem[];
@@ -26,7 +26,6 @@ export interface Order {
 export default function OrderList() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
-  const [expandedOrderId, setExpandedOrderId] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,28 +51,34 @@ export default function OrderList() {
         return "Đang giao";
       case "delivered":
         return "Đã giao";
+      case "cancel":
+        return "Đã hủy";
       default:
         return status;
     }
   };
 
-  // Màu bagde tương ứng với gettatusTextS
   const getStatusColor = (status: string) => {
     switch (status) {
       case "placed":
-        return "text-bg-primary"; // Xanh dương ( Đã đặt hàng )
+        return "text-bg-primary";
       case "processing":
-        return "text-bg-warning"; // Vàng ( Chờ xử lý )
+        return "text-bg-warning";
       case "shipping":
-        return "text-bg-info"; // Xanh nhạt ( Đang giao )
+        return "text-bg-info";
       case "delivered":
-        return "text-bg-secondary"; // Xanh lá ( Đã giao )
+        return "text-bg-secondary";
       case "cancel":
-        return "text-bg-danger"; // Đỏ ( Đã hủy )
+        return "text-bg-danger";
       default:
-        return "text-bg-success"; // Xám (  )
+        return "text-bg-success";
     }
   };
+
+  // 👉 Chỉ lấy đơn hàng chưa hoàn tất/hủy
+  const activeOrders = orders.filter(
+    (order) => order.status !== "delivered" && order.status !== "cancel"
+  );
 
   return (
     <div className="container-fluid bg-light text-start min-vh-100">
@@ -83,11 +88,15 @@ export default function OrderList() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Phần thông tin cần làm */}
           <div className="container py-4">
+            <h4 className="mb-4 text-primary">Đơn hàng đang chờ xử lý</h4>
             {loading ? (
               <div className="text-center my-5">
                 <div className="spinner-border text-primary" />
+              </div>
+            ) : activeOrders.length === 0 ? (
+              <div className="alert alert-info text-center">
+                Hiện không có đơn hàng!
               </div>
             ) : (
               <div className="table-responsive">
@@ -103,72 +112,32 @@ export default function OrderList() {
                     </tr>
                   </thead>
                   <tbody>
-                    {orders.map((order, index) => (
-                      <React.Fragment key={order.id}>
-                        <tr>
-                          <td>{index + 1}</td>
-                          <td>{order.code || `#${order.id}`}</td>
-                          <td>
-                            {new Date(order.orderDate).toLocaleDateString(
-                              "vi-VN"
-                            )}
-                          </td>
-                          <td>
-                            <span
-                              className={`badge ${getStatusColor(
-                                order.status
-                              )}`}
-                            >
-                              {getStatusText(order.status)}
-                            </span>
-                          </td>
-                          <td>{order.total.toLocaleString("vi-VN")}đ</td>
-                          <td>
-                            <button
-                              className="btn btn-sm btn-outline-primary"
-                              onClick={() =>
-                                navigate(`/admin/order/${order.id}`)
-                              }
-                            >
-                              Chi tiết
-                            </button>
-                          </td>
-                        </tr>
-
-                        {expandedOrderId === order.id && (
-                          <tr>
-                            <td colSpan={6}>
-                              <div className="p-3 bg-light rounded">
-                                <h6>Chi tiết sản phẩm:</h6>
-                                <ul className="list-group">
-                                  {order.items.map((item) => (
-                                    <li
-                                      key={item.id}
-                                      className="list-group-item d-flex justify-content-between"
-                                    >
-                                      <div>
-                                        {item.name} x {item.quantity}
-                                      </div>
-                                      <div>
-                                        {(
-                                          item.price * item.quantity
-                                        ).toLocaleString("vi-VN")}
-                                        đ
-                                      </div>
-                                    </li>
-                                  ))}
-                                </ul>
-                                <div className="text-end mt-2">
-                                  <strong>
-                                    Phí ship:{" "}
-                                    {order.shippingFee.toLocaleString("vi-VN")}đ
-                                  </strong>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        )}
-                      </React.Fragment>
+                    {activeOrders.map((order, index) => (
+                      <tr key={order.id}>
+                        <td>{index + 1}</td>
+                        <td>{order.code || `#${order.id}`}</td>
+                        <td>
+                          {new Date(order.orderDate).toLocaleDateString(
+                            "vi-VN"
+                          )}
+                        </td>
+                        <td>
+                          <span
+                            className={`badge ${getStatusColor(order.status)}`}
+                          >
+                            {getStatusText(order.status)}
+                          </span>
+                        </td>
+                        <td>{order.total.toLocaleString("vi-VN")}đ</td>
+                        <td>
+                          <button
+                            className="btn btn-sm btn-outline-primary"
+                            onClick={() => navigate(`/admin/order/${order.id}`)}
+                          >
+                            Chi tiết
+                          </button>
+                        </td>
+                      </tr>
                     ))}
                   </tbody>
                 </table>

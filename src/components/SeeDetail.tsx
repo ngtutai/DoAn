@@ -152,7 +152,7 @@ export default function SeeDetail() {
               src={product.image}
               alt={product.name}
               className="img-fluid rounded"
-              style={{ width: "50%" }}
+              style={{ width: "100%" }}
             />
           </div>
 
@@ -163,10 +163,10 @@ export default function SeeDetail() {
               {product.price.toLocaleString("vi-VN")}₫
             </h4>
             <hr />
-            <p className="mt-3">
+            <pre className="mt-3">
               {/* Mô tả */}
               {product.description || "Không có mô tả sản phẩm."}
-            </p>
+            </pre>
 
             <button className="btn btn-primary mt-3" onClick={handleAddToCart}>
               <i className="fa-solid fa-cart-plus me-2"></i> Thêm vào giỏ hàng

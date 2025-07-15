@@ -1,5 +1,229 @@
-====================  ====================
+- I.    Mèo Ragdoll
+- II.   Mèo Maine Coon
+- III.  Mèo Angora
+- IV.   Mèo LaPerm
+- V.    Mèo Somali
+- VI.   Mèo Xiêm
+- VII.  Mèo Turkish Van
+- VIII. Mèo Anh lông ngắn
+- IX.   Mèo Anh lông dài
+- X.    Mèo Scottish Fold Tai Cụp
 
-====================  ====================
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== I. Mèo Ragdoll ====================
+========== Giá : 30,000,000 VNĐ
+========== Tùy thuộc vào nhà giống và độ thuần chủng. ==========
+Mèo Ragdoll là giống mèo lớn, nổi bật với tính cách hiền hòa và bộ lông dài.
 
-====================  ====================
+1. Nguồn Gốc
+- Xuất xứ:          Mỹ.
+2. Đặc Điểm
+- Kích thước:       Lớn, nặng từ 4-9 kg.
+- Bộ lông:          Dài, mềm, màu sắc đa dạng.
+- Hình dáng:        Đầu lớn, mắt xanh, thân hình chắc chắn.
+3. Tính Cách
+- Thân thiện:       Rất hòa đồng với mọi người, đặc biệt là trẻ em.
+- Thích được ôm ấp: Thích nằm trong lòng người.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về tim.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== II. Mèo Maine Coon ====================
+========== Giá : 40,000,000 VNĐ
+========== Tùy thuộc vào nguồn gốc và độ thuần chủng. ==========
+Mèo Maine Coon là giống mèo lớn, nổi bật với bộ lông dày và tính cách thân thiện.
+
+1. Nguồn Gốc
+- Xuất xứ:          Mỹ
+2. Đặc Điểm
+- Kích thước:       Lớn, nặng từ 5-10 kg.
+- Bộ lông:          Dày, có màu sắc đa dạng.
+- Hình dáng:        Đầu rộng, tai lớn, đuôi dài.
+3. Tính Cách
+- Thân thiện:       Rất hòa đồng và dễ gần.
+- Thông minh:       Dễ huấn luyện và thích chơi đùa.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức khỏe
+- Có thể mắc bệnh về tim và khớp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== III. Mèo Angora ====================
+========== Giá : 15,000,000 VNĐ
+========== Tùy thuộc vào nguồn gốc và độ thuần chủng. ==========
+Mèo Angora là giống mèo nhỏ, nổi bật với bộ lông dài và tính cách năng động.
+
+1. Nguồn Gốc
+- Xuất xứ:          Thổ Nhĩ Kỳ.
+2. Đặc Điểm
+- Kích thước:       Nhỏ đến trung bình.
+- Bộ lông:          Dài, mượt, thường có màu trắng.
+- Hình dáng:        Đầu hình tam giác, mắt lớn.
+3. Tính Cách
+- Thân thiện:       Hòa đồng với mọi người.
+- Năng động:        Thích chơi đùa và khám phá.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức khỏe
+- Có thể mắc bệnh về mắt.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== IV. Mèo LaPerm ====================
+========== Giá : 20,000,000 VNĐ
+========== Giá : ==========
+Mèo LaPerm có bộ lông xoăn đặc trưng và tính cách vui vẻ.
+
+1. Nguồn Gốc
+- Xuất xứ:          Mỹ.
+2. Đặc Điểm
+- Kích thước:       Trung bình.
+- Bộ lông:          Xoăn, có màu sắc đa dạng.
+- Hình dáng:        Đầu hình tam giác, mắt lớn.
+3. Tính Cách
+- Vui vẻ:           Thích chơi đùa, năng động.
+- Thân thiện:       Hòa đồng với mọi người.
+4. Chăm Sóc
+- Chăm sóc lông:    Dễ chăm sóc do bộ lông xoăn.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Thường khỏe mạnh, ít mắc bệnh.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== V. Mèo Somali ====================
+========== Giá : 25,000,000 VNĐ
+========== Giá : ==========
+Mèo Somali là giống mèo trung bình, nổi bật với bộ lông dài và tính cách năng động.
+
+1. Nguồn Gốc
+- Xuất xứ:          Mỹ.
+2. Đặc Điểm
+- Kích thước:       Trung bình.
+- Bộ lông:          Dài, mềm, có màu sắc đa dạng.
+- Hình dáng:        Đầu hình tam giác, mắt lớn.
+3. Tính Cách
+- Vui vẻ:           Rất thích vận động và khám phá.
+- Thân thiện:       Hòa đồng với mọi người.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về thận.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== VI. Mèo Xiêm ====================
+========== Giá : 10,000,000 VNĐ
+========== Giá : ==========
+Mèo Xiêm là giống mèo nhỏ, nổi bật với bộ lông ngắn và tính cách thân thiện.
+
+1. Nguồn Gốc
+- Xuất xứ:          Thái Lan.
+2. Đặc Điểm
+- Kích thước:       Nhỏ đến trung bình.
+- Bộ lông:          Ngắn, có màu sắc đặc trưng.
+- Hình dáng:        Đầu hình tam giác, mắt xanh.
+3. Tính Cách
+- Thân thiện:       Hòa đồng với mọi người.
+- Thông minh:       Dễ huấn luyện.
+4. Chăm Sóc
+- Chăm sóc lông:    Không cần chải lông nhiều.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về hô hấp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== VII. Mèo Turkish Van ====================
+========== Giá : 15,000,000 VNĐ
+========== Giá : ==========
+Mèo Turkish Van nổi bật với bộ lông dài và tính cách năng động.
+
+1. Nguồn Gốc
+- Xuất xứ:          Thổ Nhĩ Kỳ.
+2. Đặc Điểm
+- Kích thước:       Trung bình đến lớn.
+- Bộ lông:          Dày, có màu trắng với đốm màu.
+- Hình dáng:        Đầu hình tam giác, mắt lớn.
+3. Tính Cách
+- Vui vẻ:           Thích chơi đùa và khám phá.
+- Thân thiện:       Hòa đồng với mọi người.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.
+5. Sức Khỏe
+- Thường khỏe mạnh, ít mắc bệnh.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== VIII. Mèo Anh lông ngắn ====================
+========== Giá : 20,000,000 VNĐ
+========== Giá : ==========
+Mèo Anh lông ngắn là giống mèo trung bình, nổi bật với bộ lông ngắn và tính cách bình tĩnh.
+
+1. Nguồn Gốc
+- Xuất xứ:          Anh.
+2. Đặc Điểm
+- Kích thước:       Trung bình.
+- Bộ lông:          Ngắn, dày và mượt.
+- Hình dáng:        Đầu tròn, mắt lớn.
+3. Tính Cách
+- Vui vẻ:           Thích thư giãn, không quá hiếu động.
+- Thân thiện:       Hòa đồng với mọi người.
+4. Chăm Sóc
+- Chăm sóc lông:    Dễ chăm sóc do bộ lông ngắn.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Có thể mắc bệnh về tim và khớp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== IX. Mèo Anh lông dài ====================
+========== Giá : 25,000,000 VNĐ
+========== Giá : ==========
+Mèo Anh lông dài nổi bật với bộ lông dài và tính cách hiền hòa.
+
+1. Nguồn Gốc
+- Xuất xứ:          Anh.
+2. Đặc Điểm
+- Kích thước:       Trung bình đến lớn.
+- Bộ lông:          Dài, dày và mượt.
+- Hình dáng:        Đầu tròn, mắt lớn.
+3. Tính Cách
+- Vui vẻ:           Thích gần gũi với mọi người.
+- Thân thiện:       Dễ huấn luyện.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.
+5. Sức Khỏe
+- Có thể mắc bệnh về khớp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== X. Mèo Scottish Fold Tai Cụp ====================
+========== Giá : 30,000,000 VNĐ
+========== Giá : ==========
+Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.
+
+1. Nguồn Gốc
+- Xuất xứ:          Scotland.
+2. Đặc Điểm
+- Kích thước:       Trung bình.
+- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.
+- Hình dáng:        Đầu tròn, đôi tai cụp.
+3. Tính Cách
+- Thân thiện:       Rất hòa đồng và dễ gần.
+- Thông minh:       Dễ huấn luyện.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Có thể mắc vấn đề về khớp và tai.

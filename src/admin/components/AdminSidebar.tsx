@@ -56,6 +56,30 @@ export default function AdminSidebar() {
             </NavLink>
           </li>
 
+          {/* History (Lịch sử) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/history"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-file-lines me-2"></i> Lịch sử
+            </NavLink>
+          </li>
+
+          {/* Account (Tài khoản) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/account"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-user-tie me-2"></i> Tài khoản
+            </NavLink>
+          </li>
+
           {/* Comment (Bình luận ) */}
           <li className="nav-item">
             <NavLink
@@ -80,30 +104,6 @@ export default function AdminSidebar() {
               }
             >
               <i className="fa-solid fa-lightbulb me-2"></i> Dashboard 2
-            </NavLink>
-          </li>
-
-          {/* Question */}
-          <li className="nav-item">
-            <NavLink
-              to="/admin"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-question me-2"></i> Dashboard 3
-            </NavLink>
-          </li>
-
-          {/* Question */}
-          <li className="nav-item">
-            <NavLink
-              to="/admin"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-question me-2"></i> Dashboard 3
             </NavLink>
           </li>
 

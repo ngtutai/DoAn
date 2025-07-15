@@ -1,9 +1,239 @@
-==================== Chó Eskimo ====================
-Là một giống chó nhỏ, thông minh và trung thành, nổi bật với bộ lông dày và tính cách vui vẻ. Dưới đây là một số thông tin chi tiết về giống chó này:
-Nguồn Gốc   :
-Kích thước  :
-Bộ lông     :
+- I.    Chó Eskimo
+- II.   Chó Beagle
+- III.  Chó Samoyed
+- IV.   Chó Alaska (Alaskan Malamute)
+- V.    Chó Husky
+- VI.   Chó Dalmatian
+- VII.  Chó Pomeranian (Chó Phốc sóc)
+- VIII. Chó Shiba Inu
+- IX.   Chó Golden Retriever
+- X.    Chó Corgi
 
-====================  ====================
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== I. Chó Eskimo ====================
+========== Giá : 20,000,000 VNĐ
+========== Tùy vào kích thước và nguồn gốc. ==========
+Chó Eskimo là một giống chó nhỏ, thông minh và trung thành, nổi bật với bộ lông 
+dày và tính cách vui vẻ.
 
-====================  ====================
+1. Nguồn Gốc
+- Xuất xứ:          Châu Âu, từ các giống chó Spitz.
+2. Đặc Điểm
+- Kích thước:       Toy, Miniature và Standard.
+- Bộ lông:          Dày, mềm mượt, màu trắng hoặc kem.
+- Hình dáng:        Đầu tam giác, tai thẳng, mắt sáng.
+3. Tính Cách
+- Thân thiện:       Hòa đồng với trẻ em và vật nuôi.
+- Năng động:        Cần tập thể dục thường xuyên.
+- Thông minh:       Dễ huấn luyện, thích học lệnh.
+4. Chăm Sóc
+- Chăm sóc lông:    Chải lông thường xuyên.
+- Chế độ ăn:        Cân bằng, phù hợp với kích thước.
+5. Sức Khỏe
+- Có thể mắc bệnh về mắt và khớp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== II. Chó Beagle ====================
+========== Giá : 10,000,000 VNĐ
+Chó Beagle là giống chó nhỏ, vui vẻ, nổi bật với khứu giác nhạy bén và tính cách thân thiện.
+
+1. Nguồn Gốc
+- Xuất xứ:          Anh.
+2. Đặc Điểm
+- Kích thước:       Nhỏ gọn.
+- Bộ lông:          Ngắn, mượt, thường có màu nâu, trắng, đen.
+- Hình dáng:        Đầu tròn, tai dài, mắt to.
+3. Tính Cách
+- Thân thiện:       Hòa đồng với trẻ em và vật nuôi khác.
+- Năng động:        Thích chạy nhảy và khám phá.
+- Thông minh:       Dễ huấn luyện nhưng cần kiên nhẫn.
+4. Chăm Sóc
+- Chăm sóc lông:    Thường không cần chải lông nhiều.
+- Chế độ ăn:        Cần chế độ ăn phù hợp để tránh béo phì.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về tai và khớp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== III. Chó Samoyed ====================
+========== Giá : 35,000,000 VNĐ
+==========  Tùy thuộc vào nguồn gốc và độ thuần chủng. ==========
+Chó Samoyed là giống chó lớn, nổi bật với bộ lông trắng muốt và tính cách hiền hòa.
+
+1. Nguồn Gốc
+- Xuất xứ:          Siberia, Nga.
+2. Đặc Điểm
+- Kích thước:       Lớn.
+- Bộ lông:          Dày, trắng, có lớp lông dưới.
+- Hình dáng:        Đầu hình tròn, mắt đen, mũi đen.
+3. Tính Cách
+- Thân thiện:       Rất hòa đồng với mọi người.
+- Năng động:        Cần vận động thường xuyên
+- Thông minh:       Dễ huấn luyện và thích chơi đùa.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn giàu dinh dưỡng.
+5. Sức Khỏe
+- Thường khỏe mạnh, nhưng có thể mắc bệnh về tim.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== IV. Chó Alaska (Alaskan Malamute) ====================
+========== Giá : 25,000,000 VNĐ
+========== Giá : ==========
+Chó Alaska là giống chó lớn, mạnh mẽ, nổi bật với bộ lông dày và tính cách trung thành.
+
+1. Nguồn Gốc
+- Xuất xứ:          Alaska, Bắc Mỹ.
+2. Đặc Điểm
+- Kích thước:       Lớn.
+- Bộ lông:          Dày, có màu xám, đen hoặc trắng.
+- Hình dáng:        Đầu lớn, mắt hình hạnh nhân.
+3. Tính Cách
+- Thân thiện:       Dễ huấn luyện nhưng cần kiên nhẫn.
+- Năng động:        Cần nhiều vận động.
+- Thông minh:       Rất trung thành với gia đình.
+4. Chăm Sóc
+- Chăm sóc lông:    Chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn giàu năng lượng.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về khớp và tim.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== V. Chó Husky ====================
+========== Giá : 30,000,000 VNĐ
+========== Giá : ==========
+Chó Husky là giống chó lớn, nổi bật với đôi mắt xanh và bộ lông dày.
+
+1. Nguồn Gốc
+- Xuất xứ:          Siberia.
+2. Đặc Điểm
+- Kích thước:       Lớn.
+- Bộ lông:          Dày, có màu đen, trắng hoặc xám.
+- Hình dáng:        Đầu hình tam giác, mắt to, thường có màu xanh.
+3. Tính Cách
+- Thân thiện:       Thích giao tiếp và hòa đồng.
+- Năng động:        Cần vận động nhiều.
+- Thông minh:       Rất thông minh, cần huấn luyện sớm.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn đủ dinh dưỡng.
+5. Sức Khỏe
+- Có thể mắc bệnh về mắt và khớp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== VI. Chó Dalmatian ====================
+========== Giá : 15,000,000 VNĐ
+========== Giá : ==========
+Chó Dalmatian nổi bật với bộ lông trắng có đốm đen và tính cách năng động.
+
+1. Nguồn Gốc
+- Xuất xứ:          Croatia.
+2. Đặc Điểm
+- Kích thước:       Trung bình.
+- Bộ lông:          Ngắn, trắng với đốm đen.
+- Hình dáng:        Cơ thể săn chắc, đầu hình chữ nhật.
+3. Tính Cách
+- Thân thiện:       Rất hòa đồng với mọi người.
+- Năng động:        Cần vận động thường xuyên.
+- Thông minh:       Dễ huấn luyện, thích học.
+4. Chăm Sóc
+- Chăm sóc lông:    Không cần chải lông nhiều.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về thính giác và da.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== VII. Chó Phốc sóc ====================
+========== Giá : 15,000,000 VNĐ
+========== Giá : ==========
+Còn gọi chó Pomeranian là giống chó nhỏ, nổi bật với bộ lông xù và tính cách vui vẻ.
+
+1. Nguồn Gốc
+- Xuất xứ:          Đức.
+2. Đặc Điểm
+- Kích thước:       Nhỏ.
+- Bộ lông:          Dày, xù, có nhiều màu sắc.
+- Hình dáng:        Đầu tròn, mắt to, tai đứng.
+3. Tính Cách
+- Thân thiện:       Thích giao tiếp với mọi người.
+- Năng động:        Cần vận động thường xuyên.
+- Thông minh:       Dễ huấn luyện, thích chơi đùa.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về răng miệng.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== VIII. Chó Shiba Inu ====================
+========== Giá : 20,000,000 VNĐ
+========== Giá : ==========
+Chó Shiba Inu là giống chó nhỏ, mạnh mẽ, nổi bật với bộ lông dày và tính cách độc lập.
+
+1. Nguồn Gốc
+- Xuất xứ:          Nhật Bản.
+2. Đặc Điểm
+- Kích thước:       Nhỏ đến trung bình.
+- Bộ lông:          Dày, có màu đỏ, đen hoặc trắng.
+- Hình dáng:        Đầu hình tam giác, mắt hình hạnh nhân.
+3. Tính Cách
+- Thân thiện:       Thích giao tiếp nhưng cũng có phần bảo vệ.
+- Năng động:        Cần vận động thường xuyên.
+- Thông minh:       Rất thông minh, có tính tự lập.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn phù hợp.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về mắt và khớp.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== IX. Chó Golden Retriever ====================
+========== Giá : 30,000,000 VNĐ
+========== Giá : ==========
+Chó Golden Retriever là giống chó lớn, nổi bật với tính cách thân thiện và dễ huấn luyện.
+
+1. Nguồn Gốc
+- Xuất xứ:          Scotland.
+2. Đặc Điểm
+- Kích thước:       Lớn.
+- Bộ lông:          Dày, có màu vàng nhạt đến vàng đậm.
+- Hình dáng:        Thân hình chắc chắn, đầu to.
+3. Tính Cách
+- Thân thiện:       Rất hòa đồng và thân thiện với mọi người.
+- Năng động:        Cần vận động thường xuyên.
+- Thông minh:       Dễ huấn luyện và thông minh.
+4. Chăm Sóc
+- Chăm sóc lông:    Cần chải lông thường xuyên.
+- Chế độ ăn:        Cần chế độ ăn dinh dưỡng.
+5. Sức Khỏe
+- Có thể mắc bệnh về khớp và tim.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+==================== X. Chó Corgi ====================
+========== Giá : 25,000,000 VNĐ
+========== Giá : ==========
+Chó Corgi là giống chó nhỏ, nổi bật với thân hình ngắn và tính cách vui vẻ.
+
+1. Nguồn Gốc
+- Xuất xứ:          Wales.
+2. Đặc Điểm
+- Kích thước:       Nhỏ đến trung bình.
+- Bộ lông:          Ngắn, có màu nâu, trắng hoặc đen.
+- Hình dáng:        Thân hình dài, chân ngắn.
+3. Tính Cách
+- Thân thiện:       Rất hòa đồng với mọi người.
+- Năng động:        Cần vận động thường xuyên.
+- Thông minh:       Dễ huấn luyện, thông minh.
+4. Chăm Sóc
+- Chăm sóc lông:    Không cần chải lông nhiều.
+- Chế độ ăn:        Cần chế độ ăn cân bằng.
+5. Sức Khỏe
+- Có thể mắc các vấn đề về khớp và béo phì.

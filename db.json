@@ -15,52 +15,164 @@
   ],
   "products": [
     {
-      "name": "Chó Alaska",
-      "price": 30000000,
-      "image": "Cho-Alaska-1.png",
-      "categoryId": 1,
-      "description": "Hay còn gọi là Alaskan Malamute, là một giống chó mạnh mẽ và có sức bền cao, thường được biết đến với khả năng kéo xe trong điều kiện lạnh. Dưới đây là một số thông tin chi tiết về giống chó này:\n\nNguồn Gốc\nXuất xứ: Alaskan Malamute có nguồn gốc từ vùng Alaska, Mỹ. Chúng được phát triển bởi người Inuit để kéo xe và làm việc trong môi trường khắc nghiệt.\nĐặc Điểm\nKích thước: Chúng là giống chó lớn, thường nặng từ 34-38 kg và cao từ 58-64 cm.\nBộ lông: Bộ lông dày, hai lớp, giúp giữ ấm. Màu lông thường là xám, đen, nâu hoặc màu trắng.\nHình dáng: Có đầu lớn, đôi tai dựng thẳng và đôi mắt sáng, thể hiện sự mạnh mẽ và thông minh.\nTính Cách\nThân thiện: Alaskan Malamute rất thân thiện với gia đình và trẻ em, nhưng cũng có tính cảnh giác với người lạ.\nNăng động: Chúng cần nhiều hoạt động thể chất để giữ sức khỏe và tránh cảm thấy chán nản.\nThông minh: Rất thông minh nhưng cũng có tính độc lập, nên cần huấn luyện kiên nhẫn và nhất quán.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên, đặc biệt trong mùa rụng lông.\nChế độ ăn: Cần cung cấp chế độ ăn giàu protein để hỗ trợ sức khỏe và hoạt động của chúng.\nSức Khỏe\nAlaskan Malamute thường khỏe mạnh, nhưng có thể gặp một số vấn đề sức khỏe như bệnh về khớp và các vấn đề liên quan đến di truyền.\nTổng Kết",
-      "id": "e852"
-    },
-    {
+      "id": "bf54",
       "name": "Chó Eskimo",
       "price": 20000000,
-      "image": "Cho-Eskimo-1.png",
+      "image": "1 Chó Eskimo 1.png",
       "categoryId": 1,
-      "description": "Là một giống chó nhỏ, thông minh và trung thành, nổi bật với bộ lông dày và tính cách vui vẻ. Dưới đây là một số thông tin chi tiết về giống chó này:\n\nNguồn Gốc\nXuất xứ: Mặc dù có tên gọi là \"American Eskimo\", giống chó này có nguồn gốc từ châu Âu, đặc biệt là từ các giống chó Spitz.\nĐặc Điểm\nKích thước: Có ba kích thước khác nhau: Toy (nhỏ nhất), Miniature và Standard (lớn nhất).\nBộ lông: Bộ lông dày, mềm mượt, có màu trắng hoặc kem. Chúng có lớp lông dưới giúp giữ ấm.\nHình dáng: Đầu hình tam giác, đôi tai thẳng đứng và mắt sáng, thể hiện sự thông minh.\nTính Cách\nThông minh: American Eskimo rất thông minh và dễ huấn luyện, thích học các lệnh và trò chơi.\nNăng động: Chúng yêu thích vận động và cần được tập thể dục thường xuyên.\nThân thiện: Rất hòa đồng với trẻ em và các vật nuôi khác, nhưng cũng có tính cảnh giác, thích giữ an ninh cho gia đình.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông sạch sẽ và không bị rối.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, phù hợp với kích thước và mức độ hoạt động.\nSức Khỏe\nAmerican Eskimo thường khỏe mạnh, nhưng có thể mắc một số vấn đề sức khỏe như bệnh về mắt và bệnh liên quan đến khớp.\n",
-      "id": "96f3"
+      "description": "Chó Eskimo là một giống chó nhỏ, thông minh và trung thành, nổi bật với bộ lông \ndày và tính cách vui vẻ.\n\n1. Nguồn Gốc\n- Xuất xứ:          Châu Âu, từ các giống chó Spitz.\n2. Đặc Điểm\n- Kích thước:       Toy, Miniature và Standard.\n- Bộ lông:          Dày, mềm mượt, màu trắng hoặc kem.\n- Hình dáng:        Đầu tam giác, tai thẳng, mắt sáng.\n3. Tính Cách\n- Thân thiện:       Hòa đồng với trẻ em và vật nuôi.\n- Năng động:        Cần tập thể dục thường xuyên.\n- Thông minh:       Dễ huấn luyện, thích học lệnh.\n4. Chăm Sóc\n- Chăm sóc lông:    Chải lông thường xuyên.\n- Chế độ ăn:        Cân bằng, phù hợp với kích thước.\n5. Sức Khỏe\n- Có thể mắc bệnh về mắt và khớp."
     },
     {
-      "name": "Mèo Angora",
-      "price": 20000000,
-      "image": "Meo-Angora-1.png",
-      "categoryId": 2,
-      "description": "Hay còn gọi là mèo Thổ Nhĩ Kỳ Angora, là một giống mèo nổi bật với bộ lông dài, mượt mà và tính cách thân thiện. Dưới đây là một số thông tin chi tiết về giống mèo này:\n\nNguồn Gốc\nXuất xứ: Mèo Angora có nguồn gốc từ Thổ Nhĩ Kỳ, nơi chúng được nuôi dưỡng từ hàng thế kỷ trước.\nĐặc Điểm\nKích thước: Chúng thường có kích thước trung bình, với cơ thể mảnh khảnh nhưng mạnh mẽ.\nBộ lông: Bộ lông dài, mềm mại, có thể có nhiều màu sắc khác nhau, từ trắng, đen đến nhiều màu sắc phối hợp.\nĐầu: Đầu hình tam giác với đôi tai lớn và mắt to, có thể có màu xanh, vàng hoặc hai màu khác nhau.\nTính Cách\nThân thiện: Mèo Angora thường rất thân thiện, hòa đồng và thích giao tiếp với con người.\nNăng động: Chúng rất hoạt bát và thích chơi đùa, vì vậy cần có không gian để chạy nhảy.\nThông minh: Chúng dễ huấn luyện và có khả năng học hỏi nhanh.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông không bị rối và khỏe mạnh.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, giàu protein để hỗ trợ sức khỏe.\nSức Khỏe\nMèo Angora thường khỏe mạnh, nhưng như nhiều giống mèo khác, chúng cũng có thể mắc một số bệnh di truyền, như bệnh tim.\n",
-      "id": "f1d6"
+      "id": "9a5a",
+      "name": "Chó Beagle",
+      "price": 10000000,
+      "image": "2 Chó Beagle 1.png",
+      "categoryId": 1,
+      "description": "Chó Beagle là giống chó nhỏ, vui vẻ, nổi bật với khứu giác nhạy bén và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Anh.\n2. Đặc Điểm\n- Kích thước:       Nhỏ gọn.\n- Bộ lông:          Ngắn, mượt, thường có màu nâu, trắng, đen.\n- Hình dáng:        Đầu tròn, tai dài, mắt to.\n3. Tính Cách\n- Thân thiện:       Hòa đồng với trẻ em và vật nuôi khác.\n- Năng động:        Thích chạy nhảy và khám phá.\n- Thông minh:       Dễ huấn luyện nhưng cần kiên nhẫn.\n4. Chăm Sóc\n- Chăm sóc lông:    Thường không cần chải lông nhiều.\n- Chế độ ăn:        Cần chế độ ăn phù hợp để tránh béo phì.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về tai và khớp."
     },
     {
-      "name": "Mèo Maine Coon",
+      "id": "1e5e",
+      "name": "Chó Samoyed",
       "price": 35000000,
-      "image": "Meo-MaineCoon-1.png",
-      "categoryId": 2,
-      "description": "Là một trong những giống mèo lớn nhất và phổ biến nhất trên thế giới. Dưới đây là một số thông tin chi tiết về giống mèo này:\n\nNguồn Gốc\nXuất xứ: Được cho là có nguồn gốc từ bang Maine, Mỹ, Maine Coon có lịch sử lâu dài và được biết đến như một giống mèo bản địa.\nĐặc Điểm\nKích thước: Chúng là một trong những giống mèo lớn nhất, với trọng lượng từ 4-10 kg, thậm chí có thể nặng hơn.\nBộ lông: Bộ lông dài, dày, có khả năng chống nước, thường có màu sắc đa dạng và hoa văn.\nĐầu: Đầu rộng với đôi tai lớn và có lông tua ở đầu, mắt lớn và biểu cảm thông minh.\nTính Cách\nThân thiện: Maine Coon rất hòa đồng, thân thiện và thường thích gần gũi với con người và các thú cưng khác.\nThông minh: Chúng rất thông minh và dễ huấn luyện, thích chơi các trò chơi trí tuệ.\nNăng động: Dù có kích thước lớn, chúng rất năng động và thích khám phá.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông không bị rối, đặc biệt là ở vùng bụng và lưng.\nChế độ ăn: Nên cung cấp chế độ ăn giàu protein và chất dinh dưỡng để hỗ trợ sự phát triển.\nSức Khỏe\nMaine Coon có thể mắc một số bệnh di truyền, như bệnh cơ tim phì đại (HCM), nên cần theo dõi sức khỏe định kỳ.\n",
-      "id": "5c48"
+      "image": "3 Chó Samoyed 1.png",
+      "categoryId": 1,
+      "description": "Chó Samoyed là giống chó lớn, nổi bật với bộ lông trắng muốt và tính cách hiền hòa.\n\n1. Nguồn Gốc\n- Xuất xứ:          Siberia, Nga.\n2. Đặc Điểm\n- Kích thước:       Lớn.\n- Bộ lông:          Dày, trắng, có lớp lông dưới.\n- Hình dáng:        Đầu hình tròn, mắt đen, mũi đen.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng với mọi người.\n- Năng động:        Cần vận động thường xuyên\n- Thông minh:       Dễ huấn luyện và thích chơi đùa.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn giàu dinh dưỡng.\n5. Sức Khỏe\n- Thường khỏe mạnh, nhưng có thể mắc bệnh về tim."
+    },
+    {
+      "id": "b05b",
+      "name": "Chó Alaska",
+      "price": 25000000,
+      "image": "4 Chó Alaska 1.png",
+      "categoryId": 1,
+      "description": "Chó Alaska là giống chó lớn, mạnh mẽ, nổi bật với bộ lông dày và tính cách trung thành.\n\n1. Nguồn Gốc\n- Xuất xứ:          Alaska, Bắc Mỹ.\n2. Đặc Điểm\n- Kích thước:       Lớn.\n- Bộ lông:          Dày, có màu xám, đen hoặc trắng.\n- Hình dáng:        Đầu lớn, mắt hình hạnh nhân.\n3. Tính Cách\n- Thân thiện:       Dễ huấn luyện nhưng cần kiên nhẫn.\n- Năng động:        Cần nhiều vận động.\n- Thông minh:       Rất trung thành với gia đình.\n4. Chăm Sóc\n- Chăm sóc lông:    Chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn giàu năng lượng.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về khớp và tim."
+    },
+    {
+      "id": "62b6",
+      "name": "Chó Husky",
+      "price": 30000000,
+      "image": "5 Chó Husky 1.png",
+      "categoryId": 1,
+      "description": "Chó Husky là giống chó lớn, nổi bật với đôi mắt xanh và bộ lông dày.\n\n1. Nguồn Gốc\n- Xuất xứ:          Siberia.\n2. Đặc Điểm\n- Kích thước:       Lớn.\n- Bộ lông:          Dày, có màu đen, trắng hoặc xám.\n- Hình dáng:        Đầu hình tam giác, mắt to, thường có màu xanh.\n3. Tính Cách\n- Thân thiện:       Thích giao tiếp và hòa đồng.\n- Năng động:        Cần vận động nhiều.\n- Thông minh:       Rất thông minh, cần huấn luyện sớm.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn đủ dinh dưỡng.\n5. Sức Khỏe\n- Có thể mắc bệnh về mắt và khớp."
+    },
+    {
+      "name": "Chó Dalmatian",
+      "price": 15000000,
+      "image": "6 Chó Dalmatian 1.png",
+      "categoryId": 1,
+      "description": "Chó Dalmatian nổi bật với bộ lông trắng có đốm đen và tính cách năng động.\n\n1. Nguồn Gốc\n- Xuất xứ:          Croatia.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn, trắng với đốm đen.\n- Hình dáng:        Cơ thể săn chắc, đầu hình chữ nhật.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng với mọi người.\n- Năng động:        Cần vận động thường xuyên.\n- Thông minh:       Dễ huấn luyện, thích học.\n4. Chăm Sóc\n- Chăm sóc lông:    Không cần chải lông nhiều.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về thính giác và da.",
+      "id": "814f"
+    },
+    {
+      "id": "c272",
+      "name": "Chó Phốc sóc",
+      "price": 15000000,
+      "image": "7 Chó Phốc sóc 1.png",
+      "categoryId": 1,
+      "description": "Còn gọi chó Pomeranian là giống chó nhỏ, nổi bật với bộ lông xù và tính cách vui vẻ.\n\n1. Nguồn Gốc\n- Xuất xứ:          Đức.\n2. Đặc Điểm\n- Kích thước:       Nhỏ.\n- Bộ lông:          Dày, xù, có nhiều màu sắc.\n- Hình dáng:        Đầu tròn, mắt to, tai đứng.\n3. Tính Cách\n- Thân thiện:       Thích giao tiếp với mọi người.\n- Năng động:        Cần vận động thường xuyên.\n- Thông minh:       Dễ huấn luyện, thích chơi đùa.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về răng miệng."
+    },
+    {
+      "id": "266d",
+      "name": "Chó Shiba Inu",
+      "price": 20000000,
+      "image": "8 Chó Shiba Inu 1.png",
+      "categoryId": 1,
+      "description": "Chó Shiba Inu là giống chó nhỏ, mạnh mẽ, nổi bật với bộ lông dày và tính cách độc lập.\n\n1. Nguồn Gốc\n- Xuất xứ:          Nhật Bản.\n2. Đặc Điểm\n- Kích thước:       Nhỏ đến trung bình.\n- Bộ lông:          Dày, có màu đỏ, đen hoặc trắng.\n- Hình dáng:        Đầu hình tam giác, mắt hình hạnh nhân.\n3. Tính Cách\n- Thân thiện:       Thích giao tiếp nhưng cũng có phần bảo vệ.\n- Năng động:        Cần vận động thường xuyên.\n- Thông minh:       Rất thông minh, có tính tự lập.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn phù hợp.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về mắt và khớp."
+    },
+    {
+      "id": "b274",
+      "name": "Chó Golden Retriever",
+      "price": 30000000,
+      "image": "9 Chó Golden Retriever 1.png",
+      "categoryId": 1,
+      "description": "Chó Golden Retriever là giống chó lớn, nổi bật với tính cách thân thiện và dễ huấn luyện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Lớn.\n- Bộ lông:          Dày, có màu vàng nhạt đến vàng đậm.\n- Hình dáng:        Thân hình chắc chắn, đầu to.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và thân thiện với mọi người.\n- Năng động:        Cần vận động thường xuyên.\n- Thông minh:       Dễ huấn luyện và thông minh.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn dinh dưỡng.\n5. Sức Khỏe\n- Có thể mắc bệnh về khớp và tim."
+    },
+    {
+      "id": "ec56",
+      "name": "Chó Corgi",
+      "price": 25000000,
+      "image": "10 Chó Corgi 1.png",
+      "categoryId": 1,
+      "description": "Chó Corgi là giống chó nhỏ, nổi bật với thân hình ngắn và tính cách vui vẻ.\n\n1. Nguồn Gốc\n- Xuất xứ:          Wales.\n2. Đặc Điểm\n- Kích thước:       Nhỏ đến trung bình.\n- Bộ lông:          Ngắn, có màu nâu, trắng hoặc đen.\n- Hình dáng:        Thân hình dài, chân ngắn.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng với mọi người.\n- Năng động:        Cần vận động thường xuyên.\n- Thông minh:       Dễ huấn luyện, thông minh.\n4. Chăm Sóc\n- Chăm sóc lông:    Không cần chải lông nhiều.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về khớp và béo phì."
     },
     {
       "name": "Mèo Ragdoll",
       "price": 30000000,
-      "image": "Meo-Ragdoll-1.png",
+      "image": "1 Mèo Ragdoll 1.png",
       "categoryId": 2,
-      "description": "Là một giống mèo nổi bật với tính cách dịu dàng và bộ lông mềm mượt. Dưới đây là một số thông tin chi tiết về giống mèo này:\n\nNguồn Gốc\nXuất xứ: Ragdoll được phát triển vào những năm 1960 tại California, Mỹ, từ các giống mèo địa phương.\nĐặc Điểm\nKích thước: Ragdoll là một trong những giống mèo lớn nhất, thường nặng từ 4-9 kg.\nBộ lông: Chúng có bộ lông dài, mềm mượt và thường có nhiều màu sắc khác nhau (như màu điểm, màu bicolor, và màu mitted).\nĐầu: Đầu hình tam giác với đôi tai lớn và mắt xanh sáng, mang lại vẻ đẹp quyến rũ.\nTính Cách\nDịu dàng: Ragdoll nổi tiếng với tính cách hiền lành, thích được ôm ấp và thường thư giãn trong vòng tay của chủ.\nThân thiện: Chúng rất hòa đồng và thích gần gũi với con người, thường không ngại gặp gỡ khách lạ.\nThông minh: Ragdoll dễ huấn luyện và thích chơi các trò chơi tương tác.\nChăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông không bị rối và khỏe mạnh.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, giàu protein để hỗ trợ sức khỏe.\nSức Khỏe\nRagdoll có thể mắc một số bệnh di truyền như bệnh tim phì đại (HCM), nên cần theo dõi sức khỏe định kỳ.\n",
-      "id": "7feb"
+      "description": "Mèo Ragdoll là giống mèo lớn, nổi bật với tính cách hiền hòa và bộ lông dài.\n\n1. Nguồn Gốc\n- Xuất xứ:          Mỹ.\n2. Đặc Điểm\n- Kích thước:       Lớn, nặng từ 4-9 kg.\n- Bộ lông:          Dài, mềm, màu sắc đa dạng.\n- Hình dáng:        Đầu lớn, mắt xanh, thân hình chắc chắn.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng với mọi người, đặc biệt là trẻ em.\n- Thích được ôm ấp: Thích nằm trong lòng người.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về tim.",
+      "id": "075b"
     },
     {
-      "name": "Chó Samoyed",
-      "price": 35000000,
-      "image": "Cho-Samoyed-1.png",
-      "categoryId": 1,
-      "description": "- Là một giống chó nổi bật với bộ lông trắng muốt và nụ cười đáng yêu. Dưới đây là một số thông tin chi tiết về giống chó này:\n- Nguồn Gốc\nXuất xứ: Samoyed có nguồn gốc từ Siberia, Nga, nơi chúng được nuôi bởi người Samoyed để kéo xe và chăn gia súc.\nĐặc Điểm\nKích thước: Samoyed có kích thước trung bình, thường nặng từ 20-30 kg và cao từ 48-60 cm.\nBộ lông: Bộ lông dày, hai lớp, giúp giữ ấm trong điều kiện lạnh. Màu sắc chủ yếu là trắng, nhưng cũng có thể có màu kem hoặc biscuit.\nHình dáng: Đầu tròn, đôi tai đứng, và đôi mắt đen sáng, tạo nên vẻ ngoài thân thiện.\n- Tính Cách\nThân thiện: Samoyed rất hòa đồng, thân thiện và thích giao tiếp với con người, đặc biệt là trẻ em.\nNăng động: Chúng cần nhiều hoạt động thể chất và thích chơi đùa, chạy nhảy.\nThông minh: Rất thông minh và dễ huấn luyện, nhưng cũng có thể có phần bướng bỉnh.\n- Chăm Sóc\nChăm sóc lông: Cần chải lông thường xuyên để giữ cho bộ lông sạch sẽ và không bị rối.\nChế độ ăn: Cần cung cấp chế độ ăn cân bằng, giàu protein để hỗ trợ sức khỏe và năng lượng.\nSức Khỏe\nSamoyed thường khỏe mạnh, nhưng có thể mắc một số vấn đề sức khỏe như bệnh về mắt và các vấn đề liên quan đến khớp.\n",
-      "id": "a517"
+      "id": "781b",
+      "name": "Mèo Maine Coon",
+      "price": 40000000,
+      "image": "2 Mèo Maine Coon 1.png",
+      "categoryId": 2,
+      "description": "Mèo Maine Coon là giống mèo lớn, nổi bật với bộ lông dày và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Mỹ\n2. Đặc Điểm\n- Kích thước:       Lớn, nặng từ 5-10 kg.\n- Bộ lông:          Dày, có màu sắc đa dạng.\n- Hình dáng:        Đầu rộng, tai lớn, đuôi dài.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện và thích chơi đùa.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức khỏe\n- Có thể mắc bệnh về tim và khớp."
+    },
+    {
+      "id": "f6da",
+      "name": "Mèo Angora",
+      "price": 15000000,
+      "image": "3 Mèo Angora 1.png",
+      "categoryId": 2,
+      "description": "Mèo Angora là giống mèo nhỏ, nổi bật với bộ lông dài và tính cách năng động.\n\n1. Nguồn Gốc\n- Xuất xứ:          Thổ Nhĩ Kỳ.\n2. Đặc Điểm\n- Kích thước:       Nhỏ đến trung bình.\n- Bộ lông:          Dài, mượt, thường có màu trắng.\n- Hình dáng:        Đầu hình tam giác, mắt lớn.\n3. Tính Cách\n- Thân thiện:       Hòa đồng với mọi người.\n- Năng động:        Thích chơi đùa và khám phá.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức khỏe\n- Có thể mắc bệnh về mắt."
+    },
+    {
+      "id": "02af",
+      "name": "Mèo LaPerm",
+      "price": 20000000,
+      "image": "4 Mèo LaPerm 1.png",
+      "categoryId": 2,
+      "description": "Mèo LaPerm có bộ lông xoăn đặc trưng và tính cách vui vẻ.\n\n1. Nguồn Gốc\n- Xuất xứ:          Mỹ.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Xoăn, có màu sắc đa dạng.\n- Hình dáng:        Đầu hình tam giác, mắt lớn.\n3. Tính Cách\n- Vui vẻ:           Thích chơi đùa, năng động.\n- Thân thiện:       Hòa đồng với mọi người.\n4. Chăm Sóc\n- Chăm sóc lông:    Dễ chăm sóc do bộ lông xoăn.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Thường khỏe mạnh, ít mắc bệnh."
+    },
+    {
+      "id": "5c5d",
+      "name": "Mèo Somali",
+      "price": 25000000,
+      "image": "5 Mèo Somali 1.png",
+      "categoryId": 2,
+      "description": "Mèo Somali là giống mèo trung bình, nổi bật với bộ lông dài và tính cách năng động.\n\n1. Nguồn Gốc\n- Xuất xứ:          Mỹ.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Dài, mềm, có màu sắc đa dạng.\n- Hình dáng:        Đầu hình tam giác, mắt lớn.\n3. Tính Cách\n- Vui vẻ:           Rất thích vận động và khám phá.\n- Thân thiện:       Hòa đồng với mọi người.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về thận."
+    },
+    {
+      "name": "Mèo Xiêm",
+      "price": 10000000,
+      "image": "6 Mèo Xiêm 1.png",
+      "categoryId": 2,
+      "description": "Mèo Xiêm là giống mèo nhỏ, nổi bật với bộ lông ngắn và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Thái Lan.\n2. Đặc Điểm\n- Kích thước:       Nhỏ đến trung bình.\n- Bộ lông:          Ngắn, có màu sắc đặc trưng.\n- Hình dáng:        Đầu hình tam giác, mắt xanh.\n3. Tính Cách\n- Thân thiện:       Hòa đồng với mọi người.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Không cần chải lông nhiều.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc các vấn đề về hô hấp.",
+      "id": "5ca6"
+    },
+    {
+      "name": "Mèo Turkish Van",
+      "price": 15000000,
+      "image": "7 Mèo Turkish Van 1.png",
+      "categoryId": 2,
+      "description": "Mèo Turkish Van nổi bật với bộ lông dài và tính cách năng động.\n\n1. Nguồn Gốc\n- Xuất xứ:          Thổ Nhĩ Kỳ.\n2. Đặc Điểm\n- Kích thước:       Trung bình đến lớn.\n- Bộ lông:          Dày, có màu trắng với đốm màu.\n- Hình dáng:        Đầu hình tam giác, mắt lớn.\n3. Tính Cách\n- Vui vẻ:           Thích chơi đùa và khám phá.\n- Thân thiện:       Hòa đồng với mọi người.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.\n5. Sức Khỏe\n- Thường khỏe mạnh, ít mắc bệnh.",
+      "id": "7068"
+    },
+    {
+      "id": "a8a6",
+      "name": "Mèo Anh lông ngắn",
+      "price": 20000000,
+      "image": "8 Mèo Anh lông ngắn 1.png",
+      "categoryId": 2,
+      "description": "Mèo Anh lông ngắn là giống mèo trung bình, nổi bật với bộ lông ngắn và tính cách bình tĩnh.\n\n1. Nguồn Gốc\n- Xuất xứ:          Anh.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn, dày và mượt.\n- Hình dáng:        Đầu tròn, mắt lớn.\n3. Tính Cách\n- Vui vẻ:           Thích thư giãn, không quá hiếu động.\n- Thân thiện:       Hòa đồng với mọi người.\n4. Chăm Sóc\n- Chăm sóc lông:    Dễ chăm sóc do bộ lông ngắn.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc bệnh về tim và khớp."
+    },
+    {
+      "id": "f645",
+      "name": "Mèo Anh lông dài",
+      "price": 25000000,
+      "image": "9 Mèo Anh lông dài 1.png",
+      "categoryId": 2,
+      "description": "Mèo Anh lông dài nổi bật với bộ lông dài và tính cách hiền hòa.\n\n1. Nguồn Gốc\n- Xuất xứ:          Anh.\n2. Đặc Điểm\n- Kích thước:       Trung bình đến lớn.\n- Bộ lông:          Dài, dày và mượt.\n- Hình dáng:        Đầu tròn, mắt lớn.\n3. Tính Cách\n- Vui vẻ:           Thích gần gũi với mọi người.\n- Thân thiện:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.\n5. Sức Khỏe\n- Có thể mắc bệnh về khớp."
+    },
+    {
+      "id": "de37",
+      "name": "Mèo Scottish Fold Tai Cụp",
+      "price": 30000000,
+      "image": "10 Mèo Scottish Fold Tai Cụp 1.png",
+      "categoryId": 2,
+      "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai."
     }
   ],
   "users": [
@@ -72,15 +184,15 @@
       "role": "admin"
     },
     {
-      "id": "2",
-      "displayname": "Kun",
+      "id": "8b2f",
+      "displayname": "Kun 1",
       "email": "kun1@gmail.com",
       "password": "123",
       "role": "user"
     },
     {
-      "id": "8b2f",
-      "displayname": "Kun",
+      "id": "96a5",
+      "displayname": "Kun 2",
       "email": "kun2@gmail.com",
       "password": "123",
       "role": "user"
@@ -93,6 +205,29 @@
       "userId": "8b2f",
       "orderDate": "2025-07-13T08:00:00Z",
       "status": "processing",
+      "shippingFee": 30000,
+      "total": 680000,
+      "items": [
+        {
+          "id": 1,
+          "name": "Mèo Anh lông ngắn",
+          "price": 150000,
+          "quantity": 2
+        },
+        {
+          "id": 3,
+          "name": "Vòng cổ Mèo đẹp",
+          "price": 200000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "code": "4C3B2A1",
+      "userId": "96a5",
+      "orderDate": "2025-07-13T08:00:00Z",
+      "status": "shipping",
       "shippingFee": 30000,
       "total": 680000,
       "items": [

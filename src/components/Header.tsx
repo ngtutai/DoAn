@@ -213,6 +213,15 @@ export default function Header() {
                         </NavLink>
                       </li>
                       <li>
+                        <NavLink
+                          className="dropdown-item fw-bold text-muted"
+                          to="/historyorder"
+                        >
+                          <i className="fa-solid fa-envelope-open-text me-2"></i>
+                          Lịch sử
+                        </NavLink>
+                      </li>
+                      <li>
                         <button
                           className="dropdown-item fw-bold text-muted"
                           onClick={handleLogout}

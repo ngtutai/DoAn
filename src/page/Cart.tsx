@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import QR from "../components/user/QR";
+import QR from "../components/QR";
 import COD from "../components/COD";
 
 export interface CartItem {

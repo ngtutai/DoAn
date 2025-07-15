@@ -33,6 +33,7 @@ export default function ChangePassword() {
 
           <Sidebar />
 
+          {/* Phần chỉnh sửa */}
           <div className="col-md-9"></div>
         </div>
       </div>
