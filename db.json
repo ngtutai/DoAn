@@ -204,7 +204,7 @@
       "code": "1A2B3C4",
       "userId": "8b2f",
       "orderDate": "2025-07-13T08:00:00Z",
-      "status": "placed",
+      "status": "delivered",
       "shippingFee": 30000,
       "total": 680000,
       "items": [
@@ -227,7 +227,7 @@
       "code": "4C3B2A1",
       "userId": "a93f",
       "orderDate": "2025-07-13T08:00:00Z",
-      "status": "shipping",
+      "status": "placed",
       "shippingFee": 30000,
       "total": 680000,
       "items": [

@@ -48,7 +48,7 @@ export default function OrderList() {
       case "processing":
         return "Chờ xử lý";
       case "shipping":
-        return "Đang giao";
+        return "Đang trung chuyển";
       case "delivered":
         return "Đã giao";
       case "cancel":
