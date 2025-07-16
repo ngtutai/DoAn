@@ -207,7 +207,6 @@ export default function Order() {
 
           <Sidebar />
 
-          {/* Phần chỉnh sửa */}
           <div className="col-md-9">
             {orders.filter(
               (order) =>
@@ -236,7 +235,6 @@ export default function Order() {
                     </div>
 
                     <div className="card-body">
-                      {/* Tiến trình đơn hàng */}
                       <div className="row mb-3 text-center">
                         {["placed", "processing", "shipping", "delivered"].map(
                           (status, index) => (
@@ -269,8 +267,6 @@ export default function Order() {
                           )
                         )}
                       </div>
-
-                      {/* Nút Xem / Hủy */}
                       <div className="d-flex justify-content-end gap-2 mb-3">
                         <button
                           className="btn btn-outline-danger btn-sm"
@@ -293,7 +289,6 @@ export default function Order() {
                         </button>
                       </div>
 
-                      {/* Chi tiết sản phẩm */}
                       {expandedOrderId === order.id && (
                         <div className="table-responsive">
                           <table className="table table-bordered table-hover">

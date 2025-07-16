@@ -93,7 +93,7 @@ export default function HistoryOrder() {
             ) : (
               orders.map((order) => (
                 <div key={order.id} className="card mb-4 shadow-sm mt-4">
-                  <div className="card-header bg-secondary text-white">
+                  <div className="card-header bg-secondary bg-opacity-75 text-white">
                     <div className="d-flex justify-content-start align-items-center">
                       <h6 className="card-title mb-0 mt-1">
                         Đơn hàng {formatOrderCode(order.code || order.id)}

@@ -42,16 +42,17 @@ export default function AdminHeader() {
   return (
     <header className="container-fluid bg-light">
       <div className="row align-items-center bg-info bg-opacity-10">
-        {/* Chữ &Logo - chiếm 2 cột */}
+        {/* Chữ & Logo - chiếm 2 cột */}
         <div className="col-12 col-md-2">
           <div className="d-flex align-items-center justify-content-center justify-content-md-start">
-            <h2 className="mb-0 me-2">ADMIN</h2>
+            <h2 className="mb-0 mt-2 me-2">ADMIN</h2>
             <img src="/assets/images/iconlogo/icon-web.png" alt="Logo" />
           </div>
         </div>
 
         {/* Phần còn lại - chiếm 10 cột */}
         <div className="col-md-10 col-12 bg-gradient-header d-flex flex-wrap align-items-center p-3">
+          {/* Menu */}
           <button
             className="btn btn-outline-secondary d-md-none me-3"
             type="button"
@@ -62,8 +63,10 @@ export default function AdminHeader() {
             <i className="fa fa-bars"></i>
           </button>
 
+          {/* Tên trang */}
           <h4 className="mb-0 me-auto">{getPageTitle()}</h4>
 
+          {/* Search */}
           <form
             className="flex-grow-1 mx-3 position-relative"
             style={{ maxWidth: "300px" }}

@@ -16,9 +16,10 @@ export interface Productx {
 
 export default function ProductList() {
   const [products, setProducts] = useState<Productx[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   const fetchProducts = () => {
-    // Read (Đọc dữ liệu) CRUD
     fetch("http://localhost:3001/products")
       .then((res) => res.json())
       .then((data) => {
@@ -28,7 +29,6 @@ export default function ProductList() {
           return "Phụ kiện";
         };
 
-        // Sắp xếp theo tên loại sản phẩm (A-Z)
         const sortedData = data.sort((a: Productx, b: Productx) => {
           const nameA = getCategoryName(a.categoryId);
           const nameB = getCategoryName(b.categoryId);
@@ -40,7 +40,6 @@ export default function ProductList() {
       .catch(() => toast.error("Lỗi tải sản phẩm"));
   };
 
-  // Delete (Xóa dữ liệu) CRUD
   const handleDelete = (id: number) => {
     if (!window.confirm("Bạn có chắc chắn muốn xoá sản phẩm này?")) return;
 
@@ -48,7 +47,6 @@ export default function ProductList() {
       method: "DELETE",
     })
       .then(() => {
-        setProducts(products.filter((p) => p.id !== id));
         toast.success("Đã xóa sản phẩm");
         fetchProducts();
       })
@@ -59,6 +57,11 @@ export default function ProductList() {
     fetchProducts();
   }, []);
 
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProducts = products.slice(startIndex, endIndex);
+
   return (
     <Fragment>
       <div className="container-fluid bg-light text-start min-vh-100">
@@ -67,8 +70,7 @@ export default function ProductList() {
           <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
             <AdminSidebar />
           </div>
-          <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-            {/* Phần thông tin cần làm */}
+          <div className="col-md-10 col-12 bg-secondary bg-opacity-25">
             <div className="container p-3">
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h3>Sản phẩm</h3>
@@ -88,7 +90,7 @@ export default function ProductList() {
                   </tr>
                 </thead>
                 <tbody>
-                  {products.map((item) => (
+                  {currentProducts.map((item) => (
                     <tr key={item.id}>
                       <td>{item.id}</td>
                       <td>
@@ -109,7 +111,6 @@ export default function ProductList() {
                         />
                       </td>
                       <td>{item.name}</td>
-
                       <td>
                         {item.categoryId === 1
                           ? "Chó"
@@ -136,6 +137,53 @@ export default function ProductList() {
                   ))}
                 </tbody>
               </table>
+
+              {/* Phân trang */}
+              <nav>
+                <ul className="pagination justify-content-center">
+                  <li
+                    className={`page-item ${
+                      currentPage === 1 ? "disabled" : ""
+                    }`}
+                  >
+                    <button
+                      className="page-link"
+                      onClick={() => setCurrentPage(currentPage - 1)}
+                    >
+                      &laquo;
+                    </button>
+                  </li>
+
+                  {Array.from({ length: totalPages }, (_, index) => (
+                    <li
+                      key={index}
+                      className={`page-item ${
+                        currentPage === index + 1 ? "active" : ""
+                      }`}
+                    >
+                      <button
+                        className="page-link"
+                        onClick={() => setCurrentPage(index + 1)}
+                      >
+                        {index + 1}
+                      </button>
+                    </li>
+                  ))}
+
+                  <li
+                    className={`page-item ${
+                      currentPage === totalPages ? "disabled" : ""
+                    }`}
+                  >
+                    <button
+                      className="page-link"
+                      onClick={() => setCurrentPage(currentPage + 1)}
+                    >
+                      &raquo;
+                    </button>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>

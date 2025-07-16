@@ -162,15 +162,18 @@ export default function SeeDetail() {
             <h4 className="text-danger mt-3">
               {product.price.toLocaleString("vi-VN")}₫
             </h4>
-            <hr />
-            <pre className="mt-3">
-              {/* Mô tả */}
-              {product.description || "Không có mô tả sản phẩm."}
-            </pre>
 
             <button className="btn btn-primary mt-3" onClick={handleAddToCart}>
               <i className="fa-solid fa-cart-plus me-2"></i> Thêm vào giỏ hàng
             </button>
+
+            <hr />
+
+            <pre className="mt-3">
+              {/* Mô tả */}
+              <h3 className="text-primary">Mô tả</h3>
+              {product.description || "Không có mô tả sản phẩm."}
+            </pre>
           </div>
         </div>
 

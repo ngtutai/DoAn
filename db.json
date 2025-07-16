@@ -191,7 +191,7 @@
       "role": "user"
     },
     {
-      "id": "96a5",
+      "id": "a93f",
       "displayname": "Kun 2",
       "email": "kun2@gmail.com",
       "password": "123",
@@ -204,7 +204,7 @@
       "code": "1A2B3C4",
       "userId": "8b2f",
       "orderDate": "2025-07-13T08:00:00Z",
-      "status": "processing",
+      "status": "placed",
       "shippingFee": 30000,
       "total": 680000,
       "items": [
@@ -225,7 +225,7 @@
     {
       "id": "2",
       "code": "4C3B2A1",
-      "userId": "96a5",
+      "userId": "a93f",
       "orderDate": "2025-07-13T08:00:00Z",
       "status": "shipping",
       "shippingFee": 30000,
@@ -248,22 +248,22 @@
   ],
   "comments": [
     {
-      "id": "1752470665997",
-      "productId": null,
-      "userId": "2",
-      "content": "wow thật đẹp",
-      "date": "2025-07-14T05:24:25.997Z",
-      "rating": 3,
-      "userName": "Kun"
+      "id": "1752635608641",
+      "productId": "f645",
+      "userId": "a93f",
+      "content": "Đẹp quá tôi cảm giác nó cực kì dính lấy người :3",
+      "date": "2025-07-16T03:13:28.641Z",
+      "rating": 5,
+      "userName": "Kun 2"
     },
     {
-      "id": "1752470735422",
-      "productId": null,
-      "userId": "1",
-      "content": "Cảm ơn bạn",
-      "date": "2025-07-14T05:25:35.422Z",
+      "id": "1752635711289",
+      "productId": "f645",
+      "userId": "8b2f",
+      "content": "thật sự nó rất đẹp",
+      "date": "2025-07-16T03:15:11.289Z",
       "rating": 5,
-      "userName": "Admin"
+      "userName": "Kun 1"
     }
   ]
 }
