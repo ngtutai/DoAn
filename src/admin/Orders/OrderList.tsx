@@ -43,6 +43,8 @@ export default function OrderList() {
 
   const getStatusText = (status: string) => {
     switch (status) {
+      case "paid":
+        return "Chờ xác nhận";
       case "placed":
         return "Đã đặt hàng";
       case "processing":
@@ -60,6 +62,8 @@ export default function OrderList() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
+      case "paid":
+        return "text-bg-dark";
       case "placed":
         return "text-bg-primary";
       case "processing":
@@ -95,7 +99,7 @@ export default function OrderList() {
                 <div className="spinner-border text-primary" />
               </div>
             ) : activeOrders.length === 0 ? (
-              <div className="alert alert-info text-center">
+              <div className="alert alert-warning text-center">
                 Hiện không có đơn hàng!
               </div>
             ) : (

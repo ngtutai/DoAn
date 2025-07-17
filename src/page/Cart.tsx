@@ -82,6 +82,47 @@ const Cart: React.FC = () => {
   );
   const final = total - (total * voucherPercent) / 100;
 
+  // ✅ Lưu đơn hàng vào db.json
+  const saveOrderToServer = async (
+    itemsToOrder: CartItem[],
+    method: "atm" | "cod"
+  ) => {
+    const storedUser = localStorage.getItem("currentUser");
+    const userId = storedUser ? JSON.parse(storedUser).id : "guest";
+    const orderDate = new Date().toISOString();
+    const code = Math.random().toString(36).substring(2, 8).toUpperCase();
+    const totalPrice = itemsToOrder.reduce(
+      (sum, i) => sum + i.price * i.quantity,
+      0
+    );
+
+    const order = {
+      id: Date.now().toString(),
+      code,
+      userId,
+      orderDate,
+      status: method === "atm" ? "paid" : "placed",
+      shippingFee: 0,
+      total: totalPrice,
+      items: itemsToOrder.map(({ id, name, price, quantity }) => ({
+        id,
+        name,
+        price,
+        quantity,
+      })),
+    };
+
+    try {
+      await fetch("http://localhost:3001/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order),
+      });
+    } catch (err) {
+      toast.error("Không thể lưu đơn hàng vào hệ thống");
+    }
+  };
+
   // Voucher
   const applyVoucher = () => {
     const code = voucherInput.trim();
@@ -173,20 +214,22 @@ const Cart: React.FC = () => {
     updateCart(updated);
   };
 
-  // Hàm thanh toán (chưa chọn sản phẩm) & (quét mã QR)
-  const handlePayment = () => {
+  // ✅ Thanh toán bằng QR
+  const handlePayment = async () => {
     if (total === 0) return toast.warning("Bạn chưa chọn sản phẩm nào.");
+    const itemsToOrder = items.filter((item) => item.checked);
 
     if (paymentMethod === "atm") {
       const id = "demo_" + Date.now();
       setOrderId(id);
       setShowQRModal(true);
 
-      const interval = setInterval(() => {
+      const interval = setInterval(async () => {
         if (localStorage.getItem("orderStatus_" + id) === "paid") {
           clearInterval(interval);
           toast.success("Thanh toán thành công!");
           setShowQRModal(false);
+          await saveOrderToServer(itemsToOrder, "atm"); // ✅ lưu
           const updated = items.filter((item) => !item.checked);
           updateCart(updated);
           setIsPaid(true);
@@ -197,10 +240,12 @@ const Cart: React.FC = () => {
     }
   };
 
-  // Hàm thanh toán (bằng tiền mặt khi giao hàng)
-  const handleCODConfirm = (address: string) => {
+  // ✅ Thanh toán COD
+  const handleCODConfirm = async (address: string) => {
     toast.success("Đặt hàng thành công!\nĐịa chỉ: " + address);
     setShowCODModal(false);
+    const itemsToOrder = items.filter((item) => item.checked);
+    await saveOrderToServer(itemsToOrder, "cod"); // ✅ lưu
     const updated = items.filter((item) => !item.checked);
     updateCart(updated);
   };

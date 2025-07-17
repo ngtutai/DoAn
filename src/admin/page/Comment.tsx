@@ -49,7 +49,9 @@ export default function Comment() {
               </div>
             </div>
           ) : comments.length === 0 ? (
-            <p>Không có bình luận nào.</p>
+            <div className="alert alert-warning  text-center">
+              Không có bình luận nào!
+            </div>
           ) : (
             <div className="table-responsive">
               <table className="table table-striped table-bordered bg-white">

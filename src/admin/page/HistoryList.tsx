@@ -50,9 +50,10 @@ export default function HistoryList() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3">
+          {/* Phần thông tin cần làm */}
           <h4 className="mb-4 text-secondary">Lịch sử đơn hàng</h4>
           {orders.length === 0 ? (
-            <div className="alert alert-warning">
+            <div className="alert alert-warning text-center">
               Chưa có đơn hàng đã giao hoặc đã hủy.
             </div>
           ) : (

@@ -17,7 +17,7 @@ export interface Productx {
 export default function ProductList() {
   const [products, setProducts] = useState<Productx[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 7;
 
   const fetchProducts = () => {
     fetch("http://localhost:3001/products")
@@ -50,7 +50,7 @@ export default function ProductList() {
         toast.success("Đã xóa sản phẩm");
         fetchProducts();
       })
-      .catch(() => alert("Lỗi xoá sản phẩm!"));
+      .catch(() => toast.error("Lỗi xoá sản phẩm!"));
   };
 
   useEffect(() => {

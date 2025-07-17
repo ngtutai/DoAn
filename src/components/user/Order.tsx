@@ -174,7 +174,11 @@ export default function Order() {
         <div className="container py-5">
           <div className="row">
             <Sidebar />
-            <h3 className="col-md-9 text-danger">Bạn chưa có đơn hàng nào!</h3>
+            <h6 className="col-md-9 text-danger">
+              <div className="alert alert-warning">
+                Bạn chưa có đơn hàng nào!
+              </div>
+            </h6>
           </div>
         </div>
         <Footer />

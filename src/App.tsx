@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import Home from "./page/Home";
 import Pet from "./page/Pet";
 import Detail from "./page/Detail";
-import SeeDetail from "./components/SeeDetail";
+import Information from "./page/Information";
 import Contact from "./page/Contact";
 import TeamPage from "./page/TeamPage";
 import Cart from "./page/Cart";
@@ -48,8 +48,8 @@ function App() {
           {/* ========== Link Web User ========== */}
           <Route path="/" element={<Home />} />
           <Route path="/pet" element={<Pet />} />
-          <Route path="/detail" element={<Detail />} />
-          <Route path="/detail/:id" element={<SeeDetail />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/information" element={<Information />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/teampage" element={<TeamPage />} />
           <Route path="/cart" element={<Cart />} />

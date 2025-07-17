@@ -177,94 +177,14 @@
   ],
   "users": [
     {
-      "id": "1",
-      "displayname": "Admin",
+      "id": "883c",
+      "displayname": "Tài",
       "email": "admin@gmail.com",
       "password": "123",
       "role": "admin"
-    },
-    {
-      "id": "8b2f",
-      "displayname": "Kun 1",
-      "email": "kun1@gmail.com",
-      "password": "123",
-      "role": "user"
-    },
-    {
-      "id": "a93f",
-      "displayname": "Kun 2",
-      "email": "kun2@gmail.com",
-      "password": "123",
-      "role": "user"
     }
   ],
-  "orders": [
-    {
-      "id": "1",
-      "code": "1A2B3C4",
-      "userId": "8b2f",
-      "orderDate": "2025-07-13T08:00:00Z",
-      "status": "delivered",
-      "shippingFee": 30000,
-      "total": 680000,
-      "items": [
-        {
-          "id": 1,
-          "name": "Mèo Anh lông ngắn",
-          "price": 150000,
-          "quantity": 2
-        },
-        {
-          "id": 3,
-          "name": "Vòng cổ Mèo đẹp",
-          "price": 200000,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "code": "4C3B2A1",
-      "userId": "a93f",
-      "orderDate": "2025-07-13T08:00:00Z",
-      "status": "placed",
-      "shippingFee": 30000,
-      "total": 680000,
-      "items": [
-        {
-          "id": 1,
-          "name": "Mèo Anh lông ngắn",
-          "price": 150000,
-          "quantity": 2
-        },
-        {
-          "id": 3,
-          "name": "Vòng cổ Mèo đẹp",
-          "price": 200000,
-          "quantity": 1
-        }
-      ]
-    }
-  ],
+  "orders": [],
   "vouchers": [],
-  "comments": [
-    {
-      "id": "1752635608641",
-      "productId": "f645",
-      "userId": "a93f",
-      "content": "Đẹp quá tôi cảm giác nó cực kì dính lấy người :3",
-      "date": "2025-07-16T03:13:28.641Z",
-      "rating": 5,
-      "userName": "Kun 2"
-    },
-    {
-      "id": "1752635711289",
-      "productId": "f645",
-      "userId": "8b2f",
-      "content": "thật sự nó rất đẹp",
-      "date": "2025-07-16T03:15:11.289Z",
-      "rating": 5,
-      "userName": "Kun 1"
-    }
-  ]
+  "comments": []
 }

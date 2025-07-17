@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-interface Props {
+export interface Props {
   orderId: string;
   amount: number;
   onClose: () => void;

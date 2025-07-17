@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thanh Toán</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo/pawprint.png"
+      type="image/x-icon"
+    />
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 80px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Thanh toán đơn hàng</h2>
+    <p>Bấm nút bên dưới để hoàn tất thanh toán</p>
+    <button onclick="handlePay()">✅ Xác nhận thanh toán</button>
+
+    <script>
+      const params = new URLSearchParams(location.search);
+      const orderId = params.get("orderId");
+
+      function handlePay() {
+        if (!orderId) return alert("Thiếu mã đơn hàng");
+
+        // Gửi trạng thái placed lên server (hoặc localStorage)
+        fetch("http://localhost:3001/pay-status/" + orderId, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ status: "placed" }),
+        }).catch(() => {
+          alert("Không thể cập nhật trạng thái đơn hàng");
+        });
+
+        // Đánh dấu đã thanh toán ở localStorage (Cart.tsx sẽ kiểm tra cái này)
+        localStorage.setItem("orderStatus_" + orderId, "paid");
+
+        alert("✅ Thanh toán thành công!");
+      }
+    </script>
+  </body>
+</html>

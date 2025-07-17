@@ -4,6 +4,7 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
+import { toast } from "react-toastify";
 
 export default function EditProduct() {
   const navigate = useNavigate();
@@ -68,12 +69,12 @@ export default function EditProduct() {
       body: JSON.stringify(product),
     })
       .then(() => {
-        alert(
+        toast.success(
           isEditMode ? "Cập nhật thành công!" : "Thêm sản phẩm thành công!"
         );
         navigate("/admin/product");
       })
-      .catch(() => alert("Lỗi xử lý sản phẩm!"));
+      .catch(() => toast.error("Lỗi xử lý sản phẩm!"));
   };
 
   return (

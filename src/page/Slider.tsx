@@ -29,11 +29,19 @@ export default function Slide() {
   }, [sliders]);
 
   if (sliders.length === 0)
-    return (
-      <p>
-        <h4 className="mt-3">Hiện không có slider nào ...</h4>
-      </p>
-    );
+    return <h4 className="mt-3">Hiện không có slider nào ...</h4>;
+
+  const goToNext = () => {
+    setCurrent((prev) => (prev + 1) % sliders.length);
+  };
+
+  const goToPrev = () => {
+    setCurrent((prev) => (prev - 1 + sliders.length) % sliders.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrent(index);
+  };
 
   return (
     <div
@@ -52,6 +60,7 @@ export default function Slide() {
             transition: "opacity 0.8s ease-in-out",
           }}
         >
+          {/* Phần mô tả */}
           <h2 className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-2">
             {item.title}
           </h2>
@@ -66,6 +75,39 @@ export default function Slide() {
           </button>
         </div>
       ))}
+
+      {/* Prev Button */}
+      <button
+        onClick={goToPrev}
+        className="btn btn-dark position-absolute top-50 start-0 translate-middle-y px-3"
+        style={{ zIndex: 2 }}
+      >
+        <i className="fa-solid fa-arrow-left"></i>
+      </button>
+      {/* Next Button */}
+      <button
+        onClick={goToNext}
+        className="btn btn-dark position-absolute top-50 end-0 translate-middle-y px-3"
+        style={{ zIndex: 2 }}
+      >
+        <i className="fa-solid fa-arrow-right"></i>
+      </button>
+      {/* Dots */}
+      <div className="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex gap-2">
+        {sliders.map((_, index) => (
+          <span
+            key={index}
+            onClick={() => goToSlide(index)}
+            style={{
+              width: "12px",
+              height: "12px",
+              borderRadius: "50%",
+              backgroundColor: index === current ? "#dc3545" : "#ccc",
+              cursor: "pointer",
+            }}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 }

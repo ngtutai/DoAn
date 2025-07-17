@@ -5,6 +5,7 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
+import { toast } from "react-toastify";
 
 export interface OrderItem {
   id: number;
@@ -18,7 +19,13 @@ export interface Order {
   code: string;
   userId: string;
   orderDate: string;
-  status: "placed" | "processing" | "shipping" | "delivered" | "cancel";
+  status:
+    | "paid"
+    | "placed"
+    | "processing"
+    | "shipping"
+    | "delivered"
+    | "cancel";
   shippingFee: number;
   total: number;
   items: OrderItem[];
@@ -31,6 +38,7 @@ export default function EditOrder() {
   const [status, setStatus] = useState<Order["status"]>("placed");
 
   const statusOptions: Order["status"][] = [
+    "paid",
     "placed",
     "processing",
     "shipping",
@@ -58,7 +66,7 @@ export default function EditOrder() {
       body: JSON.stringify({ ...order, status }),
     })
       .then(() => {
-        alert("Cập nhật thành công!");
+        toast.success("Cập nhật thành công!");
         navigate("/admin/order");
       })
       .catch((err) => console.error("Lỗi:", err));
@@ -78,6 +86,8 @@ export default function EditOrder() {
 
   const getStatusText = (status: string) => {
     switch (status) {
+      case "paid":
+        return "Chờ xác nhận";
       case "placed":
         return "Đã đặt hàng";
       case "processing":

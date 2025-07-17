@@ -33,7 +33,23 @@ export default function Voucher() {
   const fetchVouchers = async () => {
     try {
       const res = await axios.get("http://localhost:3001/vouchers");
-      setVouchers(res.data);
+      const data: Vouchers[] = res.data;
+
+      // Tách các voucher hợp lệ (usageLimit > 0)
+      const validVouchers = data.filter((v) => v.usageLimit > 0);
+
+      // Tách các voucher cần xóa (usageLimit <= 0)
+      const toDelete = data.filter((v) => v.usageLimit <= 0);
+
+      // Xoá toàn bộ voucher usageLimit = 0 khỏi server
+      await Promise.all(
+        toDelete.map((v) =>
+          axios.delete(`http://localhost:3001/vouchers/${v.id}`)
+        )
+      );
+
+      // Cập nhật state
+      setVouchers(validVouchers);
     } catch (error) {
       toast.error("Lỗi khi tải danh sách voucher!");
     }
@@ -118,7 +134,7 @@ export default function Voucher() {
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3 text-center">
           {/* Phần thông tin cần làm */}
           <div className="container">
-            <h2>Voucher Management</h2>
+            <h2>Quản lý Voucher</h2>
 
             {/* Add form */}
             <div className="row g-2 mb-3">
@@ -160,7 +176,7 @@ export default function Voucher() {
             <table className="table table-bordered">
               <thead>
                 <tr>
-                  <th style={{ width: "15%" }}>Code</th>
+                  <th style={{ width: "15%" }}>Mã voucher</th>
                   <th style={{ width: "15%" }}>Percent</th>
                   <th style={{ width: "15%" }}>Start</th>
                   <th style={{ width: "15%" }}>End</th>

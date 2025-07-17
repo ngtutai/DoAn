@@ -44,16 +44,16 @@ export default function HistoryOrder() {
     }
   }, []);
 
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case "delivered":
-        return "Đã giao";
-      case "cancel":
-        return "Đã hủy";
-      default:
-        return status;
-    }
-  };
+  // const getStatusText = (status: string) => {
+  //   switch (status) {
+  //     case "delivered":
+  //       return "Đã giao";
+  //     case "cancel":
+  //       return "Đã hủy";
+  //     default:
+  //       return status;
+  //   }
+  // };
 
   const formatOrderCode = (code: string | number) => {
     return `#${code}`;
