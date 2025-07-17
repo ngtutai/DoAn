@@ -14,27 +14,35 @@ export interface CartItem {
   checked: boolean;
 }
 
-const vouchers: Record<string, number> = {
-  kun: 50,
-};
-
 const formatCurrency = (value: number) => value.toLocaleString("vi-VN") + "đ";
 
 const Cart: React.FC = () => {
   const [items, setItems] = useState<CartItem[]>([]);
   const [checkAll, setCheckAll] = useState(false);
+  const [orderId, setOrderId] = useState("");
+  const [isPaid, setIsPaid] = useState(false);
+  // Voucher
   const [voucherInput, setVoucherInput] = useState("");
   const [voucherPercent, setVoucherPercent] = useState(0);
   const [voucherCode, setVoucherCode] = useState("Chưa áp dụng");
   const [voucherMessage, setVoucherMessage] = useState("");
   const [voucherValid, setVoucherValid] = useState<boolean | null>(null);
-  const [paymentMethod, setPaymentMethod] = useState<"atm" | "cod">("atm");
+  const [voucherList, setVoucherList] = useState<
+    {
+      code: string;
+      percent: number;
+      startDate: string;
+      endDate: string;
+      usageLimit: number;
+      id: string;
+    }[]
+  >([]);
+  // Thanh toán
   const [showQRModal, setShowQRModal] = useState(false);
-  const [orderId, setOrderId] = useState("");
-  const [isPaid, setIsPaid] = useState(false);
   const [showCODModal, setShowCODModal] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<"atm" | "cod">("atm");
 
-  // Load cart từ localStorage khi trang Cart mở
+  // Load cart từ localStorage + server khi trang Cart mở
   useEffect(() => {
     const storedUser = localStorage.getItem("currentUser");
     const userId = storedUser ? JSON.parse(storedUser).id : null;
@@ -50,6 +58,12 @@ const Cart: React.FC = () => {
       );
       setItems(loadedCart);
     }
+
+    // Fetch voucher list
+    fetch("http://localhost:3001/vouchers")
+      .then((res) => res.json())
+      .then((data) => setVoucherList(data))
+      .catch(() => toast.error("Không thể tải danh sách voucher"));
   }, []);
 
   // Khi cập nhật cart
@@ -71,23 +85,62 @@ const Cart: React.FC = () => {
   // Voucher
   const applyVoucher = () => {
     const code = voucherInput.trim();
-    const percent = vouchers[code];
+    const found = voucherList.find((v) => v.code === code);
 
+    // Nếu không nhập mã
     if (!code) {
       setVoucherMessage("Vui lòng nhập mã giảm giá");
       setVoucherValid(false);
       setVoucherPercent(0);
       setVoucherCode("Chưa áp dụng");
-    } else if (percent) {
-      setVoucherPercent(percent);
-      setVoucherCode(code);
-      setVoucherMessage(`Đã áp dụng mã ${code} giảm ${percent}%`);
-      setVoucherValid(true);
-    } else {
+      return;
+    }
+
+    // Nếu không tìm thấy trong danh sách
+    if (!found) {
       setVoucherMessage("Mã giảm giá không hợp lệ");
       setVoucherValid(false);
       setVoucherPercent(0);
       setVoucherCode("Chưa áp dụng");
+      return;
+    }
+
+    // Lấy ngày hiện tại và chuyển định dạng ngày từ JSON sang Date
+    const today = new Date();
+    const start = new Date(found.startDate + "T00:00:00");
+    const end = new Date(found.endDate + "T23:59:59");
+
+    // So sánh ngày
+    if (today < start) {
+      setVoucherMessage("Mã giảm giá chưa có hiệu lực");
+      setVoucherValid(false);
+      setVoucherPercent(0);
+      setVoucherCode("Chưa áp dụng");
+    } else if (today > end) {
+      setVoucherMessage("Mã giảm giá đã hết hạn");
+      setVoucherValid(false);
+      setVoucherPercent(0);
+      setVoucherCode("Chưa áp dụng");
+    } else if (found.usageLimit <= 0) {
+      setVoucherMessage("Mã giảm giá đã hết lượt sử dụng");
+      setVoucherValid(false);
+      setVoucherPercent(0);
+      setVoucherCode("Chưa áp dụng");
+    } else {
+      // Áp dụng voucher thành công
+      setVoucherPercent(found.percent);
+      setVoucherCode(found.code);
+      setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
+      setVoucherValid(true);
+
+      // Gửi PATCH giảm usageLimit trên server
+      fetch(`http://localhost:3001/vouchers/${found.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ usageLimit: found.usageLimit - 1 }),
+      }).catch(() => {
+        toast.error("Không thể cập nhật lượt sử dụng voucher");
+      });
     }
   };
 
@@ -228,8 +281,8 @@ const Cart: React.FC = () => {
                             src={item.image || "https://placehold.co/100x100"}
                             alt=""
                             style={{
-                              width: "50%",
-                              height: "50%",
+                              width: "80px",
+                              height: "80px",
                               objectFit: "cover",
                               borderRadius: "8px",
                             }}

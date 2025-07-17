@@ -80,6 +80,18 @@ export default function AdminSidebar() {
             </NavLink>
           </li>
 
+          {/* Account (Mã giảm giá) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/voucher"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-ticket me-2"></i> Mã giảm giá
+            </NavLink>
+          </li>
+
           {/* Comment (Bình luận ) */}
           <li className="nav-item">
             <NavLink

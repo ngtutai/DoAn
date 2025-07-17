@@ -34,6 +34,7 @@ import SliderList from "./admin/Sliders/SliderList";
 import EditSlider from "./admin/Sliders/EditSlider";
 import HistoryList from "./admin/page/HistoryList";
 import Account from "./admin/page/Account";
+import Voucher from "./admin/page/Voucher";
 import Comment from "./admin/page/Comment";
 import ProfileAdmin from "./admin/page/ProfileAdmin";
 // ========== Link Lỗi Error ========== //
@@ -83,6 +84,7 @@ function App() {
               <Route path="slider/edit/:id" element={<EditSlider />} />
               <Route path="history" element={<HistoryList />} />
               <Route path="account" element={<Account />} />
+              <Route path="voucher" element={<Voucher />} />
               <Route path="comment" element={<Comment />} />
               <Route path="profileadmin" element={<ProfileAdmin />} />
             </Route>
