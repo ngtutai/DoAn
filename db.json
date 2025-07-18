@@ -180,9 +180,16 @@
       "id": "883c",
       "displayname": "Tài",
       "email": "Admin@gmail.com",
+<<<<<<< HEAD
       "password": "123",
       "role": "admin",
       "image": ""
+=======
+      "password": "123456",
+      "role": "admin",
+      "phone": "0367645738",
+      "address": "cuchi"
+>>>>>>> ff4f67a (Initial commit)
     },
     {
       "id": "68ba",
