@@ -24,7 +24,7 @@ export default function Slide() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % sliders.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [sliders]);
 
