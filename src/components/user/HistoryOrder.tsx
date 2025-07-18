@@ -23,7 +23,7 @@ export interface Order {
 
 export default function HistoryOrder() {
   const [orders, setOrders] = useState<Order[]>([]);
-  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [, setCurrentUser] = useState<any>(null);
   const [expandedOrderId, setExpandedOrderId] = useState<number | null>(null);
 
   useEffect(() => {
