@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 // import "./Layout/Admin.css";
 
-const AdminLogin = () => {
+export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
@@ -14,6 +14,15 @@ const AdminLogin = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // hiện sẵn tk mk admin chỉ cần nhấn đăng nhập
+    const remembered = localStorage.getItem("adminRemember");
+    if (remembered) {
+      const { email, password } = JSON.parse(remembered);
+      setEmail(email);
+      setPassword(password);
+      setRememberMe(true);
+    }
+    ////////////////////////////////////////////////
     const isLoggedIn = !!localStorage.getItem("adminToken");
     if (isLoggedIn) navigate("/admin/dashboard", { replace: true });
   }, [navigate]);
@@ -67,6 +76,16 @@ const AdminLogin = () => {
             role: adminUser.role,
           })
         );
+        // hiện sẵn tk mk admin chỉ cần nhấn đăng nhập
+        if (rememberMe) {
+          localStorage.setItem(
+            "adminRemember",
+            JSON.stringify({ email, password })
+          );
+        } else {
+          localStorage.removeItem("adminRemember");
+        }
+        ////////////////////////////////////////////////
         navigate("/admin/dashboard");
       }
     } catch (error) {
@@ -150,7 +169,7 @@ const AdminLogin = () => {
               checked={rememberMe}
               onChange={() => setRememberMe(!rememberMe)}
             />
-            <label className="text-primary">Remember me</label>
+            <label className="text-primary">Remember Me</label>
           </div>
 
           <button type="submit" className="login-button">
@@ -160,6 +179,4 @@ const AdminLogin = () => {
       </div>
     </div>
   );
-};
-
-export default AdminLogin;
+}

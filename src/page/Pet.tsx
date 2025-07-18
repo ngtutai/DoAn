@@ -18,7 +18,7 @@ type CartItem = Product & {
   checked: boolean;
 };
 
-const itemsPerPage = 12;
+const itemsPerPage = 8;
 
 function formatCurrency(value: number): string {
   return value.toLocaleString("vi-VN") + " đ";
@@ -106,6 +106,7 @@ export default function Pet() {
     toast.success("Đã thêm vào giỏ hàng!");
   };
 
+  // Danh mục
   const handleTypeChange = (type: "all" | "dog" | "cat" | "accessory") => {
     setSelectedType(type);
     setCurrentPage(1);
@@ -128,7 +129,7 @@ export default function Pet() {
     const matchKeyword =
       keyword === "" ||
       p.name.toLowerCase().includes(keyword) ||
-      p.id.toString().includes(keyword); // 🔍 Tìm theo ID
+      p.id.toString().includes(keyword); // Tìm theo ID
 
     return matchType && matchPrice && matchKeyword;
   });
@@ -151,6 +152,7 @@ export default function Pet() {
       />
       <Header />
 
+      {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
         style={{
@@ -173,7 +175,7 @@ export default function Pet() {
 
       <div className="container-fluid py-4" id="section-pet">
         <div className="row">
-          {/* Danh mục sản phẩm */}
+          {/* Danh mục sản phẩm Left */}
           <div className="col-3 pt-3 pe-4 border-end">
             <div className="mb-3 fw-bold text-dark">
               <h6>
@@ -249,6 +251,7 @@ export default function Pet() {
             </ul>
           </div>
 
+          {/* Right */}
           <div className="col-9">
             <div className="row align-items-center mb-3">
               {/* Breadcrumbs */}

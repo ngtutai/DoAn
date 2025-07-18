@@ -71,6 +71,7 @@ export default function ProductList() {
             <AdminSidebar />
           </div>
           <div className="col-md-10 col-12 bg-secondary bg-opacity-25">
+            {/* Phần thông tin cần làm */}
             <div className="container p-3">
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h3>Sản phẩm</h3>

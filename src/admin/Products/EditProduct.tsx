@@ -85,6 +85,7 @@ export default function EditProduct() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
+          {/* Phần thông tin cần làm */}
           <div className="container p-4">
             <h3>{isEditMode ? "Chỉnh sửa" : "Thêm mới"} sản phẩm</h3>
             <form

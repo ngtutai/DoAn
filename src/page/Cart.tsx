@@ -123,7 +123,7 @@ const Cart: React.FC = () => {
     }
   };
 
-  // Voucher
+  // Áp dụng mã Voucher
   const applyVoucher = () => {
     const code = voucherInput.trim();
     const found = voucherList.find((v) => v.code === code);
@@ -208,7 +208,7 @@ const Cart: React.FC = () => {
     updateCart(updated);
   };
 
-  // Hàm Delete
+  // Hàm Xóa
   const handleDelete = (i: number) => {
     const updated = items.filter((_, idx) => idx !== i);
     updateCart(updated);

@@ -92,6 +92,7 @@ export default function OrderList() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
+          {/* Phần thông tin cần làm */}
           <div className="container py-4">
             <h4 className="mb-4 text-primary">Đơn hàng đang chờ xử lý</h4>
             {loading ? (

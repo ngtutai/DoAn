@@ -179,9 +179,16 @@
     {
       "id": "883c",
       "displayname": "Tài",
-      "email": "admin@gmail.com",
+      "email": "Admin@gmail.com",
       "password": "123",
       "role": "admin"
+    },
+    {
+      "id": "0d3b",
+      "displayname": "Người dùng",
+      "email": "User@gmail.com",
+      "password": "123",
+      "role": "user"
     }
   ],
   "orders": [],
