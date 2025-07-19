@@ -11,9 +11,9 @@ export default function ProfileAdmin() {
         <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
           <AdminSidebar />
         </div>
-        <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
+        <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-4">
           {/* Phần thông tin cần làm */}
-          ...
+          <main className="col-12 col-md-12 min-vh-100 bg-light rounded"></main>
         </div>
       </div>
 

@@ -39,6 +39,7 @@ export default function Register() {
         email,
         password,
         role: "user",
+        image: "",
       };
 
       await fetch("http://localhost:3001/users", {

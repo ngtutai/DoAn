@@ -1,5 +1,6 @@
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function AdminHeader() {
   // thay đổi tên Page Title
@@ -7,6 +8,7 @@ export default function AdminHeader() {
   const getPageTitle = () => {
     if (location.pathname.includes("/admin/dashboard"))
       return "Bảng điều khiển";
+    if (location.pathname.includes("/admin/profileadmin")) return "Thông tin";
     if (location.pathname.includes("/admin/category")) return "Thể loại";
     if (location.pathname.includes("/admin/product")) return "Sản phẩm";
     if (location.pathname.includes("/admin/order")) return "Đơn hàng";

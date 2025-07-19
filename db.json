@@ -181,14 +181,16 @@
       "displayname": "Tài",
       "email": "Admin@gmail.com",
       "password": "123",
-      "role": "admin"
+      "role": "admin",
+      "image": ""
     },
     {
-      "id": "0d3b",
+      "id": "68ba",
       "displayname": "Người dùng",
       "email": "User@gmail.com",
       "password": "123",
-      "role": "user"
+      "role": "user",
+      "image": ""
     }
   ],
   "orders": [],
