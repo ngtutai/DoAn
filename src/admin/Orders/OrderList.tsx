@@ -94,7 +94,7 @@ export default function OrderList() {
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
           {/* Phần thông tin cần làm */}
           <div className="container py-4">
-            <h4 className="mb-4 text-primary">Đơn hàng đang chờ xử lý</h4>
+            <h4 className="mb-4 text-secondary">Đơn hàng đang chờ xử lý</h4>
             {loading ? (
               <div className="text-center my-5">
                 <div className="spinner-border text-primary" />

@@ -105,45 +105,6 @@ export default function AdminSidebar() {
           </li>
 
           <hr />
-          <h5 className="p-1 text-muted">Others</h5>
-
-          {/* Lightbulb */}
-          <li className="nav-item">
-            <NavLink
-              to="/admin"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-lightbulb me-2"></i> Dashboard 2
-            </NavLink>
-          </li>
-
-          {/* Question */}
-          <li className="nav-item">
-            <NavLink
-              to="/admin"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-question me-2"></i> Dashboard 3
-            </NavLink>
-          </li>
-
-          {/* Question */}
-          <li className="nav-item">
-            <NavLink
-              to="/admin"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-question me-2"></i> Dashboard 3
-            </NavLink>
-          </li>
-
-          <hr />
         </ul>
       </nav>
     </Fragment>

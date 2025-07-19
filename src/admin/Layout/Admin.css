@@ -22,6 +22,11 @@ a {
   font-family: "Lato", sans-serif;
 }
 
+.nav .nav-link.active,
+.nav .nav-link.show {
+  color: #ffb299;
+}
+
 /* ========== Admin Login ========== */
 /* Layout */
 .login-container {

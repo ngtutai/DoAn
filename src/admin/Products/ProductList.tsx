@@ -74,7 +74,7 @@ export default function ProductList() {
             {/* Phần thông tin cần làm */}
             <div className="container p-3">
               <div className="d-flex justify-content-between align-items-center mb-3">
-                <h3>Sản phẩm</h3>
+                <h3 className="text-secondary">Sản phẩm</h3>
                 <Link to="/admin/product/new" className="btn btn-primary">
                   <i className="fa fa-plus me-2"></i> Thêm sản phẩm
                 </Link>

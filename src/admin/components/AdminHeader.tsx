@@ -9,11 +9,13 @@ export default function AdminHeader() {
     if (location.pathname.includes("/admin/dashboard"))
       return "Bảng điều khiển";
     if (location.pathname.includes("/admin/profileadmin")) return "Thông tin";
-    if (location.pathname.includes("/admin/category")) return "Thể loại";
-    if (location.pathname.includes("/admin/product")) return "Sản phẩm";
     if (location.pathname.includes("/admin/order")) return "Đơn hàng";
+    if (location.pathname.includes("/admin/product")) return "Sản phẩm";
+    if (location.pathname.includes("/admin/category")) return "Thể loại";
     if (location.pathname.includes("/admin/slider")) return "Slider";
-    if (location.pathname.includes("/admin/profileadmin")) return "Thông tin";
+    if (location.pathname.includes("/admin/history")) return "Lịch sử";
+    if (location.pathname.includes("/admin/account")) return "Tài khoản";
+    if (location.pathname.includes("/admin/voucher")) return "Mã giảm giá";
     if (location.pathname.includes("/admin/comment")) return "Bình luận";
     // Thêm các route khác nếu cần
     return "Quản trị";
@@ -76,7 +78,7 @@ export default function AdminHeader() {
             <input
               type="search"
               className="form-control ps-5 rounded-pill border-0 shadow-sm"
-              placeholder="Search ..."
+              placeholder="Tìm kiếm ..."
               aria-label="Search"
               style={{ height: "40px" }}
             />

@@ -40,7 +40,7 @@ export default function Comment() {
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3">
           {/* Phần thông tin cần làm */}
-          <h4 className="mb-4">Danh sách bình luận</h4>
+          <h4 className="mb-4 text-secondary">Danh sách bình luận</h4>
 
           {loading ? (
             <div className="text-center">

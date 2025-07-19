@@ -193,7 +193,25 @@
       "image": ""
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": "1752929833023",
+      "code": "SVS2YS",
+      "userId": "68ba",
+      "orderDate": "2025-07-19T12:57:13.022Z",
+      "status": "placed",
+      "shippingFee": 0,
+      "total": 25000000,
+      "items": [
+        {
+          "id": "f645",
+          "name": "Mèo Anh lông dài",
+          "price": 25000000,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
   "vouchers": [],
   "comments": []
 }
