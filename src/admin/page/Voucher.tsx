@@ -134,7 +134,7 @@ export default function Voucher() {
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3 text-center">
           {/* Phần thông tin cần làm */}
           <div className="container">
-            <h2>Quản lý Voucher</h2>
+            <h2 className="text-secondary text-start">Quản lý Voucher</h2>
 
             {/* Add form */}
             <div className="row g-2 mb-3">

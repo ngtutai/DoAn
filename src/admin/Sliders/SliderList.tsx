@@ -51,7 +51,7 @@ export default function SliderList() {
           {/* Phần thông tin cần làm */}
           <div className="container mt-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
-              <h3>Slider</h3>
+              <h3 className="text-secondary">Slider</h3>
               <Link to="/admin/slider/new" className="btn btn-primary">
                 <i className="fa fa-plus me-2"></i> Thêm slider
               </Link>

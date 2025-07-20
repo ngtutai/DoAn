@@ -8,19 +8,20 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // ========== Link Web User ========== //
-import Home from "./page/Home";
-import Pet from "./page/Pet";
-import Detail from "./page/Detail";
-// import SeeDetail from "./components/SeeDetail";
-import Contact from "./page/Contact";
-import TeamPage from "./page/TeamPage";
-import Cart from "./page/Cart";
-import Login from "./auth/Login";
-import Register from "./auth/Register";
-import Profile from "./components/user/Profile";
-import ChangePassword from "./components/user/ChangePassword";
-import Order from "./components/user/Order";
-import HistoryOrder from "./components/user/HistoryOrder";
+
+import Home from "./user/page/Home";
+import Pet from "./user/page/Pet";
+import Detail from "./user/components/Detail";
+// import Information from "./user/page/Information";
+import Contact from "./user/page/Contact";
+import TeamPage from "./user/page/TeamPage";
+import Cart from "./user/page/Cart";
+import Login from "./user/auth/Login";
+import Register from "./user/auth/Register";
+import Profile from "./user/page/Profile";
+import ChangePassword from "./user/page/ChangePassword";
+import Order from "./user/page/Order";
+import HistoryOrder from "./user/page/HistoryOrder";
 
 // ========== Link Web Admin ========== //
 import AdminLayout from "./admin/Layout/AdminLayout";
@@ -40,8 +41,8 @@ import Comment from "./admin/page/Comment";
 import ProfileAdmin from "./admin/page/ProfileAdmin";
 
 // ========== Link Lỗi Error ========== //
-import NotFound from "./components/NotFound";
-import AdminUserManagement from "./admin/page/AdminUserManagement";
+
+import NotFound from "./user/components/NotFound";
 
 function App() {
   return (
@@ -62,7 +63,6 @@ function App() {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/orders" element={<Order />} />
           <Route path="/historyorder" element={<HistoryOrder />} />
-          <Route path="admin/users" element={<AdminUserManagement />} />
           <Route path="/admin" element={<AdminLayout />}>
             {/* ✅ Trang login KHÔNG cần bảo vệ */}
             <Route index element={<AdminLogin />} />

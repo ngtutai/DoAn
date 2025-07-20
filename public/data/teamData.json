@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Siêu Nhân Xanh",
+    "name": "Võ Song Toàn",
     "role": "Frontend Developer",
     "avatar": "assets/images/teampage/a.png",
     "shortDescription": "Chuyên gia React & TypeScript",
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "name": "Siêu Nhân Đỏ",
+    "name": "Nguyễn Tuấn Tài",
     "role": "UI/UX Designer",
     "avatar": "assets/images/teampage/b.png",
     "shortDescription": "Thiết kế trải nghiệm người dùng",
@@ -29,7 +29,7 @@
   },
   {
     "id": 3,
-    "name": "Siêu Nhân Lục",
+    "name": "Nguyễn Minh Triết",
     "role": "Backend Developer",
     "avatar": "assets/images/teampage/c.png",
     "shortDescription": "Chuyên gia hệ thống backend",

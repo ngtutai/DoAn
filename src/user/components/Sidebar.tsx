@@ -42,7 +42,7 @@ export default function Sidebar() {
               isActive("/historyorder") ? "active" : ""
             }`}
           >
-            <i className="fa-solid fa-envelope-open-text me-2"></i> Lịch sử
+            <i className="fa-solid fa-file-lines me-2"></i> Lịch sử
           </a>
           <span className="pt-5 mt-5 mb-5"></span>
         </div>

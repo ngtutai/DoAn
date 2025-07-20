@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CommentSection from "../components/CommentSection";
+import Header from "./Header";
+import Footer from "./Footer";
+import CommentSection from "./CommentSection";
 
 export interface Product {
   id: string;

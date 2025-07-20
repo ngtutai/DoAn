@@ -203,6 +203,7 @@
   ],
   "orders": [
     {
+<<<<<<< HEAD
       "id": "1752915138831",
       "code": "9QT812",
       "userId": "68ba",
@@ -232,6 +233,20 @@
           "id": "bf54",
           "name": "Chó Eskimo",
           "price": 20000000,
+=======
+      "id": "1752929833023",
+      "code": "SVS2YS",
+      "userId": "68ba",
+      "orderDate": "2025-07-19T12:57:13.022Z",
+      "status": "placed",
+      "shippingFee": 0,
+      "total": 25000000,
+      "items": [
+        {
+          "id": "f645",
+          "name": "Mèo Anh lông dài",
+          "price": 25000000,
+>>>>>>> 297d33c788e126c5a01493cce8deb3059bea38ef
           "quantity": 1
         }
       ]
