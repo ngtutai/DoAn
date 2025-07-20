@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import Home from "./page/Home";
 import Pet from "./page/Pet";
 import Detail from "./page/Detail";
-import Information from "./page/Information";
+// import SeeDetail from "./components/SeeDetail";
 import Contact from "./page/Contact";
 import TeamPage from "./page/TeamPage";
 import Cart from "./page/Cart";
@@ -21,6 +21,7 @@ import Profile from "./components/user/Profile";
 import ChangePassword from "./components/user/ChangePassword";
 import Order from "./components/user/Order";
 import HistoryOrder from "./components/user/HistoryOrder";
+
 // ========== Link Web Admin ========== //
 import AdminLayout from "./admin/Layout/AdminLayout";
 import AdminPrivateRoute from "./admin/Layout/AdminPrivateRoute";
@@ -37,8 +38,10 @@ import Account from "./admin/page/Account";
 import Voucher from "./admin/page/Voucher";
 import Comment from "./admin/page/Comment";
 import ProfileAdmin from "./admin/page/ProfileAdmin";
+
 // ========== Link Lỗi Error ========== //
 import NotFound from "./components/NotFound";
+import AdminUserManagement from "./admin/page/AdminUserManagement";
 
 function App() {
   return (
@@ -48,8 +51,8 @@ function App() {
           {/* ========== Link Web User ========== */}
           <Route path="/" element={<Home />} />
           <Route path="/pet" element={<Pet />} />
-          <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/information" element={<Information />} />
+          <Route path="/detail" element={<Detail />} />
+          {/* <Route path="/detail/:id" element={<SeeDetail />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/teampage" element={<TeamPage />} />
           <Route path="/cart" element={<Cart />} />
@@ -59,8 +62,7 @@ function App() {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/orders" element={<Order />} />
           <Route path="/historyorder" element={<HistoryOrder />} />
-
-          {/* ========== Link Web Admin ========== */}
+          <Route path="admin/users" element={<AdminUserManagement />} />
           <Route path="/admin" element={<AdminLayout />}>
             {/* ✅ Trang login KHÔNG cần bảo vệ */}
             <Route index element={<AdminLogin />} />

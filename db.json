@@ -180,7 +180,7 @@
       "id": "883c",
       "displayname": "Tài",
       "email": "Admin@gmail.com",
-      "password": "123",
+      "password": "321",
       "role": "admin",
       "image": ""
     },
@@ -188,12 +188,55 @@
       "id": "68ba",
       "displayname": "Người dùng",
       "email": "User@gmail.com",
-      "password": "123",
+      "password": "147",
+      "role": "user",
+      "image": ""
+    },
+    {
+      "id": "c0a9",
+      "displayname": "toàn",
+      "email": "toan@gmail.com",
+      "password": "0123",
       "role": "user",
       "image": ""
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": "1752915138831",
+      "code": "9QT812",
+      "userId": "68ba",
+      "orderDate": "2025-07-19T08:52:18.830Z",
+      "status": "cancel",
+      "shippingFee": 0,
+      "total": 20000000,
+      "items": [
+        {
+          "id": "bf54",
+          "name": "Chó Eskimo",
+          "price": 20000000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1752915246422",
+      "code": "X6DX0A",
+      "userId": "68ba",
+      "orderDate": "2025-07-19T08:54:06.422Z",
+      "status": "placed",
+      "shippingFee": 0,
+      "total": 20000000,
+      "items": [
+        {
+          "id": "bf54",
+          "name": "Chó Eskimo",
+          "price": 20000000,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
   "vouchers": [],
   "comments": []
 }
