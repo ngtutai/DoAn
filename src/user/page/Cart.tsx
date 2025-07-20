@@ -2,8 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import QR from "../components/QR";
-import COD from "../components/COD";
+import QR from "../pay/QR";
+import COD from "../pay/COD";
 
 export interface CartItem {
   id: number;
@@ -20,7 +20,7 @@ const Cart: React.FC = () => {
   const [items, setItems] = useState<CartItem[]>([]);
   const [checkAll, setCheckAll] = useState(false);
   const [orderId, setOrderId] = useState("");
-  const [isPaid, setIsPaid] = useState(false);
+  const [, setIsPaid] = useState(false);
   // Voucher
   const [voucherInput, setVoucherInput] = useState("");
   const [voucherPercent, setVoucherPercent] = useState(0);
