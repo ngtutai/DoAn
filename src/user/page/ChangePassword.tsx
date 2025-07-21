@@ -1,176 +1,153 @@
-<<<<<<< HEAD:src/user/page/ChangePassword.tsx
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
-=======
-import React, { Fragment, useState } from "react";
-import Header from "../Header";
-import Footer from "../Footer";
-import Sidebar from "../Sidebar";
-import axios from "axios";
-import { toast } from "react-toastify";
->>>>>>> ff4f67a (Initial commit):src/components/user/ChangePassword.tsx
 
 export default function ChangePassword() {
-  const [currentPassword, setCurrentPassword] = useState("");
+  const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-  const [showCurrent, setShowCurrent] = useState(false);
-  const [showNew, setShowNew] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
-
-  const user = JSON.parse(localStorage.getItem("currentUser") || "null");
-
-  const handleChangePassword = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!user) {
-      toast.warning("Bạn chưa đăng nhập.");
-      return;
-    }
-
-    if (!currentPassword || !newPassword || !confirmPassword) {
-      toast.warning("Vui lòng điền đầy đủ thông tin.");
-      return;
-    }
-
-    if (currentPassword !== user.password) {
-      toast.error("Mật khẩu hiện tại không đúng.");
-      return;
-    }
-
     if (newPassword !== confirmPassword) {
-      toast.error("Xác nhận mật khẩu mới không khớp.");
+      setMessage("❌ Mật khẩu mới và xác nhận không khớp.");
       return;
     }
 
     try {
-      const res = await axios.put(`http://localhost:3001/users/${user.id}`, {
-        ...user,
-        password: newPassword,
+      const currentUser = JSON.parse(
+        localStorage.getItem("currentUser") || "{}"
+      );
+      if (!currentUser?.id) {
+        setMessage("❌ Không tìm thấy người dùng hiện tại.");
+        return;
+      }
+
+      const res = await fetch(`http://localhost:3001/users/${currentUser.id}`);
+      const user = await res.json();
+
+      if (user.password !== oldPassword) {
+        setMessage("❌ Mật khẩu cũ không chính xác.");
+        return;
+      }
+
+      await fetch(`http://localhost:3001/users/${currentUser.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ password: newPassword }),
       });
 
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
-      toast.success("Đổi mật khẩu thành công!");
-      setCurrentPassword("");
+      setMessage("✅ Đổi mật khẩu thành công!");
+      setOldPassword("");
       setNewPassword("");
       setConfirmPassword("");
-    } catch (error) {
-      toast.error("Đổi mật khẩu thất bại!");
-      console.error(error);
+    } catch (err) {
+      console.error(err);
+      setMessage("❌ Có lỗi xảy ra khi đổi mật khẩu.");
     }
   };
 
   return (
     <Fragment>
       <Header />
-      <div className="container py-2">
+      <div className="container py-3">
         <div className="row">
-          <section className="bread-crumb">
-            <div className="container">
-              <div className="row">
-                <div className="col-12 a-left">
-                  <ul className="breadcrumb">
-                    <li className="home">
-                      <a href="/" className="nav-link text-muted">
-                        <span>Trang chủ</span>
-                      </a>
-                    </li>
-                    <li>
-                      <span className="mr_lr">&nbsp;/&nbsp;</span>
-                      <strong>
-                        <span>Đổi mật khẩu</span>
-                      </strong>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <section className="bread-crumb mb-3">
+            <div className="col-12">
+              <ul className="breadcrumb">
+                <li className="home">
+                  <a href="/" className="text-muted text-decoration-none">
+                    <i className="fa fa-home me-1"></i>Trang chủ
+                  </a>
+                </li>
+                <li>
+                  <span className="mx-2">/</span>
+                  <strong>Đổi mật khẩu</strong>
+                </li>
+              </ul>
             </div>
           </section>
 
           <Sidebar />
 
-          {/* Form đổi mật khẩu */}
-          <div className="col-md-9 d-flex justify-content-center">
-            <div className="w-100" style={{ maxWidth: "400px" }}>
-              <h3 className="mb-4 text-center">Đổi mật khẩu</h3>
-              <form onSubmit={handleChangePassword}>
-                
-                {/* Mật khẩu hiện tại */}
-                <div className="form-group text-center">
-                  <label>Mật khẩu hiện tại</label>
-                  <div className="input-group">
-                    <input
-                      type={showCurrent ? "text" : "password"}
-                      className="form-control text-center"
-                      value={currentPassword}
-                      onChange={(e) => setCurrentPassword(e.target.value)}
-                    />
-                    <div className="input-group-append">
-                      <span
-                        className="input-group-text"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setShowCurrent(!showCurrent)}
-                      >
-                        <i className={`fa-solid ${showCurrent ? "fa-eye-slash" : "fa-eye"}`}></i>
+          <div className="col-md-9">
+            <div className="card shadow-sm rounded-3">
+              <div className="card-header bg-primary text-white fw-semibold">
+                <i className="fa-solid fa-key me-2"></i>Đổi mật khẩu
+              </div>
+              <div className="card-body">
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label className="form-label">Mật khẩu cũ</label>
+                    <div className="input-group">
+                      <span className="input-group-text">
+                        <i className="fa-solid fa-lock"></i>
                       </span>
+                      <input
+                        type="password"
+                        className="form-control"
+                        value={oldPassword}
+                        onChange={(e) => setOldPassword(e.target.value)}
+                        required
+                      />
                     </div>
                   </div>
-                </div>
-
-                {/* Mật khẩu mới */}
-                <div className="form-group text-center">
-                  <label>Mật khẩu mới</label>
-                  <div className="input-group">
-                    <input
-                      type={showNew ? "text" : "password"}
-                      className="form-control text-center"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                    />
-                    <div className="input-group-append">
-                      <span
-                        className="input-group-text"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setShowNew(!showNew)}
-                      >
-                        <i className={`fa-solid ${showNew ? "fa-eye-slash" : "fa-eye"}`}></i>
+                  <div className="mb-3">
+                    <label className="form-label">Mật khẩu mới</label>
+                    <div className="input-group">
+                      <span className="input-group-text">
+                        <i className="fa-solid fa-key"></i>
                       </span>
+                      <input
+                        type="password"
+                        className="form-control"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                        required
+                      />
                     </div>
                   </div>
-                </div>
-
-                {/* Xác nhận mật khẩu */}
-                <div className="form-group text-center">
-                  <label>Xác nhận mật khẩu mới</label>
-                  <div className="input-group">
-                    <input
-                      type={showConfirm ? "text" : "password"}
-                      className="form-control text-center"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                    />
-                    <div className="input-group-append">
-                      <span
-                        className="input-group-text"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setShowConfirm(!showConfirm)}
-                      >
-                        <i className={`fa-solid ${showConfirm ? "fa-eye-slash" : "fa-eye"}`}></i>
+                  <div className="mb-3">
+                    <label className="form-label">Xác nhận mật khẩu mới</label>
+                    <div className="input-group">
+                      <span className="input-group-text">
+                        <i className="fa-solid fa-check-double"></i>
                       </span>
+                      <input
+                        type="password"
+                        className="form-control"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        required
+                      />
                     </div>
                   </div>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block mt-3 w-100">
-                  Cập nhật mật khẩu
-                </button>
-              </form>
+                  {message && (
+                    <div
+                      className={`alert ${
+                        message.includes("✅")
+                          ? "alert-success"
+                          : "alert-danger"
+                      }`}
+                    >
+                      {message}
+                    </div>
+                  )}
+                  <div className="d-grid">
+                    <button type="submit" className="btn btn-success">
+                      <i className="fa-solid fa-save me-2"></i> Cập nhật mật
+                      khẩu
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
       <Footer />
