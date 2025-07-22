@@ -8,16 +8,10 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // ========== Link Web User ========== //
-import Information from "./user/page/Information";
-
 import Home from "./user/page/Home";
 import Pet from "./user/page/Pet";
 import Detail from "./user/components/Detail";
-<<<<<<< HEAD
-// import Information from "./user/page/Information";
-=======
 import Service from "./user/page/Service";
->>>>>>> 35fa856093cc888ce21452039d0c62b0993fbf8b
 import Contact from "./user/page/Contact";
 import TeamPage from "./user/page/TeamPage";
 import Cart from "./user/page/Cart";
@@ -55,18 +49,12 @@ export default function App() {
       <Router>
         <Routes>
           {" "}
-          <Route path="/information" element={<Information />} />
-          <Route path="/information/:id" element={<Information />} />
           <Route path="/detail" element={<Detail />} />
           {/* ========== Link Web User ========== */}
           <Route path="/" element={<Home />} />
           <Route path="/pet" element={<Pet />} />
-<<<<<<< HEAD
-          {/* <Route path="/detail/:id" element={<SeeDetail />} /> */}
-=======
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/service" element={<Service />} />
->>>>>>> 35fa856093cc888ce21452039d0c62b0993fbf8b
           <Route path="/contact" element={<Contact />} />
           <Route path="/teampage" element={<TeamPage />} />
           <Route path="/cart" element={<Cart />} />

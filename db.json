@@ -203,7 +203,6 @@
       "categoryId": 3
     }
   ],
-<<<<<<< HEAD
 
   "users": [
     {
@@ -303,10 +302,6 @@
       "id": "daed"
     }
   ],
-=======
-  "users": [],
-  "orders": [],
-  "vouchers": [],
->>>>>>> 35fa856093cc888ce21452039d0c62b0993fbf8b
+
   "comments": []
 }
