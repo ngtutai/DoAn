@@ -2,11 +2,6 @@ import React, { Fragment, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
-<<<<<<< HEAD
-import axios from "axios";
-import { toast } from "react-toastify";
-=======
->>>>>>> 61f9362cb7377452b379035cd35910194e77cf4a
 
 export default function ChangePassword() {
   const [oldPassword, setOldPassword] = useState("");
@@ -80,36 +75,10 @@ export default function ChangePassword() {
 
           <Sidebar />
 
-<<<<<<< HEAD
           {/* Form đổi mật khẩu */}
-          <div className="col-md-9 d-flex justify-content-center bg-light">
-            <div className="w-100" style={{ maxWidth: "400px" }}>
-              <h3 className="mb-4 mt-4 text-center">Đổi mật khẩu</h3>
-              <form onSubmit={handleChangePassword}>
-                {/* Mật khẩu hiện tại */}
-                <div className="form-group text-center">
-                  <label>Mật khẩu hiện tại</label>
-                  <div className="input-group">
-                    <input
-                      type={showCurrent ? "text" : "password"}
-                      className="form-control text-center"
-                      value={currentPassword}
-                      onChange={(e) => setCurrentPassword(e.target.value)}
-                    />
-                    <div className="input-group-append">
-                      <span
-                        className="input-group-text"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setShowCurrent(!showCurrent)}
-                      >
-                        <i
-                          className={`fa-solid ${
-                            showCurrent ? "fa-eye-slash" : "fa-eye"
-                          }`}
-                        ></i>
-=======
+
           <div className="col-md-9">
-            <div className="card shadow-sm rounded-3">
+            <div className="card shadow-sm text-start rounded-3">
               <div className="card-header bg-primary text-white fw-semibold">
                 <i className="fa-solid fa-key me-2"></i>Đổi mật khẩu
               </div>
@@ -120,7 +89,6 @@ export default function ChangePassword() {
                     <div className="input-group">
                       <span className="input-group-text">
                         <i className="fa-solid fa-lock"></i>
->>>>>>> 61f9362cb7377452b379035cd35910194e77cf4a
                       </span>
                       <input
                         type="password"
@@ -131,37 +99,11 @@ export default function ChangePassword() {
                       />
                     </div>
                   </div>
-<<<<<<< HEAD
-                </div>
-
-                {/* Mật khẩu mới */}
-                <div className="form-group text-center">
-                  <label>Mật khẩu mới</label>
-                  <div className="input-group">
-                    <input
-                      type={showNew ? "text" : "password"}
-                      className="form-control text-center"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                    />
-                    <div className="input-group-append">
-                      <span
-                        className="input-group-text"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setShowNew(!showNew)}
-                      >
-                        <i
-                          className={`fa-solid ${
-                            showNew ? "fa-eye-slash" : "fa-eye"
-                          }`}
-                        ></i>
-=======
                   <div className="mb-3">
                     <label className="form-label">Mật khẩu mới</label>
                     <div className="input-group">
                       <span className="input-group-text">
                         <i className="fa-solid fa-key"></i>
->>>>>>> 61f9362cb7377452b379035cd35910194e77cf4a
                       </span>
                       <input
                         type="password"
@@ -172,37 +114,11 @@ export default function ChangePassword() {
                       />
                     </div>
                   </div>
-<<<<<<< HEAD
-                </div>
-
-                {/* Xác nhận mật khẩu */}
-                <div className="form-group text-center">
-                  <label>Xác nhận mật khẩu mới</label>
-                  <div className="input-group">
-                    <input
-                      type={showConfirm ? "text" : "password"}
-                      className="form-control text-center"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                    />
-                    <div className="input-group-append">
-                      <span
-                        className="input-group-text"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setShowConfirm(!showConfirm)}
-                      >
-                        <i
-                          className={`fa-solid ${
-                            showConfirm ? "fa-eye-slash" : "fa-eye"
-                          }`}
-                        ></i>
-=======
                   <div className="mb-3">
                     <label className="form-label">Xác nhận mật khẩu mới</label>
                     <div className="input-group">
                       <span className="input-group-text">
                         <i className="fa-solid fa-check-double"></i>
->>>>>>> 61f9362cb7377452b379035cd35910194e77cf4a
                       </span>
                       <input
                         type="password"
@@ -213,17 +129,6 @@ export default function ChangePassword() {
                       />
                     </div>
                   </div>
-<<<<<<< HEAD
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-block mt-3 w-100"
-                >
-                  Cập nhật mật khẩu
-                </button>
-              </form>
-=======
                   {message && (
                     <div
                       className={`alert ${
@@ -243,7 +148,6 @@ export default function ChangePassword() {
                   </div>
                 </form>
               </div>
->>>>>>> 61f9362cb7377452b379035cd35910194e77cf4a
             </div>
           </div>
         </div>

@@ -175,7 +175,26 @@
       "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai."
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "36ac",
+      "displayname": "Kun",
+      "email": "Admin@gmail.com",
+      "password": "123",
+      "role": "admin",
+      "phone": "",
+      "address": ""
+    },
+    {
+      "id": "73d4",
+      "displayname": "tài",
+      "email": "User@gmail.com",
+      "password": "123",
+      "role": "user",
+      "phone": "",
+      "address": ""
+    }
+  ],
   "orders": [],
   "vouchers": [],
   "comments": []
