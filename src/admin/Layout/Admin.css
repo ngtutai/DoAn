@@ -23,7 +23,7 @@ a {
 }
 
 .nav-link {
-  color: black;
+  color: rgb(71, 71, 71);
 }
 .nav .nav-link.active,
 .nav .nav-link.show {
