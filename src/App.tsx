@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // ========== Link Web User ========== //
+import Information from "./user/page/Information";
 
 import Home from "./user/page/Home";
 import Pet from "./user/page/Pet";
@@ -49,10 +50,13 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+          {" "}
+          <Route path="/information" element={<Information />} />
+          <Route path="/information/:id" element={<Information />} />
+          <Route path="/detail" element={<Detail />} />
           {/* ========== Link Web User ========== */}
           <Route path="/" element={<Home />} />
           <Route path="/pet" element={<Pet />} />
-          <Route path="/detail" element={<Detail />} />
           {/* <Route path="/detail/:id" element={<SeeDetail />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/teampage" element={<TeamPage />} />
@@ -63,6 +67,7 @@ function App() {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/orders" element={<Order />} />
           <Route path="/historyorder" element={<HistoryOrder />} />
+          {/* ========== Link Web Admin ========== */}
           <Route path="/admin" element={<AdminLayout />}>
             {/* ✅ Trang login KHÔNG cần bảo vệ */}
             <Route index element={<AdminLogin />} />
@@ -91,7 +96,6 @@ function App() {
               <Route path="profileadmin" element={<ProfileAdmin />} />
             </Route>
           </Route>
-
           {/* ========== Link Error ========== */}
           <Route path="/*" element={<NotFound />} />
         </Routes>

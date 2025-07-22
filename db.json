@@ -173,14 +173,43 @@
       "image": "10 Mèo Scottish Fold Tai Cụp 1.png",
       "categoryId": 2,
       "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai."
+    },
+    {
+      "id": 201,
+      "name": "Lồng vận chuyển",
+      "price": 250000,
+      "image": "1 Lồng 1.png",
+      "categoryId": 3
+    },
+    {
+      "id": 202,
+      "name": "Bát ăn cho mèo",
+      "price": 80000,
+      "image": "PhuKien-BatAnMeo.png",
+      "categoryId": 3
+    },
+    {
+      "id": 203,
+      "name": "Chuột giả",
+      "price": 50000,
+      "image": "PhuKien-ChuotGia.png",
+      "categoryId": 3
+    },
+    {
+      "id": 204,
+      "name": "Vòng cổ chiếu sáng",
+      "price": 120000,
+      "image": "PhuKien-VongCoChieuSang.png",
+      "categoryId": 3
     }
   ],
+
   "users": [
     {
       "id": "883c",
       "displayname": "Tài",
       "email": "Admin@gmail.com",
-      "password": "321",
+      "password": "123",
       "role": "admin",
       "image": ""
     },
@@ -188,57 +217,18 @@
       "id": "68ba",
       "displayname": "Người dùng",
       "email": "User@gmail.com",
-      "password": "147",
-      "role": "user",
-      "image": ""
-    },
-    {
-      "id": "c0a9",
-      "displayname": "toàn",
-      "email": "toan@gmail.com",
-      "password": "0123",
+      "password": "123",
       "role": "user",
       "image": ""
     }
   ],
   "orders": [
     {
-<<<<<<< HEAD
-      "id": "1752915138831",
-      "code": "9QT812",
-      "userId": "68ba",
-      "orderDate": "2025-07-19T08:52:18.830Z",
-      "status": "cancel",
-      "shippingFee": 0,
-      "total": 20000000,
-      "items": [
-        {
-          "id": "bf54",
-          "name": "Chó Eskimo",
-          "price": 20000000,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "1752915246422",
-      "code": "X6DX0A",
-      "userId": "68ba",
-      "orderDate": "2025-07-19T08:54:06.422Z",
-      "status": "placed",
-      "shippingFee": 0,
-      "total": 20000000,
-      "items": [
-        {
-          "id": "bf54",
-          "name": "Chó Eskimo",
-          "price": 20000000,
-=======
       "id": "1752929833023",
       "code": "SVS2YS",
       "userId": "68ba",
       "orderDate": "2025-07-19T12:57:13.022Z",
-      "status": "placed",
+      "status": "delivered",
       "shippingFee": 0,
       "total": 25000000,
       "items": [
@@ -246,12 +236,71 @@
           "id": "f645",
           "name": "Mèo Anh lông dài",
           "price": 25000000,
->>>>>>> 297d33c788e126c5a01493cce8deb3059bea38ef
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1753014295357",
+      "code": "IWDRJ3",
+      "userId": "883c",
+      "orderDate": "2025-07-20T12:24:55.356Z",
+      "status": "delivered",
+      "shippingFee": 0,
+      "total": 30000000,
+      "items": [
+        {
+          "id": "62b6",
+          "name": "Chó Husky",
+          "price": 30000000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1753014414707",
+      "code": "O0D6Y0",
+      "userId": "883c",
+      "orderDate": "2025-07-20T12:26:54.707Z",
+      "status": "shipping",
+      "shippingFee": 0,
+      "total": 35000000,
+      "items": [
+        {
+          "id": "1e5e",
+          "name": "Chó Samoyed",
+          "price": 35000000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1753015813565",
+      "code": "UVUX16",
+      "userId": "883c",
+      "orderDate": "2025-07-20T12:50:13.565Z",
+      "status": "placed",
+      "shippingFee": 0,
+      "total": 10000000,
+      "items": [
+        {
+          "id": "9a5a",
+          "name": "Chó Beagle",
+          "price": 10000000,
           "quantity": 1
         }
       ]
     }
   ],
-  "vouchers": [],
+  "vouchers": [
+    {
+      "code": "123",
+      "percent": 5,
+      "startDate": "2025-12-05",
+      "endDate": "2026-02-02",
+      "usageLimit": 3,
+      "id": "daed"
+    }
+  ],
   "comments": []
 }

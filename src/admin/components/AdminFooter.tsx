@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AdminFooter() {
   return (
@@ -14,24 +15,24 @@ export default function AdminFooter() {
           <div className="col-md-6 text-center text-md-end">
             <ul className="list-inline mb-0">
               <li className="list-inline-item">
-                <a href="#" className="text-muted">
+                <Link to="#" className="text-muted">
                   About
-                </a>
+                </Link>
               </li>
               <li className="list-inline-item">
-                <a href="#" className="text-muted">
+                <Link to="#" className="text-muted">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li className="list-inline-item">
-                <a href="#" className="text-muted">
+                <Link to="#" className="text-muted">
                   Terms
-                </a>
+                </Link>
               </li>
               <li className="list-inline-item">
-                <a href="#" className="text-muted">
+                <Link to="#" className="text-muted">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
