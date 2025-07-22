@@ -59,6 +59,7 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Phần cần làm vào bài */}
       <div className="contact-banner text-start">
         <img
           src="assets/images/banner/support-contact-2.png"

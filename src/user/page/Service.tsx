@@ -10,7 +10,7 @@ export default function Service() {
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
         style={{
-          backgroundImage: `url("assets/images/banner/banner-pet.png")`,
+          backgroundImage: `url("assets/images/banner/banner-service.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "500px",

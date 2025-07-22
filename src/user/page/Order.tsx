@@ -191,19 +191,17 @@ export default function Order() {
       <Header />
       <div className="container py-2">
         <div className="row">
-          <section className="bread-crumb">
-            <div className="container">
+          <section className="bread-crumb mb-3">
+            <div className="col-12">
               <ul className="breadcrumb">
                 <li className="home">
-                  <a href="/" className="nav-link text-muted">
-                    <span>Trang chủ</span>
+                  <a href="/" className="text-muted text-decoration-none">
+                    <i className="fa fa-home me-1"></i>Trang chủ
                   </a>
                 </li>
                 <li>
-                  <span className="mr_lr">&nbsp;/&nbsp;</span>
-                  <strong>
-                    <span>Đơn hàng</span>
-                  </strong>
+                  <span className="mx-2">/</span>
+                  <strong>Đơn hàng</strong>
                 </li>
               </ul>
             </div>

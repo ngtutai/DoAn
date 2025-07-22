@@ -175,32 +175,36 @@
       "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai."
     },
     {
-      "id": 201,
-      "name": "Lồng vận chuyển",
-      "price": 250000,
-      "image": "1 Lồng 1.png",
-      "categoryId": 3
-    },
-    {
-      "id": 202,
+      "id": "b823",
       "name": "Bát ăn cho mèo",
-      "price": 80000,
-      "image": "PhuKien-BatAnMeo.png",
-      "categoryId": 3
+      "price": 150000,
+      "image": "1 Bát ăn 1.png",
+      "categoryId": 3,
+      "description": "bát ăn"
     },
     {
-      "id": 203,
+      "id": "cb83",
       "name": "Chuột giả",
-      "price": 50000,
-      "image": "PhuKien-ChuotGia.png",
-      "categoryId": 3
+      "price": 200000,
+      "image": "1 Đồ chơi 1.png",
+      "categoryId": 3,
+      "description": "2"
     },
     {
-      "id": 204,
-      "name": "Vòng cổ chiếu sáng",
-      "price": 120000,
-      "image": "PhuKien-VongCoChieuSang.png",
-      "categoryId": 3
+      "id": "113b",
+      "name": "Lồng cho Pet",
+      "price": 500000,
+      "image": "1 Lồng 1.png",
+      "categoryId": 3,
+      "description": "3"
+    },
+    {
+      "id": "2e57",
+      "name": "Vòng cổ phát sáng",
+      "price": 300000,
+      "image": "1 Vòng cổ 1.png",
+      "categoryId": 3,
+      "description": "4"
     }
   ],
   "users": [

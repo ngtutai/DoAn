@@ -40,7 +40,6 @@ import Comment from "./admin/page/Comment";
 import ProfileAdmin from "./admin/page/ProfileAdmin";
 
 // ========== Link Lỗi Error ========== //
-
 import NotFound from "./user/components/NotFound";
 
 export default function App() {
@@ -48,8 +47,6 @@ export default function App() {
     <div className="App">
       <Router>
         <Routes>
-          {" "}
-          <Route path="/detail" element={<Detail />} />
           {/* ========== Link Web User ========== */}
           <Route path="/" element={<Home />} />
           <Route path="/pet" element={<Pet />} />

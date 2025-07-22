@@ -36,27 +36,21 @@ export default function Profile() {
   return (
     <>
       <Header />
-      <div className="container py-2">
+      <div className="container py-3">
         <div className="row">
-          <section className="bread-crumb">
-            <div className="container">
-              <div className="row">
-                <div className="col-12 a-left">
-                  <ul className="breadcrumb">
-                    <li className="home">
-                      <a href="/" className="nav-link text-muted">
-                        <span>Trang chủ</span>
-                      </a>
-                    </li>
-                    <li>
-                      <span className="mr_lr">&nbsp;/&nbsp;</span>
-                      <strong>
-                        <span>Thông tin tài khoản</span>
-                      </strong>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <section className="bread-crumb mb-3">
+            <div className="col-12">
+              <ul className="breadcrumb">
+                <li className="home">
+                  <a href="/" className="text-muted text-decoration-none">
+                    <i className="fa fa-home me-1"></i>Trang chủ
+                  </a>
+                </li>
+                <li>
+                  <span className="mx-2">/</span>
+                  <strong>Thông tin tài khoản</strong>
+                </li>
+              </ul>
             </div>
           </section>
 
