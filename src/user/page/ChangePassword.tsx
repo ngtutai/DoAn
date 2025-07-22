@@ -75,10 +75,8 @@ export default function ChangePassword() {
 
           <Sidebar />
 
-          {/* Form đổi mật khẩu */}
-
           <div className="col-md-9">
-            <div className="card shadow-sm text-start rounded-3">
+            <div className="card shadow-sm rounded-3">
               <div className="card-header bg-primary text-white fw-semibold">
                 <i className="fa-solid fa-key me-2"></i>Đổi mật khẩu
               </div>
@@ -99,6 +97,7 @@ export default function ChangePassword() {
                       />
                     </div>
                   </div>
+
                   <div className="mb-3">
                     <label className="form-label">Mật khẩu mới</label>
                     <div className="input-group">
@@ -114,6 +113,7 @@ export default function ChangePassword() {
                       />
                     </div>
                   </div>
+
                   <div className="mb-3">
                     <label className="form-label">Xác nhận mật khẩu mới</label>
                     <div className="input-group">
