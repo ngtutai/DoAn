@@ -1,16 +1,9 @@
-<<<<<<< HEAD:src/user/page/ChangePassword.tsx
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
-=======
-import React, { Fragment, useState } from "react";
-import Header from "../Header";
-import Footer from "../Footer";
-import Sidebar from "../Sidebar";
 import axios from "axios";
 import { toast } from "react-toastify";
->>>>>>> ff4f67a (Initial commit):src/components/user/ChangePassword.tsx
 
 export default function ChangePassword() {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -93,11 +86,10 @@ export default function ChangePassword() {
           <Sidebar />
 
           {/* Form đổi mật khẩu */}
-          <div className="col-md-9 d-flex justify-content-center">
+          <div className="col-md-9 d-flex justify-content-center bg-light">
             <div className="w-100" style={{ maxWidth: "400px" }}>
-              <h3 className="mb-4 text-center">Đổi mật khẩu</h3>
+              <h3 className="mb-4 mt-4 text-center">Đổi mật khẩu</h3>
               <form onSubmit={handleChangePassword}>
-                
                 {/* Mật khẩu hiện tại */}
                 <div className="form-group text-center">
                   <label>Mật khẩu hiện tại</label>
@@ -114,7 +106,11 @@ export default function ChangePassword() {
                         style={{ cursor: "pointer" }}
                         onClick={() => setShowCurrent(!showCurrent)}
                       >
-                        <i className={`fa-solid ${showCurrent ? "fa-eye-slash" : "fa-eye"}`}></i>
+                        <i
+                          className={`fa-solid ${
+                            showCurrent ? "fa-eye-slash" : "fa-eye"
+                          }`}
+                        ></i>
                       </span>
                     </div>
                   </div>
@@ -136,7 +132,11 @@ export default function ChangePassword() {
                         style={{ cursor: "pointer" }}
                         onClick={() => setShowNew(!showNew)}
                       >
-                        <i className={`fa-solid ${showNew ? "fa-eye-slash" : "fa-eye"}`}></i>
+                        <i
+                          className={`fa-solid ${
+                            showNew ? "fa-eye-slash" : "fa-eye"
+                          }`}
+                        ></i>
                       </span>
                     </div>
                   </div>
@@ -158,19 +158,25 @@ export default function ChangePassword() {
                         style={{ cursor: "pointer" }}
                         onClick={() => setShowConfirm(!showConfirm)}
                       >
-                        <i className={`fa-solid ${showConfirm ? "fa-eye-slash" : "fa-eye"}`}></i>
+                        <i
+                          className={`fa-solid ${
+                            showConfirm ? "fa-eye-slash" : "fa-eye"
+                          }`}
+                        ></i>
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block mt-3 w-100">
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-block mt-3 w-100"
+                >
                   Cập nhật mật khẩu
                 </button>
               </form>
             </div>
           </div>
-
         </div>
       </div>
       <Footer />

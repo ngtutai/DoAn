@@ -175,50 +175,8 @@
       "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai."
     }
   ],
-  "users": [
-    {
-      "id": "883c",
-      "displayname": "Tài",
-      "email": "Admin@gmail.com",
-<<<<<<< HEAD
-      "password": "123",
-      "role": "admin",
-      "image": ""
-=======
-      "password": "123456",
-      "role": "admin",
-      "phone": "0367645738",
-      "address": "cuchi"
->>>>>>> ff4f67a (Initial commit)
-    },
-    {
-      "id": "68ba",
-      "displayname": "Người dùng",
-      "email": "User@gmail.com",
-      "password": "123",
-      "role": "user",
-      "image": ""
-    }
-  ],
-  "orders": [
-    {
-      "id": "1752929833023",
-      "code": "SVS2YS",
-      "userId": "68ba",
-      "orderDate": "2025-07-19T12:57:13.022Z",
-      "status": "placed",
-      "shippingFee": 0,
-      "total": 25000000,
-      "items": [
-        {
-          "id": "f645",
-          "name": "Mèo Anh lông dài",
-          "price": 25000000,
-          "quantity": 1
-        }
-      ]
-    }
-  ],
+  "users": [],
+  "orders": [],
   "vouchers": [],
   "comments": []
 }

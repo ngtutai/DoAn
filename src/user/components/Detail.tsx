@@ -171,7 +171,7 @@ export default function Detail() {
 
             <pre className="mt-3">
               {/* Mô tả */}
-              <h3 className="text-primary">Mô tả</h3>
+              <h3 className="text-secondary">Mô tả</h3>
               {product.description || "Không có mô tả sản phẩm."}
             </pre>
           </div>

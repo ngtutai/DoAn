@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-export default function Information() {
+export default function Service() {
   return (
     <>
       <Header />
@@ -24,7 +24,7 @@ export default function Information() {
             borderRadius: "8px",
           }}
         >
-          <h1 className="display-4 fw-bold mb-0">Thú cưng</h1>
+          <h1 className="display-4 fw-bold mb-0">Dịch vụ</h1>
         </div>
       </section>
 
@@ -41,7 +41,7 @@ export default function Information() {
                 <li>
                   <span className="mr_lr">&nbsp;/&nbsp;</span>
                   <strong>
-                    <span>Thông tin</span>
+                    <span>Dịch vụ</span>
                   </strong>
                 </li>
               </ul>

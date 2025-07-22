@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import Home from "./user/page/Home";
 import Pet from "./user/page/Pet";
 import Detail from "./user/components/Detail";
-import Information from "./user/page/Information";
+import Service from "./user/page/Service";
 import Contact from "./user/page/Contact";
 import TeamPage from "./user/page/TeamPage";
 import Cart from "./user/page/Cart";
@@ -40,7 +40,7 @@ import ProfileAdmin from "./admin/page/ProfileAdmin";
 // ========== Link Lỗi Error ========== //
 import NotFound from "./user/components/NotFound";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Router>
@@ -49,7 +49,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pet" element={<Pet />} />
           <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/information" element={<Information />} />
+          <Route path="/service" element={<Service />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/teampage" element={<TeamPage />} />
           <Route path="/cart" element={<Cart />} />
@@ -107,5 +107,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
