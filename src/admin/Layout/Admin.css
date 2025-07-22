@@ -22,6 +22,9 @@ a {
   font-family: "Lato", sans-serif;
 }
 
+.nav-link {
+  color: black;
+}
 .nav .nav-link.active,
 .nav .nav-link.show {
   color: #ffb299;
