@@ -66,31 +66,29 @@ export default function TeamPage() {
           <p className="lead mb-0">
             Nhấn vào từng thành viên để xem thông tin chi tiết
           </p>
-        </div>
-      </section>
-
-      <section className="bread-crumb">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 a-left">
-              <ul className="breadcrumb">
-                <li className="home">
-                  <a href="/" className="nav-link text-muted">
-                    <span>Trang chủ</span>
-                  </a>
-                </li>
-                <li>
-                  <span className="mr_lr">&nbsp;/&nbsp;</span>
+          <div className="col-12 ms-5">
+            <ul className="breadcrumb">
+              <li className="home">
+                <a href="/" className="nav-link text-muted">
                   <strong>
-                    <span>Giới thiệu thành viên nhóm</span>
+                    <span>Trang chủ</span>
                   </strong>
-                </li>
-              </ul>
-            </div>
+                </a>
+              </li>
+              <li>
+                <span className="mr_lr">&nbsp;/&nbsp;</span>
+                <strong>
+                  <span className="text-danger">
+                    Giới thiệu thành viên nhóm
+                  </span>
+                </strong>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
+      {/* Phần cần làm vào bài */}
       <section className="team-members py-5">
         <div className="container">
           <div className="d-flex gap-4 justify-content-center flex-wrap">

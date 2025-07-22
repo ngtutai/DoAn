@@ -119,7 +119,7 @@ footer {
 
 /* ==================== Banner-area Card ==================== */
 .banner-area h1 {
-  color: red;
+  color: rgb(0, 169, 191);
 }
 
 /* ==================== Hover Product (Pet) đẩy lên  ==================== */
@@ -140,7 +140,7 @@ footer {
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .product-image-container {

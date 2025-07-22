@@ -272,6 +272,23 @@ const Cart: React.FC = () => {
           }}
         >
           <h1 className="display-4 fw-bold mb-0">Giỏ hàng</h1>
+          <div className="col-12 ms-4">
+            <ul className="breadcrumb">
+              <li className="home">
+                <a href="/" className="nav-link text-muted">
+                  <strong>
+                    <span>Trang chủ</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <span className="mr_lr">&nbsp;/&nbsp;</span>
+                <strong>
+                  <span className="text-danger">Giỏ hàng</span>
+                </strong>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -279,15 +296,9 @@ const Cart: React.FC = () => {
         <div className="row p-2 mt-2">
           {/* Left Sidebar */}
           <div className="col-12 col-md-8 mb-3">
-            <h5>
-              <a href="/" className="text-muted text-decoration-none">
-                Trang chủ
-              </a>{" "}
-              / Giỏ hàng
-            </h5>
             <div className="row">
               <div className="col">
-                <table className="table table-bordered text-center align-middle">
+                <table className="table table-bordered text-center align-middle mt-3">
                   <thead className="table-warning fw-bold">
                     <tr>
                       <th style={{ width: "7%" }}>

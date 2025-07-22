@@ -24,32 +24,27 @@ export default function Service() {
           }}
         >
           <h1 className="display-4 fw-bold mb-0">Dịch vụ</h1>
-        </div>
-      </section>
-
-      <section className="bread-crumb">
-        <div className="container">
-          <div className="row">
-            <div className="col-12 a-left">
-              <ul className="breadcrumb">
-                <li className="home">
-                  <a href="/" className="nav-link text-muted">
-                    <span>Trang chủ</span>
-                  </a>
-                </li>
-                <li>
-                  <span className="mr_lr">&nbsp;/&nbsp;</span>
+          <div className="col-12 ms-4">
+            <ul className="breadcrumb">
+              <li className="home">
+                <a href="/" className="nav-link text-muted">
                   <strong>
-                    <span>Dịch vụ</span>
+                    <span>Trang chủ</span>
                   </strong>
-                </li>
-              </ul>
-            </div>
+                </a>
+              </li>
+              <li>
+                <span className="mr_lr">&nbsp;/&nbsp;</span>
+                <strong>
+                  <span className="text-danger">Dịch vụ</span>
+                </strong>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Phầm cầm làm */}
+      {/* Phầm cầm làm vào bài */}
       <Footer />
     </>
   );

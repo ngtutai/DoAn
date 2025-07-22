@@ -170,6 +170,23 @@ export default function Pet() {
           }}
         >
           <h1 className="display-4 fw-bold mb-0">Thú cưng</h1>
+          <div className="col-12 ms-4">
+            <ul className="breadcrumb">
+              <li className="home">
+                <a href="/" className="nav-link text-muted">
+                  <strong>
+                    <span>Trang chủ</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <span className="mr_lr">&nbsp;/&nbsp;</span>
+                <strong>
+                  <span className="text-danger">Thú cưng</span>
+                </strong>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -259,7 +276,7 @@ export default function Pet() {
                 <a href="/" className="text-muted text-decoration-none">
                   Home
                 </a>{" "}
-                / Pet /{" "}
+                / Thú cưng /{" "}
                 {selectedType === "all"
                   ? "Tất cả"
                   : selectedType === "cat"
