@@ -219,9 +219,55 @@
       "password": "123",
       "role": "user",
       "image": ""
+    },
+    {
+      "id": "fa01",
+      "displayname": "Toan",
+      "email": "mailien0074@gmail.com",
+      "password": "123",
+      "role": "user",
+      "phone": "",
+      "address": ""
     }
   ],
   "orders": [],
   "vouchers": [],
-  "comments": []
+  "comments": [
+    {
+      "id": "1753150195446",
+      "productId": "814f",
+      "userId": "883c",
+      "content": "dasdsa",
+      "date": "2025-07-22T02:09:55.446Z",
+      "rating": 5,
+      "userName": "Kun"
+    },
+    {
+      "id": "1753150219956",
+      "productId": "bf54",
+      "userId": "68ba",
+      "content": "dasduasjd",
+      "date": "2025-07-22T02:10:19.956Z",
+      "rating": 5,
+      "userName": "user"
+    },
+    {
+      "id": "1753150255282",
+      "productId": "bf54",
+      "userId": "68ba",
+      "content": "sad",
+      "date": "2025-07-22T02:10:55.282Z",
+      "rating": 5,
+      "userName": "user"
+    },
+    {
+      "id": "1753150308861",
+      "productId": "bf54",
+      "userId": "fa01",
+      "content": "asd",
+      "date": "2025-07-22T02:11:48.861Z",
+      "rating": 5,
+      "userName": "Toan"
+    }
+  ]
 }
