@@ -22,7 +22,7 @@ export default function Contact() {
           backgroundImage: `url("assets/images/banner/banner-contact.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "500px",
+          height: "550px",
           position: "relative",
         }}
       >

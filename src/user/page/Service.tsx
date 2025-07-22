@@ -13,7 +13,7 @@ export default function Service() {
           backgroundImage: `url("assets/images/banner/banner-service.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "500px",
+          height: "550px",
         }}
       >
         <div

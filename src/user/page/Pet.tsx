@@ -159,7 +159,7 @@ export default function Pet() {
           backgroundImage: `url("assets/images/banner/banner-pet.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "500px",
+          height: "550px",
         }}
       >
         <div
