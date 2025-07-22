@@ -80,7 +80,7 @@ export default function ChangePassword() {
           <div className="col-md-9">
             <div className="card shadow-sm text-start rounded-3">
               <div className="card-header bg-primary text-white fw-semibold">
-                <i className="fa-solid fa-key me-2"></i>Đổi mật khẩu
+                <i className="fa-solid fa-key me-2"></i>Đổi mật khẩu 1
               </div>
               <div className="card-body">
                 <form onSubmit={handleSubmit}>
