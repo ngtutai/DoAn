@@ -21,6 +21,7 @@ import Profile from "./user/page/Profile";
 import ChangePassword from "./user/page/ChangePassword";
 import Order from "./user/page/Order";
 import HistoryOrder from "./user/page/HistoryOrder";
+
 // ========== Link Web Admin ========== //
 import AdminLayout from "./admin/Layout/AdminLayout";
 import AdminPrivateRoute from "./admin/Layout/AdminPrivateRoute";
@@ -37,7 +38,9 @@ import Account from "./admin/page/Account";
 import Voucher from "./admin/page/Voucher";
 import Comment from "./admin/page/Comment";
 import ProfileAdmin from "./admin/page/ProfileAdmin";
+
 // ========== Link Lỗi Error ========== //
+
 import NotFound from "./user/components/NotFound";
 
 export default function App() {
@@ -45,6 +48,8 @@ export default function App() {
     <div className="App">
       <Router>
         <Routes>
+          {" "}
+          <Route path="/detail" element={<Detail />} />
           {/* ========== Link Web User ========== */}
           <Route path="/" element={<Home />} />
           <Route path="/pet" element={<Pet />} />
@@ -59,7 +64,6 @@ export default function App() {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/orders" element={<Order />} />
           <Route path="/historyorder" element={<HistoryOrder />} />
-
           {/* ========== Link Web Admin ========== */}
           <Route path="/admin" element={<AdminLayout />}>
             {/* ✅ Trang login KHÔNG cần bảo vệ */}
@@ -89,7 +93,6 @@ export default function App() {
               <Route path="profileadmin" element={<ProfileAdmin />} />
             </Route>
           </Route>
-
           {/* ========== Link Error ========== */}
           <Route path="/*" element={<NotFound />} />
         </Routes>
