@@ -219,6 +219,15 @@
       "password": "123",
       "role": "user",
       "image": ""
+    },
+    {
+      "id": "bfcd",
+      "displayname": "Toan",
+      "email": "mailien0074@gmail.com",
+      "password": "132",
+      "role": "user",
+      "phone": "",
+      "address": ""
     }
   ],
   "orders": [],
