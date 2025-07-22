@@ -348,7 +348,7 @@ export default function Pet() {
                         </button>
                         <button
                           title="Xem chi tiết"
-                          onClick={() => navigate(`/information/${product.id}`)}
+                          onClick={() => navigate(`/detail/${product.id}`)}
                         >
                           <i className="fas fa-search"></i>
                         </button>
