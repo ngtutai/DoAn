@@ -99,12 +99,12 @@ export default function Header() {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    to="/information"
+                    to="/service"
                     className={({ isActive }) =>
                       "nav-link" + (isActive ? " active" : "")
                     }
                   >
-                    Thông tin
+                    Dịch vụ
                   </NavLink>
                 </li>
                 <li className="nav-item">

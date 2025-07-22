@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+<<<<<<< HEAD:src/user/page/Information.tsx
 interface Product {
   id: string; // 🔄
   name: string;
@@ -39,6 +40,9 @@ export default function Information() {
   const product = id ? products.find((p) => p.id === id) : undefined;
 
   /* ---------- RENDER ---------- */
+=======
+export default function Service() {
+>>>>>>> 35fa856093cc888ce21452039d0c62b0993fbf8b:src/user/page/Service.tsx
   return (
     <>
       <Header />
@@ -59,9 +63,13 @@ export default function Information() {
             borderRadius: 8,
           }}
         >
+<<<<<<< HEAD:src/user/page/Information.tsx
           <h1 className="display-4 fw-bold mb-0">
             {id ? "Chi tiết thú cưng" : "Thông tin thú cưng"}
           </h1>
+=======
+          <h1 className="display-4 fw-bold mb-0">Dịch vụ</h1>
+>>>>>>> 35fa856093cc888ce21452039d0c62b0993fbf8b:src/user/page/Service.tsx
         </div>
       </section>
 
@@ -84,7 +92,14 @@ export default function Information() {
               <>
                 <li className="px-1">/</li>
                 <li>
+<<<<<<< HEAD:src/user/page/Information.tsx
                   <strong>{id}</strong>
+=======
+                  <span className="mr_lr">&nbsp;/&nbsp;</span>
+                  <strong>
+                    <span>Dịch vụ</span>
+                  </strong>
+>>>>>>> 35fa856093cc888ce21452039d0c62b0993fbf8b:src/user/page/Service.tsx
                 </li>
               </>
             )}
