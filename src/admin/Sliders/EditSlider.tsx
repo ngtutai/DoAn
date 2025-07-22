@@ -70,9 +70,9 @@ export default function EditSlider() {
   };
 
   return (
-    <div className="container-fluid bg-light text-start min-vh-100">
+    <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
       <AdminHeader />
-      <div className="row g-0">
+      <div className="row g-0 flex-grow-1">
         <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
           <AdminSidebar />
         </div>
