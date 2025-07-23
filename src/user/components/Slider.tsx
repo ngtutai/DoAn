@@ -93,7 +93,7 @@ export default function Slide() {
       >
         <i className="fa-solid fa-arrow-right"></i>
       </button>
-      {/* chấm đen cho biết đang có bn slider vào đang ở slider nào */}
+      {/* chấm xanh cho biết đang có bn slider vào đang ở slider nào */}
       <div className="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex gap-2">
         {sliders.map((_, index) => (
           <span
