@@ -21,7 +21,7 @@ export interface Props {
 
 const CommentSection: React.FC<Props> = ({ productId }) => {
   const [comments, setComments] = useState<Comment[]>([]);
-  const [users, setUsers] = useState<User[]>([]);
+  const [, setUsers] = useState<User[]>([]);
   const [newComment, setNewComment] = useState("");
   const [rating, setRating] = useState<number>(5);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
