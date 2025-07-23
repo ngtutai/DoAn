@@ -141,7 +141,7 @@ export default function ChangePassword() {
                     </div>
                   )}
                   <div className="d-grid">
-                    <button type="submit" className="btn btn-success">
+                    <button type="submit" className="btn btn-primary">
                       <i className="fa-solid fa-save me-2"></i> Cập nhật mật
                       khẩu
                     </button>

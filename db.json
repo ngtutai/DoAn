@@ -214,7 +214,8 @@
       "email": "Admin@gmail.com",
       "password": "123",
       "role": "admin",
-      "image": ""
+      "phone": "",
+      "address": ""
     },
     {
       "id": "68ba",
@@ -222,7 +223,8 @@
       "email": "User@gmail.com",
       "password": "123",
       "role": "user",
-      "image": ""
+      "phone": "",
+      "address": ""
     },
     {
       "id": "bfcd",
