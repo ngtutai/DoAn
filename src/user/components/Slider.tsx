@@ -103,7 +103,7 @@ export default function Slide() {
               width: "12px",
               height: "12px",
               borderRadius: "50%",
-              backgroundColor: index === current ? "#dc3545" : "#ccc",
+              backgroundColor: index === current ? "#0073ffff" : "#ccc",
               cursor: "pointer",
             }}
           ></span>
