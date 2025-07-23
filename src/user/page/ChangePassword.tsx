@@ -72,9 +72,9 @@ export default function ChangePassword() {
               </ul>
             </div>
           </section>
-
           <Sidebar />
 
+          {/* Phần cần làm cho bài */}
           <div className="col-md-9">
             <div className="card shadow-sm rounded-3">
               <div className="card-header bg-primary text-white fw-semibold">

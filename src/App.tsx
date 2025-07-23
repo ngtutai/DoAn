@@ -37,7 +37,7 @@ import HistoryList from "./admin/page/HistoryList";
 import Account from "./admin/page/Account";
 import Voucher from "./admin/page/Voucher";
 import Comment from "./admin/page/Comment";
-import ProfileAdmin from "./admin/page/ProfileAdmin";
+import AdminProfile from "./admin/page/AdminProfile";
 
 // ========== Link Lỗi Error ========== //
 import NotFound from "./user/components/NotFound";
@@ -87,7 +87,7 @@ export default function App() {
               <Route path="account" element={<Account />} />
               <Route path="voucher" element={<Voucher />} />
               <Route path="comment" element={<Comment />} />
-              <Route path="profileadmin" element={<ProfileAdmin />} />
+              <Route path="adminprofile" element={<AdminProfile />} />
             </Route>
           </Route>
           {/* ========== Link Error ========== */}

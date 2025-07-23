@@ -3,7 +3,7 @@ import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
 
-export default function ProfileAdmin() {
+export default function AdminProfile() {
   return (
     <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
       <AdminHeader />

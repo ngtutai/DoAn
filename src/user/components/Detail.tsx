@@ -123,6 +123,7 @@ export default function Detail() {
         </div>
       </section>
 
+      {/* Phần cần làm cho bài */}
       <section className="bread-crumb" id="product-detail">
         <div className="container">
           <div className="row">

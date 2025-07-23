@@ -44,7 +44,7 @@ export default function Service() {
         </div>
       </section>
 
-      {/* Phầm cầm làm vào bài */}
+      {/* Phần cần làm cho bài */}
       <Footer />
     </>
   );

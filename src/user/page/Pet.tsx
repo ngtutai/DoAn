@@ -190,6 +190,7 @@ export default function Pet() {
         </div>
       </section>
 
+      {/* Phần cần làm cho bài */}
       <div className="container-fluid py-4" id="section-pet">
         <div className="row">
           {/* Danh mục sản phẩm Left */}

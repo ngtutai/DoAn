@@ -53,10 +53,9 @@ export default function Profile() {
               </ul>
             </div>
           </section>
-
           <Sidebar />
 
-          {/* Phần chỉnh sửa */}
+          {/* Phần cần làm cho bài */}
           <div className="col-md-9">
             <table className="table table-bordered text-start mt-5">
               <tbody>

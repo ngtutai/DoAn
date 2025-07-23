@@ -48,6 +48,7 @@ export default function Slide() {
       className="position-relative overflow-hidden"
       style={{ height: "550px" }}
     >
+      {/* Slider  */}
       {sliders.map((item, index) => (
         <div
           key={item.id}
@@ -76,7 +77,7 @@ export default function Slide() {
         </div>
       ))}
 
-      {/* Prev Button */}
+      {/* Nút lùi slider */}
       <button
         onClick={goToPrev}
         className="btn btn-dark position-absolute top-50 start-0 translate-middle-y px-3"
@@ -84,7 +85,7 @@ export default function Slide() {
       >
         <i className="fa-solid fa-arrow-left"></i>
       </button>
-      {/* Next Button */}
+      {/* Nút tiến slider */}
       <button
         onClick={goToNext}
         className="btn btn-dark position-absolute top-50 end-0 translate-middle-y px-3"
@@ -92,7 +93,7 @@ export default function Slide() {
       >
         <i className="fa-solid fa-arrow-right"></i>
       </button>
-      {/* Dots */}
+      {/* chấm đen cho biết đang có bn slider vào đang ở slider nào */}
       <div className="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex gap-2">
         {sliders.map((_, index) => (
           <span

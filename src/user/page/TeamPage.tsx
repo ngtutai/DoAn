@@ -45,6 +45,7 @@ export default function TeamPage() {
     <div className="team-page">
       <Header />
 
+      {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
         style={{

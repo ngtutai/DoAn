@@ -8,7 +8,7 @@ export default function AdminHeader() {
   const getPageTitle = () => {
     if (location.pathname.includes("/admin/dashboard"))
       return "Bảng điều khiển";
-    if (location.pathname.includes("/admin/profileadmin")) return "Thông tin";
+    if (location.pathname.includes("/admin/adminprofile")) return "Thông tin";
     if (location.pathname.includes("/admin/order")) return "Đơn hàng";
     if (location.pathname.includes("/admin/product")) return "Sản phẩm";
     if (location.pathname.includes("/admin/category")) return "Thể loại";
@@ -109,7 +109,7 @@ export default function AdminHeader() {
               <li>
                 <NavLink
                   className="dropdown-item fw-bold text-muted"
-                  to="/admin/profileadmin"
+                  to="/admin/adminprofile"
                 >
                   <i className="fa-solid fa-id-card me-2"></i>
                   Thông tin Admin

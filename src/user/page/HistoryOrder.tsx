@@ -79,10 +79,9 @@ export default function HistoryOrder() {
               </ul>
             </div>
           </section>
-
           <Sidebar />
 
-          {/* Phần chỉnh sửa */}
+          {/* Phần cần làm cho bài */}
           <div className="col-md-9">
             {orders.length === 0 ? (
               <div className="alert alert-warning">

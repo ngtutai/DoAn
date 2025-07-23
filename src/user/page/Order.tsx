@@ -65,7 +65,7 @@ export default function Order() {
     }
   }, []);
 
-  // Hàm hủy
+  // Hàm hủy đơn hàng
   const handleCancel = async (orderId: number) => {
     const confirmCancel = window.confirm("Bạn có chắc muốn hủy đơn hàng này?");
     if (!confirmCancel) return;
@@ -107,6 +107,7 @@ export default function Order() {
     }
   };
 
+  // trạng thái đơn hàng
   const getStatusText = (status: string) => {
     switch (status) {
       case "placed":
@@ -206,9 +207,9 @@ export default function Order() {
               </ul>
             </div>
           </section>
-
           <Sidebar />
 
+          {/* Phần cần làm cho bài */}
           <div className="col-md-9">
             {orders.filter(
               (order) =>

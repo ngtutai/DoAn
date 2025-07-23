@@ -116,6 +116,7 @@ const CommentSection: React.FC<Props> = ({ productId }) => {
 
   return (
     <div className="mt-5">
+      {/* Phần cần làm cho bài */}
       <h4 className="mb-4 text-start">Đánh giá & Bình luận</h4>
 
       {currentUser ? (

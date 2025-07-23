@@ -254,6 +254,7 @@ const Cart: React.FC = () => {
   return (
     <Fragment>
       <Header />
+      {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
         style={{
@@ -292,6 +293,7 @@ const Cart: React.FC = () => {
         </div>
       </section>
 
+      {/* Phần cần làm cho bài */}
       <div className="container-fluid text-start">
         <div className="row p-2 mt-2">
           {/* Left Sidebar */}

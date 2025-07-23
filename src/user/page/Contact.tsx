@@ -16,6 +16,7 @@ export default function Contact() {
       <link rel="stylesheet" href="assets/css/bootstrap-4.1.3.min.css" />
       <link rel="stylesheet" href="assets/css/styles.css" />
       <Header />
+      {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
         style={{

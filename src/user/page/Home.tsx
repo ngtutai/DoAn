@@ -11,7 +11,7 @@ export default function Home() {
       <Slider />
 
       {/* băng rôn chào mừng */}
-      <div className="container mt-3">
+      <div className="container mt-2 mb-2">
         <div className="row justify-content-center">
           <div className="col-12 mx-auto">
             <div className="marquee-container">
@@ -27,7 +27,7 @@ export default function Home() {
       </div>
 
       {/* Dịch vụ */}
-      <section className="bg-light py-5">
+      <section className="bg-light py-3">
         <div className="container">
           <div className="row text-center">
             {[
@@ -52,7 +52,7 @@ export default function Home() {
                 desc: "Tư vấn miễn phí: 1900 123 456",
               },
             ].map((item, index) => (
-              <div className="col-md-3 mb-4" key={index}>
+              <div className="col-md-3 mb-1" key={index}>
                 <div className="cloud-box p-4 h-100 position-relative">
                   <div className="circle-icon mb-3 mx-auto">
                     <i className={`fa-solid ${item.icon} fa-2x`}></i>
@@ -65,6 +65,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Phần cần làm cho bài */}
 
       <Footer />
     </Fragment>
