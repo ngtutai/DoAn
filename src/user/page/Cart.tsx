@@ -87,14 +87,16 @@ const Cart: React.FC = () => {
     itemsToOrder: CartItem[],
     method: "atm" | "cod"
   ) => {
+    // Tính giá khi nhập voucher
     const storedUser = localStorage.getItem("currentUser");
     const userId = storedUser ? JSON.parse(storedUser).id : "guest";
     const orderDate = new Date().toISOString();
     const code = Math.random().toString(36).substring(2, 8).toUpperCase();
-    const totalPrice = itemsToOrder.reduce(
+    const originalTotal = itemsToOrder.reduce(
       (sum, i) => sum + i.price * i.quantity,
       0
     );
+    const totalPrice = originalTotal - (originalTotal * voucherPercent) / 100;
 
     const order = {
       id: Date.now().toString(),
