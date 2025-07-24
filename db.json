@@ -209,8 +209,8 @@
   ],
   "users": [
     {
-      "id": "f9e8",
-      "displayname": "Admin",
+      "id": "883c",
+      "displayname": "Kun",
       "email": "Admin@gmail.com",
       "password": "123",
       "role": "admin",
@@ -218,28 +218,19 @@
       "address": ""
     },
     {
-      "id": "e010",
-      "displayname": "Kun",
-      "email": "Tai@gmail.com",
+      "id": "68ba",
+      "displayname": "Tai",
+      "email": "User@gmail.com",
       "password": "123",
       "role": "user",
       "phone": "",
       "address": ""
     },
     {
-      "id": "1949",
-      "displayname": "Toàn",
-      "email": "Toan@gmail.com",
-      "password": "123",
-      "role": "user",
-      "phone": "",
-      "address": ""
-    },
-    {
-      "id": "57ac",
-      "displayname": "Triết",
-      "email": "Triet@gmail.com",
-      "password": "123",
+      "id": "bfcd",
+      "displayname": "Toan",
+      "email": "mailien0074@gmail.com",
+      "password": "132",
       "role": "user",
       "phone": "",
       "address": ""
