@@ -87,6 +87,8 @@ export default function AdminLogin() {
         }
         ////////////////////////////////////////////////
         navigate("/admin/dashboard");
+      } else {
+        toast.warning("Sai hoặc là bạn không phải Admin");
       }
     } catch (error) {
       console.error("Login error:", error);
