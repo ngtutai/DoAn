@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { Fragment, useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,7 +9,20 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
+
+  // Khi vào trang, kiểm tra nếu đã lưu
+  useEffect(() => {
+    const rememberedEmail = localStorage.getItem("rememberEmail");
+    const rememberedPassword = localStorage.getItem("rememberPassword");
+
+    if (rememberedEmail && rememberedPassword) {
+      setEmail(rememberedEmail);
+      setPassword(rememberedPassword);
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,10 +38,16 @@ export default function Login() {
 
       if (found) {
         localStorage.setItem("currentUser", JSON.stringify(found));
-        toast.success("Đăng nhập thành công!");
 
-        // if (found.role === "admin") navigate("/admin/dashboard"); // admin luôn vào trang admin
-        // else navigate("/"); // user luôn vào trang chủ
+        if (rememberMe) {
+          localStorage.setItem("rememberEmail", email);
+          localStorage.setItem("rememberPassword", password);
+        } else {
+          localStorage.removeItem("rememberEmail");
+          localStorage.removeItem("rememberPassword");
+        }
+
+        toast.success("Đăng nhập thành công!");
         navigate("/"); // luôn vào trang chủ
       } else {
         toast.warning("Email hoặc mật khẩu không đúng.");
@@ -41,17 +60,6 @@ export default function Login() {
   return (
     <Fragment>
       <Header />
-      <div className="form-check form switch">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          id="flexSwitchCheckDefault"
-        />
-        <label
-          className="form-check-label"
-          htmlFor="flexSwitchCheckDefault"
-        ></label>
-      </div>
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-md-5">
@@ -122,14 +130,33 @@ export default function Login() {
                     <div className="alert alert-danger py-2">{errorMsg}</div>
                   )}
 
+                  <div className="form-check mb-3 d-flex align-items-center gap-2">
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id="rememberMe"
+                      checked={rememberMe}
+                      onChange={(e) => setRememberMe(e.target.checked)}
+                      style={{ cursor: "pointer", transform: "scale(1.2)" }}
+                    />
+                    <label
+                      htmlFor="rememberMe"
+                      className="form-check-label text-dark mt-1"
+                      style={{ cursor: "pointer", fontSize: "1rem" }}
+                    >
+                      Ghi nhớ đăng nhập
+                    </label>
+                  </div>
+
                   <button type="submit" className="btn btn-primary w-100">
+                    <i className="fa-solid fa-right-to-bracket me-2"></i>
                     Đăng nhập
                   </button>
                   <p className="mt-3 text-start">
                     Bạn chưa có tài khoản?{" "}
-                    <a href="/register" className="text-decoration-none ms-2">
+                    <Link to="/register" className="text-decoration-none ms-2">
                       Đăng ký 👈
-                    </a>
+                    </Link>
                   </p>
                 </form>
               </div>
