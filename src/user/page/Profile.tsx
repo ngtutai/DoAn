@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
@@ -13,23 +13,42 @@ export interface User {
 
 export default function Profile() {
   const [user, setUser] = useState<User | null>(null);
+  const [editing, setEditing] = useState(false);
+  const [formData, setFormData] = useState<User | null>(null);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("currentUser");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const parsed = JSON.parse(storedUser);
+      setUser(parsed);
+      setFormData(parsed);
     }
   }, []);
 
-  if (!user) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!formData) return;
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSave = () => {
+    if (formData) {
+      localStorage.setItem("currentUser", JSON.stringify(formData));
+      setUser(formData);
+      setEditing(false);
+      alert("Cập nhật thành công!");
+    }
+  };
+
+  if (!user || !formData) {
     return (
-      <div>
+      <>
         <Header />
         <div className="container py-5">
           <h3 className="text-danger">Bạn chưa đăng nhập!</h3>
         </div>
         <Footer />
-      </div>
+      </>
     );
   }
 
@@ -54,31 +73,78 @@ export default function Profile() {
             </div>
           </section>
           <Sidebar />
-
-          {/* Phần cần làm cho bài */}
           <div className="col-md-9">
-            <table className="table table-bordered text-start mt-5">
-              <tbody>
-                <tr>
-                  <th className="col-2" scope="row">
-                    Tên hiển thị
-                  </th>
-                  <td className="col-5">{user.displayname}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Email</th>
-                  <td>{user.email}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Số điện thoại</th>
-                  <td>{user.phone || "Chưa cập nhật"}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Địa chỉ</th>
-                  <td>{user.address || "Chưa cập nhật"}</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="card shadow-sm border-0">
+              <div className="card-header bg-primary text-white fw-bold">
+                <i className="fa fa-user me-2"></i>Thông tin tài khoản
+              </div>
+              <div className="card-body">
+                <div className="mb-3 d-flex align-items-center">
+                  <i className="fa fa-id-badge me-2"></i>
+                  <input
+                    type="text"
+                    name="displayname"
+                    className="form-control"
+                    placeholder="Tên hiển thị"
+                    value={formData.displayname}
+                    onChange={handleChange}
+                    disabled={!editing}
+                  />
+                </div>
+                <div className="mb-3 d-flex align-items-center">
+                  <i className="fa fa-envelope me-2"></i>
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-control"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    disabled={!editing}
+                  />
+                </div>
+                <div className="mb-3 d-flex align-items-center">
+                  <i className="fa fa-phone me-2"></i>
+                  <input
+                    type="text"
+                    name="phone"
+                    className="form-control"
+                    placeholder="Số điện thoại"
+                    value={formData.phone || ""}
+                    onChange={handleChange}
+                    disabled={!editing}
+                  />
+                </div>
+                <div className="mb-3 d-flex align-items-center">
+                  <i className="fa fa-map-marker-alt me-2"></i>
+                  <input
+                    type="text"
+                    name="address"
+                    className="form-control"
+                    placeholder="Địa chỉ"
+                    value={formData.address || ""}
+                    onChange={handleChange}
+                    disabled={!editing}
+                  />
+                </div>
+                <div className="text-end">
+                  {editing ? (
+                    <>
+                      <button className="btn btn-success me-2" onClick={handleSave}>
+                        <i className="fa fa-save me-1"></i>Lưu thay đổi
+                      </button>
+                      <button className="btn btn-secondary" onClick={() => setEditing(false)}>
+                        Hủy
+                      </button>
+                    </>
+                  ) : (
+                    <button className="btn btn-primary" onClick={() => setEditing(true)}>
+                      <i className="fa fa-edit me-1"></i>Chỉnh sửa
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

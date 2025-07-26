@@ -87,6 +87,8 @@ export default function AdminLogin() {
         }
         ////////////////////////////////////////////////
         navigate("/admin/dashboard");
+      } else {
+        toast.warning("Sai hoặc là bạn không phải Admin");
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -161,7 +163,7 @@ export default function AdminLogin() {
             </div>
           </div>
 
-          {/* Remember Me */}
+          {/* Remember Me (Ghi nhớ đăng nhập) */}
           <div className="checkbox">
             <input
               type="checkbox"
@@ -169,7 +171,7 @@ export default function AdminLogin() {
               checked={rememberMe}
               onChange={() => setRememberMe(!rememberMe)}
             />
-            <label className="text-primary">Remember Me</label>
+            <label className="text-primary">Ghi nhớ đăng nhập</label>
           </div>
 
           <button type="submit" className="login-button">

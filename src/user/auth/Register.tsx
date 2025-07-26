@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -181,14 +181,14 @@ export default function Register() {
 
                 {/* Nút Đăng ký */}
                 <button type="submit" className="btn btn-primary w-100">
-                  <i className="fa-solid fa-user-plus me-2"></i> Đăng ký
+                  <i className="fa-solid fa-user-plus me-2"></i>Đăng ký
                 </button>
 
                 <p className="mt-3 text-start">
                   Bạn đã có tài khoản?{" "}
-                  <a href="/login" className="text-decoration-none ms-2">
+                  <Link to="/login" className="text-decoration-none ms-2">
                     Đăng nhập tại đây 👈
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>

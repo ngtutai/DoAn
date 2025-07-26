@@ -105,6 +105,47 @@ export default function AdminSidebar() {
           </li>
 
           <hr />
+
+          <li className="nav-item">
+            <NavLink
+              to="/admin/error"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-gauge me-2"></i> Dashboard 1
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/admin/error"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-gauge me-2"></i> Dashboard 2
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/admin/error"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-gauge me-2"></i> Dashboard 3
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/admin/error"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-gauge me-2"></i> Dashboard 4
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </Fragment>
