@@ -295,15 +295,25 @@
       ]
     }
   ],
-  "vouchers": [
+  "vouchers": [],
+  "comments": [
     {
-      "id": "2d95",
-      "code": "100",
-      "percent": 100,
-      "startDate": "2025-07-23",
-      "endDate": "2025-07-23",
-      "usageLimit": 0
+      "id": "1753337974870",
+      "productId": "bf54",
+      "userId": "bfcd",
+      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "date": "2025-07-24T06:19:34.870Z",
+      "rating": 5,
+      "userName": "Toan"
+    },
+    {
+      "id": "1753458833725",
+      "productId": "113b",
+      "userId": "bfcd",
+      "content": "a",
+      "date": "2025-07-25T15:53:53.725Z",
+      "rating": 5,
+      "userName": "Toan"
     }
-  ],
-  "comments": []
+  ]
 }
