@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export interface User {
   id: number;
@@ -32,13 +34,13 @@ export default function Profile() {
   };
 
   const handleSave = () => {
-    if (formData) {
-      localStorage.setItem("currentUser", JSON.stringify(formData));
-      setUser(formData);
-      setEditing(false);
-      alert("Cập nhật thành công!");
-    }
-  };
+  if (formData) {
+    localStorage.setItem("currentUser", JSON.stringify(formData));
+    setUser(formData);
+    setEditing(false);
+    toast.success("Cập nhật thông tin thành công!");
+  }
+};
 
   if (!user || !formData) {
     return (

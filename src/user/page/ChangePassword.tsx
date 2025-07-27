@@ -2,6 +2,8 @@ import React, { Fragment, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ChangePassword() {
   const [oldPassword, setOldPassword] = useState("");
@@ -13,16 +15,14 @@ export default function ChangePassword() {
     e.preventDefault();
 
     if (newPassword !== confirmPassword) {
-      setMessage("❌ Mật khẩu mới và xác nhận không khớp.");
+      toast.error("Mật khẩu mới và xác nhận không khớp.");
       return;
     }
 
     try {
-      const currentUser = JSON.parse(
-        localStorage.getItem("currentUser") || "{}"
-      );
+      const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
       if (!currentUser?.id) {
-        setMessage("❌ Không tìm thấy người dùng hiện tại.");
+        toast.error("Không tìm thấy người dùng hiện tại.");
         return;
       }
 
@@ -30,7 +30,7 @@ export default function ChangePassword() {
       const user = await res.json();
 
       if (user.password !== oldPassword) {
-        setMessage("❌ Mật khẩu cũ không chính xác.");
+        toast.error("Mật khẩu cũ không chính xác.");
         return;
       }
 
@@ -42,13 +42,13 @@ export default function ChangePassword() {
         body: JSON.stringify({ password: newPassword }),
       });
 
-      setMessage("✅ Đổi mật khẩu thành công!");
+      toast.success("Đổi mật khẩu thành công!");
       setOldPassword("");
       setNewPassword("");
       setConfirmPassword("");
     } catch (err) {
       console.error(err);
-      setMessage("❌ Có lỗi xảy ra khi đổi mật khẩu.");
+      toast.error("Có lỗi xảy ra khi đổi mật khẩu.");
     }
   };
 
@@ -132,7 +132,7 @@ export default function ChangePassword() {
                   {message && (
                     <div
                       className={`alert ${
-                        message.includes("✅")
+                        message.includes("thành công")
                           ? "alert-success"
                           : "alert-danger"
                       }`}
