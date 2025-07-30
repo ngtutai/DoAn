@@ -1,9 +1,54 @@
+import React, { useEffect, useState } from "react";
 import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
 
+export interface Admin {
+  id: string;
+  displayname: string;
+  email: string;
+  phone?: string;
+  address?: string;
+}
+
 export default function AdminProfile() {
+  const [admin, setAdmin] = useState<Admin | null>(null);
+  const [formData, setFormData] = useState<Admin | null>(null);
+  const [editing, setEditing] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("currentUser");
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      setAdmin(parsed);
+      setFormData(parsed);
+    }
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!formData) return;
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSave = () => {
+    if (formData) {
+      localStorage.setItem("currentUser", JSON.stringify(formData));
+      setAdmin(formData);
+      setEditing(false);
+      alert("Cập nhật thành công!");
+    }
+  };
+
+  if (!admin || !formData) {
+    return (
+      <div className="container py-5">
+        <h3 className="text-danger">Không tìm thấy thông tin quản trị viên.</h3>
+      </div>
+    );
+  }
+
   return (
     <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
       <AdminHeader />
@@ -11,10 +56,84 @@ export default function AdminProfile() {
         <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
           <AdminSidebar />
         </div>
+
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-4">
-          {/* Phần thông tin cần làm */}
-          <main className="col-12 col-md-12 min-vh-100 bg-light rounded">
-            1
+          <main className="col-12 bg-white rounded shadow-sm p-4">
+            <h4 className="fw-bold mb-4">
+              <i className="fa fa-user me-2 text-primary" />
+              Thông tin quản trị viên
+            </h4>
+
+            <div className="mb-3">
+              <label className="form-label fw-bold">Tên hiển thị</label>
+              <input
+                type="text"
+                className="form-control"
+                name="displayname"
+                value={formData.displayname}
+                onChange={handleChange}
+                disabled={!editing}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label fw-bold">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                disabled={!editing}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label fw-bold">Số điện thoại</label>
+              <input
+                type="text"
+                className="form-control"
+                name="phone"
+                value={formData.phone || ""}
+                onChange={handleChange}
+                disabled={!editing}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label fw-bold">Địa chỉ</label>
+              <input
+                type="text"
+                className="form-control"
+                name="address"
+                value={formData.address || ""}
+                onChange={handleChange}
+                disabled={!editing}
+              />
+            </div>
+
+            <div className="text-end">
+              {editing ? (
+                <>
+                  <button className="btn btn-success me-2" onClick={handleSave}>
+                    <i className="fa fa-save me-1"></i> Lưu thay đổi
+                  </button>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={() => setEditing(false)}
+                  >
+                    Hủy
+                  </button>
+                </>
+              ) : (
+                <button
+                  className="btn btn-primary"
+                  onClick={() => setEditing(true)}
+                >
+                  <i className="fa fa-edit me-1"></i> Chỉnh sửa
+                </button>
+              )}
+            </div>
           </main>
         </div>
       </div>
