@@ -78,8 +78,8 @@ export default function EditSlider() {
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
           {/* Phần thông tin cần làm */}
-          <div className="container p-4">
-            <h3>{id ? "Chỉnh sửa" : "Thêm"} slider</h3>
+          <div className="container mt-4">
+            <h3 className="text-secondary">{id ? "Sửa" : "Thêm"} slider</h3>
             <form
               onSubmit={handleSubmit}
               className="border p-4 rounded shadow-sm bg-light"

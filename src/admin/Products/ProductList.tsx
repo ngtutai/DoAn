@@ -188,7 +188,6 @@ export default function ProductList() {
             </div>
           </div>
         </div>
-
         <Menu />
         <AdminFooter />
       </div>

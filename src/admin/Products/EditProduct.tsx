@@ -87,7 +87,9 @@ export default function EditProduct() {
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
           {/* Phần thông tin cần làm */}
           <div className="container p-4">
-            <h3>{isEditMode ? "Chỉnh sửa" : "Thêm mới"} sản phẩm</h3>
+            <h3 className="text-secondary">
+              {isEditMode ? "Sửa" : "Thêm"} sản phẩm
+            </h3>
             <form
               onSubmit={handleSubmit}
               className="border p-4 rounded shadow-sm bg-light"
@@ -182,10 +184,10 @@ export default function EditProduct() {
               </button>
             </form>
           </div>
-          <Menu />
-          <AdminFooter />
         </div>
       </div>
+      <Menu />
+      <AdminFooter />
     </div>
   );
 }
