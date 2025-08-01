@@ -308,7 +308,6 @@
   "vouchers": [],
   "comments": [
     {
-<<<<<<< HEAD
       "id": "1753337974870",
       "productId": "bf54",
       "userId": "bfcd",
@@ -325,7 +324,8 @@
       "date": "2025-07-25T15:53:53.725Z",
       "rating": 5,
       "userName": "Toan"
-=======
+    },
+    {
       "id": "1754019585776",
       "productId": "075b",
       "userId": "2ba1",
@@ -333,7 +333,6 @@
       "date": "2025-08-01T03:39:45.776Z",
       "rating": 5,
       "userName": "Kun"
->>>>>>> 3245c0dbfef46532b1cf501cdadee65749124e07
     }
   ]
 }
