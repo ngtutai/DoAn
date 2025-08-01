@@ -201,7 +201,7 @@ export default function Pet() {
               </h6>
             </div>
             <hr />
-            <ul className="list-unstyled text-start ps-2 fs-5">
+            <ul className="list-unstyled text-start ps-4 fs-5">
               <li className="mb-2">
                 <button
                   className={`btn btn-link p-0 text-start text-decoration-none ${
