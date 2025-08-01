@@ -41,6 +41,7 @@ import AdminProfile from "./admin/page/AdminProfile";
 
 // ========== Link Lỗi Error ========== //
 import NotFound from "./user/components/NotFound";
+import AdminUserManagement from "./admin/page/AdminUserManagement";
 
 export default function App() {
   return (
@@ -88,6 +89,7 @@ export default function App() {
               <Route path="voucher" element={<Voucher />} />
               <Route path="comment" element={<Comment />} />
               <Route path="adminprofile" element={<AdminProfile />} />
+              <Route path="mana" element={<AdminUserManagement />} />
             </Route>
           </Route>
           {/* ========== Link Error ========== */}

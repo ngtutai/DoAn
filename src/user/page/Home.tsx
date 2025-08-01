@@ -33,25 +33,25 @@ export default function Home() {
       id: "spa",
       title: "Cắt tỉa & Spa",
       desc: "Làm đẹp, vệ sinh toàn diện cho thú cưng.",
-      image: "/assets/images/DichVu/mot.jpg",
+      image: "/assets/images/DichVu/mot.png",
     },
     {
       id: "health",
       title: "Khám sức khỏe",
       desc: "Bác sĩ thú y kiểm tra định kỳ, đảm bảo sức khỏe.",
-      image: "/assets/images/DichVu/hai.jpg",
+      image: "/assets/images/DichVu/hai.png",
     },
     {
       id: "hotel",
       title: "Khách sạn thú cưng",
       desc: "Chăm sóc khi bạn đi vắng, an toàn & chu đáo.",
-      image: "/assets/images/DichVu/ba.webp",
+      image: "/assets/images/DichVu/ba.png",
     },
     {
       id: "training",
       title: "Huấn luyện cơ bản",
       desc: "Dạy ngồi, bắt tay, đi vệ sinh đúng chỗ...",
-      image: "/assets/images/DichVu/bon.webp",
+      image: "/assets/images/DichVu/bon.png",
     },
   ];
 

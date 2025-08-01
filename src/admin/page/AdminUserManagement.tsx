@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-interface User {
+export interface Users {
   id: number;
   displayname: string;
   email: string;
@@ -10,7 +10,7 @@ interface User {
 }
 
 export default function AdminUserManagement() {
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<Users[]>([]);
   const navigate = useNavigate(); // Thêm dòng này
 
   const fetchUsers = async () => {
