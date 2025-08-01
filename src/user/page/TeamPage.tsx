@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -19,6 +19,9 @@ export interface TeamMember {
 
 export default function TeamPage() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [activeMember, setActiveMember] = useState<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   useEffect(() => {
     fetch("./data/teamData.json")
       .then((res) => res.json())
@@ -26,7 +29,34 @@ export default function TeamPage() {
       .catch((err) => console.error("Lỗi đọc JSON:", err));
   }, []);
 
-  const [activeMember, setActiveMember] = useState<number | null>(null);
+  useEffect(() => {
+    // Tạo audio element và tự động phát nhạc
+    audioRef.current = new Audio(
+      "/assets/audio/teampage-audio.mp3"
+    );
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.7;
+
+    // Phát nhạc sau một khoảng thời gian nhỏ
+    const playAudio = () => {
+      audioRef.current?.play().catch((err) => {
+        console.warn("Không thể tự động phát nhạc:", err);
+      });
+    };
+
+    // Delay nhẹ cho việc phát nhạc tự động
+    const timeout = setTimeout(playAudio, 300);
+
+    // Cleanup khi rời trang
+    return () => {
+      clearTimeout(timeout);
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
+
   const handleMemberClick = (id: number) => {
     setActiveMember(activeMember === id ? null : id);
   };
@@ -89,7 +119,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Phần cần làm vào bài */}
+      {/* TEAM MEMBERS */}
       <section className="team-members py-5">
         <div className="container">
           <div className="d-flex gap-4 justify-content-center flex-wrap">
