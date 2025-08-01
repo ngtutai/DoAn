@@ -33,14 +33,29 @@ export default function Profile() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSave = () => {
-  if (formData) {
-    localStorage.setItem("currentUser", JSON.stringify(formData));
-    setUser(formData);
-    setEditing(false);
-    toast.success("Cập nhật thông tin thành công!");
-  }
-};
+  const handleSave = async () => { //cap nhat thong tin nguoi dung
+    if (formData && user) {
+      try {
+        const response = await fetch(`http://localhost:3001/users/${user.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) throw new Error("Lỗi khi cập nhật người dùng");
+
+        localStorage.setItem("currentUser", JSON.stringify(formData));
+        setUser(formData);
+        setEditing(false);
+        toast.success("Cập nhật thông tin thành công!");
+      } catch (err) {
+        console.error(err);
+        toast.error("Cập nhật thất bại. Vui lòng thử lại!");
+      }
+    }
+  };
 
   if (!user || !formData) {
     return (
