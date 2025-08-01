@@ -247,5 +247,15 @@
   ],
   "orders": [],
   "vouchers": [],
-  "comments": []
+  "comments": [
+    {
+      "id": "1754019585776",
+      "productId": "075b",
+      "userId": "2ba1",
+      "content": "wwoww",
+      "date": "2025-08-01T03:39:45.776Z",
+      "rating": 5,
+      "userName": "Kun"
+    }
+  ]
 }
