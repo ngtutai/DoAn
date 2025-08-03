@@ -32,7 +32,7 @@ export default function TeamPage() {
   useEffect(() => {
     // Tạo audio element và tự động phát nhạc
     audioRef.current = new Audio(
-      "/assets/audio/teampage-audio.mp3"
+      "/assets/audio/y2mate.gg--邓紫棋-泡沫-DJ抖音版-2025-为什么难过-Bong-Bóng-Wanji-Edit.mp3"
     );
     audioRef.current.loop = true;
     audioRef.current.volume = 0.7;
@@ -134,7 +134,7 @@ export default function TeamPage() {
                   onClick={() => handleMemberClick(member.id)}
                 >
                   <div className="card h-100 shadow-sm">
-                    <div className="card-body d-flex flex-column align-items-center text-center p-4">
+                    <div className="card-body d-flex flex-column align-items-center text-center">
                       <img
                         src={member.avatar}
                         alt={member.name}

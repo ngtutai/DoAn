@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+
     "name": "Võ Song Toàn",
     "role": "Frontend Developer",
     "avatar": "assets/images/teampage/a.png",
@@ -15,6 +16,7 @@
   },
   {
     "id": 2,
+
     "name": "Nguyễn Tuấn Tài",
     "role": "UI/UX Designer",
     "avatar": "assets/images/teampage/b.png",
@@ -25,6 +27,20 @@
       "facebook": "https://www.facebook.com/kun.21tuoi",
       "zalo": "https://zalo.me/0868807904",
       "github": "https://github.com/ngtutai"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Võ Song Toàn",
+    "role": "Frontend Developer",
+    "avatar": "assets/images/teampage/a.png",
+    "shortDescription": "Chuyên gia React & TypeScript",
+    "fullDescription": "Có 5 năm kinh nghiệm phát triển ứng dụng web. Từng làm việc tại các công ty công nghệ hàng đầu. Chuyên môn: React, TypeScript, Redux, Next.js.",
+    "skills": ["React", "TypeScript", "UI/UX", "Performance"],
+    "social": {
+      "facebook": "#",
+      "zalo": "#",
+      "github": "#"
     }
   },
   {

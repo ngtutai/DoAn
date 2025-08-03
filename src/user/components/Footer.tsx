@@ -144,7 +144,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-copy bg-secondary bg-opacity-25 py-2">
+      <div className="footer-copy bg-secondary bg-opacity-10 py-2 text-muted">
         Website design By Bee <i>@Nocopyright</i>
       </div>
     </footer>
