@@ -250,7 +250,7 @@ footer {
 
 /* ==================== Team Page ==================== */
 .member-card {
-  width: 300px;
+  width: 350px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
