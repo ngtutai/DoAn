@@ -320,70 +320,56 @@ export default function Pet() {
             {/* Danh sách sản phẩm */}
             <div className="row g-4">
               {/* phần hiển sản phẩm tất cả thì có bào nhiêu sản phẩm trong tất cả */}
-              <div className="text-muted text-end">
-                Hiện có <strong>{filteredProducts.length}</strong> sản phẩm
-                {selectedType !== "all" && (
-                  <>
-                    {" "}
-                    ở mục{" "}
-                    <strong>
-                      {selectedType === "dog"
-                        ? "Chó"
-                        : selectedType === "cat"
-                        ? "Mèo"
-                        : "Phụ kiện"}
-                    </strong>
-                  </>
-                )}
-              </div>
+              <div className="text-muted text-end mb-2">
+                  Hiện có <strong>{filteredProducts.length}</strong> sản phẩm
+                  {selectedType !== "all" && (
+                    <> ở mục <strong>{selectedType === "dog" ? "Chó" : selectedType === "cat" ? "Mèo" : "Phụ kiện"}</strong></>
+                  )}
+                </div>
 
-              {paginatedProducts.map((product) => (
-                <div className="col-10 col-sm-6 col-md-3" key={product.id}>
-                  <div className="product-card border p-3 text-center">
-                    <div className="product-image-container">
-                      <span
-                        className="badge bg-warning text-dark position-absolute top-0 end-0 m-2"
-                        style={{ zIndex: 10 }}
-                      >
+                {paginatedProducts.map((product) => (
+                  <div className="col-10 col-sm-6 col-md-3" key={product.id}>
+                    <div className="product-card border p-3 text-center shadow-sm rounded-3 position-relative bg-white">
+                      <span className="badge bg-warning text-dark position-absolute top-0 end-0 m-2" style={{ zIndex: 10 }}>
                         ID: {product.id}
                       </span>
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="img-fluid mb-2"
+                        className="img-fluid mb-3 rounded"
                         style={{
                           width: "100%",
                           height: "200px",
                           objectFit: "cover",
+                          boxShadow: "0 0 6px rgba(0,0,0,0.1)",
                         }}
                       />
-                      <div className="product-actions">
+                      <h5 className="fw-bold mb-1" style={{ fontFamily: "'Fredoka', cursive" }}>
+                        {product.name}
+                      </h5>
+                      <p className="text-muted mb-3">{formatCurrency(product.price)}</p>
+                      <div className="d-flex justify-content-center gap-2">
                         <button
                           title="Thêm vào giỏ hàng"
+                          className="btn btn-outline-primary btn-sm px-3 py-2"
                           onClick={() => addToCart(product)}
                         >
-                          <i className="fas fa-shopping-cart"></i>
+                          <i className="fas fa-shopping-cart me-1"></i> Thêm vào
                         </button>
                         <button
                           title="Xem chi tiết"
+                          className="btn btn-outline-secondary btn-sm px-3 py-2"
                           onClick={() => navigate(`/detail/${product.id}`)}
                         >
-                          <i className="fas fa-search"></i>
+                          <i className="fas fa-search me-1"></i> Xem
                         </button>
                       </div>
                     </div>
-                    <h5 className="mt-4">{product.name}</h5>
-                    <p className="text-muted">
-                      {formatCurrency(product.price)}
-                    </p>
                   </div>
-                </div>
-              ))}
-              {paginatedProducts.length === 0 && (
-                <p className="text-center text-danger">
-                  Không có sản phẩm phù hợp.
-                </p>
-              )}
+                ))}
+                {paginatedProducts.length === 0 && (
+                  <p className="text-center text-danger">Không có sản phẩm phù hợp.</p>
+                )}
             </div>
 
             {/* Phân trang */}
