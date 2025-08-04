@@ -349,19 +349,17 @@ const Cart: React.FC = () => {
                         </td>
                         <td>{index + 1}</td>
                         <td>
-                          <a href="">
-                            <img
-                              src={item.image || "https://placehold.co/100x100"}
-                              alt={item.name}
-                              style={{
-                                width: "80px",
-                                height: "80px",
-                                objectFit: "cover",
-                                borderRadius: "8px",
-                              }}
-                              onClick={() => navigate(`/detail/${item.id}`)}
-                            />
-                          </a>
+                          <img
+                            src={item.image || "https://placehold.co/100x100"}
+                            alt={item.name}
+                            style={{
+                              width: "80px",
+                              height: "80px",
+                              objectFit: "cover",
+                              borderRadius: "8px",
+                            }}
+                            onClick={() => navigate(`/detail/${item.id}`)}
+                          />
                         </td>
                         <td>{item.name}</td>
                         <td>
