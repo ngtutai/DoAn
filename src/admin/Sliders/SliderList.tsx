@@ -84,6 +84,7 @@ export default function SliderList() {
                       <div className="d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center">
                         <Link to={`/admin/slider/edit/${item.id}`}>
                           <button className="btn btn-info w-md-auto">
+                            <i className="fa-solid fa-pen-to-square me-2"></i>
                             Sửa
                           </button>
                         </Link>
@@ -91,6 +92,7 @@ export default function SliderList() {
                           className="btn btn-danger w-md-auto"
                           onClick={() => deleteSlider(item.id)}
                         >
+                          <i className="fa-solid fa-trash me-2"></i>
                           Xóa
                         </button>
                       </div>

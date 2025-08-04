@@ -129,6 +129,22 @@ const Cart: React.FC = () => {
     }
   };
 
+  // - mỗi khi nhập thành công voucher và thanh toán
+  const decreaseVoucherUsage = async () => {
+    const usedVoucher = voucherList.find((v) => v.code === voucherCode);
+    if (usedVoucher && usedVoucher.usageLimit > 0) {
+      try {
+        await fetch(`http://localhost:3001/vouchers/${usedVoucher.id}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usageLimit: usedVoucher.usageLimit - 1 }),
+        });
+      } catch {
+        toast.error("Không thể cập nhật lượt sử dụng voucher sau thanh toán");
+      }
+    }
+  };
+
   // Áp dụng mã Voucher
   const applyVoucher = () => {
     const code = voucherInput.trim();
@@ -179,15 +195,6 @@ const Cart: React.FC = () => {
       setVoucherCode(found.code);
       setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
       setVoucherValid(true);
-
-      // Gửi PATCH giảm usageLimit trên server
-      fetch(`http://localhost:3001/vouchers/${found.id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ usageLimit: found.usageLimit - 1 }),
-      }).catch(() => {
-        toast.error("Không thể cập nhật lượt sử dụng voucher");
-      });
     }
   };
 
@@ -244,6 +251,7 @@ const Cart: React.FC = () => {
           toast.success("Thanh toán thành công!");
           setShowQRModal(false);
           await saveOrderToServer(itemsToOrder, "atm"); // ✅ lưu
+          await decreaseVoucherUsage(); // ✅ giảm số lần dùng
           const updated = items.filter((item) => !item.checked);
           updateCart(updated);
           setIsPaid(true);
@@ -260,6 +268,7 @@ const Cart: React.FC = () => {
     setShowCODModal(false);
     const itemsToOrder = items.filter((item) => item.checked);
     await saveOrderToServer(itemsToOrder, "cod"); // ✅ lưu
+    await decreaseVoucherUsage(); // ✅ giảm số lần dùng
     const updated = items.filter((item) => !item.checked);
     updateCart(updated);
   };
@@ -318,20 +327,21 @@ const Cart: React.FC = () => {
                   <thead className="table-warning fw-bold">
                     <tr>
                       <th style={{ width: "7%" }}>
+                        All
                         <input
                           type="checkbox"
-                          className="form-check-input"
+                          className="form-check-input ms-1"
                           checked={checkAll}
                           onChange={handleCheckAll}
-                        />{" "}
-                        <label className="form-check-label"> All</label>
+                        />
+                        <label className="form-check-label"></label>
                       </th>
                       <th style={{ width: "5%" }}>ID</th>
-                      <th style={{ width: "20%" }}>Image</th>
-                      <th style={{ width: "40%" }}>Name Product</th>
-                      <th style={{ width: "11%" }}>Quantity</th>
-                      <th style={{ width: "11%" }}>Price</th>
-                      <th style={{ width: "6%" }}>Delete</th>
+                      <th style={{ width: "10%" }}>Image</th>
+                      <th style={{ width: "20%" }}>Tên</th>
+                      <th style={{ width: "10%" }}>Số lượng</th>
+                      <th style={{ width: "11%" }}>Giá</th>
+                      <th style={{ width: "7%" }}></th>
                     </tr>
                   </thead>
 

@@ -245,65 +245,26 @@
       "address": ""
     }
   ],
-  "orders": [
+  "orders": [],
+  "vouchers": [
     {
-      "id": "1753245299282",
-      "code": "MLGQ8M",
-      "userId": "68ba",
-      "orderDate": "2025-07-23T04:34:59.276Z",
-      "status": "delivered",
-      "shippingFee": 0,
-      "total": 25500000,
-      "items": [
-        {
-          "id": "f645",
-          "name": "Mèo Anh lông dài",
-          "price": 25000000,
-          "quantity": 1
-        },
-        {
-          "id": "113b",
-          "name": "Lồng cho Pet",
-          "price": 500000,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "1753245591659",
-      "code": "XAZ8R1",
-      "userId": "68ba",
-      "orderDate": "2025-07-23T04:39:51.659Z",
-      "status": "cancel",
-      "shippingFee": 0,
-      "total": 0,
-      "items": [
-        {
-          "id": "bf54",
-          "name": "Chó Eskimo",
-          "price": 20000000,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "1753245694539",
-      "code": "XWODV3",
-      "userId": "68ba",
-      "orderDate": "2025-07-23T04:41:34.539Z",
-      "status": "placed",
-      "shippingFee": 0,
-      "total": 20000000,
-      "items": [
-        {
-          "id": "bf54",
-          "name": "Chó Eskimo",
-          "price": 20000000,
-          "quantity": 1
-        }
-      ]
+      "id": "3141",
+      "code": "1",
+      "percent": 1,
+      "startDate": "2025-08-05",
+      "endDate": "2025-08-06",
+      "usageLimit": 1
     }
   ],
-  "vouchers": [],
-  "comments": []
+  "comments": [
+    {
+      "id": "1754330597565",
+      "productId": "f6da",
+      "userId": "2ba1",
+      "content": "Trời ơi đẹp quá đi, giá hơi chát 1 xíu =((",
+      "date": "2025-08-04T18:03:17.565Z",
+      "rating": 5,
+      "userName": "Kun"
+    }
+  ]
 }

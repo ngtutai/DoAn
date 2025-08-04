@@ -332,7 +332,7 @@ export default function Pet() {
                 <div className="col-10 col-sm-6 col-md-3" key={product.id}>
                   <div className="product-card border p-3 text-center shadow-sm rounded-3 position-relative bg-white">
                     <span
-                      className="badge bg-warning text-dark position-absolute top-0 end-0 m-2"
+                      className="badge bg-warning text-dark position-absolute top-0 end-0 m-2 rounded-pill"
                       style={{ zIndex: 10 }}
                     >
                       ID: {product.id}

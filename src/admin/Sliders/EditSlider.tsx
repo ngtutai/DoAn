@@ -121,20 +121,22 @@ export default function EditSlider() {
                   className="form-control bg-secondary bg-opacity-10"
                   value={form.description}
                   onChange={handleChange}
-                  rows={3}
+                  rows={5}
                   required
                 />
               </div>
 
               <button type="submit" className="btn btn-success">
-                {id ? "Cập nhật" : "Thêm mới"}
+                <i className="fa-solid fa-floppy-disk me-2"></i>
+                {id ? "Lưu" : "Thêm"}
               </button>
               <button
                 type="button"
                 className="btn btn-secondary ms-2"
                 onClick={() => navigate("/admin/slider")}
               >
-                Huỷ
+                <i className="fa-solid fa-xmark me-2"></i>
+                Hủy
               </button>
             </form>
           </div>

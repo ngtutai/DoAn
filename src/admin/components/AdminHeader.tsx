@@ -97,7 +97,7 @@ export default function AdminHeader() {
               style={{ cursor: "pointer" }}
             >
               <img
-                src="/assets/images/iconlogo/group.png"
+                src="/assets/images/iconlogo/admin.png"
                 alt="Avatar"
                 className="rounded-circle me-2"
                 width="40"

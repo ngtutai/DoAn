@@ -62,10 +62,10 @@ export default function Slide() {
           }}
         >
           {/* Phần mô tả */}
-          <h2 className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-2">
+          <h2 className="bg-dark bg-opacity-50 px-3 py-2 rounded-pill mb-2">
             {item.title}
           </h2>
-          <p className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-3 w-50 w-md-100">
+          <p className="bg-dark bg-opacity-50 px-3 py-2 rounded mb-3 w-50 w-md-100">
             {item.description}
           </p>
           <button

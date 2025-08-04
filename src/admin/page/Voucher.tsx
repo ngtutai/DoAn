@@ -167,7 +167,7 @@ export default function Voucher() {
               )}
               <div className="col-auto">
                 <button className="btn btn-primary" onClick={handleAdd}>
-                  Add
+                  <i className="fa fa-plus me-2"></i>Thêm
                 </button>
               </div>
             </div>
@@ -220,16 +220,16 @@ export default function Voucher() {
                       ))}
                       <td>
                         <button
-                          className="btn btn-success btn-sm me-2"
+                          className="btn btn-outline-primary btn-sm me-2"
                           onClick={() => handleSave(v.id)}
                         >
-                          Save
+                          <i className="fa-solid fa-floppy-disk me-2"></i>Lưu
                         </button>
                         <button
-                          className="btn btn-secondary btn-sm"
+                          className="btn btn-outline-success btn-sm"
                           onClick={() => setEditingId(null)}
                         >
-                          Cancel
+                          <i className="fa-solid fa-xmark me-2"></i>Hủy
                         </button>
                       </td>
                     </tr>
@@ -242,16 +242,18 @@ export default function Voucher() {
                       <td>{v.usageLimit}</td>
                       <td>
                         <button
-                          className="btn btn-warning btn-sm me-2"
+                          className="btn btn-outline-info btn-sm me-2"
                           onClick={() => handleEdit(v)}
                         >
-                          Edit
+                          <i className="fa-solid fa-pen-to-square me-2"></i>
+                          Sửa
                         </button>
                         <button
-                          className="btn btn-danger btn-sm"
+                          className="btn btn-outline-danger btn-sm"
                           onClick={() => handleDelete(v.id)}
                         >
-                          Delete
+                          <i className="fa-solid fa-trash me-2"></i>
+                          Xóa
                         </button>
                       </td>
                     </tr>
