@@ -167,12 +167,12 @@
       "description": "Mèo Anh lông dài nổi bật với bộ lông dài và tính cách hiền hòa.\n\n1. Nguồn Gốc\n- Xuất xứ:          Anh.\n2. Đặc Điểm\n- Kích thước:       Trung bình đến lớn.\n- Bộ lông:          Dài, dày và mượt.\n- Hình dáng:        Đầu tròn, mắt lớn.\n3. Tính Cách\n- Vui vẻ:           Thích gần gũi với mọi người.\n- Thân thiện:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.\n5. Sức Khỏe\n- Có thể mắc bệnh về khớp."
     },
     {
-      "id": "de37",
-      "name": "Mèo Scottish Fold Tai Cụp",
+      "name": "Mèo Scottish Fold",
       "price": 30000000,
       "image": "10 Mèo Scottish Fold Tai Cụp 1.png",
       "categoryId": 2,
-      "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai."
+      "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai.",
+      "id": "de37"
     },
     {
       "id": "b823",
@@ -305,33 +305,5 @@
     }
   ],
   "vouchers": [],
-  "comments": [
-    {
-      "id": "1753337974870",
-      "productId": "bf54",
-      "userId": "bfcd",
-      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "date": "2025-07-24T06:19:34.870Z",
-      "rating": 5,
-      "userName": "Toan"
-    },
-    {
-      "id": "1753458833725",
-      "productId": "113b",
-      "userId": "bfcd",
-      "content": "a",
-      "date": "2025-07-25T15:53:53.725Z",
-      "rating": 5,
-      "userName": "Toan"
-    },
-    {
-      "id": "1754019585776",
-      "productId": "075b",
-      "userId": "2ba1",
-      "content": "wwoww",
-      "date": "2025-08-01T03:39:45.776Z",
-      "rating": 5,
-      "userName": "Kun"
-    }
-  ]
+  "comments": []
 }

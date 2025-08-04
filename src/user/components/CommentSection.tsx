@@ -33,7 +33,7 @@ const CommentSection: React.FC<Props> = ({ productId }) => {
       minute: "2-digit",
     });
     const day = date.toLocaleDateString("vi-VN");
-    return `${time} ${day}`;
+    return `${time} - ${day}`;
   };
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -42,6 +43,8 @@ const Cart: React.FC = () => {
   const [showCODModal, setShowCODModal] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<"atm" | "cod">("atm");
 
+  const navigate = useNavigate();
+
   // Load cart từ localStorage + server khi trang Cart mở
   useEffect(() => {
     const storedUser = localStorage.getItem("currentUser");
@@ -76,6 +79,7 @@ const Cart: React.FC = () => {
     localStorage.setItem(cartKey, JSON.stringify(newItems));
   };
 
+  // giá
   const total = items.reduce(
     (sum, i) => (i.checked ? sum + i.price * i.quantity : sum),
     0
@@ -216,6 +220,14 @@ const Cart: React.FC = () => {
     updateCart(updated);
   };
 
+  // Hàm Xóa tất cả
+  const handleDeleteAll = () => {
+    if (window.confirm("Bạn có chắc muốn xóa toàn bộ sản phẩm?")) {
+      updateCart([]);
+      toast.success("Đã xóa toàn bộ sản phẩm");
+    }
+  };
+
   // ✅ Thanh toán bằng QR
   const handlePayment = async () => {
     if (total === 0) return toast.warning("Bạn chưa chọn sản phẩm nào.");
@@ -299,10 +311,10 @@ const Cart: React.FC = () => {
       <div className="container-fluid text-start">
         <div className="row p-2 mt-2">
           {/* Left Sidebar */}
-          <div className="col-12 col-md-8 mb-3">
+          <div className="col-12 col-md-8 mb-3 border-end border-1 border-dark">
             <div className="row">
               <div className="col">
-                <table className="table table-bordered text-center align-middle mt-3">
+                <table className="table table-bordered text-center align-middle">
                   <thead className="table-warning fw-bold">
                     <tr>
                       <th style={{ width: "7%" }}>
@@ -337,16 +349,19 @@ const Cart: React.FC = () => {
                         </td>
                         <td>{index + 1}</td>
                         <td>
-                          <img
-                            src={item.image || "https://placehold.co/100x100"}
-                            alt=""
-                            style={{
-                              width: "80px",
-                              height: "80px",
-                              objectFit: "cover",
-                              borderRadius: "8px",
-                            }}
-                          />
+                          <a href="">
+                            <img
+                              src={item.image || "https://placehold.co/100x100"}
+                              alt={item.name}
+                              style={{
+                                width: "80px",
+                                height: "80px",
+                                objectFit: "cover",
+                                borderRadius: "8px",
+                              }}
+                              onClick={() => navigate(`/detail/${item.id}`)}
+                            />
+                          </a>
                         </td>
                         <td>{item.name}</td>
                         <td>
@@ -382,6 +397,24 @@ const Cart: React.FC = () => {
                       </tr>
                     ))}
                   </tbody>
+
+                  {/* Xóa all */}
+                  <tfoot>
+                    <tr>
+                      <td
+                        colSpan={7}
+                        className="text-end bg-secondary bg-opacity-10"
+                      >
+                        <button
+                          className="btn btn-danger"
+                          onClick={handleDeleteAll}
+                          disabled={items.length === 0}
+                        >
+                          Xóa toàn bộ
+                        </button>
+                      </td>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
             </div>
