@@ -281,7 +281,7 @@ const Cart: React.FC = () => {
       >
         <div
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.13)",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
             padding: "20px 40px",
             borderRadius: "8px",
           }}

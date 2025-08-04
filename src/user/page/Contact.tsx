@@ -1,20 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function Contact() {
   return (
-    <Fragment>
-      <link
-        rel="stylesheet"
-        href="assets/plugins/font-awesome/css/all.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="assets/plugins/bootstrap/css/bootstrap.min.css"
-      />
-      <link rel="stylesheet" href="assets/css/bootstrap-4.1.3.min.css" />
-      <link rel="stylesheet" href="assets/css/styles.css" />
+    <>
       <Header />
       {/* BANNER */}
       <section
@@ -29,7 +19,7 @@ export default function Contact() {
       >
         <div
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.13)",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
             padding: "20px 40px",
             borderRadius: "8px",
           }}
@@ -166,6 +156,6 @@ export default function Contact() {
       </div>
 
       <Footer />
-    </Fragment>
+    </>
   );
 }
