@@ -32,15 +32,15 @@
   {
     "id": 3,
     "name": "Nguyễn Minh Triết",
-    "role": "Backend Developer",
+    "role": "Frontend Developer",
     "avatar": "assets/images/teampage/c.png",
-    "shortDescription": "Chuyên gia hệ thống backend",
-    "fullDescription": "Có kiến thức sâu về kiến trúc hệ thống và cơ sở dữ liệu. Đã xây dựng nhiều hệ thống lớn phục vụ hàng triệu người dùng. Thành thạo nhiều ngôn ngữ lập trình server-side.",
+    "shortDescription": "Chuyên gia hệ thống và API",
+    "fullDescription": "Có kiến thức về kiến trúc hệ thống và cơ sở dữ liệu.",
     "skills": ["Node.js", "Python", "Database", "API Design"],
     "social": {
-      "facebook": "#",
-      "zalo": "#",
-      "github": "#"
+      "facebook": "https://www.facebook.com/Aki.Hayakawa.999",
+      "zalo": "https://zalo.me/0367645738",
+      "github": "https://github.com/MinhRudeus"
     }
   }
 ]
