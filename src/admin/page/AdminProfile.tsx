@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 export interface Admin {
   id: string;
   displayname: string;
+  role: string;
   email: string;
   phone?: string;
   address?: string;
@@ -19,7 +20,7 @@ export default function AdminProfile() {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("currentUser");
+    const stored = localStorage.getItem("adminToken");
     if (stored) {
       const parsed = JSON.parse(stored);
       setAdmin(parsed);
@@ -92,6 +93,8 @@ export default function AdminProfile() {
                 value={formData.displayname}
                 onChange={handleChange}
                 disabled={!editing}
+                placeholder="Nhập tên hiển thị"
+                title="Tên hiển thị"
               />
             </div>
 
@@ -104,6 +107,8 @@ export default function AdminProfile() {
                 value={formData.email}
                 onChange={handleChange}
                 disabled={!editing}
+                placeholder="Nhập email"
+                title="Email"
               />
             </div>
 
@@ -116,6 +121,8 @@ export default function AdminProfile() {
                 value={formData.phone || ""}
                 onChange={handleChange}
                 disabled={!editing}
+                placeholder="Nhập số điện thoại"
+                title="Số điện thoại"
               />
             </div>
 
