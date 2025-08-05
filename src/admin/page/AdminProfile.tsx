@@ -3,11 +3,12 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export interface Admin {
   id: string;
   displayname: string;
+  role: string;
   email: string;
   phone?: string;
   address?: string;
@@ -19,7 +20,7 @@ export default function AdminProfile() {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("currentUser");
+    const stored = localStorage.getItem("adminToken");
     if (stored) {
       const parsed = JSON.parse(stored);
       setAdmin(parsed);
@@ -36,13 +37,16 @@ export default function AdminProfile() {
   const handleSave = async () => {
     if (formData && admin) {
       try {
-        const response = await fetch(`http://localhost:3001/users/${admin.id}`, {
-          method: "PATCH", // hoặc PUT nếu bạn muốn ghi đè toàn bộ
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          `http://localhost:3001/users/${admin.id}`,
+          {
+            method: "PATCH", // hoặc PUT nếu bạn muốn ghi đè toàn bộ
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         if (!response.ok) throw new Error("Lỗi khi cập nhật người dùng");
 
@@ -89,6 +93,8 @@ export default function AdminProfile() {
                 value={formData.displayname}
                 onChange={handleChange}
                 disabled={!editing}
+                placeholder="Nhập tên hiển thị"
+                title="Tên hiển thị"
               />
             </div>
 
@@ -101,6 +107,8 @@ export default function AdminProfile() {
                 value={formData.email}
                 onChange={handleChange}
                 disabled={!editing}
+                placeholder="Nhập email"
+                title="Email"
               />
             </div>
 
@@ -113,6 +121,8 @@ export default function AdminProfile() {
                 value={formData.phone || ""}
                 onChange={handleChange}
                 disabled={!editing}
+                placeholder="Nhập số điện thoại"
+                title="Số điện thoại"
               />
             </div>
 

@@ -1,22 +1,6 @@
 [
   {
     "id": 1,
-
-    "name": "Võ Song Toàn",
-    "role": "Frontend Developer",
-    "avatar": "assets/images/teampage/a.png",
-    "shortDescription": "Chuyên gia React & TypeScript",
-    "fullDescription": "Có 5 năm kinh nghiệm phát triển ứng dụng web. Từng làm việc tại các công ty công nghệ hàng đầu. Chuyên môn: React, TypeScript, Redux, Next.js.",
-    "skills": ["React", "TypeScript", "UI/UX", "Performance"],
-    "social": {
-      "facebook": "https://www.facebook.com/songtoan.vo.1991",
-      "zalo": "https://zalo.me/0777735504",
-      "github": "https://github.com/Toan1920"
-    }
-  },
-  {
-    "id": 2,
-
     "name": "Nguyễn Tuấn Tài",
     "role": "UI/UX Designer",
     "avatar": "assets/images/teampage/b.png",
@@ -31,17 +15,32 @@
   },
 
   {
+    "id": 2,
+    "name": "Võ Song Toàn",
+    "role": "Frontend Developer",
+    "avatar": "assets/images/teampage/a.png",
+    "shortDescription": "Thành viên React & TypeScript",
+    "fullDescription": "Có 5 năm kinh nghiệm phát triển ứng dụng web. Từng làm việc tại các công ty công nghệ hàng đầu. Chuyên môn: React, TypeScript, Redux, Next.js.",
+    "skills": ["React", "TypeScript", "UI/UX", "Performance"],
+    "social": {
+      "facebook": "https://www.facebook.com/songtoan.vo.1991",
+      "zalo": "https://zalo.me/0777735504",
+      "github": "https://github.com/Toan1920"
+    }
+  },
+
+  {
     "id": 3,
     "name": "Nguyễn Minh Triết",
-    "role": "Backend Developer",
+    "role": "Frontend Developer",
     "avatar": "assets/images/teampage/c.png",
-    "shortDescription": "Chuyên gia hệ thống backend",
-    "fullDescription": "Có kiến thức sâu về kiến trúc hệ thống và cơ sở dữ liệu. Đã xây dựng nhiều hệ thống lớn phục vụ hàng triệu người dùng. Thành thạo nhiều ngôn ngữ lập trình server-side.",
+    "shortDescription": "Chuyên gia hệ thống và API",
+    "fullDescription": "Có kiến thức về kiến trúc hệ thống và cơ sở dữ liệu.",
     "skills": ["Node.js", "Python", "Database", "API Design"],
     "social": {
-      "facebook": "#",
-      "zalo": "#",
-      "github": "#"
+      "facebook": "https://www.facebook.com/Aki.Hayakawa.999",
+      "zalo": "https://zalo.me/0367645738",
+      "github": "https://github.com/MinhRudeus"
     }
   }
 ]

@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -42,6 +43,8 @@ const Cart: React.FC = () => {
   const [showCODModal, setShowCODModal] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<"atm" | "cod">("atm");
 
+  const navigate = useNavigate();
+
   // Load cart từ localStorage + server khi trang Cart mở
   useEffect(() => {
     const storedUser = localStorage.getItem("currentUser");
@@ -76,6 +79,7 @@ const Cart: React.FC = () => {
     localStorage.setItem(cartKey, JSON.stringify(newItems));
   };
 
+  // giá
   const total = items.reduce(
     (sum, i) => (i.checked ? sum + i.price * i.quantity : sum),
     0
@@ -122,6 +126,22 @@ const Cart: React.FC = () => {
       });
     } catch (err) {
       toast.error("Không thể lưu đơn hàng vào hệ thống");
+    }
+  };
+
+  // - mỗi khi nhập thành công voucher và thanh toán
+  const decreaseVoucherUsage = async () => {
+    const usedVoucher = voucherList.find((v) => v.code === voucherCode);
+    if (usedVoucher && usedVoucher.usageLimit > 0) {
+      try {
+        await fetch(`http://localhost:3001/vouchers/${usedVoucher.id}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usageLimit: usedVoucher.usageLimit - 1 }),
+        });
+      } catch {
+        toast.error("Không thể cập nhật lượt sử dụng voucher sau thanh toán");
+      }
     }
   };
 
@@ -175,15 +195,6 @@ const Cart: React.FC = () => {
       setVoucherCode(found.code);
       setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
       setVoucherValid(true);
-
-      // Gửi PATCH giảm usageLimit trên server
-      fetch(`http://localhost:3001/vouchers/${found.id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ usageLimit: found.usageLimit - 1 }),
-      }).catch(() => {
-        toast.error("Không thể cập nhật lượt sử dụng voucher");
-      });
     }
   };
 
@@ -216,6 +227,14 @@ const Cart: React.FC = () => {
     updateCart(updated);
   };
 
+  // Hàm Xóa tất cả
+  const handleDeleteAll = () => {
+    if (window.confirm("Bạn có chắc muốn xóa toàn bộ sản phẩm?")) {
+      updateCart([]);
+      toast.success("Đã xóa toàn bộ sản phẩm");
+    }
+  };
+
   // ✅ Thanh toán bằng QR
   const handlePayment = async () => {
     if (total === 0) return toast.warning("Bạn chưa chọn sản phẩm nào.");
@@ -232,6 +251,7 @@ const Cart: React.FC = () => {
           toast.success("Thanh toán thành công!");
           setShowQRModal(false);
           await saveOrderToServer(itemsToOrder, "atm"); // ✅ lưu
+          await decreaseVoucherUsage(); // ✅ giảm số lần dùng
           const updated = items.filter((item) => !item.checked);
           updateCart(updated);
           setIsPaid(true);
@@ -248,6 +268,7 @@ const Cart: React.FC = () => {
     setShowCODModal(false);
     const itemsToOrder = items.filter((item) => item.checked);
     await saveOrderToServer(itemsToOrder, "cod"); // ✅ lưu
+    await decreaseVoucherUsage(); // ✅ giảm số lần dùng
     const updated = items.filter((item) => !item.checked);
     updateCart(updated);
   };
@@ -269,7 +290,7 @@ const Cart: React.FC = () => {
       >
         <div
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.13)",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
             padding: "20px 40px",
             borderRadius: "8px",
           }}
@@ -299,27 +320,28 @@ const Cart: React.FC = () => {
       <div className="container-fluid text-start">
         <div className="row p-2 mt-2">
           {/* Left Sidebar */}
-          <div className="col-12 col-md-8 mb-3">
+          <div className="col-12 col-md-8 mb-3 border-end border-1 border-dark">
             <div className="row">
               <div className="col">
-                <table className="table table-bordered text-center align-middle mt-3">
+                <table className="table table-bordered text-center align-middle">
                   <thead className="table-warning fw-bold">
                     <tr>
                       <th style={{ width: "7%" }}>
+                        All
                         <input
                           type="checkbox"
-                          className="form-check-input"
+                          className="form-check-input ms-1"
                           checked={checkAll}
                           onChange={handleCheckAll}
-                        />{" "}
-                        <label className="form-check-label"> All</label>
+                        />
+                        <label className="form-check-label"></label>
                       </th>
                       <th style={{ width: "5%" }}>ID</th>
-                      <th style={{ width: "20%" }}>Image</th>
-                      <th style={{ width: "40%" }}>Name Product</th>
-                      <th style={{ width: "11%" }}>Quantity</th>
-                      <th style={{ width: "11%" }}>Price</th>
-                      <th style={{ width: "6%" }}>Delete</th>
+                      <th style={{ width: "10%" }}>Image</th>
+                      <th style={{ width: "20%" }}>Tên</th>
+                      <th style={{ width: "10%" }}>Số lượng</th>
+                      <th style={{ width: "11%" }}>Giá</th>
+                      <th style={{ width: "7%" }}></th>
                     </tr>
                   </thead>
 
@@ -339,13 +361,14 @@ const Cart: React.FC = () => {
                         <td>
                           <img
                             src={item.image || "https://placehold.co/100x100"}
-                            alt=""
+                            alt={item.name}
                             style={{
                               width: "80px",
                               height: "80px",
                               objectFit: "cover",
                               borderRadius: "8px",
                             }}
+                            onClick={() => navigate(`/detail/${item.id}`)}
                           />
                         </td>
                         <td>{item.name}</td>
@@ -382,6 +405,24 @@ const Cart: React.FC = () => {
                       </tr>
                     ))}
                   </tbody>
+
+                  {/* Xóa all */}
+                  <tfoot>
+                    <tr>
+                      <td
+                        colSpan={7}
+                        className="text-end bg-secondary bg-opacity-10"
+                      >
+                        <button
+                          className="btn btn-danger"
+                          onClick={handleDeleteAll}
+                          disabled={items.length === 0}
+                        >
+                          Xóa toàn bộ
+                        </button>
+                      </td>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
             </div>

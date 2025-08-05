@@ -76,7 +76,7 @@ export default function ProductList() {
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h3 className="text-secondary">Sản phẩm</h3>
                 <Link to="/admin/product/new" className="btn btn-primary">
-                  <i className="fa fa-plus me-2"></i> Thêm sản phẩm
+                  <i className="fa fa-plus me-2"></i>Thêm
                 </Link>
               </div>
               <table className="table table-bordered table-hover text-center">
@@ -87,7 +87,7 @@ export default function ProductList() {
                     <th>Tên</th>
                     <th>Loại</th>
                     <th>Giá</th>
-                    <th>Hành động</th>
+                    <th style={{ width: "20%" }}>Hành động</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -119,19 +119,22 @@ export default function ProductList() {
                           ? "Mèo"
                           : "Phụ kiện"}
                       </td>
-                      <td>{item.price.toLocaleString("vi-VN")}₫</td>
+                      <td>{item.price.toLocaleString("vi-VN")} ₫</td>
                       <td>
                         <Link
                           to={`/admin/product/edit/${item.id}`}
                           className="me-2"
                         >
-                          <button className="btn btn-info">Sửa</button>
+                          <button className="btn btn-info">
+                            <i className="fa-solid fa-pen-to-square me-2"></i>
+                            Sửa
+                          </button>
                         </Link>
                         <button
                           className="btn btn-danger"
                           onClick={() => handleDelete(item.id)}
                         >
-                          Xóa
+                          <i className="fa-solid fa-trash me-2"></i>Xóa
                         </button>
                       </td>
                     </tr>

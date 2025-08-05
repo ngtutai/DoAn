@@ -1,20 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function Contact() {
   return (
-    <Fragment>
-      <link
-        rel="stylesheet"
-        href="assets/plugins/font-awesome/css/all.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="assets/plugins/bootstrap/css/bootstrap.min.css"
-      />
-      <link rel="stylesheet" href="assets/css/bootstrap-4.1.3.min.css" />
-      <link rel="stylesheet" href="assets/css/styles.css" />
+    <>
       <Header />
       {/* BANNER */}
       <section
@@ -29,7 +19,7 @@ export default function Contact() {
       >
         <div
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.13)",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
             padding: "20px 40px",
             borderRadius: "8px",
           }}
@@ -138,27 +128,27 @@ export default function Contact() {
               <h4 className="text-dark">Địa chỉ của chúng tôi</h4>
               <p className="mb-1">
                 <strong>
-                  <i className="fa-solid fa-building" /> :
+                  <i className="fa-solid fa-building me-2" /> :{""}
                 </strong>{" "}
                 Celah Vietnam
               </p>
               <p className="mb-1">
                 <strong>
-                  <i className="fa-solid fa-location-dot" /> :
+                  <i className="fa-solid fa-location-dot me-2" /> :{""}
                 </strong>{" "}
-                123 Đường ABC, Quận 1, TP.HCM
+                123 Đường ABC, Quận 100, TP.HCM
               </p>
               <p className="mb-1">
                 <strong>
-                  <i className="fa-solid fa-envelope" /> :
+                  <i className="fa-solid fa-envelope me-1" /> : {""}
                 </strong>
-                lienhe@celah.vn
+                lienhe@petshop.vn
               </p>
               <p>
                 <strong>
-                  <i className="fa-solid fa-phone" /> :
+                  <i className="fa-solid fa-phone me-1" /> :{""}
                 </strong>{" "}
-                0123 456 789
+                0987 123 321
               </p>
             </div>
           </div>
@@ -166,6 +156,6 @@ export default function Contact() {
       </div>
 
       <Footer />
-    </Fragment>
+    </>
   );
 }

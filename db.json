@@ -167,12 +167,12 @@
       "description": "Mèo Anh lông dài nổi bật với bộ lông dài và tính cách hiền hòa.\n\n1. Nguồn Gốc\n- Xuất xứ:          Anh.\n2. Đặc Điểm\n- Kích thước:       Trung bình đến lớn.\n- Bộ lông:          Dài, dày và mượt.\n- Hình dáng:        Đầu tròn, mắt lớn.\n3. Tính Cách\n- Vui vẻ:           Thích gần gũi với mọi người.\n- Thân thiện:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chải lông thường xuyên.\n- Chế độ ăn:        Cần chế độ ăn đầy đủ dinh dưỡng.\n5. Sức Khỏe\n- Có thể mắc bệnh về khớp."
     },
     {
-      "id": "de37",
-      "name": "Mèo Scottish Fold Tai Cụp",
+      "name": "Mèo Scottish Fold",
       "price": 30000000,
       "image": "10 Mèo Scottish Fold Tai Cụp 1.png",
       "categoryId": 2,
-      "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai."
+      "description": "Mèo Scottish Fold nổi bật với đôi tai cụp và tính cách thân thiện.\n\n1. Nguồn Gốc\n- Xuất xứ:          Scotland.\n2. Đặc Điểm\n- Kích thước:       Trung bình.\n- Bộ lông:          Ngắn hoặc dài, có màu sắc đa dạng.\n- Hình dáng:        Đầu tròn, đôi tai cụp.\n3. Tính Cách\n- Thân thiện:       Rất hòa đồng và dễ gần.\n- Thông minh:       Dễ huấn luyện.\n4. Chăm Sóc\n- Chăm sóc lông:    Cần chăm sóc tùy theo loại lông.\n- Chế độ ăn:        Cần chế độ ăn cân bằng.\n5. Sức Khỏe\n- Có thể mắc vấn đề về khớp và tai.",
+      "id": "de37"
     },
     {
       "id": "b823",
@@ -223,8 +223,8 @@
       "email": "Tai@gmail.com",
       "password": "123",
       "role": "user",
-      "phone": "",
-      "address": ""
+      "phone": "0868807904",
+      "address": "163 Bùi Văn Ngữ"
     },
     {
       "id": "7e8c",
@@ -245,73 +245,25 @@
       "address": ""
     }
   ],
-  "orders": [
+  "orders": [],
+  "vouchers": [
     {
-      "id": "1753245299282",
-      "code": "MLGQ8M",
-      "userId": "68ba",
-      "orderDate": "2025-07-23T04:34:59.276Z",
-      "status": "delivered",
-      "shippingFee": 0,
-      "total": 25500000,
-      "items": [
-        {
-          "id": "f645",
-          "name": "Mèo Anh lông dài",
-          "price": 25000000,
-          "quantity": 1
-        },
-        {
-          "id": "113b",
-          "name": "Lồng cho Pet",
-          "price": 500000,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "1753245591659",
-      "code": "XAZ8R1",
-      "userId": "68ba",
-      "orderDate": "2025-07-23T04:39:51.659Z",
-      "status": "cancel",
-      "shippingFee": 0,
-      "total": 0,
-      "items": [
-        {
-          "id": "bf54",
-          "name": "Chó Eskimo",
-          "price": 20000000,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "1753245694539",
-      "code": "XWODV3",
-      "userId": "68ba",
-      "orderDate": "2025-07-23T04:41:34.539Z",
-      "status": "placed",
-      "shippingFee": 0,
-      "total": 20000000,
-      "items": [
-        {
-          "id": "bf54",
-          "name": "Chó Eskimo",
-          "price": 20000000,
-          "quantity": 1
-        }
-      ]
+      "code": "1",
+      "percent": 50,
+      "startDate": "2025-08-05",
+      "endDate": "2025-08-06",
+      "usageLimit": 1,
+      "id": "3141"
     }
   ],
-  "vouchers": [],
   "comments": [
     {
-      "id": "1754019585776",
-      "productId": "075b",
+      "id": "1754330597565",
+      "productId": "f6da",
+
       "userId": "2ba1",
-      "content": "wwoww",
-      "date": "2025-08-01T03:39:45.776Z",
+      "content": "Trời ơi đẹp quá đi, giá hơi chát 1 xíu =((",
+      "date": "2025-08-04T18:03:17.565Z",
       "rating": 5,
       "userName": "Kun"
     },

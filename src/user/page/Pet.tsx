@@ -1,5 +1,5 @@
 // Pet ( Thú cưng )
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
@@ -141,17 +141,8 @@ export default function Pet() {
   );
 
   return (
-    <Fragment>
-      <link
-        rel="stylesheet"
-        href="assets/plugins/font-awesome/css/all.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="assets/plugins/bootstrap/css/bootstrap.min.css"
-      />
+    <>
       <Header />
-
       {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
@@ -162,10 +153,10 @@ export default function Pet() {
           minHeight: "300px",
           height: "auto",
         }}
-       >
+      >
         <div
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.13)",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
             padding: "20px 40px",
             borderRadius: "8px",
           }}
@@ -190,11 +181,14 @@ export default function Pet() {
       {/* PHẦN CHÍNH */}
       <div className="container-fluid py-4 px-3 px-md-5" id="section-pet">
         <div className="row">
-          {/* Danh mục bên trái */}
-          <div className="col-12 col-md-3 pt-3 pe-md-4 border-end mb-4 mb-md-0">
-            <h6 className="fw-bold text-dark">
-              <i className="fa-solid fa-table-list me-2"></i>Danh mục sản phẩm
-            </h6>
+          {/* Danh mục sản phẩm Left */}
+          <div className="col-3 pt-3 border-end border-1 border-dark">
+            <div className="mb-3 fw-bold text-dark">
+              <h6>
+                <i className="fa-solid fa-table-list me-2"></i>Danh mục sản phẩm
+              </h6>
+            </div>
+
             <hr />
             <ul className="list-unstyled ps-3 fs-6">
               {[
@@ -226,10 +220,11 @@ export default function Pet() {
             </ul>
           </div>
 
-          {/* Nội dung bên phải */}
-          <div className="col-12 col-md-9">
-            <div className="row align-items-center mb-3">
-              <div className="col-12 col-md-6 text-center text-md-start fw-bold mb-2 mb-md-0">
+          {/* Right */}
+          <div className="col-9">
+            <div className="row align-items-center">
+              {/* Breadcrumbs */}
+              <div className="col-md-6 text-dark text-start fw-bold">
                 <a href="/" className="text-muted text-decoration-none">
                   Home
                 </a>{" "}
@@ -272,7 +267,8 @@ export default function Pet() {
             <hr />
 
             <div className="row g-4">
-              <div className="text-muted text-end">
+              {/* phần hiển sản phẩm tất cả thì có bào nhiêu sản phẩm trong tất cả */}
+              <div className="text-muted text-end mb-2">
                 Hiện có <strong>{filteredProducts.length}</strong> sản phẩm
                 {selectedType !== "all" && (
                   <>
@@ -290,44 +286,48 @@ export default function Pet() {
               </div>
 
               {paginatedProducts.map((product) => (
-                <div
-                  className="col-12 col-sm-6 col-md-4 col-lg-3"
-                  key={product.id}
-                >
-                  <div className="product-card border p-3 text-center h-100 d-flex flex-column justify-content-between">
-                    <div>
-                      <span className="badge bg-warning text-dark position-absolute top-0 end-0 m-2">
-                        ID: {product.id}
-                      </span>
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="img-fluid mb-2"
-                        style={{
-                          width: "100%",
-                          height: "200px",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </div>
-                    <h6 className="mt-3">{product.name}</h6>
-                    <p className="text-muted">
+                <div className="col-10 col-sm-6 col-md-3" key={product.id}>
+                  <div className="product-card border p-3 text-center shadow-sm rounded-3 position-relative bg-white">
+                    <span
+                      className="badge bg-warning text-dark position-absolute top-0 end-0 m-2 rounded-pill"
+                      style={{ zIndex: 10 }}
+                    >
+                      ID: {product.id}
+                    </span>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="img-fluid mb-3 rounded"
+                      style={{
+                        width: "100%",
+                        height: "220px",
+                        objectFit: "cover",
+                        boxShadow: "0 0 6px rgba(0,0,0,0.1)",
+                      }}
+                    />
+                    <h6
+                      className="fw-bold text-start mb-1 p-1"
+                      style={{ fontFamily: "'Fredoka', cursive" }}
+                    >
+                      {product.name}
+                    </h6>
+                    <p className="text-start text-muted mb-3 p-1">
                       {formatCurrency(product.price)}
                     </p>
-                    <div className="product-actions d-flex justify-content-center gap-2 mt-2">
+                    <div className="d-flex justify-content-center gap-2">
                       <button
-                        className="btn btn-outline-primary btn-sm"
                         title="Thêm vào giỏ hàng"
+                        className="btn btn-primary btn-sm px-3 py-2"
                         onClick={() => addToCart(product)}
                       >
-                        <i className="fas fa-shopping-cart"></i>
+                        <i className="fas fa-shopping-cart me-1"></i> Thêm vào
                       </button>
                       <button
-                        className="btn btn-outline-secondary btn-sm"
                         title="Xem chi tiết"
+                        className="btn btn-outline-secondary btn-sm px-3 py-2"
                         onClick={() => navigate(`/detail/${product.id}`)}
                       >
-                        <i className="fas fa-search"></i>
+                        <i className="fas fa-search me-1"></i> Xem
                       </button>
                     </div>
                   </div>
@@ -394,6 +394,6 @@ export default function Pet() {
       </div>
 
       <Footer />
-    </Fragment>
+    </>
   );
 }

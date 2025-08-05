@@ -44,8 +44,8 @@ export default function Slide() {
 
   return (
     <div
-      className="position-relative overflow-hidden"
-      style={{ minHeight: "300px", height: "50vh" }} // responsive height
+      className="position-relative overflow-hidden mx-5 mt-2"
+      style={{ height: "550px" }}
     >
       {sliders.map((item, index) => (
         <div
@@ -59,10 +59,11 @@ export default function Slide() {
             transition: "opacity 0.8s ease-in-out",
           }}
         >
-          <h3 className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-2 fs-5 fs-md-3">
+          {/* Phần mô tả */}
+          <h2 className="bg-dark bg-opacity-50 px-3 py-2 rounded-pill mb-2">
             {item.title}
-          </h3>
-          <p className="bg-dark bg-opacity-50 px-3 py-2 rounded mb-3 w-100 w-md-50">
+          </h2>
+          <p className="bg-dark bg-opacity-50 px-3 py-2 rounded mb-3 w-50 w-md-100">
             {item.description}
           </p>
           <button

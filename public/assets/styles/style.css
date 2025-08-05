@@ -37,20 +37,11 @@ header {
 .btn-primary {
   background-color: rgb(122, 157, 199);
   border: none;
-  color: white;
+  color: rgb(43, 43, 43);
 }
 .btn-primary:hover {
   background-color: rgb(234, 158, 126); /* hover Button */
-  color: white;
-}
-/* Nút phụ */
-.btn-outline-secondary {
-  border-color: #d6eaf8;
-  color: #003366;
-}
-.btn-outline-secondary:hover {
-  background-color: #d6eaf8;
-  color: #003366;
+  color: rgb(43, 43, 43);
 }
 
 /* Hover chữ hoặc link */
@@ -124,10 +115,19 @@ footer {
 
 /* ==================== Hover Product (Pet) đẩy lên  ==================== */
 .list-unstyled .text-primary span h5 {
-  color: red;
+  color: #ff835b;
 }
 .list-unstyled span h5:hover {
-  color: red;
+  color: #ff835b;
+}
+/* Nút phụ */
+.btn-outline-secondary {
+  border-color: #c6e6ff;
+  color: rgb(43, 43, 43);
+}
+.btn-outline-secondary:hover {
+  background-color: #c1e4fd;
+  color: rgb(43, 43, 43);
 }
 
 .product-card {

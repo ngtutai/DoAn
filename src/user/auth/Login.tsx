@@ -1,32 +1,42 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Input from "../auth/Input"; // Import component Input
+import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = () => {
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
   const [errorMsg, setErrorMsg] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
-  // Khi vào trang, kiểm tra nếu đã lưu
   useEffect(() => {
     const rememberedEmail = localStorage.getItem("rememberEmail");
     const rememberedPassword = localStorage.getItem("rememberPassword");
 
-    if (rememberedEmail && rememberedPassword) {
-      setEmail(rememberedEmail);
-      setPassword(rememberedPassword);
-      setRememberMe(true);
-    }
+    if (emailRef.current && rememberedEmail)
+      emailRef.current.value = rememberedEmail;
+    if (passwordRef.current && rememberedPassword)
+      passwordRef.current.value = rememberedPassword;
+    if (rememberedEmail && rememberedPassword) setRememberMe(true);
   }, []);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const formhandleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
+
+    const email = emailRef.current?.value || "";
+    const password = passwordRef.current?.value || "";
+
+    if (!email || !password) {
+      setErrorMsg("Vui lòng nhập đầy đủ thông tin");
+      return;
+    }
 
     try {
       const res = await fetch("http://localhost:3001/users");
@@ -48,7 +58,7 @@ export default function Login() {
         }
 
         toast.success("Đăng nhập thành công!");
-        navigate("/"); // luôn vào trang chủ
+        navigate("/");
       } else {
         toast.warning("Email hoặc mật khẩu không đúng.");
       }
@@ -64,65 +74,50 @@ export default function Login() {
         <div className="row justify-content-center">
           <div className="col-md-5">
             <div className="tab-content" id="authTabsContent">
-              {/* Login Form */}
               <div
                 className="tab-pane fade show active border rounded p-4 bg-white"
                 id="login"
                 role="tabpanel"
-                aria-labelledby="login-tab"
               >
                 <h2 className="mb-3 text-center fw-bold">ĐĂNG NHẬP</h2>
-                <form className="text-start" onSubmit={handleLogin}>
+                <form className="text-start" onSubmit={formhandleLogin}>
                   {/* Email */}
                   <div className="mb-3">
-                    <label htmlFor="registerEmail" className="form-label">
+                    <label htmlFor="loginEmail" className="form-label">
                       Email
                     </label>
                     <div className="input-group">
                       <span className="input-group-text">
-                        <i className="fa-solid fa-envelope"></i>
+                        <FontAwesomeIcon icon={faEnvelope} />
                       </span>
-                      <input
-                        type="email"
-                        className="form-control"
+                      <Input
                         id="loginEmail"
+                        inputRef={emailRef}
+                        type="email"
                         placeholder="Email ..."
                         required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        label=""
                       />
                     </div>
                   </div>
 
                   {/* Password */}
                   <div className="mb-3">
-                    <label htmlFor="registerPassword" className="form-label">
+                    <label htmlFor="loginPassword" className="form-label">
                       Mật khẩu
                     </label>
                     <div className="input-group">
                       <span className="input-group-text">
-                        <i className="fa-solid fa-lock"></i>
+                        <FontAwesomeIcon icon={faLock} />
                       </span>
-                      <input
-                        type={showPassword ? "text" : "password"}
-                        className="form-control"
-                        id="registerPassword"
+                      <Input
+                        id="loginPassword"
+                        inputRef={passwordRef}
                         placeholder="Mật khẩu ..."
                         required
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        label=""
+                        showTogglePassword
                       />
-                      <span
-                        className="input-group-text"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setShowPassword(!showPassword)}
-                      >
-                        <i
-                          className={`fa-solid ${
-                            showPassword ? "fa-eye" : "fa-eye-slash"
-                          }`}
-                        ></i>
-                      </span>
                     </div>
                   </div>
 
@@ -167,4 +162,5 @@ export default function Login() {
       <Footer />
     </Fragment>
   );
-}
+};
+export default Login;

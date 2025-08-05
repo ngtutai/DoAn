@@ -114,11 +114,11 @@ export default function Footer() {
             <ul className="list-unstyled text-start text-danger mb-3">
               <li>
                 <i className="fa-solid fa-location-dot me-2"></i>
-                123 Đường ABC, Q.1, TP.HCM
+                123 Đường ABC, Q.100, TP.HCM
               </li>
               <li>
                 <i className="fa-solid fa-phone me-2"></i>
-                1900 123 456
+                1900 123 321
               </li>
               <li>
                 <i className="fa-solid fa-envelope me-2"></i>

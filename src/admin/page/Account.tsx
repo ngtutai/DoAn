@@ -77,13 +77,15 @@ export default function Account() {
                       <td className="text-center">
                         <div className="d-flex justify-content-center flex-wrap gap-2">
                           <button className="btn btn-sm btn-secondary">
-                            <i className="fa-solid fa-handshake-slash"></i>
+                            <i className="fa-solid fa-ban me-2"></i>
+                            Ban
                           </button>
                           <button
                             className="btn btn-sm btn-danger"
                             onClick={() => handleDelete(user.id)}
                           >
-                            <i className="fa-solid fa-trash"></i>
+                            <i className="fa-solid fa-trash me-2"></i>
+                            Xóa
                           </button>
                         </div>
                       </td>
