@@ -232,8 +232,8 @@
       "email": "Toan@gmail.com",
       "password": "123",
       "role": "user",
-      "phone": "",
-      "address": ""
+      "phone": "0905000548",
+      "address": "tp Hồ Chí Minh"
     },
     {
       "id": "469a",
@@ -307,24 +307,6 @@
   "vouchers": [],
   "comments": [
     {
-      "id": "1753337974870",
-      "productId": "bf54",
-      "userId": "bfcd",
-      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "date": "2025-07-24T06:19:34.870Z",
-      "rating": 5,
-      "userName": "Toan"
-    },
-    {
-      "id": "1753458833725",
-      "productId": "113b",
-      "userId": "bfcd",
-      "content": "a",
-      "date": "2025-07-25T15:53:53.725Z",
-      "rating": 5,
-      "userName": "Toan"
-    },
-    {
       "id": "1754019585776",
       "productId": "075b",
       "userId": "2ba1",
@@ -332,6 +314,132 @@
       "date": "2025-08-01T03:39:45.776Z",
       "rating": 5,
       "userName": "Kun"
+    },
+    {
+      "id": "1754140420433",
+      "productId": "9a5a",
+      "userId": "cef3",
+      "content": "đẹp quá",
+      "date": "2025-08-02T13:13:40.433Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142556994",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "sản phẩm tốt",
+      "date": "2025-08-02T13:49:16.994Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142583687",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "sa",
+      "date": "2025-08-02T13:49:43.687Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142586440",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "ád",
+      "date": "2025-08-02T13:49:46.440Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142587308",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "sd",
+      "date": "2025-08-02T13:49:47.308Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142588339",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "ads",
+      "date": "2025-08-02T13:49:48.339Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142589236",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "ád",
+      "date": "2025-08-02T13:49:49.236Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142590160",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "sad",
+      "date": "2025-08-02T13:49:50.160Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142591117",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "sad",
+      "date": "2025-08-02T13:49:51.117Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142592368",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "ád",
+      "date": "2025-08-02T13:49:52.368Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142593221",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "sad",
+      "date": "2025-08-02T13:49:53.221Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142594078",
+      "productId": "113b",
+      "userId": "cef3",
+      "content": "sad",
+      "date": "2025-08-02T13:49:54.078Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142619133",
+      "productId": "814f",
+      "userId": "cef3",
+      "content": "s",
+      "date": "2025-08-02T13:50:19.133Z",
+      "rating": 5,
+      "userName": "Admin"
+    },
+    {
+      "id": "1754142629206",
+      "productId": "814f",
+      "userId": "cef3",
+      "content": "hư",
+      "date": "2025-08-02T13:50:29.206Z",
+      "rating": 5,
+      "userName": "Admin"
     }
   ]
 }

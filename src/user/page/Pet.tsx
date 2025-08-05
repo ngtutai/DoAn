@@ -159,9 +159,10 @@ export default function Pet() {
           backgroundImage: `url("assets/images/banner/banner-pet.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "550px",
+          minHeight: "300px",
+          height: "auto",
         }}
-      >
+       >
         <div
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.13)",
@@ -169,111 +170,66 @@ export default function Pet() {
             borderRadius: "8px",
           }}
         >
-          <h1 className="display-4 fw-bold mb-0">Thú cưng</h1>
-          <div className="col-12 ms-4">
-            <ul className="breadcrumb">
+          <h1 className="display-6 display-md-4 fw-bold mb-0">Thú cưng</h1>
+          <div className="col-12 mt-2">
+            <ul className="breadcrumb justify-content-center justify-content-md-start">
               <li className="home">
-                <a href="/" className="nav-link text-muted">
-                  <strong>
-                    <span>Trang chủ</span>
-                  </strong>
+                <a href="/" className="nav-link text-muted fw-bold">
+                  Trang chủ
                 </a>
               </li>
               <li>
-                <span className="mr_lr">&nbsp;/&nbsp;</span>
-                <strong>
-                  <span className="text-danger">Thú cưng</span>
-                </strong>
+                <span className="mx-2">/</span>
+                <span className="text-danger fw-bold">Thú cưng</span>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Phần cần làm cho bài */}
-      <div className="container-fluid py-4" id="section-pet">
+      {/* PHẦN CHÍNH */}
+      <div className="container-fluid py-4 px-3 px-md-5" id="section-pet">
         <div className="row">
-          {/* Danh mục sản phẩm Left */}
-          <div className="col-3 pt-3 pe-4 border-end">
-            <div className="mb-3 fw-bold text-dark">
-              <h6>
-                <i className="fa-solid fa-table-list me-2"></i>Danh mục sản phẩm
-              </h6>
-            </div>
+          {/* Danh mục bên trái */}
+          <div className="col-12 col-md-3 pt-3 pe-md-4 border-end mb-4 mb-md-0">
+            <h6 className="fw-bold text-dark">
+              <i className="fa-solid fa-table-list me-2"></i>Danh mục sản phẩm
+            </h6>
             <hr />
-            <ul className="list-unstyled text-start ps-4 fs-5">
-              <li className="mb-2">
-                <button
-                  className={`btn btn-link p-0 text-start text-decoration-none ${
-                    selectedType === "all"
-                      ? "fw-bold text-primary"
-                      : "text-muted"
-                  }`}
-                  onClick={() => handleTypeChange("all")}
-                >
-                  <span>
-                    <h5>
-                      <i className="fa-solid fa-border-all me-2"></i> Tất cả
-                    </h5>
-                  </span>
-                </button>
-              </li>
-              <li className="mb-2">
-                <button
-                  className={`btn btn-link p-0 text-start text-decoration-none ${
-                    selectedType === "dog"
-                      ? "fw-bold text-primary"
-                      : "text-muted"
-                  }`}
-                  onClick={() => handleTypeChange("dog")}
-                >
-                  <span>
-                    <h5>
-                      <i className="fa-solid fa-dog me-2"></i>Chó
-                    </h5>
-                  </span>
-                </button>
-              </li>
-              <li className="mb-2">
-                <button
-                  className={`btn btn-link p-0 text-start text-decoration-none ${
-                    selectedType === "cat"
-                      ? "fw-bold text-primary"
-                      : "text-muted"
-                  }`}
-                  onClick={() => handleTypeChange("cat")}
-                >
-                  <span>
-                    <h5>
-                      <i className="fa-solid fa-cat me-2"></i>Mèo
-                    </h5>
-                  </span>
-                </button>
-              </li>
-              <li className="mb-2">
-                <button
-                  className={`btn btn-link p-0 text-start text-decoration-none ${
-                    selectedType === "accessory"
-                      ? "fw-bold text-primary"
-                      : "text-muted"
-                  }`}
-                  onClick={() => handleTypeChange("accessory")}
-                >
-                  <span>
-                    <h5>
-                      <i className="fa-solid fa-hat-wizard me-2"></i>Phụ kiện
-                    </h5>
-                  </span>
-                </button>
-              </li>
+            <ul className="list-unstyled ps-3 fs-6">
+              {[
+                { label: "Tất cả", value: "all", icon: "fa-border-all" },
+                { label: "Chó", value: "dog", icon: "fa-dog" },
+                { label: "Mèo", value: "cat", icon: "fa-cat" },
+                {
+                  label: "Phụ kiện",
+                  value: "accessory",
+                  icon: "fa-hat-wizard",
+                },
+              ].map((item) => (
+                <li className="mb-2" key={item.value}>
+                  <button
+                    className={`btn btn-link p-0 text-start text-decoration-none ${
+                      selectedType === item.value
+                        ? "fw-bold text-primary"
+                        : "text-muted"
+                    }`}
+                    onClick={() => handleTypeChange(item.value as any)}
+                  >
+                    <h6>
+                      <i className={`fa-solid ${item.icon} me-2`}></i>
+                      {item.label}
+                    </h6>
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Right */}
-          <div className="col-9">
+          {/* Nội dung bên phải */}
+          <div className="col-12 col-md-9">
             <div className="row align-items-center mb-3">
-              {/* Breadcrumbs */}
-              <div className="col-md-6 text-dark text-start fw-bold">
+              <div className="col-12 col-md-6 text-center text-md-start fw-bold mb-2 mb-md-0">
                 <a href="/" className="text-muted text-decoration-none">
                   Home
                 </a>{" "}
@@ -287,19 +243,17 @@ export default function Pet() {
                   : "Phụ kiện"}
               </div>
 
-              {/* Tìm kiếm bằng cách nhập */}
-              <div className="col-md-3">
+              <div className="col-12 col-sm-6 col-md-3 mt-2 mt-md-0">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Tìm theo tên sản phẩm..."
+                  placeholder="Tìm theo tên..."
                   value={searchKeyword}
                   onChange={(e) => setSearchKeyword(e.target.value)}
                 />
               </div>
 
-              {/* Tìm kiếm bằng giá */}
-              <div className="col-md-3">
+              <div className="col-12 col-sm-6 col-md-3 mt-2 mt-md-0">
                 <select
                   className="form-select"
                   value={selectedPriceIndex}
@@ -317,9 +271,7 @@ export default function Pet() {
 
             <hr />
 
-            {/* Danh sách sản phẩm */}
             <div className="row g-4">
-              {/* phần hiển sản phẩm tất cả thì có bào nhiêu sản phẩm trong tất cả */}
               <div className="text-muted text-end">
                 Hiện có <strong>{filteredProducts.length}</strong> sản phẩm
                 {selectedType !== "all" && (
@@ -338,13 +290,13 @@ export default function Pet() {
               </div>
 
               {paginatedProducts.map((product) => (
-                <div className="col-10 col-sm-6 col-md-3" key={product.id}>
-                  <div className="product-card border p-3 text-center">
-                    <div className="product-image-container">
-                      <span
-                        className="badge bg-warning text-dark position-absolute top-0 end-0 m-2"
-                        style={{ zIndex: 10 }}
-                      >
+                <div
+                  className="col-12 col-sm-6 col-md-4 col-lg-3"
+                  key={product.id}
+                >
+                  <div className="product-card border p-3 text-center h-100 d-flex flex-column justify-content-between">
+                    <div>
+                      <span className="badge bg-warning text-dark position-absolute top-0 end-0 m-2">
                         ID: {product.id}
                       </span>
                       <img
@@ -357,28 +309,31 @@ export default function Pet() {
                           objectFit: "cover",
                         }}
                       />
-                      <div className="product-actions">
-                        <button
-                          title="Thêm vào giỏ hàng"
-                          onClick={() => addToCart(product)}
-                        >
-                          <i className="fas fa-shopping-cart"></i>
-                        </button>
-                        <button
-                          title="Xem chi tiết"
-                          onClick={() => navigate(`/detail/${product.id}`)}
-                        >
-                          <i className="fas fa-search"></i>
-                        </button>
-                      </div>
                     </div>
-                    <h5 className="mt-4">{product.name}</h5>
+                    <h6 className="mt-3">{product.name}</h6>
                     <p className="text-muted">
                       {formatCurrency(product.price)}
                     </p>
+                    <div className="product-actions d-flex justify-content-center gap-2 mt-2">
+                      <button
+                        className="btn btn-outline-primary btn-sm"
+                        title="Thêm vào giỏ hàng"
+                        onClick={() => addToCart(product)}
+                      >
+                        <i className="fas fa-shopping-cart"></i>
+                      </button>
+                      <button
+                        className="btn btn-outline-secondary btn-sm"
+                        title="Xem chi tiết"
+                        onClick={() => navigate(`/detail/${product.id}`)}
+                      >
+                        <i className="fas fa-search"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
+
               {paginatedProducts.length === 0 && (
                 <p className="text-center text-danger">
                   Không có sản phẩm phù hợp.
@@ -386,11 +341,11 @@ export default function Pet() {
               )}
             </div>
 
-            {/* Phân trang */}
+            {/* PHÂN TRANG */}
             {totalPages > 1 && (
               <div className="d-flex justify-content-center mt-4">
                 <nav>
-                  <ul className="pagination">
+                  <ul className="pagination flex-wrap justify-content-center">
                     <li
                       className={`page-item ${
                         currentPage === 1 ? "disabled" : ""

@@ -29,20 +29,7 @@
       "github": "https://github.com/ngtutai"
     }
   },
-  {
-    "id": 2,
-    "name": "Võ Song Toàn",
-    "role": "Frontend Developer",
-    "avatar": "assets/images/teampage/a.png",
-    "shortDescription": "Chuyên gia React & TypeScript",
-    "fullDescription": "Có 5 năm kinh nghiệm phát triển ứng dụng web. Từng làm việc tại các công ty công nghệ hàng đầu. Chuyên môn: React, TypeScript, Redux, Next.js.",
-    "skills": ["React", "TypeScript", "UI/UX", "Performance"],
-    "social": {
-      "facebook": "#",
-      "zalo": "#",
-      "github": "#"
-    }
-  },
+
   {
     "id": 3,
     "name": "Nguyễn Minh Triết",

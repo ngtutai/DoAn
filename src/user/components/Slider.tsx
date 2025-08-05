@@ -20,7 +20,6 @@ export default function Slide() {
       .catch(() => console.error("Lỗi tải slider"));
   }, []);
 
-  // Tự động chuyển slide sau 3s
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % sliders.length);
@@ -46,13 +45,12 @@ export default function Slide() {
   return (
     <div
       className="position-relative overflow-hidden"
-      style={{ height: "550px" }}
+      style={{ minHeight: "300px", height: "50vh" }} // responsive height
     >
-      {/* Slider  */}
       {sliders.map((item, index) => (
         <div
           key={item.id}
-          className="position-absolute w-100 h-100 text-center text-white d-flex flex-column justify-content-center align-items-start px-5"
+          className="position-absolute w-100 h-100 text-white d-flex flex-column justify-content-center align-items-start px-3 px-md-5"
           style={{
             backgroundImage: `url("/assets/images/slider/${item.image}")`,
             backgroundSize: "cover",
@@ -61,11 +59,10 @@ export default function Slide() {
             transition: "opacity 0.8s ease-in-out",
           }}
         >
-          {/* Phần mô tả */}
-          <h2 className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-2">
+          <h3 className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-2 fs-5 fs-md-3">
             {item.title}
-          </h2>
-          <p className="bg-dark bg-opacity-50 px-3 py-1 rounded mb-3 w-50 w-md-100">
+          </h3>
+          <p className="bg-dark bg-opacity-50 px-3 py-2 rounded mb-3 w-100 w-md-50">
             {item.description}
           </p>
           <button
@@ -77,23 +74,23 @@ export default function Slide() {
         </div>
       ))}
 
-      {/* Nút lùi slider */}
+      {/* Nút chuyển slider - ẩn trên mobile nếu muốn */}
       <button
         onClick={goToPrev}
-        className="btn btn-dark position-absolute top-50 start-0 translate-middle-y px-3"
+        className="btn btn-dark position-absolute top-50 start-0 translate-middle-y px-3 d-none d-md-block"
         style={{ zIndex: 2 }}
       >
         <i className="fa-solid fa-arrow-left"></i>
       </button>
-      {/* Nút tiến slider */}
       <button
         onClick={goToNext}
-        className="btn btn-dark position-absolute top-50 end-0 translate-middle-y px-3"
+        className="btn btn-dark position-absolute top-50 end-0 translate-middle-y px-3 d-none d-md-block"
         style={{ zIndex: 2 }}
       >
         <i className="fa-solid fa-arrow-right"></i>
       </button>
-      {/* chấm xanh cho biết đang có bn slider vào đang ở slider nào */}
+
+      {/* Dots */}
       <div className="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex gap-2">
         {sliders.map((_, index) => (
           <span

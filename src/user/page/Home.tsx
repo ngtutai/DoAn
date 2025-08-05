@@ -60,6 +60,7 @@ export default function Home() {
       <Header />
       <Slider />
 
+      {/* Băng rôn */}
       <div className="container mt-2 mb-2">
         <div className="row justify-content-center">
           <div className="col-12 mx-auto">
@@ -98,7 +99,9 @@ export default function Home() {
         {/* Dịch vụ nổi bật */}
         <section className="bg-light py-3 rounded mb-4">
           <div className="container">
-            <h3 className="text-center fw-bold mb-4">✨ Dịch vụ nổi bật</h3>
+            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill">
+              ✨ Dịch vụ nổi bật
+            </h3>
             <div className="row">
               {featuredServices.map((item, i) => (
                 <div className="col-md-3 mb-4" key={i}>
@@ -114,7 +117,7 @@ export default function Home() {
                       <p className="card-text small">{item.desc}</p>
                       <Link
                         to={`/service#${item.id}`}
-                        className="btn btn-sm btn-outline-danger mt-auto"
+                        className="btn btn-sm btn-outline-info mt-auto"
                       >
                         Tìm hiểu thêm
                       </Link>
@@ -148,6 +151,16 @@ export default function Home() {
                 <p className="mb-0">Sản phẩm thân thiện với môi trường</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Sản phẩm nổi bật */}
+        <section className="bg-light py-3 rounded mt-5">
+          <div className="container">
+            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill">
+              ✨ Sản phẩm nổi bật
+            </h3>
+            <div className="row"></div>
           </div>
         </section>
       </div>
