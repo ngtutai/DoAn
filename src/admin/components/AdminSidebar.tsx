@@ -88,7 +88,7 @@ export default function AdminSidebar() {
                 "nav-link fw-semibold" + (isActive ? " active " : "")
               }
             >
-              <i className="fa-solid fa-ticket me-2"></i> Mã giảm giá
+              <i className="fa-solid fa-tag me-2"></i> Mã giảm giá
             </NavLink>
           </li>
 
