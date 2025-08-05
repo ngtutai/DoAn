@@ -138,7 +138,7 @@ export default function Voucher() {
 
             {/* Add form */}
             <div className="row g-2 mb-3">
-              {["code", "percent", "startDate", "endDate", "usageLimit"].map(
+              {["Mã code", "percent", "startDate", "endDate", "usageLimit"].map(
                 (field) => (
                   <div className="col" key={field}>
                     <input
@@ -177,11 +177,11 @@ export default function Voucher() {
               <thead>
                 <tr>
                   <th style={{ width: "15%" }}>Mã voucher</th>
-                  <th style={{ width: "15%" }}>Percent</th>
-                  <th style={{ width: "15%" }}>Start</th>
-                  <th style={{ width: "15%" }}>End</th>
-                  <th style={{ width: "15%" }}>Usage</th>
-                  <th style={{ width: "15%" }}>Actions</th>
+                  <th style={{ width: "15%" }}>Phần %</th>
+                  <th style={{ width: "15%" }}>Bắt đầu</th>
+                  <th style={{ width: "15%" }}>Kết thúc</th>
+                  <th style={{ width: "15%" }}>Số lượng</th>
+                  <th style={{ width: "15%" }}>Hành động</th>
                 </tr>
               </thead>
               <tbody>

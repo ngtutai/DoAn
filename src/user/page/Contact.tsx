@@ -128,27 +128,27 @@ export default function Contact() {
               <h4 className="text-dark">Địa chỉ của chúng tôi</h4>
               <p className="mb-1">
                 <strong>
-                  <i className="fa-solid fa-building" /> :
+                  <i className="fa-solid fa-building me-2" /> :{""}
                 </strong>{" "}
                 Celah Vietnam
               </p>
               <p className="mb-1">
                 <strong>
-                  <i className="fa-solid fa-location-dot" /> :
+                  <i className="fa-solid fa-location-dot me-2" /> :{""}
                 </strong>{" "}
-                123 Đường ABC, Quận 1, TP.HCM
+                123 Đường ABC, Quận 100, TP.HCM
               </p>
               <p className="mb-1">
                 <strong>
-                  <i className="fa-solid fa-envelope" /> :
+                  <i className="fa-solid fa-envelope me-1" /> : {""}
                 </strong>
-                lienhe@celah.vn
+                lienhe@petshop.vn
               </p>
               <p>
                 <strong>
-                  <i className="fa-solid fa-phone" /> :
+                  <i className="fa-solid fa-phone me-1" /> :{""}
                 </strong>{" "}
-                0123 456 789
+                0987 123 321
               </p>
             </div>
           </div>

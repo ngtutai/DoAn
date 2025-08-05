@@ -3,7 +3,7 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export interface Admin {
   id: string;
@@ -36,13 +36,16 @@ export default function AdminProfile() {
   const handleSave = async () => {
     if (formData && admin) {
       try {
-        const response = await fetch(`http://localhost:3001/users/${admin.id}`, {
-          method: "PATCH", // hoặc PUT nếu bạn muốn ghi đè toàn bộ
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          `http://localhost:3001/users/${admin.id}`,
+          {
+            method: "PATCH", // hoặc PUT nếu bạn muốn ghi đè toàn bộ
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         if (!response.ok) throw new Error("Lỗi khi cập nhật người dùng");
 
