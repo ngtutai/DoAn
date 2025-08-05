@@ -119,7 +119,7 @@ export default function ProductList() {
                           ? "Mèo"
                           : "Phụ kiện"}
                       </td>
-                      <td>{item.price.toLocaleString("vi-VN")}₫</td>
+                      <td>{item.price.toLocaleString("vi-VN")} ₫</td>
                       <td>
                         <Link
                           to={`/admin/product/edit/${item.id}`}
