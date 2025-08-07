@@ -245,22 +245,47 @@
       "address": ""
     }
   ],
-  "orders": [],
-  "vouchers": [
+  "orders": [
     {
-      "code": "1",
-      "percent": 50,
-      "startDate": "2025-08-05",
-      "endDate": "2025-08-06",
-      "usageLimit": 1,
-      "id": "3141"
+      "id": "1754465499579",
+      "code": "LMV3DN",
+      "userId": "7e8c",
+      "orderDate": "2025-08-06T07:31:39.578Z",
+      "status": "cancel",
+      "shippingFee": 0,
+      "total": 20000000,
+      "items": [
+        {
+          "id": "bf54",
+          "name": "Chó Eskimo",
+          "price": 20000000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1754465745752",
+      "code": "W9P1FH",
+      "userId": "7e8c",
+      "orderDate": "2025-08-06T07:35:45.751Z",
+      "status": "placed",
+      "shippingFee": 0,
+      "total": 5000000,
+      "items": [
+        {
+          "id": "9a5a",
+          "name": "Chó Beagle",
+          "price": 10000000,
+          "quantity": 1
+        }
+      ]
     }
   ],
+  "vouchers": [],
   "comments": [
     {
       "id": "1754330597565",
       "productId": "f6da",
-
       "userId": "2ba1",
       "content": "Trời ơi đẹp quá đi, giá hơi chát 1 xíu =((",
       "date": "2025-08-04T18:03:17.565Z",

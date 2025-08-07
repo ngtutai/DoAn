@@ -1,10 +1,50 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Slider from "../components/Slider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+interface Product {
+  id: number;
+  name: string;
+  type: "dog" | "cat" | "accessory";
+  price: number;
+  image: string;
+}
 
 export default function Home() {
+  function formatCurrency(value: number): string {
+    return value.toLocaleString("vi-VN") + " đ";
+  }
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/products")
+      .then((res) => res.json())
+      .then((data) => {
+        const mapped: Product[] = data.slice(0, 4).map((item: any) => {
+          let type: "dog" | "cat" | "accessory" = "accessory";
+          let folder = "PhuKien";
+          if (item.categoryId === 1) {
+            type = "dog";
+            folder = "Cho";
+          } else if (item.categoryId === 2) {
+            type = "cat";
+            folder = "Meo";
+          }
+
+          return {
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            image: `/assets/images/${folder}/${item.image}`,
+            type,
+          };
+        });
+
+        setFeaturedProducts(mapped);
+      })
+      .catch((err) => console.error("Lỗi khi tải sản phẩm nổi bật:", err));
+  }, []);
   const services = [
     {
       icon: "fa-truck-fast",
@@ -128,7 +168,46 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        {/* Sản phẩm nổi bật */}
+        <section className="bg-light py-3 rounded ">
+          <div className="container">
+            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill">
+              ✨ Sản phẩm nổi bật
+            </h3>
+            <div className="row">
+              {featuredProducts.map((product) => (
+                <div className="col-md-3 mb-4" key={product.id}>
+                  <div className="card h-100 shadow-sm border-0 position-relative">
+                    <span className="badge bg-warning text-dark position-absolute top-0 end-0 m-2 rounded-pill">
+                      ID: {product.id}
+                    </span>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="card-img-top"
+                      style={{
+                        height: "180px",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div className="card-body d-flex flex-column">
+                      <h5 className="card-title">{product.name}</h5>
+                      <p className="card-text text-muted small">
+                        {formatCurrency(product.price)}
+                      </p>
+                      <Link
+                        to={`/detail/${product.id}`}
+                        className="btn btn-sm btn-outline-secondary mt-auto"
+                      >
+                        <i className="fas fa-search me-1"></i> Xem
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         {/* Cam kết */}
         <section className="bg-warning bg-opacity-25 py-4 rounded text-center">
           <div className="container">
@@ -151,16 +230,6 @@ export default function Home() {
                 <p className="mb-0">Sản phẩm thân thiện với môi trường</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Sản phẩm nổi bật */}
-        <section className="bg-light py-3 rounded mt-5">
-          <div className="container">
-            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill">
-              ✨ Sản phẩm nổi bật
-            </h3>
-            <div className="row"></div>
           </div>
         </section>
       </div>
