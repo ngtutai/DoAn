@@ -150,38 +150,33 @@ const Cart: React.FC = () => {
     const code = voucherInput.trim();
     const found = voucherList.find((v) => v.code === code);
 
-    // Nếu không nhập mã
     if (!code) {
-      setVoucherMessage("Vui lòng nhập mã giảm giá");
-      setVoucherValid(false);
-      return;
+      return resetVoucher("Vui lòng nhập mã giảm giá");
     }
 
-    // Nếu không tìm thấy trong danh sách
     if (!found) {
-      setVoucherMessage("Mã giảm giá không hợp lệ");
-      setVoucherValid(false);
-      return;
+      return resetVoucher("Mã giảm giá không hợp lệ");
     }
 
-    // Lấy ngày hiện tại và chuyển định dạng ngày từ JSON sang Date
     const today = new Date();
-    const start = new Date(found.startDate + "T00:00:00");
-    const end = new Date(found.endDate + "T23:59:59");
+    const start = new Date(`${found.startDate}T00:00:00`);
+    const end = new Date(`${found.endDate}T23:59:59`);
 
-    // So sánh ngày
     if (today < start || today > end || found.usageLimit <= 0) {
-      setVoucherMessage("Mã giảm giá không hợp lệ");
-      setVoucherValid(false);
-      setVoucherPercent(0);
-      setVoucherCode("Chưa áp dụng");
-    } else {
-      // Áp dụng voucher thành công
-      setVoucherPercent(found.percent);
-      setVoucherCode(found.code);
-      setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
-      setVoucherValid(true);
+      return resetVoucher("Mã giảm giá không hợp lệ");
     }
+
+    // Thành công
+    setVoucherPercent(found.percent);
+    setVoucherCode(found.code);
+    setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
+    setVoucherValid(true);
+  };
+  const resetVoucher = (message: string) => {
+    setVoucherMessage(message);
+    setVoucherValid(false);
+    setVoucherPercent(0);
+    setVoucherCode("Chưa áp dụng");
   };
 
   // Tick input từng cái
