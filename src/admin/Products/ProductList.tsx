@@ -125,13 +125,13 @@ export default function ProductList() {
                           to={`/admin/product/edit/${item.id}`}
                           className="me-2"
                         >
-                          <button className="btn btn-info">
+                          <button className="btn btn-outline-info">
                             <i className="fa-solid fa-pen-to-square me-2"></i>
                             Sửa
                           </button>
                         </Link>
                         <button
-                          className="btn btn-danger"
+                          className="btn btn-outline-danger"
                           onClick={() => handleDelete(item.id)}
                         >
                           <i className="fa-solid fa-trash me-2"></i>Xóa

@@ -1,4 +1,74 @@
 {
+  "sliders": [
+    {
+      "id": "4954",
+      "image": "slider-1.png",
+      "title": "1. Thú Cưng Là Gì?",
+      "description": "Thú cưng là những loài động vật được nuôi trong gia đình không chỉ để làm bạn, \n            mà còn để cung cấp niềm vui và sự gắn bó. Chúng đóng vai trò quan trọng trong \n            cuộc sống của nhiều người, mang lại cảm giác an toàn và ấm áp. Các loại thú cưng \n            phổ biến gồm chó, mèo mỗi loài đều có những đặc điểm riêng biệt, phù hợp biệt, \n            biệt, phù hợp với sở thích và lối sống của từng gia đình."
+    },
+    {
+      "id": "ae4f",
+      "image": "slider-2.png",
+      "title": "2. Lợi Ích Của Việc Nuôi Thú Cưng",
+      "description": "Nuôi thú cưng mang lại nhiều lợi ích cho sức khỏe tinh thần và thể chất. Nghiên \n            cứu đã chỉ ra rằng việc chăm sóc thú cưng có thể giảm mức độ căng thẳng, lo âu \n            và trầm cảm. Thú cưng không chỉ là những người bạn đồng hành, mà còn là nguồn \n            động viên tuyệt vời, giúp cải thiện tâm trạng và tạo ra những kỷ niệm đáng nhớ \n            cho cả gia đình. Ngoài ra, việc chăm sóc thú cưng cũng khuyến khích hoạt động \n            thể chất, như đi dạo cùng chó hay chơi đùa với mèo."
+    },
+    {
+      "id": "6049",
+      "image": "slider-3.png",
+      "title": "3. Chăm Sóc Thú Cưng",
+      "description": "Chăm sóc thú cưng không chỉ đơn thuần là cho ăn và uống nước. Nó bao gồm việc \n            cung cấp một môi trường sống an toàn, sạch sẽ, và thoải mái. Điều này đòi hỏi \n            người nuôi phải hiểu rõ nhu cầu dinh dưỡng, sức khỏe và tâm lý của thú cưng. \n            Định kỳ đưa thú cưng đi khám sức khỏe, tiêm phòng, và cho chúng tham gia các \n            hoạt động thể chất là rất cần thiết để đảm bảo chúng luôn khỏe mạnh và hạnh phúc."
+    },
+    {
+      "id": "8436",
+      "image": "slider-4.png",
+      "title": "4. Thú Cưng và Trẻ Em",
+      "description": "Thú cưng có thể đóng vai trò quan trọng trong việc giáo dục trẻ em về trách \n            nhiệm và tình yêu thương. Chúng giúp trẻ em học cách chăm sóc, nuôi dưỡng và \n            tôn trọng sự sống. Những trải nghiệm tích cực với thú cưng có thể giúp trẻ \n            phát triển kỹ năng xã hội, tạo ra mối liên kết tình cảm mạnh mẽ và hỗ trợ sự \n            phát triển cảm xúc. Việc nuôi thú cưng cũng giúp trẻ em trở nên nhạy cảm hơn \n            với cảm xúc của người khác."
+    },
+    {
+      "id": "c8e7",
+      "image": "slider-1.png",
+      "title": "52342342423423",
+      "description": "fgasdjaaaaaaaaaaaaaaaaaaaaaaaasdasdssssssssssssssssssssss"
+    }
+  ],
+  "users": [
+    {
+      "id": "cef3",
+      "displayname": "Admin",
+      "email": "Admin@gmail.com",
+      "password": "123",
+      "role": "admin",
+      "phone": "",
+      "address": ""
+    },
+    {
+      "id": "2ba1",
+      "displayname": "Kun",
+      "email": "Tai@gmail.com",
+      "password": "123",
+      "role": "user",
+      "phone": "0868807904",
+      "address": "163 Bùi Văn Ngữ"
+    },
+    {
+      "id": "7e8c",
+      "displayname": "Toàn",
+      "email": "Toan@gmail.com",
+      "password": "123",
+      "role": "user",
+      "phone": "",
+      "address": ""
+    },
+    {
+      "id": "469a",
+      "displayname": "Triết",
+      "email": "Triet@gmail.com",
+      "password": "123",
+      "role": "user",
+      "phone": "",
+      "address": ""
+    }
+  ],
   "categories": [
     {
       "id": "1",
@@ -207,81 +277,17 @@
       "description": "4"
     }
   ],
-  "users": [
+  "orders": [],
+  "vouchers": [
     {
-      "id": "cef3",
-      "displayname": "Admin",
-      "email": "Admin@gmail.com",
-      "password": "123",
-      "role": "admin",
-      "phone": "",
-      "address": ""
-    },
-    {
-      "id": "2ba1",
-      "displayname": "Kun",
-      "email": "Tai@gmail.com",
-      "password": "123",
-      "role": "user",
-      "phone": "0868807904",
-      "address": "163 Bùi Văn Ngữ"
-    },
-    {
-      "id": "7e8c",
-      "displayname": "Toàn",
-      "email": "Toan@gmail.com",
-      "password": "123",
-      "role": "user",
-      "phone": "0905000548",
-      "address": "tp Hồ Chí Minh"
-    },
-    {
-      "id": "469a",
-      "displayname": "Triết",
-      "email": "Triet@gmail.com",
-      "password": "123",
-      "role": "user",
-      "phone": "",
-      "address": ""
+      "code": "1",
+      "percent": 50,
+      "startDate": "2025-08-05",
+      "endDate": "2025-08-06",
+      "usageLimit": 1,
+      "id": "3141"
     }
   ],
-  "orders": [
-    {
-      "id": "1754465499579",
-      "code": "LMV3DN",
-      "userId": "7e8c",
-      "orderDate": "2025-08-06T07:31:39.578Z",
-      "status": "cancel",
-      "shippingFee": 0,
-      "total": 20000000,
-      "items": [
-        {
-          "id": "bf54",
-          "name": "Chó Eskimo",
-          "price": 20000000,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "1754465745752",
-      "code": "W9P1FH",
-      "userId": "7e8c",
-      "orderDate": "2025-08-06T07:35:45.751Z",
-      "status": "placed",
-      "shippingFee": 0,
-      "total": 5000000,
-      "items": [
-        {
-          "id": "9a5a",
-          "name": "Chó Beagle",
-          "price": 10000000,
-          "quantity": 1
-        }
-      ]
-    }
-  ],
-  "vouchers": [],
   "comments": [
     {
       "id": "1754330597565",
@@ -291,132 +297,6 @@
       "date": "2025-08-04T18:03:17.565Z",
       "rating": 5,
       "userName": "Kun"
-    },
-    {
-      "id": "1754140420433",
-      "productId": "9a5a",
-      "userId": "cef3",
-      "content": "đẹp quá",
-      "date": "2025-08-02T13:13:40.433Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142556994",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "sản phẩm tốt",
-      "date": "2025-08-02T13:49:16.994Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142583687",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "sa",
-      "date": "2025-08-02T13:49:43.687Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142586440",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "ád",
-      "date": "2025-08-02T13:49:46.440Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142587308",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "sd",
-      "date": "2025-08-02T13:49:47.308Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142588339",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "ads",
-      "date": "2025-08-02T13:49:48.339Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142589236",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "ád",
-      "date": "2025-08-02T13:49:49.236Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142590160",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "sad",
-      "date": "2025-08-02T13:49:50.160Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142591117",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "sad",
-      "date": "2025-08-02T13:49:51.117Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142592368",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "ád",
-      "date": "2025-08-02T13:49:52.368Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142593221",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "sad",
-      "date": "2025-08-02T13:49:53.221Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142594078",
-      "productId": "113b",
-      "userId": "cef3",
-      "content": "sad",
-      "date": "2025-08-02T13:49:54.078Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142619133",
-      "productId": "814f",
-      "userId": "cef3",
-      "content": "s",
-      "date": "2025-08-02T13:50:19.133Z",
-      "rating": 5,
-      "userName": "Admin"
-    },
-    {
-      "id": "1754142629206",
-      "productId": "814f",
-      "userId": "cef3",
-      "content": "hư",
-      "date": "2025-08-02T13:50:29.206Z",
-      "rating": 5,
-      "userName": "Admin"
     }
   ]
 }
