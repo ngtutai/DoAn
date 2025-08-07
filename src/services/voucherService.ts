@@ -30,5 +30,11 @@ const remove = async (id: number) => {
   return res.data;
 };
 
-const voucherService = { list, add, update, remove };
+// Lấy voucher theo code
+const getByCode = async (code: string) => {
+  const res = await api.get<Vouchers[]>(`${api.url.vouchers}?code=${code}`);
+  return res.data[0]; // vì filter theo code sẽ trả về mảng
+};
+
+const voucherService = { list, add, update, remove, getByCode };
 export default voucherService;

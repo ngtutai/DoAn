@@ -294,7 +294,7 @@
       "code": "MV1TAR",
       "userId": "2ba1",
       "orderDate": "2025-08-07T10:39:19.382Z",
-      "status": "placed",
+      "status": "processing",
       "shippingFee": 0,
       "total": 20000000,
       "items": [
@@ -309,12 +309,36 @@
   ],
   "vouchers": [
     {
+      "code": "endCode",
+      "percent": 25,
+      "startDate": "2025-08-11",
+      "endDate": "2025-08-11",
+      "usageLimit": 5,
+      "id": "3e2c"
+    },
+    {
+      "id": "821b",
+      "code": "startCode",
+      "percent": 20,
+      "startDate": "2025-08-12",
+      "endDate": "2025-08-12",
+      "usageLimit": 5
+    },
+    {
+      "id": "80a3",
+      "code": "code1",
+      "percent": 30,
+      "startDate": "2025-08-12",
+      "endDate": "2025-08-12",
+      "usageLimit": 1
+    },
+    {
+      "id": "f0f2",
       "code": "1",
-      "percent": 50,
-      "startDate": "2025-08-05",
-      "endDate": "2025-08-06",
-      "usageLimit": 2,
-      "id": "3141"
+      "percent": 1,
+      "startDate": "2025-08-07",
+      "endDate": "2025-08-07",
+      "usageLimit": 1
     }
   ],
   "comments": [
