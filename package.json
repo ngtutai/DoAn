@@ -28,10 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run react\" \"npm run json:db\" \"npm run json:sliders\"",
+    "start": "concurrently \"npm run react\" \"npm run json\"",
     "react": "react-scripts start",
-    "json:db": "json-server --watch db.json --port 3001",
-    "json:sliders": "json-server --watch slider.json --port 3002",
+    "json": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

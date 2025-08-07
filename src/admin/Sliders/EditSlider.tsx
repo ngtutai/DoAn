@@ -25,7 +25,7 @@ export default function EditSlider() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3002/sliders/${id}`)
+      fetch(`http://localhost:3001/sliders/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setForm(data);
@@ -54,8 +54,8 @@ export default function EditSlider() {
 
     const method = id ? "PUT" : "POST";
     const url = id
-      ? `http://localhost:3002/sliders/${id}`
-      : `http://localhost:3002/sliders`;
+      ? `http://localhost:3001/sliders/${id}`
+      : `http://localhost:3001/sliders`;
 
     fetch(url, {
       method,
@@ -63,7 +63,7 @@ export default function EditSlider() {
       body: JSON.stringify(form),
     })
       .then(() => {
-        toast.success(id ? "Cập nhật thành công" : "Thêm mới thành công");
+        toast.success(id ? "Sửa thành công" : "Thêm thành công");
         navigate("/admin/slider");
       })
       .catch(() => toast.error("Lỗi khi lưu slider"));
@@ -126,13 +126,13 @@ export default function EditSlider() {
                 />
               </div>
 
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-outline-primary">
                 <i className="fa-solid fa-floppy-disk me-2"></i>
                 {id ? "Lưu" : "Thêm"}
               </button>
               <button
                 type="button"
-                className="btn btn-secondary ms-2"
+                className="btn btn-outline-success ms-2"
                 onClick={() => navigate("/admin/slider")}
               >
                 <i className="fa-solid fa-xmark me-2"></i>

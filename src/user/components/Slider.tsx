@@ -14,7 +14,7 @@ export default function Slide() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3002/sliders")
+    fetch("http://localhost:3001/sliders")
       .then((res) => res.json())
       .then((data) => setSliders(data))
       .catch(() => console.error("Lỗi tải slider"));

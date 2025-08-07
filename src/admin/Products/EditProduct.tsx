@@ -172,13 +172,13 @@ export default function EditProduct() {
               </div>
 
               {/* Hành động */}
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-outline-primary">
                 <i className="fa-solid fa-floppy-disk me-2"></i>
                 {isEditMode ? "Lưu" : "Thêm"}
               </button>
               <button
                 type="button"
-                className="btn btn-secondary ms-2"
+                className="btn btn-outline-success ms-2"
                 onClick={() => navigate("/admin/product")}
               >
                 <i className="fa-solid fa-xmark me-2"></i>Hủy

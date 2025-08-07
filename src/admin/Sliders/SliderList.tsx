@@ -17,7 +17,7 @@ export default function SliderList() {
   const [sliders, setSliders] = useState<SliderItem[]>([]);
   // Read (Đọc dữ liệu) CRUD
   const fetchSliders = () => {
-    fetch("http://localhost:3002/sliders")
+    fetch("http://localhost:3001/sliders")
       .then((res) => res.json())
       .then((data) => setSliders(data))
       .catch(() => toast.error("Lỗi tải Slider"));
@@ -26,7 +26,7 @@ export default function SliderList() {
   // Delete (Xóa dữ liệu) CRUD
   const deleteSlider = (id: number) => {
     if (!window.confirm("Bạn có muốn xóa Slider này?")) return;
-    fetch(`http://localhost:3002/sliders/${id}`, {
+    fetch(`http://localhost:3001/sliders/${id}`, {
       method: "DELETE",
     })
       .then(() => {
@@ -83,13 +83,13 @@ export default function SliderList() {
                     <td>
                       <div className="d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center">
                         <Link to={`/admin/slider/edit/${item.id}`}>
-                          <button className="btn btn-info w-md-auto">
+                          <button className="btn btn-outline-info w-md-auto">
                             <i className="fa-solid fa-pen-to-square me-2"></i>
                             Sửa
                           </button>
                         </Link>
                         <button
-                          className="btn btn-danger w-md-auto"
+                          className="btn btn-outline-danger w-md-auto"
                           onClick={() => deleteSlider(item.id)}
                         >
                           <i className="fa-solid fa-trash me-2"></i>

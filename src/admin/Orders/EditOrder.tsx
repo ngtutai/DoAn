@@ -164,7 +164,10 @@ export default function EditOrder() {
 
             {!isFinalized && (
               <div className="text-end">
-                <button className="btn btn-success" onClick={handleSave}>
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={handleSave}
+                >
                   Lưu
                 </button>
               </div>
