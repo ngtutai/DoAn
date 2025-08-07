@@ -3,26 +3,18 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
+import commentService, { IComment } from "../../services/commentService";
 
-export interface CommentItem {
-  id: string;
-  productId: string;
-  userId: string;
-  userName: string;
-  content: string;
-  date: string;
-  rating: number;
-}
-
-export default function Comment() {
-  const [comments, setComments] = useState<CommentItem[]>([]);
+function CommentList() {
+  const [comments, setComments] = useState<IComment[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/comments")
-      .then((res) => res.json())
+    // Dùng service thay vì fetch thô
+    commentService
+      .list()
       .then((data) => {
-        setComments(data.reverse()); // Hiển thị mới nhất trước
+        setComments(data.reverse()); // Mới nhất lên trước
         setLoading(false);
       })
       .catch((err) => {
@@ -39,7 +31,6 @@ export default function Comment() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3">
-          {/* Phần thông tin cần làm */}
           <h4 className="mb-4 text-secondary">Danh sách bình luận</h4>
 
           {loading ? (
@@ -49,7 +40,7 @@ export default function Comment() {
               </div>
             </div>
           ) : comments.length === 0 ? (
-            <div className="alert alert-warning  text-center">
+            <div className="alert alert-warning text-center">
               Không có bình luận nào!
             </div>
           ) : (
@@ -99,3 +90,5 @@ export default function Comment() {
     </div>
   );
 }
+
+export default CommentList;

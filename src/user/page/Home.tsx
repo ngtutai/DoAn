@@ -3,6 +3,8 @@ import Slider from "../components/Slider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import petService from "../../services/petService";
+
 interface Product {
   id: number;
   name: string;
@@ -18,8 +20,8 @@ export default function Home() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((res) => res.json())
+    petService
+      .list()
       .then((data) => {
         const mapped: Product[] = data.slice(0, 4).map((item: any) => {
           let type: "dog" | "cat" | "accessory" = "accessory";
@@ -67,7 +69,6 @@ export default function Home() {
       desc: "Tư vấn miễn phí: 1900 123 456",
     },
   ];
-
   const featuredServices = [
     {
       id: "spa",
@@ -137,9 +138,9 @@ export default function Home() {
         </section>
 
         {/* Dịch vụ nổi bật */}
-        <section className="bg-light py-3 rounded mb-4">
+        <section className="bg-light rounded mb-4">
           <div className="container">
-            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill">
+            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill  mb-4">
               ✨ Dịch vụ nổi bật
             </h3>
             <div className="row">
@@ -169,9 +170,9 @@ export default function Home() {
           </div>
         </section>
         {/* Sản phẩm nổi bật */}
-        <section className="bg-light py-3 rounded ">
+        <section className="bg-light rounded ">
           <div className="container">
-            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill">
+            <h3 className="text-center bg-secondary bg-opacity-25 fw-bold p-3 rounded-pill mb-4">
               ✨ Sản phẩm nổi bật
             </h3>
             <div className="row">
@@ -186,7 +187,7 @@ export default function Home() {
                       alt={product.name}
                       className="card-img-top"
                       style={{
-                        height: "180px",
+                        height: "280px",
                         objectFit: "cover",
                       }}
                     />
@@ -209,7 +210,7 @@ export default function Home() {
           </div>
         </section>
         {/* Cam kết */}
-        <section className="bg-warning bg-opacity-25 py-4 rounded text-center">
+        <section className="bg-warning bg-opacity-25 py-4 rounded text-center mt-4">
           <div className="container">
             <h4 className="fw-bold mb-3">🎯 Cam kết của PET SHOP</h4>
             <div className="row">

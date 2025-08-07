@@ -1,0 +1,27 @@
+import api from "./api";
+
+export interface IPet {
+  id: number;
+  name: string;
+  categoryId: number;
+  price: number;
+  image: string;
+}
+
+// Danh sách thú cưng
+const list = () => api.get<IPet[]>(api.url.pets).then((res) => res.data);
+// Lấy theo ID
+const get = (id: number) =>
+  api.get<IPet>(`${api.url.pets}/${id}`).then((res) => res.data);
+// Thêm mới thú cưng
+const add = (data: IPet) =>
+  api.post<IPet>(api.url.pets, data).then((res) => res.data);
+// Cập nhật thú cưng
+const update = (id: number, data: IPet) =>
+  api.put<IPet>(`${api.url.pets}/${id}`, data).then((res) => res.data);
+// Xóa thú cưng
+const remove = (id: number) =>
+  api.delete<IPet>(`${api.url.pets}/${id}`).then((res) => res.data);
+
+const petService = { list, get, add, update, remove };
+export default petService;

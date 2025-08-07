@@ -23,7 +23,7 @@ export interface Order {
   items: OrderItem[];
 }
 
-export default function OrderList() {
+function OrderList() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -156,3 +156,4 @@ export default function OrderList() {
     </div>
   );
 }
+export default OrderList;

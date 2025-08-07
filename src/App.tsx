@@ -29,14 +29,14 @@ import AdminLogin from "./admin/auth/AdminLogin";
 import Dashboard from "./admin/page/Dashboard";
 import OrderList from "./admin/Orders/OrderList";
 import EditOrder from "./admin/Orders/EditOrder";
-import ProductList from "./admin/Products/ProductList";
-import EditProduct from "./admin/Products/EditProduct";
+import ProductList from "./admin/Products/PetList";
+import EditProduct from "./admin/Products/EditPet";
 import SliderList from "./admin/Sliders/SliderList";
 import EditSlider from "./admin/Sliders/EditSlider";
 import HistoryList from "./admin/page/HistoryList";
 import Account from "./admin/page/Account";
 import Voucher from "./admin/page/Voucher";
-import Comment from "./admin/page/Comment";
+import CommentList from "./admin/page/CommentList";
 import AdminProfile from "./admin/page/AdminProfile";
 
 // ========== Link Lỗi Error ========== //
@@ -49,19 +49,19 @@ export default function App() {
       <Router>
         <Routes>
           {/* ========== Link Web User ========== */}
-          <Route path="/" element={<Home />} />
-          <Route path="/pet" element={<Pet />} />
-          <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/teampage" element={<TeamPage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/change-password" element={<ChangePassword />} />
-          <Route path="/orders" element={<Order />} />
-          <Route path="/historyorder" element={<HistoryOrder />} />
+          <Route path="" element={<Home />} />
+          <Route path="pet" element={<Pet />} />
+          <Route path="detail/:id" element={<Detail />} />
+          <Route path="service" element={<Service />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="teampage" element={<TeamPage />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="change-password" element={<ChangePassword />} />
+          <Route path="orders" element={<Order />} />
+          <Route path="historyorder" element={<HistoryOrder />} />
           {/* ========== Link Web Admin ========== */}
           <Route path="/admin" element={<AdminLayout />}>
             {/* ✅ Trang login KHÔNG cần bảo vệ */}
@@ -87,7 +87,7 @@ export default function App() {
               <Route path="history" element={<HistoryList />} />
               <Route path="account" element={<Account />} />
               <Route path="voucher" element={<Voucher />} />
-              <Route path="comment" element={<Comment />} />
+              <Route path="comment" element={<CommentList />} />
               <Route path="adminprofile" element={<AdminProfile />} />
               <Route path="mana" element={<AdminUserManagement />} />
             </Route>

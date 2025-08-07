@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function AdminFooter() {
+function AdminFooter() {
   return (
     <footer className="bg-primary bg-opacity-10 p-3 border-top">
       <div className="container-fluid">
@@ -40,3 +40,4 @@ export default function AdminFooter() {
     </footer>
   );
 }
+export default AdminFooter;

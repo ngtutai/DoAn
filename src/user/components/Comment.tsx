@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import api from "../../services/api"; // điều chỉnh lại đường dẫn nếu cần
 
 export interface Comment {
   id: string;
@@ -21,7 +22,7 @@ export interface Props {
 
 const CommentSection: React.FC<Props> = ({ productId }) => {
   const [comments, setComments] = useState<Comment[]>([]);
-  const [, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [newComment, setNewComment] = useState("");
   const [rating, setRating] = useState<number>(5);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -36,43 +37,39 @@ const CommentSection: React.FC<Props> = ({ productId }) => {
     return `${time} - ${day}`;
   };
 
-  useEffect(() => {
-    const fetchCommentsAndUsers = async () => {
-      try {
-        const [cmtRes, userRes] = await Promise.all([
-          fetch("http://localhost:3001/comments"),
-          fetch("http://localhost:3001/users"),
-        ]);
+  const fetchCommentsAndUsers = async () => {
+    try {
+      const [cmtRes, userRes] = await Promise.all([
+        api.get(`${api.url.comments}?productId=${productId}`),
+        api.get(api.url.users),
+      ]);
 
-        const commentsData: Comment[] = await cmtRes.json();
-        const usersData: User[] = await userRes.json();
+      const commentsData: Comment[] = cmtRes.data;
+      const usersData: User[] = userRes.data;
 
-        const combined = commentsData
-          .filter((c) => c.productId.toString() === productId)
-          .map((c) => {
-            const foundUser = usersData.find(
-              (u) => u.id.toString() === c.userId.toString()
-            );
-            return {
-              ...c,
-              userName: foundUser ? foundUser.displayname : "Ẩn danh",
-            };
-          });
+      const combined = commentsData.map((c) => {
+        const foundUser = usersData.find((u) => u.id === c.userId);
+        return {
+          ...c,
+          userName: foundUser ? foundUser.displayname : "Ẩn danh",
+        };
+      });
 
-        setComments(combined);
-        setUsers(usersData);
+      setComments(combined);
+      setUsers(usersData);
 
-        const storedUser = localStorage.getItem("currentUser");
-        if (storedUser) {
-          const parsed = JSON.parse(storedUser);
-          const matchedUser = usersData.find((u) => u.id === parsed.id);
-          if (matchedUser) setCurrentUser(matchedUser);
-        }
-      } catch (error) {
-        console.error("Lỗi tải bình luận hoặc người dùng:", error);
+      const storedUser = localStorage.getItem("currentUser");
+      if (storedUser) {
+        const parsed = JSON.parse(storedUser);
+        const matchedUser = usersData.find((u) => u.id === parsed.id);
+        if (matchedUser) setCurrentUser(matchedUser);
       }
-    };
+    } catch (error) {
+      console.error("Lỗi tải dữ liệu:", error);
+    }
+  };
 
+  useEffect(() => {
     fetchCommentsAndUsers();
   }, [productId]);
 
@@ -98,14 +95,7 @@ const CommentSection: React.FC<Props> = ({ productId }) => {
     };
 
     try {
-      const res = await fetch("http://localhost:3001/comments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newCmt),
-      });
-
-      if (!res.ok) throw new Error("Gửi bình luận thất bại");
-
+      await api.post(api.url.comments, newCmt);
       setComments((prev) => [...prev, newCmt]);
       setNewComment("");
       setRating(5);
@@ -116,7 +106,6 @@ const CommentSection: React.FC<Props> = ({ productId }) => {
 
   return (
     <div className="mt-5">
-      {/* Phần cần làm cho bài */}
       <h4 className="mb-4 text-start">Đánh giá & Bình luận</h4>
 
       {currentUser ? (

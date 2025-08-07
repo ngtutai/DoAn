@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import AdminSidebar from "./AdminSidebar";
 
-export default function Menu() {
+function Menu() {
   return (
     <Fragment>
       {/* Sidebar offcanvas(menu ẩn) cho mobile */}
@@ -29,3 +29,4 @@ export default function Menu() {
     </Fragment>
   );
 }
+export default Menu;

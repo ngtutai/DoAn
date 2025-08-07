@@ -4,18 +4,9 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
-import axios from "axios";
+import voucherService, { Vouchers } from "../../services/voucherService";
 
-interface Vouchers {
-  id: number;
-  code: string;
-  percent: number;
-  startDate: string;
-  endDate: string;
-  usageLimit: number;
-}
-
-export default function Voucher() {
+function Voucher() {
   const [vouchers, setVouchers] = useState<Vouchers[]>([]);
   const [newVoucher, setNewVoucher] = useState<Omit<Vouchers, "id">>({
     code: "",
@@ -32,26 +23,13 @@ export default function Voucher() {
 
   const fetchVouchers = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/vouchers");
-      const data: Vouchers[] = res.data;
-
-      // Tách các voucher hợp lệ (usageLimit > 0)
-      const validVouchers = data.filter((v) => v.usageLimit > 0);
-
-      // Tách các voucher cần xóa (usageLimit <= 0)
+      const data = await voucherService.list();
+      const valid = data.filter((v) => v.usageLimit > 0);
       const toDelete = data.filter((v) => v.usageLimit <= 0);
-
-      // Xoá toàn bộ voucher usageLimit = 0 khỏi server
-      await Promise.all(
-        toDelete.map((v) =>
-          axios.delete(`http://localhost:3001/vouchers/${v.id}`)
-        )
-      );
-
-      // Cập nhật state
-      setVouchers(validVouchers);
-    } catch (error) {
-      toast.error("Lỗi khi tải danh sách voucher!");
+      await Promise.all(toDelete.map((v) => voucherService.remove(v.id)));
+      setVouchers(valid);
+    } catch {
+      toast.error("Không thể tải danh sách voucher");
     }
   };
 
@@ -60,15 +38,20 @@ export default function Voucher() {
   }, []);
 
   const handleAdd = async () => {
+    if (!newVoucher.code.trim()) {
+      toast.error("Vui lòng nhập mã voucher");
+      return;
+    }
+
     const exists = vouchers.some((v) => v.code === newVoucher.code);
-    if (!newVoucher.code || exists) {
-      toast.error("Mã code bị trống hoặc đã tồn tại!");
+    if (exists) {
+      toast.error("Mã voucher đã tồn tại");
       return;
     }
 
     try {
-      await axios.post("http://localhost:3001/vouchers", newVoucher);
-      toast.success("Thêm voucher thành công!");
+      await voucherService.add(newVoucher);
+      toast.success("Thêm voucher thành công");
       setNewVoucher({
         code: "",
         percent: 0,
@@ -77,18 +60,18 @@ export default function Voucher() {
         usageLimit: 0,
       });
       fetchVouchers();
-    } catch (error) {
-      toast.error("Lỗi khi thêm voucher!");
+    } catch {
+      toast.error("Lỗi khi thêm voucher");
     }
   };
 
   const handleDelete = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:3001/vouchers/${id}`);
-      toast.success("Xoá voucher thành công!");
+      await voucherService.remove(id);
+      toast.success("Đã xoá voucher");
       fetchVouchers();
-    } catch (error) {
-      toast.error("Lỗi khi xoá voucher!");
+    } catch {
+      toast.error("Lỗi khi xoá voucher");
     }
   };
 
@@ -105,22 +88,23 @@ export default function Voucher() {
 
   const handleSave = async (id: number) => {
     if (!editingVoucher) return;
+
     const exists = vouchers.some(
       (v) => v.code === editingVoucher.code && v.id !== id
     );
     if (exists) {
-      toast.error("Mã voucher đã tồn tại!");
+      toast.error("Mã voucher đã tồn tại");
       return;
     }
 
     try {
-      await axios.put(`http://localhost:3001/vouchers/${id}`, editingVoucher);
-      toast.success("Cập nhật voucher thành công!");
+      await voucherService.update(id, editingVoucher);
+      toast.success("Cập nhật thành công");
       setEditingId(null);
       setEditingVoucher(null);
       fetchVouchers();
-    } catch (error) {
-      toast.error("Lỗi khi cập nhật voucher!");
+    } catch {
+      toast.error("Lỗi khi cập nhật voucher");
     }
   };
 
@@ -132,13 +116,12 @@ export default function Voucher() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3 text-center">
-          {/* Phần thông tin cần làm */}
           <div className="container">
             <h2 className="text-secondary text-start">Quản lý Voucher</h2>
 
-            {/* Add form */}
+            {/* Form thêm voucher */}
             <div className="row g-2 mb-3">
-              {["Mã code", "percent", "startDate", "endDate", "usageLimit"].map(
+              {["code", "percent", "startDate", "endDate", "usageLimit"].map(
                 (field) => (
                   <div className="col" key={field}>
                     <input
@@ -146,7 +129,7 @@ export default function Voucher() {
                       type={
                         field === "percent" || field === "usageLimit"
                           ? "number"
-                          : field === "startDate" || field === "endDate"
+                          : field.includes("Date")
                           ? "date"
                           : "text"
                       }
@@ -172,7 +155,7 @@ export default function Voucher() {
               </div>
             </div>
 
-            {/* Table */}
+            {/* Bảng voucher */}
             <table className="table table-bordered">
               <thead>
                 <tr>
@@ -201,7 +184,7 @@ export default function Voucher() {
                             type={
                               field === "percent" || field === "usageLimit"
                                 ? "number"
-                                : field === "startDate" || field === "endDate"
+                                : field.includes("Date")
                                 ? "date"
                                 : "text"
                             }
@@ -223,13 +206,13 @@ export default function Voucher() {
                           className="btn btn-outline-primary btn-sm me-2"
                           onClick={() => handleSave(v.id)}
                         >
-                          <i className="fa-solid fa-floppy-disk me-2"></i>Lưu
+                          <i className="fa fa-save me-1"></i>Lưu
                         </button>
                         <button
                           className="btn btn-outline-success btn-sm"
                           onClick={() => setEditingId(null)}
                         >
-                          <i className="fa-solid fa-xmark me-2"></i>Hủy
+                          <i className="fa fa-times me-1"></i>Huỷ
                         </button>
                       </td>
                     </tr>
@@ -245,15 +228,13 @@ export default function Voucher() {
                           className="btn btn-outline-info btn-sm me-2"
                           onClick={() => handleEdit(v)}
                         >
-                          <i className="fa-solid fa-pen-to-square me-2"></i>
-                          Sửa
+                          <i className="fa fa-edit me-1"></i>Sửa
                         </button>
                         <button
                           className="btn btn-outline-danger btn-sm"
                           onClick={() => handleDelete(v.id)}
                         >
-                          <i className="fa-solid fa-trash me-2"></i>
-                          Xóa
+                          <i className="fa fa-trash me-1"></i>Xoá
                         </button>
                       </td>
                     </tr>
@@ -264,9 +245,9 @@ export default function Voucher() {
           </div>
         </div>
       </div>
-
       <Menu />
       <AdminFooter />
     </div>
   );
 }
+export default Voucher;
