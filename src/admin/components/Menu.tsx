@@ -13,7 +13,7 @@ export default function Menu() {
       >
         <div className="offcanvas-header">
           <h5 id="mobileSidebarLabel" className="mb-0">
-            Thanh điều hướng
+            Danh mục
           </h5>
           <button
             type="button"
