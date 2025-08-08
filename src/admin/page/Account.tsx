@@ -3,21 +3,15 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
+import userService, { User } from "../../services/userService";
 
-interface User {
-  id: string;
-  displayname: string;
-  email: string;
-  role: string;
-}
-
-export default function Account() {
+function Account() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/users")
-      .then((res) => res.json())
+    userService
+      .list()
       .then((data) => {
         setUsers(data);
         setLoading(false);
@@ -31,9 +25,8 @@ export default function Account() {
   const handleDelete = (id: string) => {
     if (!window.confirm("Bạn có chắc chắn muốn xóa tài khoản này?")) return;
 
-    fetch(`http://localhost:3001/users/${id}`, {
-      method: "DELETE",
-    })
+    userService
+      .remove(id)
       .then(() => {
         setUsers((prev) => prev.filter((u) => u.id !== id));
       })
@@ -103,3 +96,4 @@ export default function Account() {
     </div>
   );
 }
+export default Account;

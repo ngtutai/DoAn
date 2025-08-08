@@ -2,7 +2,7 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 // import axios from "axios";
 
-export default function AdminHeader() {
+function AdminHeader() {
   // thay đổi tên Page Title
   const location = useLocation();
   const getPageTitle = () => {
@@ -10,7 +10,7 @@ export default function AdminHeader() {
       return "Bảng điều khiển";
     if (location.pathname.includes("/admin/adminprofile")) return "Thông tin";
     if (location.pathname.includes("/admin/order")) return "Đơn hàng";
-    if (location.pathname.includes("/admin/product")) return "Sản phẩm";
+    if (location.pathname.includes("/admin/product")) return "Thú cưng";
     if (location.pathname.includes("/admin/category")) return "Thể loại";
     if (location.pathname.includes("/admin/slider")) return "Slider";
     if (location.pathname.includes("/admin/history")) return "Lịch sử";
@@ -131,3 +131,4 @@ export default function AdminHeader() {
     </header>
   );
 }
+export default AdminHeader;

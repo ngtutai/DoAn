@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
@@ -150,52 +150,34 @@ const Cart: React.FC = () => {
     const code = voucherInput.trim();
     const found = voucherList.find((v) => v.code === code);
 
-    // Nếu không nhập mã
     if (!code) {
-      setVoucherMessage("Vui lòng nhập mã giảm giá");
-      setVoucherValid(false);
-      setVoucherPercent(0);
-      setVoucherCode("Chưa áp dụng");
-      return;
+      return resetVoucher("Vui lòng nhập mã giảm giá");
     }
 
-    // Nếu không tìm thấy trong danh sách
     if (!found) {
-      setVoucherMessage("Mã giảm giá không hợp lệ");
-      setVoucherValid(false);
-      setVoucherPercent(0);
-      setVoucherCode("Chưa áp dụng");
-      return;
+      return resetVoucher("Mã giảm giá không hợp lệ");
     }
 
-    // Lấy ngày hiện tại và chuyển định dạng ngày từ JSON sang Date
     const today = new Date();
-    const start = new Date(found.startDate + "T00:00:00");
-    const end = new Date(found.endDate + "T23:59:59");
+    const start = new Date(`${found.startDate}T00:00:00`);
+    const end = new Date(`${found.endDate}T23:59:59`);
 
-    // So sánh ngày
-    if (today < start) {
-      setVoucherMessage("Mã giảm giá chưa có hiệu lực");
-      setVoucherValid(false);
-      setVoucherPercent(0);
-      setVoucherCode("Chưa áp dụng");
-    } else if (today > end) {
-      setVoucherMessage("Mã giảm giá đã hết hạn");
-      setVoucherValid(false);
-      setVoucherPercent(0);
-      setVoucherCode("Chưa áp dụng");
-    } else if (found.usageLimit <= 0) {
-      setVoucherMessage("Mã giảm giá đã hết lượt sử dụng");
-      setVoucherValid(false);
-      setVoucherPercent(0);
-      setVoucherCode("Chưa áp dụng");
-    } else {
-      // Áp dụng voucher thành công
-      setVoucherPercent(found.percent);
-      setVoucherCode(found.code);
-      setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
-      setVoucherValid(true);
+    if (today < start || today > end || found.usageLimit <= 0) {
+      return resetVoucher("Mã giảm giá không hợp lệ");
     }
+
+    // Thành công
+    setVoucherPercent(found.percent);
+    setVoucherCode(found.code);
+    setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
+    setVoucherValid(true);
+  };
+
+  const resetVoucher = (message: string) => {
+    setVoucherMessage(message);
+    setVoucherValid(false);
+    setVoucherPercent(0);
+    setVoucherCode("Chưa áp dụng");
   };
 
   // Tick input từng cái
@@ -236,7 +218,7 @@ const Cart: React.FC = () => {
   };
 
   // ✅ Thanh toán bằng QR
-  const handlePayment = async () => {
+  const handleQRConfirm = async () => {
     if (total === 0) return toast.warning("Bạn chưa chọn sản phẩm nào.");
     const itemsToOrder = items.filter((item) => item.checked);
 
@@ -275,7 +257,7 @@ const Cart: React.FC = () => {
 
   // ==== UI ====
   return (
-    <Fragment>
+    <>
       <Header />
       {/* BANNER */}
       <section
@@ -360,7 +342,7 @@ const Cart: React.FC = () => {
                         <td>{index + 1}</td>
                         <td>
                           <img
-                            src={item.image || "https://placehold.co/100x100"}
+                            src={item.image}
                             alt={item.name}
                             style={{
                               width: "80px",
@@ -430,7 +412,7 @@ const Cart: React.FC = () => {
 
           {/* Right Sidebar */}
           <div className="col-12 col-md-4">
-            <h5 className="text-danger">Mã giảm giá</h5>
+            <h5 className="text-danger ms-2">Mã giảm giá</h5>
             <div className="row">
               <div className="col">
                 <div className="input-group">
@@ -450,8 +432,8 @@ const Cart: React.FC = () => {
                     voucherValid === null
                       ? ""
                       : voucherValid
-                      ? "mt-2 text-primary"
-                      : "mt-2 text-danger"
+                      ? "mt-2 text-primary ms-2"
+                      : "mt-2 text-danger ms-2"
                   }
                   style={{ minHeight: 24 }}
                 >
@@ -521,7 +503,7 @@ const Cart: React.FC = () => {
                   </div>
                   <button
                     className="btn btn-primary w-100"
-                    onClick={handlePayment}
+                    onClick={handleQRConfirm}
                   >
                     Thanh toán
                   </button>
@@ -549,7 +531,7 @@ const Cart: React.FC = () => {
       )}
 
       <Footer />
-    </Fragment>
+    </>
   );
 };
 export default Cart;

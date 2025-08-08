@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React, { Fragment } from "react";
 
-export default function AdminSidebar() {
+function AdminSidebar() {
   return (
     <Fragment>
       <nav className="sidebar border-end">
@@ -151,3 +151,4 @@ export default function AdminSidebar() {
     </Fragment>
   );
 }
+export default AdminSidebar;

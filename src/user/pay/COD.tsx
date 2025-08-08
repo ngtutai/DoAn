@@ -193,11 +193,11 @@ const COD: React.FC<Props> = ({ onClose, onConfirm }) => {
           </div>
 
           <div className="d-flex justify-content-end mt-3 gap-2">
-            <button className="btn btn-secondary" onClick={onClose}>
-              Hủy
-            </button>
-            <button className="btn btn-success" onClick={handleConfirm}>
+            <button className="btn btn-outline-info" onClick={handleConfirm}>
               Xác nhận
+            </button>
+            <button className="btn btn-outline-success" onClick={onClose}>
+              Hủy
             </button>
           </div>
         </div>

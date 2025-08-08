@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "./Header";
 import Footer from "./Footer";
-import CommentSection from "./CommentSection";
+import CommentSection from "./Comment";
+import detailService from "../../services/detailService";
 
 export interface Product {
   id: string;
@@ -20,8 +21,10 @@ export default function Detail() {
 
   // Sản phẩm
   useEffect(() => {
-    fetch(`http://localhost:3001/products/${id}`)
-      .then((res) => res.json())
+    if (!id) return;
+
+    detailService
+      .get(id)
       .then((data) => {
         if (!data) {
           toast.error("Không tìm thấy sản phẩm");

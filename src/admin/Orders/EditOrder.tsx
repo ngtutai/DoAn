@@ -31,7 +31,7 @@ export interface Order {
   items: OrderItem[];
 }
 
-export default function EditOrder() {
+function EditOrder() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [order, setOrder] = useState<Order | null>(null);
@@ -180,3 +180,4 @@ export default function EditOrder() {
     </div>
   );
 }
+export default EditOrder;

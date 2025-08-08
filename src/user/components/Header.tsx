@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-export default function Header() {
+function Header() {
   const storedUser = localStorage.getItem("currentUser");
   const currentUser = storedUser ? JSON.parse(storedUser) : null;
   const handleLogout = () => {
@@ -75,7 +75,7 @@ export default function Header() {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="offcanvas-body">
+            <div className="offcanvas-body text-start">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 mt-1">
                 <li className="nav-item">
                   <NavLink
@@ -241,3 +241,4 @@ export default function Header() {
     </header>
   );
 }
+export default Header;

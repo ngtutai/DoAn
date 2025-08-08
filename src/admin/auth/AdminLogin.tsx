@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import userService from "../../services/userService";
 // import "./Layout/Admin.css";
 
-export default function AdminLogin() {
+function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
@@ -57,12 +58,10 @@ export default function AdminLogin() {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/users");
-      const users = await res.json();
-
-      const adminUser = users.find(
-        (u: any) =>
-          u.email === email && u.password === password && u.role === "admin"
+      const adminUser = await userService.findByAccountdRole(
+        email,
+        password,
+        "admin"
       );
 
       if (adminUser) {
@@ -182,3 +181,4 @@ export default function AdminLogin() {
     </div>
   );
 }
+export default AdminLogin;

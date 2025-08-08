@@ -3,35 +3,18 @@ import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
+import orderService, { Order } from "../../services/ortherService";
 
-export interface OrderItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-export interface Order {
-  id: number;
-  code: string;
-  userId: number;
-  orderDate: string;
-  status: "delivered" | "cancel";
-  shippingFee: number;
-  total: number;
-  items: OrderItem[];
-}
-
-export default function HistoryList() {
+function HistoryList() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [expandedOrderId, setExpandedOrderId] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:3001/orders")
-      .then((res) => res.json())
+    orderService
+      .list()
       .then((data) => {
         const filtered = data.filter(
-          (o: Order) => o.status === "delivered" || o.status === "cancel"
+          (o) => o.status === "delivered" || o.status === "cancel"
         );
         setOrders(filtered);
       })
@@ -50,8 +33,8 @@ export default function HistoryList() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3">
-          {/* Phần thông tin cần làm */}
           <h4 className="mb-4 text-secondary">Lịch sử đơn hàng</h4>
+
           {orders.length === 0 ? (
             <div className="alert alert-warning text-center">
               Chưa có đơn hàng đã giao hoặc đã hủy.
@@ -148,3 +131,4 @@ export default function HistoryList() {
     </div>
   );
 }
+export default HistoryList;

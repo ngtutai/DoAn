@@ -58,8 +58,8 @@ export default function EditProduct() {
     const product = { name, price, image, categoryId, description };
 
     const url = isEditMode
-      ? `http://localhost:3001/products/${id}`
-      : "http://localhost:3001/products";
+      ? `http://localhost:3001/pets/${id}`
+      : "http://localhost:3001/pets";
 
     fetch(url, {
       method: isEditMode ? "PUT" : "POST",

@@ -20,7 +20,7 @@ export default function ProductList() {
   const itemsPerPage = 7;
 
   const fetchProducts = () => {
-    fetch("http://localhost:3001/products")
+    fetch("http://localhost:3001/pets")
       .then((res) => res.json())
       .then((data) => {
         const getCategoryName = (id: number): string => {
@@ -43,7 +43,7 @@ export default function ProductList() {
   const handleDelete = (id: number) => {
     if (!window.confirm("Bạn có chắc chắn muốn xoá sản phẩm này?")) return;
 
-    fetch(`http://localhost:3001/products/${id}`, {
+    fetch(`http://localhost:3001/pets/${id}`, {
       method: "DELETE",
     })
       .then(() => {

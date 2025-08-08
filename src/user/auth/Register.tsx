@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Input from "../auth/Input";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import userService from "../../services/userService";
 
 const Register = () => {
   const fullNameRef = useRef<HTMLInputElement>(null);
@@ -34,10 +35,7 @@ const Register = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/users");
-      const users = await res.json();
-
-      const existed = users.find((u: any) => u.email === email);
+      const existed = await userService.findByEmail(email);
       if (existed) {
         toast.error("Email đã được đăng ký.");
         return;
@@ -52,11 +50,7 @@ const Register = () => {
         address: "",
       };
 
-      await fetch("http://localhost:3001/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newUser),
-      });
+      await userService.create(newUser);
 
       toast.success("Đăng ký thành công!");
       navigate("/login");
@@ -178,7 +172,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <Footer />
       <Footer />
     </>
   );

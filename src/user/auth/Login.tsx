@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Input from "../auth/Input"; // Import component Input
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import userService from "../../services/userService";
 
 const Login = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -39,15 +40,10 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/users");
-      const users = await res.json();
+      const user = await userService.findByEmailPassword(email, password);
 
-      const found = users.find(
-        (u: any) => u.email === email && u.password === password
-      );
-
-      if (found) {
-        localStorage.setItem("currentUser", JSON.stringify(found));
+      if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
 
         if (rememberMe) {
           localStorage.setItem("rememberEmail", email);

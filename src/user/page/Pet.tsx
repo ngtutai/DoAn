@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import petService from "../../services/petService";
 
 export interface Product {
   id: number;
@@ -24,7 +25,7 @@ function formatCurrency(value: number): string {
   return value.toLocaleString("vi-VN") + " đ";
 }
 
-export default function Pet() {
+function Pet() {
   const [selectedType, setSelectedType] = useState<
     "all" | "dog" | "cat" | "accessory"
   >("all");
@@ -47,12 +48,13 @@ export default function Pet() {
 
   // ✅ Load dữ liệu từ JSON Server và chuyển đổi categoryId → type
   useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((res) => res.json())
+    petService
+      .list()
       .then((data) => {
         const mapped: Product[] = data.map((item: any) => {
           let type: "dog" | "cat" | "accessory" = "accessory";
           let folder = "PhuKien";
+
           if (item.categoryId === 1) {
             type = "dog";
             folder = "Cho";
@@ -397,3 +399,4 @@ export default function Pet() {
     </>
   );
 }
+export default Pet;
