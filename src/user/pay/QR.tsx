@@ -113,6 +113,38 @@ const QR: React.FC<Props> = ({ orderId, amount, onClose }) => {
           </div>
         </div>
       </div>
+      {/* Bên phải: hình điện thoại + mã QR */}
+      <div className="col-md-6 d-flex justify-content-center align-items-center">
+        <div
+          style={{
+            width: "300px",
+            height: "600px",
+            border: "16px solid black",
+            borderRadius: "36px",
+            padding: "20px",
+            position: "relative",
+            backgroundColor: "#fff",
+          }}
+        >
+          <div
+            style={{
+              width: "260px",
+              height: "260px",
+              margin: "0 auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="/images/qr-example.png" // hoặc QR được render từ API
+              alt="QR Code"
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+          </div>
+          <p className="text-center mt-4">Quét mã để thanh toán</p>
+        </div>
+      </div>
     </div>
   );
 };

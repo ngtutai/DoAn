@@ -172,6 +172,7 @@ const Cart: React.FC = () => {
     setVoucherMessage(`Đã áp dụng mã ${found.code} giảm ${found.percent}%`);
     setVoucherValid(true);
   };
+
   const resetVoucher = (message: string) => {
     setVoucherMessage(message);
     setVoucherValid(false);

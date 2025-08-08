@@ -35,13 +35,11 @@ const create = async (data: Order) => {
   return res.data;
 };
 
-// Cập nhật đơn hàng theo ID
 const update = async (id: number, order: Partial<Order>) => {
   const res = await api.put<Order>(`${api.url.orders}/${id}`, order);
   return res.data;
 };
 
-// Xóa đơn hàng theo ID
 const remove = async (id: number) => {
   const res = await api.delete(`${api.url.orders}/${id}`);
   return res.data;
