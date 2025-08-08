@@ -23,6 +23,9 @@
       "image": "slider-4.png",
       "title": "4. Thú Cưng và Trẻ Em",
       "description": "Thú cưng có thể đóng vai trò quan trọng trong việc giáo dục trẻ em về trách \n            nhiệm và tình yêu thương. Chúng giúp trẻ em học cách chăm sóc, nuôi dưỡng và \n            tôn trọng sự sống. Những trải nghiệm tích cực với thú cưng có thể giúp trẻ \n            phát triển kỹ năng xã hội, tạo ra mối liên kết tình cảm mạnh mẽ và hỗ trợ sự \n            phát triển cảm xúc. Việc nuôi thú cưng cũng giúp trẻ em trở nên nhạy cảm hơn \n            với cảm xúc của người khác."
+    },
+    {
+      "id": "5762"
     }
   ],
   "users": [
@@ -61,6 +64,9 @@
       "role": "user",
       "phone": "",
       "address": ""
+    },
+    {
+      "id": "4ab7"
     }
   ],
   "categories": [
@@ -269,6 +275,9 @@
       "image": "1 Vòng cổ 1.png",
       "categoryId": 3,
       "description": "4"
+    },
+    {
+      "id": "b2ad"
     }
   ],
   "orders": [],
