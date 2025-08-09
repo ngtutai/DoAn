@@ -1,8 +1,6 @@
-import React, { Fragment, useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Input from "../auth/Input"; // Import component Input
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -64,8 +62,7 @@ const Login = () => {
   };
 
   return (
-    <Fragment>
-      <Header />
+    <>
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-md-5">
@@ -155,8 +152,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </Fragment>
+    </>
   );
 };
 export default Login;

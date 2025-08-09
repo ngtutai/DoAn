@@ -32,8 +32,8 @@
       "email": "Admin@gmail.com",
       "password": "123",
       "role": "admin",
-      "phone": "",
-      "address": ""
+      "phone": "0123789654",
+      "address": "Công Viên Phần Mềm Quang Trung"
     },
     {
       "id": "2ba1",

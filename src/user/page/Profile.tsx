@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export interface User {
   id: number;
@@ -13,7 +11,7 @@ export interface User {
   address?: string;
 }
 
-export default function Profile() {
+function Profile() {
   const [user, setUser] = useState<User | null>(null);
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState<User | null>(null);
@@ -33,7 +31,8 @@ export default function Profile() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSave = async () => { //cap nhat thong tin nguoi dung
+  const handleSave = async () => {
+    //cap nhat thong tin nguoi dung
     if (formData && user) {
       try {
         const response = await fetch(`http://localhost:3001/users/${user.id}`, {
@@ -60,18 +59,15 @@ export default function Profile() {
   if (!user || !formData) {
     return (
       <>
-        <Header />
         <div className="container py-5">
           <h3 className="text-danger">Bạn chưa đăng nhập!</h3>
         </div>
-        <Footer />
       </>
     );
   }
 
   return (
     <>
-      <Header />
       <div className="container py-3">
         <div className="row">
           <section className="bread-crumb mb-3">
@@ -147,15 +143,24 @@ export default function Profile() {
                 <div className="text-end">
                   {editing ? (
                     <>
-                      <button className="btn btn-success me-2" onClick={handleSave}>
+                      <button
+                        className="btn btn-success me-2"
+                        onClick={handleSave}
+                      >
                         <i className="fa fa-save me-1"></i>Lưu thay đổi
                       </button>
-                      <button className="btn btn-secondary" onClick={() => setEditing(false)}>
+                      <button
+                        className="btn btn-secondary"
+                        onClick={() => setEditing(false)}
+                      >
                         Hủy
                       </button>
                     </>
                   ) : (
-                    <button className="btn btn-primary" onClick={() => setEditing(true)}>
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => setEditing(true)}
+                    >
                       <i className="fa fa-edit me-1"></i>Chỉnh sửa
                     </button>
                   )}
@@ -165,7 +170,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
+export default Profile;

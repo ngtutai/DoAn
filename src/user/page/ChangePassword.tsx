@@ -1,11 +1,9 @@
-import React, { Fragment, useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ChangePassword() {
+function ChangePassword() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -55,8 +53,7 @@ export default function ChangePassword() {
   };
 
   return (
-    <Fragment>
-      <Header />
+    <>
       <div className="container py-3">
         <div className="row">
           <section className="bread-crumb mb-3">
@@ -154,7 +151,7 @@ export default function ChangePassword() {
           </div>
         </div>
       </div>
-      <Footer />
-    </Fragment>
+    </>
   );
 }
+export default ChangePassword;

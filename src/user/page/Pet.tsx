@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import petService from "../../services/petService";
 
 export interface Product {
@@ -144,7 +142,6 @@ function Pet() {
 
   return (
     <>
-      <Header />
       {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
@@ -394,8 +391,6 @@ function Pet() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

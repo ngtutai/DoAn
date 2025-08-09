@@ -8,7 +8,7 @@ export interface SliderItem {
   description: string;
 }
 
-export default function Slide() {
+function Slide() {
   const [sliders, setSliders] = useState<SliderItem[]>([]);
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
@@ -110,3 +110,4 @@ export default function Slide() {
     </div>
   );
 }
+export default Slide;

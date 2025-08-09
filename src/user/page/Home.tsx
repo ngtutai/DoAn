@@ -1,7 +1,5 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "../components/Slider";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import petService from "../../services/petService";
 
@@ -13,7 +11,7 @@ interface Product {
   image: string;
 }
 
-export default function Home() {
+function Home() {
   function formatCurrency(value: number): string {
     return value.toLocaleString("vi-VN") + " đ";
   }
@@ -97,8 +95,7 @@ export default function Home() {
   ];
 
   return (
-    <Fragment>
-      <Header />
+    <>
       <Slider />
 
       {/* Băng rôn */}
@@ -234,8 +231,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-
-      <Footer />
-    </Fragment>
+    </>
   );
 }
+export default Home;

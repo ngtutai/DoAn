@@ -1,9 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "./Header";
-import Footer from "./Footer";
-import CommentSection from "./Comment";
+import Comments from "./Comment";
 import detailService from "../../services/detailService";
 
 export interface Product {
@@ -15,7 +13,7 @@ export interface Product {
   description?: string;
 }
 
-export default function Detail() {
+function Detail() {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
 
@@ -102,9 +100,7 @@ export default function Detail() {
   if (!product) return <p className="text-center mt-5">Đang tải...</p>;
 
   return (
-    <Fragment>
-      <Header />
-
+    <>
       {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
@@ -184,11 +180,11 @@ export default function Detail() {
         {/* Bình luận */}
         <div className="row mt-5">
           <div className="col-md-12">
-            <CommentSection productId={product.id} />
+            <Comments productId={product.id} />
           </div>
         </div>
       </div>
-      <Footer />
-    </Fragment>
+    </>
   );
 }
+export default Detail;

@@ -41,6 +41,7 @@ import AdminProfile from "./admin/page/AdminProfile";
 
 // ========== Link Lỗi Error ========== //
 import NotFound from "./user/components/NotFound";
+import Layout from "./user/components/Layout";
 
 export default function App() {
   return (
@@ -48,19 +49,21 @@ export default function App() {
       <Router>
         <Routes>
           {/* ========== Link Web User ========== */}
-          <Route path="" element={<Home />} />
-          <Route path="pet" element={<Pet />} />
-          <Route path="detail/:id" element={<Detail />} />
-          <Route path="service" element={<Service />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="teampage" element={<TeamPage />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="change-password" element={<ChangePassword />} />
-          <Route path="orders" element={<Order />} />
-          <Route path="historyorder" element={<HistoryOrder />} />
+          <Route path="" element={<Layout />}>
+            <Route path="" element={<Home />} />
+            <Route path="pet" element={<Pet />} />
+            <Route path="detail/:id" element={<Detail />} />
+            <Route path="service" element={<Service />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="teampage" element={<TeamPage />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="change-password" element={<ChangePassword />} />
+            <Route path="orders" element={<Order />} />
+            <Route path="historyorder" element={<HistoryOrder />} />
+          </Route>
           {/* ========== Link Web Admin ========== */}
           <Route path="/admin" element={<AdminLayout />}>
             {/* ✅ Trang login KHÔNG cần bảo vệ */}

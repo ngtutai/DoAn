@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
 
-export default function Service() {
+function Service() {
   const services = [
     {
       id: "spa",
@@ -71,8 +69,6 @@ export default function Service() {
 
   return (
     <>
-      <Header />
-
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
         style={{
@@ -131,8 +127,7 @@ export default function Service() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
+export default Service;

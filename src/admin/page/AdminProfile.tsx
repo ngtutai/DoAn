@@ -4,6 +4,7 @@ import AdminSidebar from "../components/AdminSidebar";
 import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
 import { toast } from "react-toastify";
+import userService from "../../services/userService";
 
 export interface Admin {
   id: string;
@@ -14,7 +15,7 @@ export interface Admin {
   address?: string;
 }
 
-export default function AdminProfile() {
+function AdminProfile() {
   const [admin, setAdmin] = useState<Admin | null>(null);
   const [formData, setFormData] = useState<Admin | null>(null);
   const [editing, setEditing] = useState(false);
@@ -23,8 +24,10 @@ export default function AdminProfile() {
     const stored = localStorage.getItem("adminToken");
     if (stored) {
       const parsed = JSON.parse(stored);
-      setAdmin(parsed);
-      setFormData(parsed);
+      userService.getById(parsed.id).then((fresh) => {
+        setAdmin(fresh);
+        setFormData(fresh);
+      });
     }
   }, []);
 
@@ -37,19 +40,9 @@ export default function AdminProfile() {
   const handleSave = async () => {
     if (formData && admin) {
       try {
-        const response = await fetch(
-          `http://localhost:3001/users/${admin.id}`,
-          {
-            method: "PATCH", // hoặc PUT nếu bạn muốn ghi đè toàn bộ
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          }
-        );
+        await userService.update(admin.id, formData);
 
-        if (!response.ok) throw new Error("Lỗi khi cập nhật người dùng");
-
+        localStorage.setItem("adminToken", JSON.stringify(formData));
         localStorage.setItem("currentUser", JSON.stringify(formData));
         setAdmin(formData);
         setEditing(false);
@@ -118,7 +111,7 @@ export default function AdminProfile() {
                 type="text"
                 className="form-control"
                 name="phone"
-                value={formData.phone || ""}
+                value={formData.phone}
                 onChange={handleChange}
                 disabled={!editing}
                 placeholder="Nhập số điện thoại"
@@ -132,7 +125,7 @@ export default function AdminProfile() {
                 type="text"
                 className="form-control"
                 name="address"
-                value={formData.address || ""}
+                value={formData.address}
                 onChange={handleChange}
                 disabled={!editing}
               />
@@ -141,11 +134,14 @@ export default function AdminProfile() {
             <div className="text-end">
               {editing ? (
                 <>
-                  <button className="btn btn-success me-2" onClick={handleSave}>
-                    <i className="fa fa-save me-1"></i> Lưu thay đổi
+                  <button
+                    className="btn btn-outline-info me-2"
+                    onClick={handleSave}
+                  >
+                    <i className="fa fa-save me-1"></i> Lưu
                   </button>
                   <button
-                    className="btn btn-secondary"
+                    className="btn btn-outline-success"
                     onClick={() => setEditing(false)}
                   >
                     Hủy
@@ -169,3 +165,4 @@ export default function AdminProfile() {
     </div>
   );
 }
+export default AdminProfile;
