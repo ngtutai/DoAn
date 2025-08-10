@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import QR from "../pay/QR";
 import COD from "../pay/COD";
 
@@ -258,7 +256,6 @@ const Cart: React.FC = () => {
   // ==== UI ====
   return (
     <>
-      <Header />
       {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
@@ -529,8 +526,6 @@ const Cart: React.FC = () => {
           onConfirm={handleCODConfirm}
         />
       )}
-
-      <Footer />
     </>
   );
 };

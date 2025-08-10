@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 
-export default function Sidebar() {
+function Sidebar() {
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -50,3 +50,4 @@ export default function Sidebar() {
     </div>
   );
 }
+export default Sidebar;

@@ -20,7 +20,7 @@ export interface Props {
   productId: string;
 }
 
-const CommentSection: React.FC<Props> = ({ productId }) => {
+const Comments: React.FC<Props> = ({ productId }) => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [newComment, setNewComment] = useState("");
@@ -187,4 +187,4 @@ const CommentSection: React.FC<Props> = ({ productId }) => {
   );
 };
 
-export default CommentSection;
+export default Comments;

@@ -1,6 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 
 export interface Orders {
@@ -29,7 +27,7 @@ export interface UserData {
   orders: Orders[];
 }
 
-export default function Order() {
+function Order() {
   const [orders, setOrders] = useState<Orders[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState<any>(null);
@@ -139,14 +137,12 @@ export default function Order() {
   if (!currentUser) {
     return (
       <div>
-        <Header />
         <div className="container py-5">
           <div className="row">
             <Sidebar />
             <h3 className="col-md-9 text-danger">Bạn chưa đăng nhập!</h3>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -154,7 +150,6 @@ export default function Order() {
   if (loading) {
     return (
       <div>
-        <Header />
         <div className="container py-5">
           <div className="row">
             <Sidebar />
@@ -163,7 +158,6 @@ export default function Order() {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -171,7 +165,6 @@ export default function Order() {
   if (orders.length === 0) {
     return (
       <div>
-        <Header />
         <div className="container py-5">
           <div className="row">
             <Sidebar />
@@ -182,14 +175,12 @@ export default function Order() {
             </h6>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
 
   return (
-    <Fragment>
-      <Header />
+    <>
       <div className="container py-2">
         <div className="row">
           <section className="bread-crumb mb-3">
@@ -346,8 +337,7 @@ export default function Order() {
           </div>
         </div>
       </div>
-
-      <Footer />
-    </Fragment>
+    </>
   );
 }
+export default Order;

@@ -1,4 +1,4 @@
-export default function Footer() {
+function Footer() {
   return (
     <footer className="mt-3 bg-primary bg-opacity-10">
       <div className="container py-4">
@@ -150,3 +150,4 @@ export default function Footer() {
     </footer>
   );
 }
+export default Footer;

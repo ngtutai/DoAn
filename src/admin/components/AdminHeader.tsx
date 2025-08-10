@@ -103,7 +103,9 @@ function AdminHeader() {
                 width="40"
                 height="40"
               />
-              <span className="me-3">{adminName}</span>
+              <span className="mt-2">
+                <h6>{adminName}</h6>
+              </span>
             </span>
             <ul className="dropdown-menu dropdown-menu-end">
               <li>

@@ -45,6 +45,12 @@ const findByAccountdRole = async (
 const remove = (id: string) =>
   api.delete(`${api.url.users}/${id}`).then((res) => res.data);
 
+const update = (id: string, data: Partial<User>) =>
+  api.patch(`${api.url.users}/${id}}`, data).then((res) => res.data);
+
+const getById = (id: string) =>
+  api.get<User>(`${api.url.users}/${id}`).then((res) => res.data);
+
 const userService = {
   list,
   create,
@@ -52,5 +58,7 @@ const userService = {
   findByEmail,
   findByAccountdRole,
   remove,
+  update,
+  getById, // thêm vào đây
 };
 export default userService;

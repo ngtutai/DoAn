@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import AdminHeader from "../components/AdminHeader";
-import AdminSidebar from "../components/AdminSidebar";
-import Menu from "../components/Menu";
-import AdminFooter from "../components/AdminFooter";
 
 interface Slider {
   id?: number;
@@ -13,7 +9,7 @@ interface Slider {
   description: string;
 }
 
-export default function EditSlider() {
+function EditSlider() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [preview, setPreview] = useState<string>("");
@@ -70,81 +66,72 @@ export default function EditSlider() {
   };
 
   return (
-    <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
-      <AdminHeader />
-      <div className="row g-0 flex-grow-1">
-        <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
-          <AdminSidebar />
-        </div>
-        <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Phần thông tin cần làm */}
-          <div className="container mt-4">
-            <h3 className="text-secondary">{id ? "Sửa" : "Thêm"} slider</h3>
-            <form
-              onSubmit={handleSubmit}
-              className="border p-4 rounded shadow-sm bg-light"
-            >
-              <div className="mb-3">
-                <label>Chọn ảnh:</label>
-                <input
-                  type="file"
-                  accept="image/*"
-                  className="form-control bg-secondary bg-opacity-10"
-                  onChange={handleFileChange}
-                  required={!id}
-                />
-                {preview && (
-                  <img
-                    src={preview}
-                    alt="preview"
-                    style={{ width: 150, marginTop: 10, objectFit: "cover" }}
-                  />
-                )}
-              </div>
-
-              <div className="mb-3">
-                <label>Tiêu đề:</label>
-                <input
-                  type="text"
-                  name="title"
-                  className="form-control bg-secondary bg-opacity-10"
-                  value={form.title}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="mb-3">
-                <label>Mô tả:</label>
-                <textarea
-                  name="description"
-                  className="form-control bg-secondary bg-opacity-10"
-                  value={form.description}
-                  onChange={handleChange}
-                  rows={5}
-                  required
-                />
-              </div>
-
-              <button type="submit" className="btn btn-outline-primary">
-                <i className="fa-solid fa-floppy-disk me-2"></i>
-                {id ? "Lưu" : "Thêm"}
-              </button>
-              <button
-                type="button"
-                className="btn btn-outline-success ms-2"
-                onClick={() => navigate("/admin/slider")}
-              >
-                <i className="fa-solid fa-xmark me-2"></i>
-                Hủy
-              </button>
-            </form>
+    <>
+      {/* Phần thông tin cần làm */}
+      <div className="container mt-4">
+        <h3 className="text-secondary">{id ? "Sửa" : "Thêm"} slider</h3>
+        <form
+          onSubmit={handleSubmit}
+          className="border p-4 rounded shadow-sm bg-light"
+        >
+          <div className="mb-3">
+            <label>Chọn ảnh:</label>
+            <input
+              type="file"
+              accept="image/*"
+              className="form-control bg-secondary bg-opacity-10"
+              onChange={handleFileChange}
+              required={!id}
+            />
+            {preview && (
+              <img
+                src={preview}
+                alt="preview"
+                style={{ width: 150, marginTop: 10, objectFit: "cover" }}
+              />
+            )}
           </div>
-        </div>
-      </div>
 
-      <Menu />
-      <AdminFooter />
-    </div>
+          <div className="mb-3">
+            <label>Tiêu đề:</label>
+            <input
+              type="text"
+              name="title"
+              className="form-control bg-secondary bg-opacity-10"
+              value={form.title}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label>Mô tả:</label>
+            <textarea
+              name="description"
+              className="form-control bg-secondary bg-opacity-10"
+              value={form.description}
+              onChange={handleChange}
+              rows={5}
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-outline-primary">
+            <i className="fa-solid fa-floppy-disk me-2"></i>
+            {id ? "Lưu" : "Thêm"}
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-success ms-2"
+            onClick={() => navigate("/admin/slider")}
+          >
+            <i className="fa-solid fa-xmark me-2"></i>
+            Hủy
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
+
+export default EditSlider;

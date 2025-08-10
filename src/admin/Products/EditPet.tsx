@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import AdminHeader from "../components/AdminHeader";
-import AdminSidebar from "../components/AdminSidebar";
-import Menu from "../components/Menu";
-import AdminFooter from "../components/AdminFooter";
 import { toast } from "react-toastify";
 
-export default function EditProduct() {
+function EditProduct() {
   const navigate = useNavigate();
   const { id } = useParams(); // Nếu có id → là sửa, không có → thêm
 
@@ -78,117 +74,108 @@ export default function EditProduct() {
   };
 
   return (
-    <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
-      <AdminHeader />
-      <div className="row g-0 flex-grow-1">
-        <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
-          <AdminSidebar />
-        </div>
-        <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Phần thông tin cần làm */}
-          <div className="container p-4">
-            <h3 className="text-secondary">
-              {isEditMode ? "Sửa" : "Thêm"} sản phẩm
-            </h3>
-            <form
-              onSubmit={handleSubmit}
-              className="border p-4 rounded shadow-sm bg-light"
-            >
-              {/* Ảnh */}
-              <div className="mb-3">
-                <label className="form-label">Chọn ảnh sản phẩm</label>
-                <input
-                  type="file"
-                  accept="image/*"
-                  className="form-control bg-secondary bg-opacity-10"
-                  onChange={handleFileChange}
-                  required={!isEditMode}
-                />
-                {preview && (
-                  <img
-                    src={preview}
-                    alt="preview"
-                    className="mt-2"
-                    style={{ width: 150, objectFit: "cover" }}
-                  />
-                )}
-                <div className="form-text">
-                  Hãy chắc chắn bạn đã thêm ảnh vào thư mục:
-                  <br />
-                  <code>
-                    /assets/images/Cho/, /Meo/, hoặc /PhuKien/ (tùy danh mục)
-                  </code>
-                </div>
-              </div>
-
-              {/* Tên sản phẩm */}
-              <div className="mb-3">
-                <label className="form-label">Tên sản phẩm</label>
-                <input
-                  type="text"
-                  className="form-control bg-secondary bg-opacity-10"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-
-              {/* Danh mục */}
-              <div className="mb-3">
-                <label className="form-label">Danh mục</label>
-                <select
-                  className="form-select bg-secondary bg-opacity-10"
-                  value={categoryId}
-                  onChange={(e) => setCategoryId(Number(e.target.value))}
-                >
-                  <option value={1}>Chó</option>
-                  <option value={2}>Mèo</option>
-                  <option value={3}>Phụ kiện</option>
-                </select>
-              </div>
-
-              {/* Giá */}
-              <div className="mb-3">
-                <label className="form-label">Giá</label>
-                <input
-                  type="number"
-                  className="form-control bg-secondary bg-opacity-10"
-                  value={price}
-                  onChange={(e) => setPrice(Number(e.target.value))}
-                  required
-                />
-              </div>
-
-              {/* Mô tả */}
-              <div className="mb-3">
-                <label className="form-label">Mô tả</label>
-                <textarea
-                  className="form-control bg-secondary bg-opacity-10"
-                  rows={4}
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Nhập mô tả chi tiết về sản phẩm"
-                ></textarea>
-              </div>
-
-              {/* Hành động */}
-              <button type="submit" className="btn btn-outline-primary">
-                <i className="fa-solid fa-floppy-disk me-2"></i>
-                {isEditMode ? "Lưu" : "Thêm"}
-              </button>
-              <button
-                type="button"
-                className="btn btn-outline-success ms-2"
-                onClick={() => navigate("/admin/product")}
-              >
-                <i className="fa-solid fa-xmark me-2"></i>Hủy
-              </button>
-            </form>
+    <>
+      {/* Phần thông tin cần làm */}
+      <div className="container p-4">
+        <h3 className="text-secondary">
+          {isEditMode ? "Sửa" : "Thêm"} sản phẩm
+        </h3>
+        <form
+          onSubmit={handleSubmit}
+          className="border p-4 rounded shadow-sm bg-light"
+        >
+          {/* Ảnh */}
+          <div className="mb-3">
+            <label className="form-label">Chọn ảnh sản phẩm</label>
+            <input
+              type="file"
+              accept="image/*"
+              className="form-control bg-secondary bg-opacity-10"
+              onChange={handleFileChange}
+              required={!isEditMode}
+            />
+            {preview && (
+              <img
+                src={preview}
+                alt="preview"
+                className="mt-2"
+                style={{ width: 150, objectFit: "cover" }}
+              />
+            )}
+            <div className="form-text">
+              Hãy chắc chắn bạn đã thêm ảnh vào thư mục:
+              <br />
+              <code>
+                /assets/images/Cho/, /Meo/, hoặc /PhuKien/ (tùy danh mục)
+              </code>
+            </div>
           </div>
-        </div>
+
+          {/* Tên sản phẩm */}
+          <div className="mb-3">
+            <label className="form-label">Tên sản phẩm</label>
+            <input
+              type="text"
+              className="form-control bg-secondary bg-opacity-10"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
+          {/* Danh mục */}
+          <div className="mb-3">
+            <label className="form-label">Danh mục</label>
+            <select
+              className="form-select bg-secondary bg-opacity-10"
+              value={categoryId}
+              onChange={(e) => setCategoryId(Number(e.target.value))}
+            >
+              <option value={1}>Chó</option>
+              <option value={2}>Mèo</option>
+              <option value={3}>Phụ kiện</option>
+            </select>
+          </div>
+
+          {/* Giá */}
+          <div className="mb-3">
+            <label className="form-label">Giá</label>
+            <input
+              type="number"
+              className="form-control bg-secondary bg-opacity-10"
+              value={price}
+              onChange={(e) => setPrice(Number(e.target.value))}
+              required
+            />
+          </div>
+
+          {/* Mô tả */}
+          <div className="mb-3">
+            <label className="form-label">Mô tả</label>
+            <textarea
+              className="form-control bg-secondary bg-opacity-10"
+              rows={4}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Nhập mô tả chi tiết về sản phẩm"
+            ></textarea>
+          </div>
+
+          {/* Hành động */}
+          <button type="submit" className="btn btn-outline-primary">
+            <i className="fa-solid fa-floppy-disk me-2"></i>
+            {isEditMode ? "Lưu" : "Thêm"}
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-success ms-2"
+            onClick={() => navigate("/admin/product")}
+          >
+            <i className="fa-solid fa-xmark me-2"></i>Hủy
+          </button>
+        </form>
       </div>
-      <Menu />
-      <AdminFooter />
-    </div>
+    </>
   );
 }
+export default EditProduct;

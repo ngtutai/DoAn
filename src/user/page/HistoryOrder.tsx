@@ -1,27 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
+import orderService, { Order } from "../../services/ortherService";
 
-export interface OrderItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-export interface Order {
-  id: number;
-  code: string;
-  userId: number;
-  orderDate: string;
-  status: "delivered" | "cancel";
-  shippingFee: number;
-  total: number;
-  items: OrderItem[];
-}
-
-export default function HistoryOrder() {
+function HistoryOrder() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [, setCurrentUser] = useState<any>(null);
   const [expandedOrderId, setExpandedOrderId] = useState<number | null>(null);
@@ -32,11 +13,14 @@ export default function HistoryOrder() {
       const user = JSON.parse(userData);
       setCurrentUser(user);
 
-      fetch(`http://localhost:3001/orders?userId=${user.id}`)
-        .then((res) => res.json())
+      orderService
+        .list()
         .then((data) => {
+          // Lọc đúng user và trạng thái
           const filtered = data.filter(
-            (o: Order) => o.status === "delivered" || o.status === "cancel"
+            (o) =>
+              o.userId === user.id &&
+              (o.status === "delivered" || o.status === "cancel")
           );
           setOrders(filtered);
         })
@@ -44,24 +28,12 @@ export default function HistoryOrder() {
     }
   }, []);
 
-  // const getStatusText = (status: string) => {
-  //   switch (status) {
-  //     case "delivered":
-  //       return "Đã giao";
-  //     case "cancel":
-  //       return "Đã hủy";
-  //     default:
-  //       return status;
-  //   }
-  // };
-
   const formatOrderCode = (code: string | number) => {
     return `#${code}`;
   };
 
   return (
     <>
-      <Header />
       <div className="container py-3">
         <div className="row">
           <section className="bread-crumb mb-3">
@@ -81,7 +53,6 @@ export default function HistoryOrder() {
           </section>
           <Sidebar />
 
-          {/* Phần cần làm cho bài */}
           <div className="col-md-9">
             {orders.length === 0 ? (
               <div className="alert alert-warning">
@@ -124,7 +95,6 @@ export default function HistoryOrder() {
 
                   {expandedOrderId === order.id && (
                     <div className="card-body">
-                      {/* Table chi tiết đơn hàng */}
                       <div className="table-responsive">
                         <table className="table table-bordered table-hover">
                           <thead className="table-light">
@@ -178,7 +148,7 @@ export default function HistoryOrder() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
+export default HistoryOrder;

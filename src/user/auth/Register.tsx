@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Input from "../auth/Input";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,7 +59,6 @@ const Register = () => {
 
   return (
     <>
-      <Header />
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-md-5">
@@ -172,7 +169,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

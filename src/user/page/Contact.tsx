@@ -1,11 +1,6 @@
-import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
-export default function Contact() {
+function Contact() {
   return (
     <>
-      <Header />
       {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
@@ -154,8 +149,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }
+export default Contact;

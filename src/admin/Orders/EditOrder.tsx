@@ -1,10 +1,6 @@
 // src/admin/EditOrder.tsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import AdminHeader from "../components/AdminHeader";
-import AdminSidebar from "../components/AdminSidebar";
-import Menu from "../components/Menu";
-import AdminFooter from "../components/AdminFooter";
 import { toast } from "react-toastify";
 
 export interface OrderItem {
@@ -104,80 +100,65 @@ function EditOrder() {
   };
 
   return (
-    <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
-      <AdminHeader />
-      <div className="row g-0 flex-grow-1">
-        <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
-          <AdminSidebar />
-        </div>
-        <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Phần thông tin cần làm */}
-          <div className="container py-4">
-            <h4 className="mb-3">
-              Cập nhật đơn hàng #{order.code || order.id}
-              {isCanceled && (
-                <span className="badge bg-danger ms-2">Đã hủy</span>
-              )}
-              {isDelivered && (
-                <span className="badge bg-success ms-2">Đã giao</span>
-              )}
-            </h4>
+    <>
+      {/* Phần thông tin cần làm */}
+      <div className="container py-4">
+        <h4 className="mb-3">
+          Cập nhật đơn hàng #{order.code || order.id}
+          {isCanceled && <span className="badge bg-danger ms-2">Đã hủy</span>}
+          {isDelivered && (
+            <span className="badge bg-success ms-2">Đã giao</span>
+          )}
+        </h4>
 
-            <div className="mb-4">
-              <label className="form-label">Trạng thái đơn hàng:</label>
-              <select
-                className="form-select"
-                value={status}
-                disabled={isFinalized}
-                onChange={(e) => setStatus(e.target.value as Order["status"])}
+        <div className="mb-4">
+          <label className="form-label">Trạng thái đơn hàng:</label>
+          <select
+            className="form-select"
+            value={status}
+            disabled={isFinalized}
+            onChange={(e) => setStatus(e.target.value as Order["status"])}
+          >
+            {statusOptions.map((opt) => (
+              <option
+                key={opt}
+                value={opt}
+                disabled={(opt === "cancel" && !isCanceled) || isFinalized}
               >
-                {statusOptions.map((opt) => (
-                  <option
-                    key={opt}
-                    value={opt}
-                    disabled={(opt === "cancel" && !isCanceled) || isFinalized}
-                  >
-                    {getStatusText(opt)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Tên sản phẩm</th>
-                  <th>Số lượng</th>
-                  <th>Đơn giá</th>
-                </tr>
-              </thead>
-              <tbody>
-                {order.items.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.name}</td>
-                    <td>{item.quantity}</td>
-                    <td>{item.price.toLocaleString("vi-VN")}đ</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {!isFinalized && (
-              <div className="text-end">
-                <button
-                  className="btn btn-outline-primary"
-                  onClick={handleSave}
-                >
-                  Lưu
-                </button>
-              </div>
-            )}
-          </div>
+                {getStatusText(opt)}
+              </option>
+            ))}
+          </select>
         </div>
+
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th>Tên sản phẩm</th>
+              <th>Số lượng</th>
+              <th>Đơn giá</th>
+            </tr>
+          </thead>
+          <tbody>
+            {order.items.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.quantity}</td>
+                <td>{item.price.toLocaleString("vi-VN")}đ</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        {!isFinalized && (
+          <div className="text-end">
+            <button className="btn btn-outline-primary" onClick={handleSave}>
+              Lưu
+            </button>
+          </div>
+        )}
       </div>
-      <Menu />
-      <AdminFooter />
-    </div>
+    </>
   );
 }
 export default EditOrder;

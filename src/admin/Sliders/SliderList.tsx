@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import AdminHeader from "../components/AdminHeader";
-import AdminSidebar from "../components/AdminSidebar";
-import Menu from "../components/Menu";
-import AdminFooter from "../components/AdminFooter";
 
 export interface SliderItem {
   id: number;
@@ -12,8 +8,7 @@ export interface SliderItem {
   title: string;
   description: string;
 }
-
-export default function SliderList() {
+function SliderList() {
   const [sliders, setSliders] = useState<SliderItem[]>([]);
   // Read (Đọc dữ liệu) CRUD
   const fetchSliders = () => {
@@ -41,72 +36,63 @@ export default function SliderList() {
   }, []);
 
   return (
-    <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
-      <AdminHeader />
-      <div className="row g-0 flex-grow-1">
-        <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
-          <AdminSidebar />
+    <>
+      {/* Phần thông tin cần làm */}
+      <div className="container mt-4">
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <h3 className="text-secondary">Slider</h3>
+          <Link to="/admin/slider/new" className="btn btn-primary">
+            <i className="fa fa-plus me-2"></i> Thêm slider
+          </Link>
         </div>
-        <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Phần thông tin cần làm */}
-          <div className="container mt-4">
-            <div className="d-flex justify-content-between align-items-center mb-3">
-              <h3 className="text-secondary">Slider</h3>
-              <Link to="/admin/slider/new" className="btn btn-primary">
-                <i className="fa fa-plus me-2"></i> Thêm slider
-              </Link>
-            </div>
 
-            <table className="table table-bordered text-center">
-              <thead className="table-warning">
-                <tr>
-                  <th style={{ width: "5%" }}>ID</th>
-                  <th style={{ width: "10%" }}>Ảnh</th>
-                  <th style={{ width: "15%" }}>Tiêu đề</th>
-                  <th>Mô tả</th>
-                  <th style={{ width: "15%" }}>Hành động</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sliders.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>
-                      <img
-                        src={`/assets/images/slider/${item.image}`}
-                        alt=""
-                        style={{ width: 100, height: 60, objectFit: "cover" }}
-                      />
-                    </td>
-                    <td>{item.title}</td>
-                    <td>{item.description}</td>
-                    <td>
-                      <div className="d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center">
-                        <Link to={`/admin/slider/edit/${item.id}`}>
-                          <button className="btn btn-outline-info w-md-auto">
-                            <i className="fa-solid fa-pen-to-square me-2"></i>
-                            Sửa
-                          </button>
-                        </Link>
-                        <button
-                          className="btn btn-outline-danger w-md-auto"
-                          onClick={() => deleteSlider(item.id)}
-                        >
-                          <i className="fa-solid fa-trash me-2"></i>
-                          Xóa
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <table className="table table-bordered text-center">
+          <thead className="table-warning">
+            <tr>
+              <th style={{ width: "5%" }}>ID</th>
+              <th style={{ width: "10%" }}>Ảnh</th>
+              <th style={{ width: "15%" }}>Tiêu đề</th>
+              <th>Mô tả</th>
+              <th style={{ width: "15%" }}>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sliders.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>
+                  <img
+                    src={`/assets/images/slider/${item.image}`}
+                    alt=""
+                    style={{ width: 100, height: 60, objectFit: "cover" }}
+                  />
+                </td>
+                <td>{item.title}</td>
+                <td>{item.description}</td>
+                <td>
+                  <div className="d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center">
+                    <Link to={`/admin/slider/edit/${item.id}`}>
+                      <button className="btn btn-outline-info w-md-auto">
+                        <i className="fa-solid fa-pen-to-square me-2"></i>
+                        Sửa
+                      </button>
+                    </Link>
+                    <button
+                      className="btn btn-outline-danger w-md-auto"
+                      onClick={() => deleteSlider(item.id)}
+                    >
+                      <i className="fa-solid fa-trash me-2"></i>
+                      Xóa
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-
-      <Menu />
-      <AdminFooter />
-    </div>
+    </>
   );
 }
+
+export default SliderList;

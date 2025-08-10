@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export interface TeamMember {
   id: number;
@@ -17,7 +15,7 @@ export interface TeamMember {
   };
 }
 
-export default function TeamPage() {
+function TeamPage() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [activeMember, setActiveMember] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -73,8 +71,6 @@ export default function TeamPage() {
 
   return (
     <div className="team-page">
-      <Header />
-
       {/* BANNER */}
       <section
         className="banner-area banner-area2 text-center text-white d-flex align-items-center justify-content-center"
@@ -228,8 +224,7 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
+export default TeamPage;

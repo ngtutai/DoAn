@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AdminHeader from "../components/AdminHeader";
-import AdminSidebar from "../components/AdminSidebar";
-import Menu from "../components/Menu";
-import AdminFooter from "../components/AdminFooter";
 
 export interface OrderItem {
   id: number;
@@ -85,75 +81,61 @@ function OrderList() {
   );
 
   return (
-    <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
-      <AdminHeader />
-      <div className="row g-0 flex-grow-1">
-        <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
-          <AdminSidebar />
-        </div>
-        <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Phần thông tin cần làm */}
-          <div className="container py-4">
-            <h4 className="mb-4 text-secondary">Đơn hàng đang chờ xử lý</h4>
-            {loading ? (
-              <div className="text-center my-5">
-                <div className="spinner-border text-primary" />
-              </div>
-            ) : activeOrders.length === 0 ? (
-              <div className="alert alert-warning text-center">
-                Hiện không có đơn hàng!
-              </div>
-            ) : (
-              <div className="table-responsive">
-                <table className="table table-hover align-middle">
-                  <thead className="table-primary">
-                    <tr>
-                      <th>#</th>
-                      <th>Mã đơn</th>
-                      <th>Ngày đặt</th>
-                      <th>Trạng thái</th>
-                      <th>Tổng cộng</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {activeOrders.map((order, index) => (
-                      <tr key={order.id}>
-                        <td>{index + 1}</td>
-                        <td>{order.code || `#${order.id}`}</td>
-                        <td>
-                          {new Date(order.orderDate).toLocaleDateString(
-                            "vi-VN"
-                          )}
-                        </td>
-                        <td>
-                          <span
-                            className={`badge ${getStatusColor(order.status)}`}
-                          >
-                            {getStatusText(order.status)}
-                          </span>
-                        </td>
-                        <td>{order.total.toLocaleString("vi-VN")}đ</td>
-                        <td>
-                          <button
-                            className="btn btn-sm btn-outline-primary"
-                            onClick={() => navigate(`/admin/order/${order.id}`)}
-                          >
-                            Chi tiết
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+    <>
+      {/* Phần thông tin cần làm */}
+      <div className="container py-4">
+        <h4 className="mb-4 text-secondary">Đơn hàng đang chờ xử lý</h4>
+        {loading ? (
+          <div className="text-center my-5">
+            <div className="spinner-border text-primary" />
           </div>
-        </div>
+        ) : activeOrders.length === 0 ? (
+          <div className="alert alert-warning text-center">
+            Hiện không có đơn hàng!
+          </div>
+        ) : (
+          <div className="table-responsive">
+            <table className="table table-hover align-middle">
+              <thead className="table-primary">
+                <tr>
+                  <th>#</th>
+                  <th>Mã đơn</th>
+                  <th>Ngày đặt</th>
+                  <th>Trạng thái</th>
+                  <th>Tổng cộng</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {activeOrders.map((order, index) => (
+                  <tr key={order.id}>
+                    <td>{index + 1}</td>
+                    <td>{order.code || `#${order.id}`}</td>
+                    <td>
+                      {new Date(order.orderDate).toLocaleDateString("vi-VN")}
+                    </td>
+                    <td>
+                      <span className={`badge ${getStatusColor(order.status)}`}>
+                        {getStatusText(order.status)}
+                      </span>
+                    </td>
+                    <td>{order.total.toLocaleString("vi-VN")}đ</td>
+                    <td>
+                      <button
+                        className="btn btn-sm btn-outline-primary"
+                        onClick={() => navigate(`/admin/order/${order.id}`)}
+                      >
+                        Chi tiết
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
-      <Menu />
-      <AdminFooter />
-    </div>
+    </>
   );
 }
 export default OrderList;
