@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import "./Admin.css"; // ⬅️ đúng và đầy đủ
 import AdminHeader from "../components/AdminHeader";
-import AdminSidebar from "../components/AdminSidebar";
-import AdminMenu from "../components/AdminMenu";
+import Menu from "../components/Menu";
 import AdminFooter from "../components/AdminFooter";
+import AdminSidebar from "../components/AdminSidebar";
 
 function AdminLayout() {
   return (
@@ -14,11 +14,10 @@ function AdminLayout() {
           <AdminSidebar />
         </div>
         <div className="col-12 col-md-10 bg-secondary bg-opacity-25">
-          {/* Có thể thêm sidebar, header,... */}
           <Outlet />
         </div>
       </div>
-      <AdminMenu />
+      <Menu />
       <AdminFooter />
     </div>
   );

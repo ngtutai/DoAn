@@ -269,6 +269,14 @@
       "image": "1 Vòng cổ 1.png",
       "categoryId": 3,
       "description": "4"
+    },
+    {
+      "id": "0d45",
+      "name": "assss",
+      "price": 123000000,
+      "image": "1 Chó Eskimo 1.png",
+      "categoryId": 2,
+      "description": "ssassasd"
     }
   ],
   "orders": [
