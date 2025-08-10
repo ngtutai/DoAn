@@ -9,15 +9,22 @@ export interface OrderItem {
 }
 
 export interface Order {
-  id: number;
+  id: number; // hoặc string, nhớ thống nhất
   code: string;
-  userId: number;
+  userId: string;
   orderDate: string;
-  status: "delivered" | "cancel";
+  status:
+    | "paid"
+    | "placed"
+    | "processing"
+    | "shipping"
+    | "delivered"
+    | "cancel";
   shippingFee: number;
   total: number;
   items: OrderItem[];
 }
+
 // Lấy danh sách tất cả đơn hàng
 const list = async () => {
   const res = await api.get<Order[]>(api.url.orders);

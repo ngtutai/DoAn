@@ -1,29 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import sliderService, { SliderItem } from "../../services/sliderService";
 
-export interface SliderItem {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-}
 function SliderList() {
   const [sliders, setSliders] = useState<SliderItem[]>([]);
   // Read (Đọc dữ liệu) CRUD
   const fetchSliders = () => {
-    fetch("http://localhost:3001/sliders")
-      .then((res) => res.json())
-      .then((data) => setSliders(data))
+    sliderService
+      .list()
+      .then(setSliders)
       .catch(() => toast.error("Lỗi tải Slider"));
   };
 
   // Delete (Xóa dữ liệu) CRUD
   const deleteSlider = (id: number) => {
     if (!window.confirm("Bạn có muốn xóa Slider này?")) return;
-    fetch(`http://localhost:3001/sliders/${id}`, {
-      method: "DELETE",
-    })
+    sliderService
+      .remove(id)
       .then(() => {
         toast.success("Đã xóa slider!");
         fetchSliders();
@@ -79,7 +73,7 @@ function SliderList() {
                     </Link>
                     <button
                       className="btn btn-outline-danger w-md-auto"
-                      onClick={() => deleteSlider(item.id)}
+                      onClick={() => deleteSlider(item.id!)}
                     >
                       <i className="fa-solid fa-trash me-2"></i>
                       Xóa
