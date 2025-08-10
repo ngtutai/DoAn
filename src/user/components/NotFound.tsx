@@ -1,10 +1,6 @@
-import Footer from "./Footer";
-import Header from "./Header";
-
 function NotFound() {
   return (
     <>
-      <Header />
       <div className="fw-bold" style={{ textAlign: "center", padding: "3rem" }}>
         <h1>404 - Page Not Found</h1>
         <p>
@@ -19,7 +15,6 @@ function NotFound() {
           <a href="/">Quay lại trang chủ Website</a>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

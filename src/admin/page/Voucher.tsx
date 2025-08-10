@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import AdminHeader from "../components/AdminHeader";
-import AdminSidebar from "../components/AdminSidebar";
-import Menu from "../components/Menu";
-import AdminFooter from "../components/AdminFooter";
 import voucherService, { Vouchers } from "../../services/voucherService";
 
 function Voucher() {
@@ -109,145 +105,135 @@ function Voucher() {
   };
 
   return (
-    <div className="container-fluid bg-light text-start min-vh-100 d-flex flex-column">
-      <AdminHeader />
-      <div className="row g-0 flex-grow-1">
-        <div className="col-md-2 d-none d-md-block bg-secondary bg-opacity-10">
-          <AdminSidebar />
-        </div>
-        <div className="col-12 col-md-10 bg-secondary bg-opacity-25 p-3 text-center">
-          <div className="container">
-            <h2 className="text-secondary text-start">Quản lý Voucher</h2>
+    <>
+      <div className="container">
+        <h2 className="text-secondary text-start">Quản lý Voucher</h2>
 
-            {/* Form thêm voucher */}
-            <div className="row g-2 mb-3">
-              {["code", "percent", "startDate", "endDate", "usageLimit"].map(
-                (field) => (
-                  <div className="col" key={field}>
-                    <input
-                      className="form-control"
-                      type={
+        {/* Form thêm voucher */}
+        <div className="row g-2 mb-3">
+          {["code", "percent", "startDate", "endDate", "usageLimit"].map(
+            (field) => (
+              <div className="col" key={field}>
+                <input
+                  className="form-control"
+                  type={
+                    field === "percent" || field === "usageLimit"
+                      ? "number"
+                      : field.includes("Date")
+                      ? "date"
+                      : "text"
+                  }
+                  placeholder={field}
+                  value={(newVoucher as any)[field]}
+                  onChange={(e) =>
+                    setNewVoucher({
+                      ...newVoucher,
+                      [field]:
                         field === "percent" || field === "usageLimit"
-                          ? "number"
-                          : field.includes("Date")
-                          ? "date"
-                          : "text"
-                      }
-                      placeholder={field}
-                      value={(newVoucher as any)[field]}
-                      onChange={(e) =>
-                        setNewVoucher({
-                          ...newVoucher,
-                          [field]:
-                            field === "percent" || field === "usageLimit"
-                              ? Number(e.target.value)
-                              : e.target.value,
-                        })
-                      }
-                    />
-                  </div>
-                )
-              )}
-              <div className="col-auto">
-                <button className="btn btn-primary" onClick={handleAdd}>
-                  <i className="fa fa-plus me-2"></i>Thêm
-                </button>
+                          ? Number(e.target.value)
+                          : e.target.value,
+                    })
+                  }
+                />
               </div>
-            </div>
-
-            {/* Bảng voucher */}
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th style={{ width: "15%" }}>Mã voucher</th>
-                  <th style={{ width: "15%" }}>Phần %</th>
-                  <th style={{ width: "15%" }}>Bắt đầu</th>
-                  <th style={{ width: "15%" }}>Kết thúc</th>
-                  <th style={{ width: "15%" }}>Số lượng</th>
-                  <th style={{ width: "15%" }}>Hành động</th>
-                </tr>
-              </thead>
-              <tbody>
-                {vouchers.map((v) =>
-                  editingId === v.id && editingVoucher ? (
-                    <tr key={v.id}>
-                      {[
-                        "code",
-                        "percent",
-                        "startDate",
-                        "endDate",
-                        "usageLimit",
-                      ].map((field) => (
-                        <td key={field}>
-                          <input
-                            className="form-control"
-                            type={
-                              field === "percent" || field === "usageLimit"
-                                ? "number"
-                                : field.includes("Date")
-                                ? "date"
-                                : "text"
-                            }
-                            value={(editingVoucher as any)[field]}
-                            onChange={(e) =>
-                              setEditingVoucher({
-                                ...editingVoucher,
-                                [field]:
-                                  field === "percent" || field === "usageLimit"
-                                    ? Number(e.target.value)
-                                    : e.target.value,
-                              })
-                            }
-                          />
-                        </td>
-                      ))}
-                      <td>
-                        <button
-                          className="btn btn-outline-primary btn-sm me-2"
-                          onClick={() => handleSave(v.id)}
-                        >
-                          <i className="fa fa-save me-1"></i>Lưu
-                        </button>
-                        <button
-                          className="btn btn-outline-success btn-sm"
-                          onClick={() => setEditingId(null)}
-                        >
-                          <i className="fa fa-times me-1"></i>Huỷ
-                        </button>
-                      </td>
-                    </tr>
-                  ) : (
-                    <tr key={v.id}>
-                      <td>{v.code}</td>
-                      <td>{v.percent}%</td>
-                      <td>{v.startDate}</td>
-                      <td>{v.endDate}</td>
-                      <td>{v.usageLimit}</td>
-                      <td>
-                        <button
-                          className="btn btn-outline-info btn-sm me-2"
-                          onClick={() => handleEdit(v)}
-                        >
-                          <i className="fa fa-edit me-1"></i>Sửa
-                        </button>
-                        <button
-                          className="btn btn-outline-danger btn-sm"
-                          onClick={() => handleDelete(v.id)}
-                        >
-                          <i className="fa fa-trash me-1"></i>Xoá
-                        </button>
-                      </td>
-                    </tr>
-                  )
-                )}
-              </tbody>
-            </table>
+            )
+          )}
+          <div className="col-auto">
+            <button className="btn btn-primary" onClick={handleAdd}>
+              <i className="fa fa-plus me-2"></i>Thêm
+            </button>
           </div>
         </div>
+
+        {/* Bảng voucher */}
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th style={{ width: "15%" }}>Mã voucher</th>
+              <th style={{ width: "15%" }}>Phần %</th>
+              <th style={{ width: "15%" }}>Bắt đầu</th>
+              <th style={{ width: "15%" }}>Kết thúc</th>
+              <th style={{ width: "15%" }}>Số lượng</th>
+              <th style={{ width: "15%" }}>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            {vouchers.map((v) =>
+              editingId === v.id && editingVoucher ? (
+                <tr key={v.id}>
+                  {[
+                    "code",
+                    "percent",
+                    "startDate",
+                    "endDate",
+                    "usageLimit",
+                  ].map((field) => (
+                    <td key={field}>
+                      <input
+                        className="form-control"
+                        type={
+                          field === "percent" || field === "usageLimit"
+                            ? "number"
+                            : field.includes("Date")
+                            ? "date"
+                            : "text"
+                        }
+                        value={(editingVoucher as any)[field]}
+                        onChange={(e) =>
+                          setEditingVoucher({
+                            ...editingVoucher,
+                            [field]:
+                              field === "percent" || field === "usageLimit"
+                                ? Number(e.target.value)
+                                : e.target.value,
+                          })
+                        }
+                      />
+                    </td>
+                  ))}
+                  <td>
+                    <button
+                      className="btn btn-outline-primary btn-sm me-2"
+                      onClick={() => handleSave(v.id)}
+                    >
+                      <i className="fa fa-save me-1"></i>Lưu
+                    </button>
+                    <button
+                      className="btn btn-outline-success btn-sm"
+                      onClick={() => setEditingId(null)}
+                    >
+                      <i className="fa fa-times me-1"></i>Huỷ
+                    </button>
+                  </td>
+                </tr>
+              ) : (
+                <tr key={v.id}>
+                  <td>{v.code}</td>
+                  <td>{v.percent}%</td>
+                  <td>{v.startDate}</td>
+                  <td>{v.endDate}</td>
+                  <td>{v.usageLimit}</td>
+                  <td>
+                    <button
+                      className="btn btn-outline-info btn-sm me-2"
+                      onClick={() => handleEdit(v)}
+                    >
+                      <i className="fa fa-edit me-1"></i>Sửa
+                    </button>
+                    <button
+                      className="btn btn-outline-danger btn-sm"
+                      onClick={() => handleDelete(v.id)}
+                    >
+                      <i className="fa fa-trash me-1"></i>Xoá
+                    </button>
+                  </td>
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
       </div>
-      <Menu />
-      <AdminFooter />
-    </div>
+    </>
   );
 }
 export default Voucher;
