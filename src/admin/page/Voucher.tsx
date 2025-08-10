@@ -146,7 +146,7 @@ function Voucher() {
         </div>
 
         {/* Bảng voucher */}
-        <table className="table table-bordered">
+        <table className="table table-bordered text-center">
           <thead>
             <tr>
               <th style={{ width: "15%" }}>Mã voucher</th>

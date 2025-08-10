@@ -1,23 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-export interface OrderItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-export interface Order {
-  id: string;
-  code: string;
-  userId: string;
-  orderDate: string;
-  status: "placed" | "processing" | "shipping" | "delivered" | "cancel";
-  shippingFee: number;
-  total: number;
-  items: OrderItem[];
-}
+import orderService, { Order } from "../../services/ortherService";
 
 function OrderList() {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -25,8 +8,8 @@ function OrderList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3001/orders")
-      .then((res) => res.json())
+    orderService
+      .list()
       .then((data) => {
         setOrders(data);
         setLoading(false);
@@ -44,7 +27,7 @@ function OrderList() {
       case "placed":
         return "Đã đặt hàng";
       case "processing":
-        return "Chờ xử lý";
+        return "Chờ chuyển phát";
       case "shipping":
         return "Đang trung chuyển";
       case "delivered":

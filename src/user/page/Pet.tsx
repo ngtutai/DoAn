@@ -178,18 +178,19 @@ function Pet() {
       </section>
 
       {/* PHẦN CHÍNH */}
-      <div className="container-fluid py-4 px-3 px-md-5" id="section-pet">
+      <div className="container-fluid py-3 px-3 px-md-5" id="section-pet">
         <div className="row">
           {/* Danh mục sản phẩm Left */}
-          <div className="col-3 pt-3 border-end border-1 border-dark">
-            <div className="mb-3 fw-bold text-dark">
-              <h6>
-                <i className="fa-solid fa-table-list me-2"></i>Danh mục sản phẩm
-              </h6>
+          <div className="col-3 pt-2 border-end border-1 border-dark">
+            <div className="fw-bold text-dark">
+              <h4>
+                <i className="fa-solid fa-table-list me-2"></i>
+                Danh mục sản phẩm
+              </h4>
             </div>
 
             <hr />
-            <ul className="list-unstyled ps-3 fs-6">
+            <ul className="list-unstyled text-start ps-4 fs-6">
               {[
                 { label: "Tất cả", value: "all", icon: "fa-border-all" },
                 { label: "Chó", value: "dog", icon: "fa-dog" },
@@ -209,10 +210,10 @@ function Pet() {
                     }`}
                     onClick={() => handleTypeChange(item.value as any)}
                   >
-                    <h6>
+                    <h5>
                       <i className={`fa-solid ${item.icon} me-2`}></i>
                       {item.label}
-                    </h6>
+                    </h5>
                   </button>
                 </li>
               ))}

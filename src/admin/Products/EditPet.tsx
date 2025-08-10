@@ -18,7 +18,7 @@ function EditProduct() {
   // ✅ Load dữ liệu nếu đang sửa
   useEffect(() => {
     if (isEditMode) {
-      fetch(`http://localhost:3001/products/${id}`)
+      fetch(`http://localhost:3001/pets/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setName(data.name);

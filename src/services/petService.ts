@@ -6,6 +6,7 @@ export interface IPet {
   categoryId: number;
   price: number;
   image: string;
+  description?: string;
 }
 
 // Danh sách thú cưng
@@ -14,8 +15,7 @@ const list = () => api.get<IPet[]>(api.url.pets).then((res) => res.data);
 // Lấy theo ID
 const get = (id: number) =>
   api.get<IPet>(`${api.url.pets}/${id}`).then((res) => res.data);
-
-const add = (data: IPet) =>
+const add = (data: Omit<IPet, "id">) =>
   api.post<IPet>(api.url.pets, data).then((res) => res.data);
 
 const update = (id: number, data: IPet) =>

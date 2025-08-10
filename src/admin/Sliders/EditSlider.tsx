@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-
-interface Slider {
-  id?: number;
-  image: string;
-  title: string;
-  description: string;
-}
+import sliderService, { SliderItem } from "../../services/sliderService";
 
 function EditSlider() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [preview, setPreview] = useState<string>("");
-  const [form, setForm] = useState<Slider>({
+  const [form, setForm] = useState<SliderItem>({
     image: "",
     title: "",
     description: "",
@@ -21,8 +15,8 @@ function EditSlider() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3001/sliders/${id}`)
-        .then((res) => res.json())
+      sliderService
+        .get(Number(id))
         .then((data) => {
           setForm(data);
           setPreview(`/assets/images/slide/${data.image}`);
@@ -48,21 +42,23 @@ function EditSlider() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const method = id ? "PUT" : "POST";
-    const url = id
-      ? `http://localhost:3001/sliders/${id}`
-      : `http://localhost:3001/sliders`;
-
-    fetch(url, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    })
-      .then(() => {
-        toast.success(id ? "Sửa thành công" : "Thêm thành công");
-        navigate("/admin/slider");
-      })
-      .catch(() => toast.error("Lỗi khi lưu slider"));
+    if (id) {
+      sliderService
+        .update(Number(id), form)
+        .then(() => {
+          toast.success("Sửa thành công");
+          navigate("/admin/slider");
+        })
+        .catch(() => toast.error("Lỗi khi lưu slider"));
+    } else {
+      sliderService
+        .add(form)
+        .then(() => {
+          toast.success("Thêm thành công");
+          navigate("/admin/slider");
+        })
+        .catch(() => toast.error("Lỗi khi lưu slider"));
+    }
   };
 
   return (
@@ -87,6 +83,7 @@ function EditSlider() {
               <img
                 src={preview}
                 alt="preview"
+                className="mt-3"
                 style={{ width: 150, marginTop: 10, objectFit: "cover" }}
               />
             )}
