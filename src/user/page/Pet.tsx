@@ -117,22 +117,30 @@ function Pet() {
     setCurrentPage(1);
   };
 
-  const filteredProducts = products.filter((p) => {
-    const matchType = selectedType === "all" || p.type === selectedType;
-    const matchPrice =
-      selectedPriceIndex === -1 ||
-      (p.price >= priceOptions[selectedPriceIndex].min &&
-        p.price <= priceOptions[selectedPriceIndex].max);
+  const filteredProducts = products
+    .filter((p) => {
+      const matchType = selectedType === "all" || p.type === selectedType;
+      const matchPrice =
+        selectedPriceIndex === -1 ||
+        (p.price >= priceOptions[selectedPriceIndex].min &&
+          p.price <= priceOptions[selectedPriceIndex].max);
 
-    const keyword = searchKeyword.trim().toLowerCase();
+      const keyword = searchKeyword.trim().toLowerCase();
 
-    const matchKeyword =
-      keyword === "" ||
-      p.name.toLowerCase().includes(keyword) ||
-      p.id.toString().includes(keyword); // Tìm theo ID
+      const matchKeyword =
+        keyword === "" ||
+        p.name.toLowerCase().includes(keyword) ||
+        p.id.toString().includes(keyword); // Tìm theo ID
 
-    return matchType && matchPrice && matchKeyword;
-  });
+      return matchType && matchPrice && matchKeyword;
+    })
+    .sort((a, b) => {
+      if (selectedType === "all") {
+        const order = { dog: 1, cat: 2, accessory: 3 };
+        return order[a.type] - order[b.type];
+      }
+      return 0; // không thay đổi thứ tự khi lọc theo 1 loại
+    });
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const paginatedProducts = filteredProducts.slice(
