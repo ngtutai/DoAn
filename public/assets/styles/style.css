@@ -114,10 +114,10 @@ footer {
 }
 
 /* ==================== Hover Product (Pet) đẩy lên  ==================== */
-.list-unstyled .text-primary h6 {
+.list-unstyled .text-primary h5 {
   color: #ff835b;
 }
-.list-unstyled h6:hover {
+.list-unstyled h5:hover {
   color: #ff835b;
 }
 /* Nút phụ */

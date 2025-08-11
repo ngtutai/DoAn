@@ -184,7 +184,7 @@ function Pet() {
           <div className="col-3 pt-2 border-end border-1 border-dark">
             <div className="fw-bold text-dark">
               <h4>
-                <i className="fa-solid fa-table-list me-2"></i>
+                <i className="fa-brands fa-instalod me-2"></i>
                 Danh mục sản phẩm
               </h4>
             </div>
@@ -192,7 +192,7 @@ function Pet() {
             <hr />
             <ul className="list-unstyled text-start ps-4 fs-6">
               {[
-                { label: "Tất cả", value: "all", icon: "fa-border-all" },
+                { label: "Tất cả", value: "all", icon: "fa-globe" },
                 { label: "Chó", value: "dog", icon: "fa-dog" },
                 { label: "Mèo", value: "cat", icon: "fa-cat" },
                 {
@@ -268,7 +268,7 @@ function Pet() {
 
             <div className="row g-4">
               {/* phần hiển sản phẩm tất cả thì có bào nhiêu sản phẩm trong tất cả */}
-              <div className="text-muted text-end mb-2">
+              <div className="text-muted text-end">
                 Hiện có <strong>{filteredProducts.length}</strong> sản phẩm
                 {selectedType !== "all" && (
                   <>
@@ -287,7 +287,7 @@ function Pet() {
 
               {paginatedProducts.map((product) => (
                 <div className="col-10 col-sm-6 col-md-3" key={product.id}>
-                  <div className="product-card border p-3 text-center shadow-sm rounded-3 position-relative bg-white">
+                  <div className="product-card border text-center shadow-sm rounded-3 position-relative bg-white">
                     <span
                       className="badge bg-warning text-dark position-absolute top-0 end-0 m-2 rounded-pill"
                       style={{ zIndex: 10 }}
@@ -306,25 +306,25 @@ function Pet() {
                       }}
                     />
                     <h6
-                      className="fw-bold text-start mb-1 p-1"
+                      className="fw-bold text-start ms-2 mb-1 p-1"
                       style={{ fontFamily: "'Fredoka', cursive" }}
                     >
                       {product.name}
                     </h6>
-                    <p className="text-start text-muted mb-3 p-1">
+                    <p className="text-start text-muted ms-2 mb-3 p-1">
                       {formatCurrency(product.price)}
                     </p>
                     <div className="d-flex justify-content-center gap-2">
                       <button
                         title="Thêm vào giỏ hàng"
-                        className="btn btn-primary btn-sm px-3 py-2"
+                        className="btn btn-primary btn-sm mb-3 px-3 py-2"
                         onClick={() => addToCart(product)}
                       >
                         <i className="fas fa-shopping-cart me-1"></i> Thêm vào
                       </button>
                       <button
                         title="Xem chi tiết"
-                        className="btn btn-outline-secondary btn-sm px-3 py-2"
+                        className="btn btn-outline-secondary btn-sm mb-3 px-3 py-2"
                         onClick={() => navigate(`/detail/${product.id}`)}
                       >
                         <i className="fas fa-search me-1"></i> Xem
