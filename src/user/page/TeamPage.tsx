@@ -168,7 +168,7 @@ function TeamPage() {
                                 <a
                                   key={key}
                                   href={value}
-                                  className="btn btn-outline-primary"
+                                  className="btn btn-outline-info"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
