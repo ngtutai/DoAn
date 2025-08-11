@@ -207,12 +207,11 @@ footer {
 .contact-form-overlay {
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 10%;
   transform: translateY(-50%);
   background-color: transparent;
-  padding: 24px;
   border-radius: 10px;
-  width: 90%;
+  width: 1-0%;
   max-width: 50%;
   /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.15); */
 }
@@ -238,9 +237,9 @@ footer {
 
 @media (max-width: 768px) {
   .contact-form-overlay {
-    right: 40%;
-    transform: translate(50%, -50%);
-    width: 90%;
+    right: 50%;
+    transform: translate(70%, -50%);
+    width: 100%;
   }
 }
 .product-image-container {

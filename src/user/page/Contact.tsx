@@ -42,17 +42,14 @@ function Contact() {
 
       {/* Phần cần làm vào bài */}
       <div className="contact-banner text-start">
-        <img
-          src="assets/images/banner/support-contact-2.png"
-          alt="Ảnh liên hệ"
-        />
+        <img src="assets/images/banner/download.jfif" alt="Ảnh liên hệ" />
         <form className="contact-form-overlay">
-          <div className="col-10 mb-3">
+          <div className="col-12 mb-3">
             <h2>Bạn cần hỗ trợ?</h2>
             <p style={{ fontSize: "15 px" }}>
-              Celah rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho chúng
+              Kun rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho chúng
               tôi nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian
-              sớm nhất.
+              sớm nhất. Chúc bạn có 1 trãi nghiệm tuyệt vời khi vào shop!
             </p>
           </div>
           <div className="row g-3 mt-1">
@@ -112,39 +109,41 @@ function Contact() {
                 />
               </div>
             </div>
-            <div className="col-md-3 mt-4">
-              <img
-                src="assets/images/iconlogo/icon-map.png"
-                style={{ width: "80%" }}
-                alt=""
-              />
-            </div>
-            <div className="col-md-4 mb-3 mt-4 text-start">
-              <h4 className="text-dark">Địa chỉ của chúng tôi</h4>
-              <p className="mb-1">
-                <strong>
-                  <i className="fa-solid fa-building me-2" /> :{""}
-                </strong>{" "}
-                Celah Vietnam
-              </p>
-              <p className="mb-1">
-                <strong>
-                  <i className="fa-solid fa-location-dot me-2" /> :{""}
-                </strong>{" "}
-                123 Đường ABC, Quận 100, TP.HCM
-              </p>
-              <p className="mb-1">
-                <strong>
-                  <i className="fa-solid fa-envelope me-1" /> : {""}
-                </strong>
-                lienhe@petshop.vn
-              </p>
-              <p>
-                <strong>
-                  <i className="fa-solid fa-phone me-1" /> :{""}
-                </strong>{" "}
-                0987 123 321
-              </p>
+            <div className="d-flex col-md-7">
+              <div className="col-7 col-md-8 text-start">
+                <h4 className="text-dark mt-5">Địa chỉ của chúng tôi</h4>
+                <p className="mb-1">
+                  <strong>
+                    <i className="fa-solid fa-building me-2" /> :{""}
+                  </strong>{" "}
+                  Celah Vietnam
+                </p>
+                <p className="mb-1">
+                  <strong>
+                    <i className="fa-solid fa-location-dot me-2" /> :{""}
+                  </strong>{" "}
+                  123 Đường ABC, Quận 1, TP.HCM
+                </p>
+                <p className="mb-1">
+                  <strong>
+                    <i className="fa-solid fa-envelope me-1" /> : {""}
+                  </strong>
+                  info@petshop.vn
+                </p>
+                <p>
+                  <strong>
+                    <i className="fa-solid fa-phone me-1" /> :{""}
+                  </strong>{" "}
+                  0987 123 321
+                </p>
+              </div>
+              <div className="col-3 col-md-3 mt-2">
+                <img
+                  src="assets/images/iconlogo/icon-map.png"
+                  style={{ width: "150%" }}
+                  alt="icon"
+                />
+              </div>
             </div>
           </div>
         </div>

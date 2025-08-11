@@ -150,12 +150,13 @@ function Home() {
                       className="card-img-top"
                       alt={item.title}
                       style={{ height: "180px", objectFit: "cover" }}
+                      onClick={() => navigate("/service")}
                     />
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{item.title}</h5>
                       <p className="card-text small">{item.desc}</p>
                       <Link
-                        to={`/service#${item.id}`}
+                        to={`/service#`} // to={`/service#${item.id}`}
                         className="btn btn-sm btn-outline-info mt-auto"
                       >
                         Tìm hiểu thêm

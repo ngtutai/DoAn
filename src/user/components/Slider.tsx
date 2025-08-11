@@ -44,7 +44,7 @@ function Slide() {
 
   return (
     <div
-      className="position-relative overflow-hidden mx-5 mt-2"
+      className="position-relative overflow-hidden"
       style={{ height: "550px" }}
     >
       {sliders.map((item, index) => (

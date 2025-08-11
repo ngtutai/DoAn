@@ -1,153 +1,117 @@
 function Footer() {
   return (
-    <footer className="mt-3 bg-primary bg-opacity-10">
-      <div className="container py-4">
-        <div className="row mx-auto">
-          {/* Cột 1: Logo và mô tả */}
-          <div className="col-12 col-md-3 mb-2 text-center">
-            <div className="row">
-              <div className="col mt-4">
-                <h3 className="fw-bold">
-                  PET
-                  <br />
-                  SHOP
-                </h3>
-              </div>
-              <div className="col text-start">
-                <img
-                  src="/assets/images/iconlogo/icon-web.png"
-                  alt="Logo"
-                  className="rounded-circle my-3"
-                  style={{ width: "80px", height: "80px", objectFit: "cover" }}
-                />
+    <>
+      <footer className="bg-primary bg-opacity-10 mt-2">
+        <div className="container-fluid p-0 text-muted">
+          <div className="row mx-5">
+            {/* Cột 1: Thông tin liên hệ */}
+            <div className="col-12 col-md-3 mt-2 text-start">
+              <h5 className="fw-bold">Thông tin liên hệ</h5>
+              <p style={{ fontSize: "15px" }}>
+                <strong>KunPet.vn</strong> là trang mua sắm trực tuyến các sản
+                phẩm bán lẻ dành cho thú cưng của{" "}
+                <strong>KUN Pet Shop. Công ty TNHH KUN</strong> .Giấy chứng nhận
+                Đăng ký Kinh doanh số 0315592769 do Sở Kế hoạch và Đầu tư Thành
+                phố Hồ Chí Minh cấp ngày 28/03/2019.
+              </p>
+            </div>
+
+            {/* Cột 2: Thông tin cửa hàng*/}
+            <div className="col-12 col-md-3 mt-2 text-start">
+              <h5 className="fw-bold">Thông tin cửa hàng</h5>
+              <ul className="list-unstyled">
+                <li>
+                  <i className="fa-solid fa-location-dot me-2"></i>
+                  123 Đường ABC, Q.1, TP.HCM
+                </li>
+                <li>
+                  <i className="fa-solid fa-envelope me-2"></i>
+                  info@petshop.vn
+                </li>
+                <li>
+                  <i className="fa-solid fa-phone me-2"></i>
+                  1900 123 321
+                </li>
+              </ul>
+            </div>
+
+            {/* Cột 3: Hỗ trợ khách hàng */}
+            <div className="col-12 col-md-3 mt-2 text-start fw-bold">
+              <h5>Hỗ trợ khách hàng</h5>
+              <li>
+                <a href="/" className="text-dark text-decoration-none">
+                  Tìm kiếm
+                </a>
+              </li>
+              <li>
+                <a href="/" className="text-dark text-decoration-none">
+                  Giới thiệu
+                </a>
+              </li>
+              <li>
+                <a href="/" className="text-dark text-decoration-none">
+                  Chính sách bảo mật
+                </a>
+              </li>
+              <li>
+                <a href="/" className="text-dark text-decoration-none">
+                  Chính sách thanh toán
+                </a>
+              </li>
+              <li>
+                <a href="/" className="text-dark text-decoration-none">
+                  Chính sách giao hàng
+                </a>
+              </li>
+              <li>
+                <a href="/" className="text-dark text-decoration-none">
+                  Chính sách đổi trả
+                </a>
+              </li>
+            </div>
+
+            {/* Cột 4:  Chăm sóc khách hàng */}
+            <div className="col-12 col-md-3 mt-2 text-start">
+              <h5 className="fw-bold d-flex justify-content-between align-items-center">
+                Chăm sóc khách hàng
+              </h5>
+              <div className="row">
+                <div className="col-2 fs-3">
+                  <i className="fa-solid fa-phone-volume"></i>
+                </div>
+                <div className="col-9">
+                  <span>1900 123 321</span>
+                  <div>
+                    <a href="/" className="text-muted fw-bold">
+                      <u>info@petshop.vn</u>
+                    </a>
+                  </div>
+                </div>
+                <h4 className="mt-3">Follow Us</h4>
+                <div className="col-12 mt-2">
+                  <button className="btn btn-outline-dark me-2 mb-2">
+                    <i className="fa-brands fa-facebook"></i>
+                  </button>
+                  <button className="btn btn-outline-dark me-2 mb-2">
+                    <i className="fa-brands fa-instagram"></i>
+                  </button>
+                  <button className="btn btn-outline-dark me-2 mb-2">
+                    <i className="fa-brands fa-tiktok"></i>
+                  </button>
+                  <button className="btn btn-outline-dark me-2 mb-2">
+                    <i className="fa-brands fa-twitter"></i>
+                  </button>
+                </div>
               </div>
             </div>
-            <p className="mb-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit
-            </p>
-          </div>
-
-          {/* Cột 2: Category One */}
-          <div className="col-6 col-md-2 mb-2">
-            <h6 className="fw-bold">Category one</h6>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category one - 1
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category one - 2
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category one - 3
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category one - 4
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Cột 3: Category Two */}
-          <div className="col-6 col-md-2">
-            <h6 className="fw-bold">Category two</h6>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category two - 1
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category two - 2
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category two - 3
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category two - 4
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Cột 4: Category Three */}
-          <div className="col-6 col-md-2">
-            <h6 className="fw-bold">Category Three</h6>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category Three - 1
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category Three - 2
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category Three - 3
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-danger text-decoration-none">
-                  Category Three - 4
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Cột 5: Category Four */}
-          <div className="col-6 col-md-3">
-            <h6 className="fw-bold">Liên hệ</h6>
-            <ul className="list-unstyled text-start text-danger mb-3">
-              <li>
-                <i className="fa-solid fa-location-dot me-2"></i>
-                123 Đường ABC, Q.100, TP.HCM
-              </li>
-              <li>
-                <i className="fa-solid fa-phone me-2"></i>
-                1900 123 321
-              </li>
-              <li>
-                <i className="fa-solid fa-envelope me-2"></i>
-                lienhe@petshop.vn
-              </li>
-            </ul>
-
-            <form>
-              <div className="input-group">
-                <input
-                  type="email"
-                  name="email"
-                  className="form-control"
-                  placeholder="Nhập email của bạn ..."
-                  required
-                />
-                <button className="btn btn-danger rounded" type="submit">
-                  Gửi
-                </button>
-              </div>
-            </form>
           </div>
         </div>
-      </div>
 
-      <div className="footer-copy bg-secondary bg-opacity-10 py-2 text-muted">
-        Website design By Bee <i>@Nocopyright</i>
-      </div>
-    </footer>
+        <div className="footer-copy bg-secondary bg-opacity-10 py-2 text-muted">
+          Website design By Bee <i>@Nocopyright</i>
+        </div>
+      </footer>
+    </>
   );
 }
 export default Footer;
