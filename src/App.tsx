@@ -65,9 +65,9 @@ export default function App() {
             <Route path="historyorder" element={<HistoryOrder />} />
           </Route>
           {/* ========== Link Web Admin ========== */}
+          <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             {/* ✅ Trang login KHÔNG cần bảo vệ */}
-            <Route index element={<AdminLogin />} />
 
             {/* ✅ Trang được bảo vệ CẦN đăng nhập */}
             <Route

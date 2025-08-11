@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../components/Slider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import petService from "../../services/petService";
 
 interface Product {
@@ -16,6 +16,7 @@ function Home() {
     return value.toLocaleString("vi-VN") + " đ";
   }
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     petService
@@ -187,6 +188,7 @@ function Home() {
                         height: "280px",
                         objectFit: "cover",
                       }}
+                      onClick={() => navigate(`/detail/${product.id}`)}
                     />
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{product.name}</h5>
