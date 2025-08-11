@@ -33,7 +33,8 @@
       "password": "123",
       "role": "admin",
       "phone": "0123789654",
-      "address": "Công Viên Phần Mềm Quang Trung"
+      "address": "Công Viên Phần Mềm Quang Trung",
+      "disabled": false
     },
     {
       "id": "2ba1",
@@ -42,7 +43,8 @@
       "password": "123",
       "role": "user",
       "phone": "0868807904",
-      "address": "163 Bùi Văn Ngữ"
+      "address": "163 Bùi Văn Ngữ",
+      "disabled": false
     },
     {
       "id": "7e8c",
@@ -51,7 +53,8 @@
       "password": "123",
       "role": "user",
       "phone": "",
-      "address": ""
+      "address": "",
+      "disabled": false
     },
     {
       "id": "469a",
@@ -60,7 +63,18 @@
       "password": "123",
       "role": "user",
       "phone": "",
-      "address": ""
+      "address": "",
+      "disabled": false
+    },
+    {
+      "id": "efcd",
+      "displayname": "TÔ",
+      "email": "sad@gmail.com",
+      "password": "123",
+      "role": "user",
+      "phone": "",
+      "address": "",
+      "disabled": false
     }
   ],
   "categories": [
@@ -361,6 +375,23 @@
           "id": "266d",
           "name": "Chó Shiba Inu",
           "price": 20000000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1754935563705",
+      "code": "8A7FJS",
+      "userId": "cef3",
+      "orderDate": "2025-08-11T18:06:03.704Z",
+      "status": "delivered",
+      "shippingFee": 0,
+      "total": 30000000,
+      "items": [
+        {
+          "id": "62b6",
+          "name": "Chó Husky",
+          "price": 30000000,
           "quantity": 1
         }
       ]

@@ -9,7 +9,7 @@ interface Props extends DetailedHTMLProps<InputAttributes, HTMLInputElement> {
   inputRef?: React.Ref<HTMLInputElement | HTMLTextAreaElement>;
   label: string;
   row?: number;
-  showTogglePassword?: boolean; // cho phép ẩn/hiện mật khẩu
+  showTogglePassword?: boolean;
 }
 interface State {
   showPassword: boolean;
@@ -28,6 +28,7 @@ class Input extends React.Component<Props, State> {
       showPassword: !prevState.showPassword,
     }));
   };
+
   render() {
     const {
       id,
@@ -40,11 +41,6 @@ class Input extends React.Component<Props, State> {
       ...others
     } = this.props;
     const inputClass = `form-control text-start ${className ? className : ""}`;
-    const inputType = showTogglePassword
-      ? this.state.showPassword
-        ? "text"
-        : "password"
-      : type;
 
     return (
       <>
@@ -60,27 +56,33 @@ class Input extends React.Component<Props, State> {
             {...(others as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
             className={inputClass}
           />
-        ) : (
-          <>
+        ) : showTogglePassword ? (
+          <div className="input-group">
             <input
               ref={inputRef as React.Ref<HTMLInputElement>}
               id={id}
               {...others}
-              type={inputType}
+              type={this.state.showPassword ? "text" : "password"}
               className={inputClass}
             />
-            {showTogglePassword && (
-              <span
-                className="input-group-text"
-                style={{ cursor: "pointer" }}
-                onClick={this.togglePasswordVisibility}
-              >
-                <FontAwesomeIcon
-                  icon={this.state.showPassword ? faEye : faEyeSlash}
-                />
-              </span>
-            )}
-          </>
+            <span
+              className="input-group-text"
+              style={{ cursor: "pointer" }}
+              onClick={this.togglePasswordVisibility}
+            >
+              <FontAwesomeIcon
+                icon={this.state.showPassword ? faEye : faEyeSlash}
+              />
+            </span>
+          </div>
+        ) : (
+          <input
+            ref={inputRef as React.Ref<HTMLInputElement>}
+            id={id}
+            {...others}
+            type={type}
+            className={inputClass}
+          />
         )}
       </>
     );

@@ -1,8 +1,9 @@
+// Register.tsx
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Input from "../auth/Input";
-import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import userService from "../../services/userService";
 
@@ -46,6 +47,7 @@ const Register = () => {
         role: "user",
         phone: "",
         address: "",
+        disabled: false, // Thêm mặc định
       };
 
       await userService.create(newUser);
@@ -112,20 +114,15 @@ const Register = () => {
                   <label htmlFor="registerPassword" className="form-label">
                     Mật khẩu
                   </label>
-                  <div className="input-group">
-                    <span className="input-group-text">
-                      <FontAwesomeIcon icon={faLock} />
-                    </span>
-                    <Input
-                      id="registerPassword"
-                      label=""
-                      placeholder="Mật khẩu ..."
-                      required
-                      showTogglePassword
-                      inputRef={passwordRef}
-                      className="border-start-0"
-                    />
-                  </div>
+                  <Input
+                    id="registerPassword"
+                    label=""
+                    placeholder="Mật khẩu ..."
+                    required
+                    showTogglePassword
+                    inputRef={passwordRef}
+                    className="border-start-0"
+                  />
                 </div>
 
                 {/* Confirm Password */}
@@ -136,20 +133,15 @@ const Register = () => {
                   >
                     Xác nhận mật khẩu
                   </label>
-                  <div className="input-group">
-                    <span className="input-group-text">
-                      <FontAwesomeIcon icon={faLock} />
-                    </span>
-                    <Input
-                      id="registerConfirmPassword"
-                      label=""
-                      placeholder="Xác nhận mật khẩu ..."
-                      required
-                      showTogglePassword
-                      inputRef={confirmPasswordRef}
-                      className="border-start-0"
-                    />
-                  </div>
+                  <Input
+                    id="registerConfirmPassword"
+                    label=""
+                    placeholder="Xác nhận mật khẩu ..."
+                    required
+                    showTogglePassword
+                    inputRef={confirmPasswordRef}
+                    className="border-start-0"
+                  />
                 </div>
 
                 {/* Submit */}

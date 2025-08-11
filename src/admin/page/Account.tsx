@@ -31,56 +31,79 @@ function Account() {
       });
   };
 
+  const handleToggleBan = (id: string, disabled: boolean) => {
+    userService
+      .update(id, { disabled: !disabled })
+      .then(() => {
+        setUsers((prev) =>
+          prev.map((u) => (u.id === id ? { ...u, disabled: !disabled } : u))
+        );
+      })
+      .catch((err) => {
+        console.error("Lỗi khi cập nhật trạng thái:", err);
+      });
+  };
+
   return (
-    <>
-      {/* Phần thông tin cần làm */}
-      <div className="container p-4">
-        {loading ? (
-          <div className="text-center my-5">
-            <div className="spinner-border text-primary" />
-          </div>
-        ) : users.length === 0 ? (
-          <div className="alert alert-warning">Không có tài khoản nào.</div>
-        ) : (
-          <div className="table-responsive">
-            <table className="table table-bordered table-hover ">
-              <thead className="table-light">
-                <tr>
-                  <th style={{ width: "10%" }}>ID</th>
-                  <th style={{ width: "25%" }}>Tên hiển thị</th>
-                  <th>Email</th>
-                  <th style={{ width: "20%" }}>Hành động</th>
+    <div className="container p-4">
+      {loading ? (
+        <div className="text-center my-5">
+          <div className="spinner-border text-primary" />
+        </div>
+      ) : users.length === 0 ? (
+        <div className="alert alert-warning">Không có tài khoản nào.</div>
+      ) : (
+        <div className="table-responsive">
+          <table className="table table-bordered table-hover">
+            <thead className="table-light">
+              <tr>
+                <th style={{ width: "10%" }}>ID</th>
+                <th style={{ width: "25%" }}>Tên hiển thị</th>
+                <th>Email</th>
+                <th>Trạng thái</th>
+                <th style={{ width: "20%" }}>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.displayname}</td>
+                  <td>{user.email}</td>
+                  <td>{user.disabled ? "Vô hiệu hóa" : "Hoạt động"}</td>
+                  <td className="text-center">
+                    <div className="d-flex justify-content-center flex-wrap gap-2">
+                      <button
+                        className={`btn btn-sm ${
+                          user.disabled ? "btn-success" : "btn-outline-warning"
+                        }`}
+                        onClick={() =>
+                          handleToggleBan(user.id, user.disabled ?? false)
+                        }
+                      >
+                        <i
+                          className={`fa-solid ${
+                            user.disabled ? "fa-unlock" : "fa-ban"
+                          } me-2`}
+                        ></i>
+                        {user.disabled ? "Mở khóa" : "Ban"}
+                      </button>
+                      <button
+                        className="btn btn-sm btn-outline-danger"
+                        onClick={() => handleDelete(user.id)}
+                      >
+                        <i className="fa-solid fa-trash me-2"></i>
+                        Xóa
+                      </button>
+                    </div>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {users.map((user) => (
-                  <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.displayname}</td>
-                    <td>{user.email}</td>
-                    <td className="text-center">
-                      <div className="d-flex justify-content-center flex-wrap gap-2">
-                        <button className="btn btn-sm btn-outline-warning">
-                          <i className="fa-solid fa-ban me-2"></i>
-                          Ban
-                        </button>
-                        <button
-                          className="btn btn-sm btn-outline-danger"
-                          onClick={() => handleDelete(user.id)}
-                        >
-                          <i className="fa-solid fa-trash me-2"></i>
-                          Xóa
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </div>
-    </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
   );
 }
 export default Account;

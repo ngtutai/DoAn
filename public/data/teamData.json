@@ -18,11 +18,8 @@
     "id": 2,
     "name": "Võ Song Toàn",
     "role": "Frontend Developer",
-<<<<<<< HEAD
-    "avatar": "assets/images/teampage/a.jpg",
-=======
+
     "avatar": "assets/images/teampage/b.png",
->>>>>>> 007b9c11975b27f0f61588ba39ab9725e02d1b1b
     "shortDescription": "Thành viên React & TypeScript",
     "fullDescription": "Có 5 năm kinh nghiệm phát triển ứng dụng web. Từng làm việc tại các công ty công nghệ hàng đầu. Chuyên môn: React, TypeScript, Redux, Next.js.",
     "skills": ["React", "TypeScript", "UI/UX", "Performance"],

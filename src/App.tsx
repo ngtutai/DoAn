@@ -4,9 +4,11 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Outlet,
+  useNavigate,
 } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import { useEffect } from "react";
+
 // ========== Link Web User ========== //
 import Home from "./user/page/Home";
 import Pet from "./user/page/Pet";
@@ -43,59 +45,90 @@ import AdminProfile from "./admin/page/AdminProfile";
 import NotFound from "./user/components/NotFound";
 import Layout from "./user/components/Layout";
 
+// ========== Service ========== //
+import userService from "./services/userService";
+
+function AppContent() {
+  const navigate = useNavigate();
+
+  // Kiểm tra trạng thái disabled của user đang đăng nhập
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      const storedUser = localStorage.getItem("currentUser");
+      if (storedUser) {
+        try {
+          const currentUser = JSON.parse(storedUser);
+          const freshUser = await userService.getById(currentUser.id);
+          if (freshUser.disabled) {
+            toast.error("Tài khoản của bạn đã bị vô hiệu hóa!");
+            localStorage.removeItem("currentUser");
+            navigate("/login");
+          }
+        } catch (error) {
+          console.error("Lỗi kiểm tra trạng thái tài khoản:", error);
+        }
+      }
+    }, 5000); // kiểm tra mỗi 5 giây
+
+    return () => clearInterval(interval);
+  }, [navigate]);
+
+  return (
+    <Routes>
+      {/* ========== Link Web User ========== */}
+      <Route path="" element={<Layout />}>
+        <Route path="" element={<Home />} />
+        <Route path="pet" element={<Pet />} />
+        <Route path="detail/:id" element={<Detail />} />
+        <Route path="service" element={<Service />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="teampage" element={<TeamPage />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="change-password" element={<ChangePassword />} />
+        <Route path="orders" element={<Order />} />
+        <Route path="historyorder" element={<HistoryOrder />} />
+      </Route>
+
+      {/* ========== Link Admin ========== */}
+      <Route path="/admin" element={<AdminLogin />} />
+      <Route
+        path="/admin"
+        element={
+          <AdminPrivateRoute>
+            <AdminLayout />
+          </AdminPrivateRoute>
+        }
+      >
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="order" element={<OrderList />} />
+        <Route path="order/:id" element={<EditOrder />} />
+        <Route path="product" element={<ProductList />} />
+        <Route path="product/new" element={<EditProduct />} />
+        <Route path="product/edit/:id" element={<EditProduct />} />
+        <Route path="slider" element={<SliderList />} />
+        <Route path="slider/new" element={<EditSlider />} />
+        <Route path="slider/edit/:id" element={<EditSlider />} />
+        <Route path="history" element={<HistoryList />} />
+        <Route path="account" element={<Account />} />
+        <Route path="voucher" element={<Voucher />} />
+        <Route path="comment" element={<CommentList />} />
+        <Route path="adminprofile" element={<AdminProfile />} />
+      </Route>
+
+      {/* ========== Link Error ========== */}
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
 export default function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          {/* ========== Link Web User ========== */}
-          <Route path="" element={<Layout />}>
-            <Route path="" element={<Home />} />
-            <Route path="pet" element={<Pet />} />
-            <Route path="detail/:id" element={<Detail />} />
-            <Route path="service" element={<Service />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="teampage" element={<TeamPage />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="change-password" element={<ChangePassword />} />
-            <Route path="orders" element={<Order />} />
-            <Route path="historyorder" element={<HistoryOrder />} />
-          </Route>
-          {/* ========== Link Web Admin ========== */}
-          <Route path="/admin" element={<AdminLayout />}>
-            {/* ✅ Trang login KHÔNG cần bảo vệ */}
-            <Route index element={<AdminLogin />} />
-
-            {/* ✅ Trang được bảo vệ CẦN đăng nhập */}
-            <Route
-              element={
-                <AdminPrivateRoute>
-                  <Outlet />
-                </AdminPrivateRoute>
-              }
-            >
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="order" element={<OrderList />} />
-              <Route path="order/:id" element={<EditOrder />} />
-              <Route path="product" element={<ProductList />} />
-              <Route path="product/new" element={<EditProduct />} />
-              <Route path="product/edit/:id" element={<EditProduct />} />
-              <Route path="slider" element={<SliderList />} />
-              <Route path="slider/new" element={<EditSlider />} />
-              <Route path="slider/edit/:id" element={<EditSlider />} />
-              <Route path="history" element={<HistoryList />} />
-              <Route path="account" element={<Account />} />
-              <Route path="voucher" element={<Voucher />} />
-              <Route path="comment" element={<CommentList />} />
-              <Route path="adminprofile" element={<AdminProfile />} />
-            </Route>
-          </Route>
-          {/* ========== Link Error ========== */}
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
+        <AppContent />
       </Router>
 
       {/* 🔔 Toast hiển thị toàn cục */}

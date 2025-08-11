@@ -7,6 +7,9 @@ export interface User {
   email: string;
   password?: string;
   role: string;
+  phone?: string;
+  address?: string;
+  disabled?: boolean; // <-- THÊM THUỘC TÍNH NÀY
 }
 
 // Lấy danh sách người dùng
@@ -19,15 +22,19 @@ const create = (user: Partial<User>) =>
 // Lấy người dùng theo email + password (dành cho login giả lập)
 const findByEmailPassword = async (email: string, password: string) => {
   const res = await api.get<User[]>(
-    `${api.url.users}?email=${email}&password=${password}`
+    `${api.url.users}?email=${encodeURIComponent(
+      email
+    )}&password=${encodeURIComponent(password)}`
   );
   return res.data[0]; // chỉ lấy 1 người đầu tiên
 };
 
 // Tìm user theo email
 const findByEmail = async (email: string) => {
-  const res = await api.get<User[]>(`${api.url.users}?email=${email}`);
-  return res.data[0]; // lấy user đầu tiên nếu có
+  const res = await api.get<User[]>(
+    `${api.url.users}?email=${encodeURIComponent(email)}`
+  );
+  return res.data[0];
 };
 
 const findByAccountdRole = async (
@@ -36,7 +43,11 @@ const findByAccountdRole = async (
   role: string
 ) => {
   const res = await api.get<User[]>(
-    `${api.url.users}?email=${email}&password=${password}&role=${role}`
+    `${api.url.users}?email=${encodeURIComponent(
+      email
+    )}&password=${encodeURIComponent(password)}&role=${encodeURIComponent(
+      role
+    )}`
   );
   return res.data[0];
 };
@@ -45,8 +56,9 @@ const findByAccountdRole = async (
 const remove = (id: string) =>
   api.delete(`${api.url.users}/${id}`).then((res) => res.data);
 
+// CẬP NHẬT (fix: xóa dấu '}' thừa ở URL)
 const update = (id: string, data: Partial<User>) =>
-  api.patch(`${api.url.users}/${id}}`, data).then((res) => res.data);
+  api.patch(`${api.url.users}/${id}`, data).then((res) => res.data);
 
 const getById = (id: string) =>
   api.get<User>(`${api.url.users}/${id}`).then((res) => res.data);
@@ -59,6 +71,6 @@ const userService = {
   findByAccountdRole,
   remove,
   update,
-  getById, // thêm vào đây
+  getById,
 };
 export default userService;
