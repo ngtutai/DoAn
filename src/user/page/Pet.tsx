@@ -304,6 +304,7 @@ function Pet() {
                         objectFit: "cover",
                         boxShadow: "0 0 6px rgba(0,0,0,0.1)",
                       }}
+                      onClick={() => navigate(`/detail/${product.id}`)}
                     />
                     <h6
                       className="fw-bold text-start ms-2 mb-1 p-1"
