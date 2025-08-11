@@ -5,19 +5,19 @@ function Footer() {
         <div className="container-fluid p-0 text-muted">
           <div className="row mx-5">
             {/* Cột 1: Thông tin liên hệ */}
-            <div className="col-12 col-md-3 mt-2 text-start">
+            <div className="col-12 col-md-3 mt-3 text-start">
               <h5 className="fw-bold">Thông tin liên hệ</h5>
               <p style={{ fontSize: "15px" }}>
                 <strong>KunPet.vn</strong> là trang mua sắm trực tuyến các sản
                 phẩm bán lẻ dành cho thú cưng của{" "}
                 <strong>KUN Pet Shop. Công ty TNHH KUN</strong> .Giấy chứng nhận
-                Đăng ký Kinh doanh số 0315592769 do Sở Kế hoạch và Đầu tư Thành
-                phố Hồ Chí Minh cấp ngày 28/03/2019.
+                Đăng ký Kinh doanh - số: 1900.123.321 - do Sở Kế hoạch và Đầu tư
+                Thành phố Hồ Chí Minh cấp ngày 28/03/2019.
               </p>
             </div>
 
             {/* Cột 2: Thông tin cửa hàng*/}
-            <div className="col-12 col-md-3 mt-2 text-start">
+            <div className="col-12 col-md-3 mt-3 text-start">
               <h5 className="fw-bold">Thông tin cửa hàng</h5>
               <ul className="list-unstyled">
                 <li>
@@ -36,8 +36,8 @@ function Footer() {
             </div>
 
             {/* Cột 3: Hỗ trợ khách hàng */}
-            <div className="col-12 col-md-3 mt-2 text-start fw-bold">
-              <h5>Hỗ trợ khách hàng</h5>
+            <div className="col-12 col-md-3 mt-3 text-start fw-bold">
+              <h5 className="fw-bold">Hỗ trợ khách hàng</h5>
               <li>
                 <a href="/" className="text-dark text-decoration-none">
                   Tìm kiếm
@@ -71,7 +71,7 @@ function Footer() {
             </div>
 
             {/* Cột 4:  Chăm sóc khách hàng */}
-            <div className="col-12 col-md-3 mt-2 text-start">
+            <div className="col-12 col-md-3 mt-3 text-start">
               <h5 className="fw-bold d-flex justify-content-between align-items-center">
                 Chăm sóc khách hàng
               </h5>
