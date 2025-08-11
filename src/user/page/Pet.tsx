@@ -190,7 +190,7 @@ function Pet() {
         <div className="row">
           {/* Danh mục sản phẩm Left */}
           <div className="col-3 pt-2 border-end border-1 border-dark">
-            <div className="fw-bold text-dark">
+            <div className="fw-bold text-muted">
               <h4>
                 <i className="fa-brands fa-instalod me-2"></i>
                 Danh mục sản phẩm
