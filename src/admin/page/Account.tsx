@@ -59,8 +59,8 @@ function Account() {
               <tr>
                 <th style={{ width: "10%" }}>ID</th>
                 <th style={{ width: "25%" }}>Tên hiển thị</th>
-                <th>Email</th>
-                <th>Trạng thái</th>
+                <th style={{ width: "25%" }}>Email</th>
+                <th style={{ width: "25%" }}>Trạng thái</th>
                 <th style={{ width: "20%" }}>Hành động</th>
               </tr>
             </thead>
@@ -75,7 +75,9 @@ function Account() {
                     <div className="d-flex justify-content-center flex-wrap gap-2">
                       <button
                         className={`btn btn-sm ${
-                          user.disabled ? "btn-success" : "btn-outline-warning"
+                          user.disabled
+                            ? "btn-outline-success"
+                            : "btn-outline-warning"
                         }`}
                         onClick={() =>
                           handleToggleBan(user.id, user.disabled ?? false)
@@ -86,7 +88,7 @@ function Account() {
                             user.disabled ? "fa-unlock" : "fa-ban"
                           } me-2`}
                         ></i>
-                        {user.disabled ? "Mở khóa" : "Ban"}
+                        {user.disabled ? "open" : "lock"}
                       </button>
                       <button
                         className="btn btn-sm btn-outline-danger"

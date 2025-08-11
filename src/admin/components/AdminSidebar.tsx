@@ -102,6 +102,18 @@ function AdminSidebar() {
             </NavLink>
           </li>
 
+          {/* Comment (Bình luận ) */}
+          <li className="nav-item">
+            <NavLink
+              to="/admin/contact"
+              className={({ isActive }) =>
+                "nav-link fw-semibold" + (isActive ? " active " : "")
+              }
+            >
+              <i className="fa-solid fa-reply-all me-2"></i> Liên hệ
+            </NavLink>
+          </li>
+
           <hr />
 
           <div style={{ display: "flex", alignItems: "center" }}>

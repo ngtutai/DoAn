@@ -62,10 +62,7 @@ function AdminProfile() {
     <>
       <div className="container p-3">
         <main className="col-12 bg-white rounded shadow-sm p-4">
-          <h4 className="fw-bold mb-4">
-            <i className="fa fa-user me-2 text-primary" />
-            Thông tin quản trị viên
-          </h4>
+          <h4 className="fw-bold mb-4">Thông tin quản trị viên</h4>
 
           <div className="mb-3">
             <label className="form-label fw-bold">Tên hiển thị</label>

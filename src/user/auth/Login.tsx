@@ -45,7 +45,7 @@ const Login = () => {
         return;
       }
       if (user.disabled) {
-        toast.error("Tài khoản của bạn đã bị vô hiệu hóa!");
+        toast.error("Tài khoản bạn đã bị vô hiệu hóa!");
         return;
       }
 

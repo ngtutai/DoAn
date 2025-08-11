@@ -4,6 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 function Header() {
   const storedUser = localStorage.getItem("currentUser");
   const currentUser = storedUser ? JSON.parse(storedUser) : null;
+
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
     window.location.href = "/login";

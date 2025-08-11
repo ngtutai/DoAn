@@ -336,7 +336,7 @@ const Cart: React.FC = () => {
                             onChange={() => handleItemCheck(index)}
                           />
                         </td>
-                        <td>{index + 1}</td>
+                        <td>{item.id}</td>
                         <td>
                           <img
                             src={item.image}
