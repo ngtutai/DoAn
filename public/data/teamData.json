@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Nguyễn Tuấn Tài",
     "role": "UI/UX Designer",
-    "avatar": "assets/images/teampage/b.png",
+    "avatar": "assets/images/teampage/a.png",
     "shortDescription": "Thiết kế trải nghiệm người dùng",
     "fullDescription": "Tốt nghiệp loại giỏi ĐH Mỹ thuật Công nghiệp. Có khả năng cảm thụ nghệ thuật tốt và tư duy sáng tạo. Đã thiết kế giao diện cho hơn 20 dự án lớn nhỏ.",
     "skills": ["Figma", "Adobe XD", "User Research", "Prototyping"],
@@ -18,7 +18,11 @@
     "id": 2,
     "name": "Võ Song Toàn",
     "role": "Frontend Developer",
+<<<<<<< HEAD
     "avatar": "assets/images/teampage/a.jpg",
+=======
+    "avatar": "assets/images/teampage/b.png",
+>>>>>>> 007b9c11975b27f0f61588ba39ab9725e02d1b1b
     "shortDescription": "Thành viên React & TypeScript",
     "fullDescription": "Có 5 năm kinh nghiệm phát triển ứng dụng web. Từng làm việc tại các công ty công nghệ hàng đầu. Chuyên môn: React, TypeScript, Redux, Next.js.",
     "skills": ["React", "TypeScript", "UI/UX", "Performance"],

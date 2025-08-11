@@ -5,9 +5,7 @@ function AdminSidebar() {
   return (
     <Fragment>
       <nav className="sidebar border-end">
-        <ul className="nav flex-column list-unstyled">
-          <h5 className="p-1 text-muted">Dashboard</h5>
-
+        <ul className="nav flex-column list-unstyled mt-3">
           {/* Dashboard (Bảng điều khiển) */}
           <li className="nav-item">
             <NavLink
@@ -106,46 +104,18 @@ function AdminSidebar() {
 
           <hr />
 
-          <li className="nav-item">
-            <NavLink
-              to="/admin/error"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-gauge me-2"></i> Dashboard 1
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/admin/error"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-gauge me-2"></i> Dashboard 2
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/admin/error"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-gauge me-2"></i> Dashboard 3
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/admin/error"
-              className={({ isActive }) =>
-                "nav-link fw-semibold" + (isActive ? " active " : "")
-              }
-            >
-              <i className="fa-solid fa-gauge me-2"></i> Dashboard 4
-            </NavLink>
-          </li>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src="/assets/images/iconlogo/icon-web.png"
+              alt=""
+              style={{ width: "50%" }}
+            />
+            <img
+              src="/assets/images/iconlogo/icon-map.png"
+              alt=""
+              style={{ width: "50%" }}
+            />
+          </div>
         </ul>
       </nav>
     </Fragment>
