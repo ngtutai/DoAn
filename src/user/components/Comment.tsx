@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import api from "../../services/api"; // điều chỉnh lại đường dẫn nếu cần
+import React, { useEffect, useState, useCallback } from "react";
+import api from "../../services/api";
 
 export interface Comment {
   id: string;
@@ -20,9 +20,9 @@ export interface Props {
   productId: string;
 }
 
-const Comments: React.FC<Props> = ({ productId }) => {
+const CommentSection: React.FC<Props> = ({ productId }) => {
   const [comments, setComments] = useState<Comment[]>([]);
-  const [users, setUsers] = useState<User[]>([]);
+  const [, setUsers] = useState<User[]>([]); // ❌ Không dùng 'users', chỉ giữ setUsers để lưu nếu cần
   const [newComment, setNewComment] = useState("");
   const [rating, setRating] = useState<number>(5);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -37,7 +37,7 @@ const Comments: React.FC<Props> = ({ productId }) => {
     return `${time} - ${day}`;
   };
 
-  const fetchCommentsAndUsers = async () => {
+  const fetchCommentsAndUsers = useCallback(async () => {
     try {
       const [cmtRes, userRes] = await Promise.all([
         api.get(`${api.url.comments}?productId=${productId}`),
@@ -67,11 +67,11 @@ const Comments: React.FC<Props> = ({ productId }) => {
     } catch (error) {
       console.error("Lỗi tải dữ liệu:", error);
     }
-  };
+  }, [productId]);
 
   useEffect(() => {
     fetchCommentsAndUsers();
-  }, [productId]);
+  }, [fetchCommentsAndUsers]);
 
   const handleSubmit = async () => {
     if (!currentUser) {
@@ -187,4 +187,4 @@ const Comments: React.FC<Props> = ({ productId }) => {
   );
 };
 
-export default Comments;
+export default CommentSection;
