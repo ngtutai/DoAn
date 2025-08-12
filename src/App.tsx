@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useEffect } from "react";
 
 // ========== Link Web User ========== //
+import Layout from "./user/components/Layout";
 import Home from "./user/page/Home";
 import Pet from "./user/page/Pet";
 import Detail from "./user/components/Detail";
@@ -43,7 +44,6 @@ import AdminProfile from "./admin/page/AdminProfile";
 
 // ========== Link Lỗi Error ========== //
 import NotFound from "./user/components/NotFound";
-import Layout from "./user/components/Layout";
 
 // ========== Service ========== //
 import userService from "./services/userService";
@@ -68,7 +68,7 @@ function AppContent() {
           console.error("Lỗi kiểm tra trạng thái tài khoản:", error);
         }
       }
-    }, 5000); // kiểm tra mỗi 5 giây
+    }, 10000); // kiểm tra mỗi 10s
 
     return () => clearInterval(interval);
   }, [navigate]);
@@ -124,7 +124,7 @@ function AppContent() {
   );
 }
 
-export default function App() {
+function App() {
   return (
     <div className="App">
       <Router>
@@ -143,3 +143,4 @@ export default function App() {
     </div>
   );
 }
+export default App;
